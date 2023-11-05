@@ -1,0 +1,945 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B8B9B947-CD8C-486D-9F03-E6872871C27B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CarDealerSupportSystem</RootNamespace>
+    <AssemblyName>CarDealerSupportSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\activity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\airplay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\alert-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\alert-octagon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\alert-triangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\align-center.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\align-justify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\align-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\align-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\anchor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\aperture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\archive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\arrow-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\arrow-down-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\arrow-down-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\arrow-down-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\arrow-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\arrow-left-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\arrow-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\arrow-right-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\arrow-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\arrow-up-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\arrow-up-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\arrow-up-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\at-sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\award.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\bar-chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\bar-chart-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\battery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\battery-charging.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\bell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\bell-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\bluetooth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\bold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\bookmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\book-open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\briefcase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\camera-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\cast.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\check-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\check-square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\chevron-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\chevron-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\chevron-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\chevrons-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\chevrons-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\chevrons-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\chevrons-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\chevron-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\chrome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\clipboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\cloud.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\cloud-drizzle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\cloud-lightning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\cloud-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\cloud-rain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\cloud-snow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\code.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\codepen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\codesandbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\coffee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\columns.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\command.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\compass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\corner-down-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\corner-down-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\corner-left-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\corner-left-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\corner-right-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\corner-right-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\corner-up-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\corner-up-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\cpu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\credit-card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\crop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\crosshair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\database.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\disc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\divide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\divide-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\divide-square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\dollar-sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\download-cloud.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\dribbble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\droplet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\edit-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\edit-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\external-link.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\eye-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\facebook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\fast-forward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\feather.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\figma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\file-minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\file-plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\file-text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\film.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\flag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\folder-minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\folder-plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\framer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\frown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\gift.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\git-branch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\git-commit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\github.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\gitlab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\git-merge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\git-pull-request.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\globe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\grid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\hard-drive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\hash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\headphones.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\help-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\hexagon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\inbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\instagram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\italic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\layers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\layout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\life-buoy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\link.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\link-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\linkedin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\loader.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\log-in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\log-out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\map-pin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\maximize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\maximize-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\meh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\message-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\message-square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\mic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\mic-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\minimize-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\minus-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\minus-square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\monitor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\moon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\more-horizontal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\more-vertical.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\mouse-pointer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\move.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\music.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\navigation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\navigation-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\octagon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\package.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\paperclip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\pause-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\pen-tool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\percent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\phone-call.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\phone-forwarded.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\phone-incoming.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\phone-missed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\phone-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\phone-outgoing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\pie-chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\play-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\plus-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\plus-square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\pocket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\power.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\radio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\refresh-ccw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\refresh-cw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\repeat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\rewind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\rotate-ccw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\rotate-cw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\rss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\scissors.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\server.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\share.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\share-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\shield-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\shopping-bag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\shopping-cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\shuffle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\sidebar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\skip-back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\skip-forward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\slack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\slash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\sliders.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\smartphone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\smile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\speaker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\stop-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\sun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\sunrise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\sunset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\tablet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\tag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\target.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\terminal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\thermometer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\thumbs-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\thumbs-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\toggle-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\toggle-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\tool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\trash-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\trello.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\trending-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\trending-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\triangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\truck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\tv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\twitch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\twitter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\type.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\umbrella.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\underline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\unlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\upload-cloud.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\user-check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\user-minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\user-plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\user-x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\video-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\voicemail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\volume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\volume-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\volume-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\volume-x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\watch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\wifi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\wifi-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\x-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\x-octagon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\x-square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\youtube.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\zap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\zap-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\zoom-in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\zoom-out.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
