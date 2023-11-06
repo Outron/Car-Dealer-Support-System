@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarDealerSupportSystem.SellerFormPanels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,8 @@ namespace CarDealerSupportSystem
     {
         private Button currentBtn;
         private Panel leftBorderBtn;
+        private Form currentChildForm;
+
 
         public SellerPanel()
         {
@@ -59,43 +62,33 @@ namespace CarDealerSupportSystem
             }
         }
 
-
         private void Form2_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
         private void LeftMenuBtn1_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            TopLabel.Text = LeftMenuBtn1.Text;
+            OpenChildForm(new MainPanel());
         }
 
         private void LeftMenuBtn2_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            TopLabel.Text = LeftMenuBtn2.Text;
+            OpenChildForm(new OrdersPanel());
         }
 
         private void LeftMenuBtn3_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            TopLabel.Text = LeftMenuBtn3.Text;
+            OpenChildForm(new CarsPanel());
         }
 
         private void LeftMenuBtn4_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            TopLabel.Text = LeftMenuBtn4.Text;
+            OpenChildForm(new OrdersPanel());
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)
@@ -112,10 +105,30 @@ namespace CarDealerSupportSystem
 
         }
 
-        private void TopLabel_Click(object sender, EventArgs e)
+        private void OpenChildForm(Form childForm)
         {
+            if (currentChildForm != null)
+            {
+                //open only one form
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            MainPanel.Controls.Add(childForm);
+            MainPanel.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            TopLabel.Text = currentBtn.Text;
+        }       
 
-        }
+
+
+
+
+
+
 
         // Drag Form
 

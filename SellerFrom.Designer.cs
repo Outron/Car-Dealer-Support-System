@@ -38,8 +38,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TopPanel = new System.Windows.Forms.Panel();
-            this.ExitBtn = new System.Windows.Forms.Button();
             this.TopLabel = new System.Windows.Forms.Label();
+            this.ExitBtn = new System.Windows.Forms.Button();
+            this.MainPanel = new System.Windows.Forms.Panel();
             this.LeftMenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.TopPanel.SuspendLayout();
@@ -160,7 +161,6 @@
             this.label3.Size = new System.Drawing.Size(93, 21);
             this.label3.TabIndex = 3;
             this.label3.Text = "Sprzedawca";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label1
             // 
@@ -195,6 +195,15 @@
             this.TopPanel.TabIndex = 1;
             this.TopPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TopPanel_MouseDown);
             // 
+            // TopLabel
+            // 
+            this.TopLabel.AutoSize = true;
+            this.TopLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.TopLabel.Location = new System.Drawing.Point(16, 12);
+            this.TopLabel.Name = "TopLabel";
+            this.TopLabel.Size = new System.Drawing.Size(0, 37);
+            this.TopLabel.TabIndex = 1;
+            // 
             // ExitBtn
             // 
             this.ExitBtn.FlatAppearance.BorderSize = 0;
@@ -208,14 +217,13 @@
             this.ExitBtn.UseVisualStyleBackColor = true;
             this.ExitBtn.Click += new System.EventHandler(this.LogOutBtn_Click);
             // 
-            // TopLabel
+            // MainPanel
             // 
-            this.TopLabel.AutoSize = true;
-            this.TopLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.TopLabel.Location = new System.Drawing.Point(16, 12);
-            this.TopLabel.Name = "TopLabel";
-            this.TopLabel.Size = new System.Drawing.Size(0, 37);
-            this.TopLabel.TabIndex = 1;
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(239, 70);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(861, 530);
+            this.MainPanel.TabIndex = 3;
             // 
             // SellerPanel
             // 
@@ -223,6 +231,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
             this.ClientSize = new System.Drawing.Size(1100, 600);
+            this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.TopPanel);
             this.Controls.Add(this.LeftMenuPanel);
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -254,5 +263,6 @@
         private System.Windows.Forms.Button ExitBtn;
         private System.Windows.Forms.Button LogOutBtn;
         private System.Windows.Forms.Label TopLabel;
+        private System.Windows.Forms.Panel MainPanel;
     }
 }

@@ -9,3 +9,7 @@ D:\CDSS BD2\CarDealerSupportSystem\obj\Debug\CarDealerSupportSystem.exe
 D:\CDSS BD2\CarDealerSupportSystem\obj\Debug\CarDealerSupportSystem.pdb
 D:\CDSS BD2\CarDealerSupportSystem\obj\Debug\CarDealerSupportSystem.SellerPanel.resources
 D:\CDSS BD2\CarDealerSupportSystem\obj\Debug\CarDealerSupportSystem.LoginForm.resources
+D:\CDSS BD2\CarDealerSupportSystem\obj\Debug\CarDealerSupportSystem.SellerFormPanels.MainPanel.resources
+D:\CDSS BD2\CarDealerSupportSystem\obj\Debug\CarDealerSupportSystem.SellerFormPanels.OrdersPanel.resources
+D:\CDSS BD2\CarDealerSupportSystem\obj\Debug\CarDealerSupportSystem.SellerFormPanels.CarsPanel.resources
+D:\CDSS BD2\CarDealerSupportSystem\obj\Debug\CarDealerSupportSystem.SellerFormPanels.ClientsForm.resources

@@ -52,6 +52,30 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SellerFormPanels\CarsPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellerFormPanels\CarsPanel.Designer.cs">
+      <DependentUpon>CarsPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SellerFormPanels\ClientsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellerFormPanels\ClientsForm.Designer.cs">
+      <DependentUpon>ClientsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SellerFormPanels\MainPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellerFormPanels\MainPanel.Designer.cs">
+      <DependentUpon>MainPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SellerFormPanels\OrdersPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellerFormPanels\OrdersPanel.Designer.cs">
+      <DependentUpon>OrdersPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="SellerFrom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +86,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellerFormPanels\CarsPanel.resx">
+      <DependentUpon>CarsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellerFormPanels\ClientsForm.resx">
+      <DependentUpon>ClientsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellerFormPanels\MainPanel.resx">
+      <DependentUpon>MainPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellerFormPanels\OrdersPanel.resx">
+      <DependentUpon>OrdersPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SellerFrom.resx">
       <DependentUpon>SellerFrom.cs</DependentUpon>
@@ -950,5 +986,6 @@
   <ItemGroup>
     <None Include="Icons\zoom-out.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
