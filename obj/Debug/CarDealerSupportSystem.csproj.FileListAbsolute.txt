@@ -2,9 +2,10 @@ D:\CDSS BD2\CarDealerSupportSystem\bin\Debug\CarDealerSupportSystem.exe.config
 D:\CDSS BD2\CarDealerSupportSystem\bin\Debug\CarDealerSupportSystem.exe
 D:\CDSS BD2\CarDealerSupportSystem\bin\Debug\CarDealerSupportSystem.pdb
 D:\CDSS BD2\CarDealerSupportSystem\obj\Debug\CarDealerSupportSystem.csproj.AssemblyReference.cache
-D:\CDSS BD2\CarDealerSupportSystem\obj\Debug\CarDealerSupportSystem.Form1.resources
 D:\CDSS BD2\CarDealerSupportSystem\obj\Debug\CarDealerSupportSystem.Properties.Resources.resources
 D:\CDSS BD2\CarDealerSupportSystem\obj\Debug\CarDealerSupportSystem.csproj.GenerateResource.cache
 D:\CDSS BD2\CarDealerSupportSystem\obj\Debug\CarDealerSupportSystem.csproj.CoreCompileInputs.cache
 D:\CDSS BD2\CarDealerSupportSystem\obj\Debug\CarDealerSupportSystem.exe
 D:\CDSS BD2\CarDealerSupportSystem\obj\Debug\CarDealerSupportSystem.pdb
+D:\CDSS BD2\CarDealerSupportSystem\obj\Debug\CarDealerSupportSystem.SellerPanel.resources
+D:\CDSS BD2\CarDealerSupportSystem\obj\Debug\CarDealerSupportSystem.LoginForm.resources
