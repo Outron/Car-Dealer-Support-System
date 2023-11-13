@@ -34,8 +34,8 @@
             this.LeftMenuBtn3 = new System.Windows.Forms.Button();
             this.LeftMenuBtn2 = new System.Windows.Forms.Button();
             this.LeftMenuBtn1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.RoleLabel = new System.Windows.Forms.Label();
+            this.NameLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TopPanel = new System.Windows.Forms.Panel();
             this.TopLabel = new System.Windows.Forms.Label();
@@ -54,8 +54,8 @@
             this.LeftMenuPanel.Controls.Add(this.LeftMenuBtn3);
             this.LeftMenuPanel.Controls.Add(this.LeftMenuBtn2);
             this.LeftMenuPanel.Controls.Add(this.LeftMenuBtn1);
-            this.LeftMenuPanel.Controls.Add(this.label3);
-            this.LeftMenuPanel.Controls.Add(this.label1);
+            this.LeftMenuPanel.Controls.Add(this.RoleLabel);
+            this.LeftMenuPanel.Controls.Add(this.NameLabel);
             this.LeftMenuPanel.Controls.Add(this.pictureBox1);
             this.LeftMenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.LeftMenuPanel.Location = new System.Drawing.Point(0, 0);
@@ -151,27 +151,28 @@
             this.LeftMenuBtn1.UseVisualStyleBackColor = true;
             this.LeftMenuBtn1.Click += new System.EventHandler(this.LeftMenuBtn1_Click);
             // 
-            // label3
+            // RoleLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(74, 126);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 21);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Sprzedawca";
+            this.RoleLabel.AutoSize = true;
+            this.RoleLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RoleLabel.ForeColor = System.Drawing.Color.White;
+            this.RoleLabel.Location = new System.Drawing.Point(74, 126);
+            this.RoleLabel.Name = "RoleLabel";
+            this.RoleLabel.Size = new System.Drawing.Size(93, 21);
+            this.RoleLabel.TabIndex = 3;
+            this.RoleLabel.Text = "Sprzedawca";
             // 
-            // label1
+            // NameLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(35, 96);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 30);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Zbigniew Kapusta";
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.NameLabel.ForeColor = System.Drawing.Color.White;
+            this.NameLabel.Location = new System.Drawing.Point(47, 96);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(69, 30);
+            this.NameLabel.TabIndex = 1;
+            this.NameLabel.Text = "Name";
+            this.NameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox1
             // 
@@ -224,6 +225,7 @@
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(861, 530);
             this.MainPanel.TabIndex = 3;
+            this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint);
             // 
             // SellerPanel
             // 
@@ -252,10 +254,8 @@
         #endregion
 
         private System.Windows.Forms.Panel LeftMenuPanel;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel TopPanel;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button LeftMenuBtn1;
         private System.Windows.Forms.Button LeftMenuBtn2;
         private System.Windows.Forms.Button LeftMenuBtn4;
@@ -264,5 +264,7 @@
         private System.Windows.Forms.Button LogOutBtn;
         private System.Windows.Forms.Label TopLabel;
         private System.Windows.Forms.Panel MainPanel;
+        public System.Windows.Forms.Label NameLabel;
+        public System.Windows.Forms.Label RoleLabel;
     }
 }

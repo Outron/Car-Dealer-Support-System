@@ -27,6 +27,7 @@ namespace CarDealerSupportSystem
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(5, 57);
             LeftMenuPanel.Controls.Add(leftBorderBtn);
+
         }
 
         private struct RGBColors
@@ -123,13 +124,6 @@ namespace CarDealerSupportSystem
             TopLabel.Text = currentBtn.Text;
         }       
 
-
-
-
-
-
-
-
         // Drag Form
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -141,6 +135,11 @@ namespace CarDealerSupportSystem
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void MainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         // End Drag Form
