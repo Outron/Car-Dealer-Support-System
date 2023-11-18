@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.Extensions.Options;
 
 // Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
 // If you have enabled NRTs for your project, then un-comment the following line:
@@ -10,6 +11,7 @@ namespace CarDealerSupportSystem.Models
 {
     public partial class salon_samochodowyContext : DbContext
     {
+
         public salon_samochodowyContext()
         {
         }
@@ -36,10 +38,11 @@ namespace CarDealerSupportSystem.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseMySql("server=localhost;database=salon_samochodowy;uid=root;pwd=samochody", x => x.ServerVersion("10.4.28-mariadb"));
+                optionsBuilder.UseMySql("server=localhost;database=cdss;uid=root;pwd=", x => x.ServerVersion("10.4.28-mariadb"));
             }
         }
 

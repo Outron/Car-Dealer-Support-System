@@ -220,6 +220,7 @@
             // 
             // MainPanel
             // 
+            this.MainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainPanel.Location = new System.Drawing.Point(239, 70);
             this.MainPanel.Name = "MainPanel";

@@ -40,6 +40,7 @@ namespace CarDealerSupportSystem
         private void button2_Click(object sender, EventArgs e)
         {
             //after clicking this button, the application will open the second form after successful login
+
             var db = new salon_samochodowyContext();
             var loginData = db.Pracownicy.Join(db.Role, p => p.KodRoli, r => r.KodRoli, (p, r) => new { p, r }).Where(pr => pr.p.Login == UsernameTextBox.Text).FirstOrDefault();
 
