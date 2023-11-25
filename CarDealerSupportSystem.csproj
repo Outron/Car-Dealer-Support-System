@@ -221,7 +221,9 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\CarDealerSupportSystem.Models.Klienci.datasource" />
     <None Include="Properties\DataSources\CarDealerSupportSystem.Models.Samochody.datasource" />
+    <None Include="Properties\DataSources\CarDealerSupportSystem.Models.Zamowienia.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
