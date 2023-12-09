@@ -39,5 +39,12 @@ namespace CarDealerSupportSystem
             //quits the application
             Application.Exit();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panelKierownika panelKform = new panelKierownika();
+            panelKform.ShowDialog();
+            this.Hide();
+        }
     }
 }

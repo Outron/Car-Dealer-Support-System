@@ -52,10 +52,66 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="paneleKierownika\klienciControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="paneleKierownika\klienciControl.Designer.cs">
+      <DependentUpon>klienciControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="paneleKierownika\pKlienci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="paneleKierownika\pKlienci.Designer.cs">
+      <DependentUpon>pKlienci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="paneleKierownika\pSamochody.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="paneleKierownika\pSamochody.Designer.cs">
+      <DependentUpon>pSamochody.cs</DependentUpon>
+    </Compile>
+    <Compile Include="paneleKierownika\pSzukaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="paneleKierownika\pSzukaj.Designer.cs">
+      <DependentUpon>pSzukaj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="paneleKierownika\pStatystyki.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="paneleKierownika\pStatystyki.Designer.cs">
+      <DependentUpon>pStatystyki.cs</DependentUpon>
+    </Compile>
+    <Compile Include="panelKierownika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="panelKierownika.Designer.cs">
+      <DependentUpon>panelKierownika.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="paneleKierownika\klienciControl.resx">
+      <DependentUpon>klienciControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="paneleKierownika\pKlienci.resx">
+      <DependentUpon>pKlienci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="paneleKierownika\pSamochody.resx">
+      <DependentUpon>pSamochody.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="paneleKierownika\pSzukaj.resx">
+      <DependentUpon>pSzukaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="paneleKierownika\pStatystyki.resx">
+      <DependentUpon>pStatystyki.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="panelKierownika.resx">
+      <DependentUpon>panelKierownika.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

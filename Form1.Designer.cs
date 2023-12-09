@@ -102,13 +102,14 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(21)))), ((int)(((byte)(28)))));
             this.button2.Location = new System.Drawing.Point(88, 357);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(170, 42);
             this.button2.TabIndex = 5;
             this.button2.Text = "ZALOGUJ";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox2
             // 
@@ -134,6 +135,7 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pictureBox3.Image = global::CarDealerSupportSystem.Properties.Resources.log_in;
             this.pictureBox3.Location = new System.Drawing.Point(128, 12);
             this.pictureBox3.Name = "pictureBox3";
@@ -146,7 +148,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(21)))), ((int)(((byte)(28)))));
             this.label1.Location = new System.Drawing.Point(90, 129);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(184, 39);

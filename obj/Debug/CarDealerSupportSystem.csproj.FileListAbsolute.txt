@@ -8,3 +8,19 @@ D:\CDSS BD2\CarDealerSupportSystem\obj\Debug\CarDealerSupportSystem.csproj.Gener
 D:\CDSS BD2\CarDealerSupportSystem\obj\Debug\CarDealerSupportSystem.csproj.CoreCompileInputs.cache
 D:\CDSS BD2\CarDealerSupportSystem\obj\Debug\CarDealerSupportSystem.exe
 D:\CDSS BD2\CarDealerSupportSystem\obj\Debug\CarDealerSupportSystem.pdb
+F:\LukaszNo\studia\BD\Car-Dealer-Support-System\bin\Debug\CarDealerSupportSystem.exe.config
+F:\LukaszNo\studia\BD\Car-Dealer-Support-System\bin\Debug\CarDealerSupportSystem.exe
+F:\LukaszNo\studia\BD\Car-Dealer-Support-System\bin\Debug\CarDealerSupportSystem.pdb
+F:\LukaszNo\studia\BD\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.csproj.AssemblyReference.cache
+F:\LukaszNo\studia\BD\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.Form1.resources
+F:\LukaszNo\studia\BD\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.Properties.Resources.resources
+F:\LukaszNo\studia\BD\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.csproj.GenerateResource.cache
+F:\LukaszNo\studia\BD\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.csproj.CoreCompileInputs.cache
+F:\LukaszNo\studia\BD\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.exe
+F:\LukaszNo\studia\BD\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.pdb
+F:\LukaszNo\studia\BD\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.panelKierownika.resources
+F:\LukaszNo\studia\BD\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.paneleKierownika.klienciControl.resources
+F:\LukaszNo\studia\BD\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.paneleKierownika.pKlienci.resources
+F:\LukaszNo\studia\BD\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.paneleKierownika.pSamochody.resources
+F:\LukaszNo\studia\BD\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.paneleKierownika.pSzukaj.resources
+F:\LukaszNo\studia\BD\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.paneleKierownika.pStatystyki.resources
