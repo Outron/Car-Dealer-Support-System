@@ -184,13 +184,34 @@
     <Compile Include="SellerFormPanels\OrdersPanel.Designer.cs">
       <DependentUpon>OrdersPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerPanel.Designer.cs">
+      <DependentUpon>ManagerPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="SellerFrom.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SellerFrom.Designer.cs">
       <DependentUpon>SellerFrom.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="ManagerFormPanels\klienciControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManagerFormPanels\klienciControl.Designer.cs">
+      <DependentUpon>klienciControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerFormPanels\Statistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerFormPanels\.Designer.cs">
+      <DependentUpon>Statistics.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Program.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -207,8 +228,17 @@
     <EmbeddedResource Include="SellerFormPanels\OrdersPanel.resx">
       <DependentUpon>OrdersPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManagerPanel.resx">
+      <DependentUpon>ManagerPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SellerFrom.resx">
       <DependentUpon>SellerFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerFormPanels\klienciControl.resx">
+      <DependentUpon>klienciControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerFormPanels\Statistics.resx">
+      <DependentUpon>Statistics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -222,6 +252,8 @@
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CarDealerSupportSystem.Models.Klienci.datasource" />
+    <None Include="Properties\DataSources\CarDealerSupportSystem.Models.Pracownicy.datasource" />
+    <None Include="Properties\DataSources\CarDealerSupportSystem.Models.Salony.datasource" />
     <None Include="Properties\DataSources\CarDealerSupportSystem.Models.Samochody.datasource" />
     <None Include="Properties\DataSources\CarDealerSupportSystem.Models.Zamowienia.datasource" />
     <None Include="Properties\Settings.settings">

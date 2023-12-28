@@ -33,9 +33,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -43,13 +43,13 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.SearchClientsTextBox = new System.Windows.Forms.TextBox();
             this.OrdersGridView = new System.Windows.Forms.DataGridView();
-            this.zamowieniaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Samochód = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idZamowieniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idKlientaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Samochód = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typZakupuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.calkowityKosztDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zamowieniaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ClientsMenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGridView)).BeginInit();
@@ -151,9 +151,14 @@
             this.OrdersGridView.Size = new System.Drawing.Size(861, 493);
             this.OrdersGridView.TabIndex = 5;
             // 
-            // zamowieniaBindingSource
+            // Samochód
             // 
-            this.zamowieniaBindingSource.DataSource = typeof(CarDealerSupportSystem.Models.Zamowienia);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            this.Samochód.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Samochód.FillWeight = 106.599F;
+            this.Samochód.HeaderText = "Samochód";
+            this.Samochód.Name = "Samochód";
+            this.Samochód.ReadOnly = true;
             // 
             // idZamowieniaDataGridViewTextBoxColumn
             // 
@@ -175,15 +180,6 @@
             this.idKlientaDataGridViewTextBoxColumn.HeaderText = "ID klienta";
             this.idKlientaDataGridViewTextBoxColumn.Name = "idKlientaDataGridViewTextBoxColumn";
             this.idKlientaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // Samochód
-            // 
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            this.Samochód.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Samochód.FillWeight = 106.599F;
-            this.Samochód.HeaderText = "Samochód";
-            this.Samochód.Name = "Samochód";
-            this.Samochód.ReadOnly = true;
             // 
             // typZakupuDataGridViewTextBoxColumn
             // 
@@ -214,6 +210,10 @@
             this.dataDataGridViewTextBoxColumn.HeaderText = "Data";
             this.dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
             this.dataDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // zamowieniaBindingSource
+            // 
+            this.zamowieniaBindingSource.DataSource = typeof(CarDealerSupportSystem.Models.Zamowienia);
             // 
             // OrdersPanel
             // 
