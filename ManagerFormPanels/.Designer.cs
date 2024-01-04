@@ -38,16 +38,15 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.mainPanel = new System.Windows.Forms.Panel();
             this.StatisticsLeftPanel = new System.Windows.Forms.Panel();
             this.BestShopGridView = new System.Windows.Forms.DataGridView();
+            this.idSalonuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.miejscowoscDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ulicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salonyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.bt1UpperBar = new System.Windows.Forms.Button();
             this.zamowieniaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pracownicyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idSalonuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.miejscowoscDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ulicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mainPanel.SuspendLayout();
             this.StatisticsLeftPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BestShopGridView)).BeginInit();
@@ -102,8 +101,7 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.BestShopGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idSalonuDataGridViewTextBoxColumn,
             this.miejscowoscDataGridViewTextBoxColumn,
-            this.ulicaDataGridViewTextBoxColumn,
-            this.cena});
+            this.ulicaDataGridViewTextBoxColumn});
             this.BestShopGridView.DataSource = this.salonyBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
@@ -138,6 +136,27 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.BestShopGridView.ShowEditingIcon = false;
             this.BestShopGridView.Size = new System.Drawing.Size(294, 298);
             this.BestShopGridView.TabIndex = 2;
+            // 
+            // idSalonuDataGridViewTextBoxColumn
+            // 
+            this.idSalonuDataGridViewTextBoxColumn.DataPropertyName = "IdSalonu";
+            this.idSalonuDataGridViewTextBoxColumn.HeaderText = "IdSalonu";
+            this.idSalonuDataGridViewTextBoxColumn.Name = "idSalonuDataGridViewTextBoxColumn";
+            this.idSalonuDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // miejscowoscDataGridViewTextBoxColumn
+            // 
+            this.miejscowoscDataGridViewTextBoxColumn.DataPropertyName = "Miejscowosc";
+            this.miejscowoscDataGridViewTextBoxColumn.HeaderText = "Miejscowosc";
+            this.miejscowoscDataGridViewTextBoxColumn.Name = "miejscowoscDataGridViewTextBoxColumn";
+            this.miejscowoscDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ulicaDataGridViewTextBoxColumn
+            // 
+            this.ulicaDataGridViewTextBoxColumn.DataPropertyName = "Ulica";
+            this.ulicaDataGridViewTextBoxColumn.HeaderText = "Ulica";
+            this.ulicaDataGridViewTextBoxColumn.Name = "ulicaDataGridViewTextBoxColumn";
+            this.ulicaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // salonyBindingSource
             // 
@@ -189,34 +208,6 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             // 
             this.pracownicyBindingSource.DataSource = typeof(CarDealerSupportSystem.Models.Pracownicy);
             // 
-            // idSalonuDataGridViewTextBoxColumn
-            // 
-            this.idSalonuDataGridViewTextBoxColumn.DataPropertyName = "IdSalonu";
-            this.idSalonuDataGridViewTextBoxColumn.HeaderText = "IdSalonu";
-            this.idSalonuDataGridViewTextBoxColumn.Name = "idSalonuDataGridViewTextBoxColumn";
-            this.idSalonuDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // miejscowoscDataGridViewTextBoxColumn
-            // 
-            this.miejscowoscDataGridViewTextBoxColumn.DataPropertyName = "Miejscowosc";
-            this.miejscowoscDataGridViewTextBoxColumn.HeaderText = "Miejscowosc";
-            this.miejscowoscDataGridViewTextBoxColumn.Name = "miejscowoscDataGridViewTextBoxColumn";
-            this.miejscowoscDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ulicaDataGridViewTextBoxColumn
-            // 
-            this.ulicaDataGridViewTextBoxColumn.DataPropertyName = "Ulica";
-            this.ulicaDataGridViewTextBoxColumn.HeaderText = "Ulica";
-            this.ulicaDataGridViewTextBoxColumn.Name = "ulicaDataGridViewTextBoxColumn";
-            this.ulicaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cena
-            // 
-            this.cena.DataPropertyName = "Cena";
-            this.cena.HeaderText = "Cena";
-            this.cena.Name = "cena";
-            this.cena.ReadOnly = true;
-            // 
             // Statistics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -252,6 +243,5 @@ namespace CarDealerSupportSystem.ManagerFormPanels
         private DataGridViewTextBoxColumn idSalonuDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn miejscowoscDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn ulicaDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn cena;
     }
 }

@@ -27,37 +27,16 @@ namespace CarDealerSupportSystem.ManagerFormPanels
 
         private void Statistics_Load(object sender, EventArgs e)
         {
-
-            var shops = db.Zamowienia
-                .Join(
+            var shops = db.Zamowienia.Join(
                 db.Pracownicy,
-                Pracownik => Pracownik.IdPracownika,
-                Zamowienie => Zamowienie.IdPracownika,
-                (Zamowienie, Pracownik) => new { Zamowienie, Pracownik })
+                p => p.IdPracownika,
+                z => z.IdPracownika,
+                (z, p) => new { Zamowienie = z, Pracownik = p })
                 .Join(
                 db.Salony,
-                zamPracownik => zamPracownik.Pracownik.IdSalonu,
-                sal => sal.IdSalonu,
-                (zamPracownik, sal) => new
-                {
-                    zamowieniePracownik = zamPracownik.Pracownik,
-                    idSalon = sal.IdSalonu,
-                    salon = sal.Miejscowosc,
-                    ulica = sal.Ulica,
-                    cena = zamPracownik.Zamowienie.CalkowityKoszt
-
-                })
-                .GroupBy(x => x.idSalon)
-                .Select(s => new
-                {
-                    idt = s.Key,
-                    id = s.Select(id=>id.idSalon),
-                    miejscowosc = s.Select(sa => sa.salon),
-                    ulica = s.Select(u => u.ulica),
-                    c = s.Sum(i => i.cena)
-                })
-                .OrderByDescending(o => o.c)
-                .ToList();
+                pS => pS.Pracownik.IdSalonu,
+                S => S.IdSalonu,
+                (pS, S) => new { Pracownik = pS, Salon = S }).Select(x => new { x.Salon.IdSalonu, x.Salon.Miejscowosc, x.Salon.Ulica }).ToList();
                 this.BestShopGridView.DataSource = shops;
         }
 
