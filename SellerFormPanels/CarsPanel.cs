@@ -145,7 +145,6 @@ namespace CarDealerSupportSystem.SellerFormPanels
                 }
             }
         }
-
     }
 }
 

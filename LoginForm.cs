@@ -1,5 +1,4 @@
-﻿using CarDealerSupportSystem.ManagerFormPanels;
-using CarDealerSupportSystem.Models;
+﻿using CarDealerSupportSystem.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,18 +45,18 @@ namespace CarDealerSupportSystem
             var loginData = db.Pracownicy.Join(db.Role, p => p.KodRoli, r => r.KodRoli, (p, r) => new { p, r }).Where(pr => pr.p.Login == UsernameTextBox.Text).FirstOrDefault();
 
             // check if the login and password are correct then check role and open the correct form
-            if (loginData.p.Login != null && ((loginData.p.Haslo == PasswordTextBox.Text) || (loginData.p.Haslo == null && PasswordTextBox.Text == "")))
+            if (loginData.p.Login != null && loginData.p.Haslo == PasswordTextBox.Text)
             {
-                /* if (loginData.r.KodRoli == "1")
-                   {
-                       AdminPanel adminpanel = new AdminPanel();
-                       adminpanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
-                       adminpanel.RoleLabel.Text = loginData.r.Nazwa;
-                       adminpanel.Show();
-                       this.Hide();
-                   }
-               */
-                /* else */ if (loginData.r.KodRoli == "2")
+             /* if (loginData.r.KodRoli == "1")
+                {
+                    AdminPanel adminpanel = new AdminPanel();
+                    adminpanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
+                    adminpanel.RoleLabel.Text = loginData.r.Nazwa;
+                    adminpanel.Show();
+                    this.Hide();
+                }
+            */
+                if /* else */ (loginData.r.KodRoli == "2")
                 {
                     SellerPanel sellerpanel = new SellerPanel();
                     sellerpanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
@@ -65,23 +64,23 @@ namespace CarDealerSupportSystem
                     sellerpanel.Show();
                     this.Hide();
                 }
-                else if (loginData.r.KodRoli == "3")
+            /*  else if (loginData.r.KodRoli == "3")
                 {
-                    ManagerPanel managerpanel = new ManagerPanel();
-                    managerpanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
-                    managerpanel.RoleLabel.Text = loginData.r.Nazwa;
-                    managerpanel.Show();
-                    this.Hide();
+                     ManagerPanel managerpanel = new ManagerPanel();
+                     managerpanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
+                     managerpanel.RoleLabel.Text = loginData.r.Nazwa;
+                     managerpanel.Show();
+                     this.Hide();
                 }
-                //else if (loginData.r.KodRoli == "4")
-                //{
-                //    ServicePanel servicepanel = new ServicePanel();
-                //    servicepanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
-                //    servicepanel.RoleLabel.Text = loginData.r.Nazwa;
-                //    servicepanel.Show();
-                //    this.Hide();
-                //}
-
+                else if (loginData.r.KodRoli == "4")
+                {
+                     ServicePanel servicepanel = new ServicePanel();
+                     servicepanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
+                     servicepanel.RoleLabel.Text = loginData.r.Nazwa;
+                     servicepanel.Show();
+                     this.Hide();
+                }
+            */
                 else
                 {   // role is not correct
                     MessageBox.Show("Nieprawidłowa rola");
@@ -91,7 +90,6 @@ namespace CarDealerSupportSystem
             {   // show the label with information about wrong login or password
                 WrongLoginLabel.Visible = true;
             }
-
         }
 
         private void button1_Click_2(object sender, EventArgs e)
