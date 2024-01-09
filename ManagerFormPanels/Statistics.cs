@@ -9,6 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.EntityFrameworkCore;
+using System.Collections;
+using System.Reflection.Emit;
+using Microsoft.EntityFrameworkCore.Internal;
 
 namespace CarDealerSupportSystem.ManagerFormPanels
 {
@@ -24,11 +27,25 @@ namespace CarDealerSupportSystem.ManagerFormPanels
         {
 
         }
-
+        private class salony
+        {
+            public int idsalonu { get; set; }
+            public string miejscowosc { get; set; }
+            public string ulica { get; set; }
+            public double? cena { get; set; }
+        }
+        private class samochody
+        {
+            public int idsamochodu { get; set; }
+            public string marka { get; set; }
+            public int ile { get; set; }
+        }
         private void Statistics_Load(object sender, EventArgs e)
         {
-
-            var shops = db.Zamowienia
+            List<salony> shops = new List<salony>();
+            try
+            {
+                shops = db.Zamowienia
                 .Join(
                 db.Pracownicy,
                 Pracownik => Pracownik.IdPracownika,
@@ -40,27 +57,90 @@ namespace CarDealerSupportSystem.ManagerFormPanels
                 sal => sal.IdSalonu,
                 (zamPracownik, sal) => new
                 {
-                    zamowieniePracownik = zamPracownik.Pracownik,
+                    zamPracownik = zamPracownik.Pracownik,
+                    zamowieniePracownik = zamPracownik.Pracownik.IdSalonu,
                     idSalon = sal.IdSalonu,
                     salon = sal.Miejscowosc,
-                    ulica = sal.Ulica,
+                    uli = sal.Ulica,
                     cena = zamPracownik.Zamowienie.CalkowityKoszt
 
                 })
-                .GroupBy(x => x.idSalon)
-                .Select(s => new
+                .ToList()
+                .GroupBy(y => y.idSalon)
+                .Select(y => new salony
                 {
-                    idt = s.Key,
-                    id = s.Select(id=>id.idSalon),
-                    miejscowosc = s.Select(sa => sa.salon),
-                    ulica = s.Select(u => u.ulica),
-                    c = s.Sum(i => i.cena)
+                    idsalonu = 1,
+                    miejscowosc = y.FirstOrDefault().salon,
+                    ulica = y.FirstOrDefault().uli,
+                    cena = y.Sum(s => s.cena)
                 })
-                .OrderByDescending(o => o.c)
+                .OrderByDescending(y => y.cena)
                 .ToList();
-                this.BestShopGridView.DataSource = shops;
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message, "Błąd serwera bazy danych najlepszy salon");
+            }
+            if (shops == null || shops.Count == 0)
+                return;
+
+            int i = 1;
+            shops.ForEach(shop => { shop.idsalonu = i++; });
+
+            List<samochody> cars = new List<samochody>();
+
+            cars = db.Zamowienia
+                .Join(
+                db.Pracownicy,
+                Pracownik => Pracownik.IdPracownika,
+                Zamowienie => Zamowienie.IdPracownika,
+                (Zamowienie, Pracownik) => new { Zamowienie, Pracownik })
+                .Join(
+                db.Salony,
+                zamPracownik => zamPracownik.Pracownik.IdSalonu,
+                sal => sal.IdSalonu,
+                (zamPracownik, sal) => new
+                {
+                    zamPracownik = zamPracownik.Pracownik,
+                    zamPracId = zamPracownik.Pracownik.IdSalonu,
+                    idSalon = sal.IdSalonu,
+                    salon = sal.Miejscowosc,
+                    uli = sal.Ulica,
+                    cena = zamPracownik.Zamowienie.CalkowityKoszt,
+                    idZam = zamPracownik.Zamowienie.IdZamowienia,
+                })
+                .Join(
+                db.SamochodyZamowienia,
+                zamPracSal => zamPracSal.idZam,
+                samochodZamowienie => samochodZamowienie.IdZamowienia,
+                (zamPracSal, samochodZamowienie) => new
+                {
+                    zamPracSal,
+                    samochodZamowienie
+                })
+                .Join(
+                db.Samochody,
+                zamPracSalSamZam => zamPracSalSamZam.samochodZamowienie.IdSamochodu,
+                samochod => samochod.IdSamochodu,
+                (zamPracSalSamZam, samochod) => new
+                {
+                    zamPracSalSamZam,samochod
+                }).ToList()
+                .GroupBy(y=>y.samochod.IdSamochodu)
+                .Select(y => new samochody
+                {
+                    ile = y.Count(),
+                    marka=y.FirstOrDefault().samochod.Marka,
+                })
+                .OrderByDescending(y=>y.ile)
+                .ToList();
+            this.BestShopGridView.DataSource = shops;
+            this.BestCarGridView.DataSource = cars;
         }
 
-       
+        private void samochodyBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
