@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.Extensions.Options;
 
 // Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
 // If you have enabled NRTs for your project, then un-comment the following line:
@@ -11,7 +10,6 @@ namespace CarDealerSupportSystem.Models
 {
     public partial class salon_samochodowyContext : DbContext
     {
-
         public salon_samochodowyContext()
         {
         }
@@ -22,6 +20,7 @@ namespace CarDealerSupportSystem.Models
         }
 
         public virtual DbSet<Klienci> Klienci { get; set; }
+        public virtual DbSet<Logi> Logi { get; set; }
         public virtual DbSet<PakietyPromocyjne> PakietyPromocyjne { get; set; }
         public virtual DbSet<PakietySamochody> PakietySamochody { get; set; }
         public virtual DbSet<Pracownicy> Pracownicy { get; set; }
@@ -38,11 +37,10 @@ namespace CarDealerSupportSystem.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseMySql("server=localhost;database=cdss;uid=root;pwd=", x => x.ServerVersion("10.4.28-mariadb"));
+                optionsBuilder.UseMySql("server=localhost;database=salon_samochodowy;uid=root;pwd=samochody", x => x.ServerVersion("10.4.28-mariadb"));
             }
         }
 
@@ -86,6 +84,34 @@ namespace CarDealerSupportSystem.Models
                 entity.Property(e => e.Telefon)
                     .HasColumnName("telefon")
                     .HasColumnType("varchar(15)")
+                    .HasCharSet("utf8")
+                    .HasCollation("utf8_polish_ci");
+            });
+
+            modelBuilder.Entity<Logi>(entity =>
+            {
+                entity.HasKey(e => e.IdLogu)
+                    .HasName("PRIMARY");
+
+                entity.ToTable("logi");
+
+                entity.Property(e => e.IdLogu)
+                    .HasColumnName("id_logu")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.DataGodzina)
+                    .HasColumnName("Data_godzina")
+                    .HasColumnType("date");
+
+                entity.Property(e => e.Typ)
+                    .IsRequired()
+                    .HasColumnType("varchar(15)")
+                    .HasCharSet("utf8")
+                    .HasCollation("utf8_polish_ci");
+
+                entity.Property(e => e.Wiadomosc)
+                    .IsRequired()
+                    .HasColumnType("varchar(50)")
                     .HasCharSet("utf8")
                     .HasCollation("utf8_polish_ci");
             });
