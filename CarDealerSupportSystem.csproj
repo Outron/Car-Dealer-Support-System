@@ -36,6 +36,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>packages\BouncyCastle.Cryptography.2.2.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.21.9.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Protobuf.3.21.9\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.3.5.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.1.3.5\lib\net462\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.3.5.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.Streams.1.3.5\lib\net462\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.8.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Hash.xxHash.1.0.8\lib\net462\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -87,6 +105,13 @@
     <Reference Include="Microsoft.Extensions.Primitives, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Extensions.Primitives.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
     </Reference>
+    <Reference Include="MySql.Data, Version=8.2.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.2.0\lib\net462\MySql.Data.dll</HintPath>
+      <Aliases>mysqldata</Aliases>
+    </Reference>
+    <Reference Include="MySqlBackup, Version=2.3.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MySqlBackup.NET.2.3.6\lib\net472\MySqlBackup.dll</HintPath>
+    </Reference>
     <Reference Include="MySqlConnector, Version=0.69.10.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
       <HintPath>packages\MySqlConnector.0.69.10\lib\net471\MySqlConnector.dll</HintPath>
     </Reference>
@@ -106,39 +131,101 @@
     <Reference Include="System.Collections.Immutable, Version=1.2.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Collections.Immutable.1.7.1\lib\net461\System.Collections.Immutable.dll</HintPath>
     </Reference>
+    <Reference Include="System.ComponentModel" />
     <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Diagnostics.DiagnosticSource.4.7.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Configuration.ConfigurationManager.4.4.1\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
     </Reference>
-    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Diagnostics.DiagnosticSource.7.0.2\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
     </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="ZstdSharp, Version=0.7.1.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
+      <HintPath>packages\ZstdSharp.Port.0.7.1\lib\net461\ZstdSharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UserInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInfoForm.Designer.cs">
+      <DependentUpon>UserInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditUserForm.Designer.cs">
+      <DependentUpon>EditUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmFormPanels\AdmMainPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmFormPanels\AdmMainPanel.Designer.cs">
+      <DependentUpon>AdmMainPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmFormPanels\UsersManagePanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmFormPanels\UsersManagePanel.Designer.cs">
+      <DependentUpon>UsersManagePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmFormPanels\LogsPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmFormPanels\LogsPanel.Designer.cs">
+      <DependentUpon>LogsPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmFormPanels\DatabasePanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmFormPanels\DatabasePanel.Designer.cs">
+      <DependentUpon>DatabasePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Log.cs" />
+    <Compile Include="AddUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddUserForm.Designer.cs">
+      <DependentUpon>AddUserForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +233,7 @@
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Klienci.cs" />
+    <Compile Include="Models\Logi.cs" />
     <Compile Include="Models\PakietyPromocyjne.cs" />
     <Compile Include="Models\PakietySamochody.cs" />
     <Compile Include="Models\Pracownicy.cs" />
@@ -184,35 +272,38 @@
     <Compile Include="SellerFormPanels\OrdersPanel.Designer.cs">
       <DependentUpon>OrdersPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerPanel.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManagerPanel.Designer.cs">
-      <DependentUpon>ManagerPanel.cs</DependentUpon>
-    </Compile>
     <Compile Include="SellerFrom.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SellerFrom.Designer.cs">
       <DependentUpon>SellerFrom.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerFormPanels\klienciControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ManagerFormPanels\klienciControl.Designer.cs">
-      <DependentUpon>klienciControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ManagerFormPanels\Statistics.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManagerFormPanels\.Designer.cs">
-      <DependentUpon>Statistics.cs</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Program.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="UserInfoForm.resx">
+      <DependentUpon>UserInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditUserForm.resx">
+      <DependentUpon>EditUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmFormPanels\AdmMainPanel.resx">
+      <DependentUpon>AdmMainPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmFormPanels\UsersManagePanel.resx">
+      <DependentUpon>UsersManagePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmFormPanels\LogsPanel.resx">
+      <DependentUpon>LogsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmFormPanels\DatabasePanel.resx">
+      <DependentUpon>DatabasePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddUserForm.resx">
+      <DependentUpon>AddUserForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,17 +319,8 @@
     <EmbeddedResource Include="SellerFormPanels\OrdersPanel.resx">
       <DependentUpon>OrdersPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerPanel.resx">
-      <DependentUpon>ManagerPanel.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="SellerFrom.resx">
       <DependentUpon>SellerFrom.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManagerFormPanels\klienciControl.resx">
-      <DependentUpon>klienciControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManagerFormPanels\Statistics.resx">
-      <DependentUpon>Statistics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -253,7 +335,6 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CarDealerSupportSystem.Models.Klienci.datasource" />
     <None Include="Properties\DataSources\CarDealerSupportSystem.Models.Pracownicy.datasource" />
-    <None Include="Properties\DataSources\CarDealerSupportSystem.Models.Salony.datasource" />
     <None Include="Properties\DataSources\CarDealerSupportSystem.Models.Samochody.datasource" />
     <None Include="Properties\DataSources\CarDealerSupportSystem.Models.Zamowienia.datasource" />
     <None Include="Properties\Settings.settings">
@@ -1132,6 +1213,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo.ico" />
+    <None Include="Resources\save-file.256x255.png" />
+    <None Include="Resources\database-restore.243x256.png" />
+    <None Include="Resources\video_image-rrOpvFHf6.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -353,16 +353,6 @@ namespace CarDealerSupportSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bar_chart_21 {
-            get {
-                object obj = ResourceManager.GetObject("bar-chart-21", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap battery {
             get {
                 object obj = ResourceManager.GetObject("battery", resourceCulture);
@@ -926,6 +916,16 @@ namespace CarDealerSupportSystem.Properties {
         internal static System.Drawing.Bitmap database {
             get {
                 object obj = ResourceManager.GetObject("database", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap database_restore_243x256 {
+            get {
+                object obj = ResourceManager.GetObject("database-restore.243x256", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2143,6 +2143,16 @@ namespace CarDealerSupportSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap save_file_256x255 {
+            get {
+                object obj = ResourceManager.GetObject("save-file.256x255", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap scissors {
             get {
                 object obj = ResourceManager.GetObject("scissors", resourceCulture);
@@ -2746,6 +2756,16 @@ namespace CarDealerSupportSystem.Properties {
         internal static System.Drawing.Bitmap video {
             get {
                 object obj = ResourceManager.GetObject("video", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap video_image_rrOpvFHf6 {
+            get {
+                object obj = ResourceManager.GetObject("video_image-rrOpvFHf6", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
