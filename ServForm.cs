@@ -6,14 +6,14 @@ using System.Windows.Forms;
 
 namespace CarDealerSupportSystem
 {
-    public partial class SellerPanel : Form
+    public partial class ServForm : Form
     {
         private Button currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
 
 
-        public SellerPanel()
+        public ServForm()
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
