@@ -16,6 +16,9 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
+	<PropertyGroup>
+		<LangVersion>preview</LangVersion>
+	</PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
@@ -177,6 +180,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\salon_samochodowyContext.cs" />
+    <Compile Include="TaskInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaskInfoForm.Designer.cs">
+      <DependentUpon>TaskInfoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ServForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -276,7 +286,6 @@
     <Compile Include="Models\PracownicyUslugi.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Salony.cs" />
-    <Compile Include="Models\salon_samochodowyContext.cs" />
     <Compile Include="Models\Samochody.cs" />
     <Compile Include="Models\SamochodyUslugi.cs" />
     <Compile Include="Models\SamochodyZamowienia.cs" />
@@ -316,6 +325,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="TaskInfoForm.resx">
+      <DependentUpon>TaskInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ServForm.resx">
       <DependentUpon>ServForm.cs</DependentUpon>
     </EmbeddedResource>

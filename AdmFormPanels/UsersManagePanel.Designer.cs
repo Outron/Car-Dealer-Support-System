@@ -34,12 +34,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ClientsMenuPanel = new System.Windows.Forms.Panel();
+            this.passCheckBox = new System.Windows.Forms.CheckBox();
             this.addUserButton = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.SearchUsersTextBox = new System.Windows.Forms.TextBox();
             this.UsersGridView = new System.Windows.Forms.DataGridView();
-            this.addUserButtonToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.passCheckBox = new System.Windows.Forms.CheckBox();
             this.idPracownikaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Haslo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +47,7 @@
             this.telefonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kodRoliDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pracownicyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.addUserButtonToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.klienciBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ClientsMenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -69,6 +69,19 @@
             this.ClientsMenuPanel.Name = "ClientsMenuPanel";
             this.ClientsMenuPanel.Size = new System.Drawing.Size(1148, 75);
             this.ClientsMenuPanel.TabIndex = 3;
+            // 
+            // passCheckBox
+            // 
+            this.passCheckBox.AutoSize = true;
+            this.passCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.passCheckBox.ForeColor = System.Drawing.Color.White;
+            this.passCheckBox.Location = new System.Drawing.Point(434, 29);
+            this.passCheckBox.Name = "passCheckBox";
+            this.passCheckBox.Size = new System.Drawing.Size(141, 29);
+            this.passCheckBox.TabIndex = 5;
+            this.passCheckBox.Text = "Pokaż hasła";
+            this.passCheckBox.UseVisualStyleBackColor = true;
+            this.passCheckBox.CheckedChanged += new System.EventHandler(this.passCheckBox_CheckedChanged);
             // 
             // addUserButton
             // 
@@ -181,23 +194,6 @@
             this.UsersGridView.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.UsersGridView_CellMouseLeave);
             this.UsersGridView.SelectionChanged += new System.EventHandler(this.UsersGridView_SelectionChanged);
             // 
-            // addUserButtonToolTip
-            // 
-            this.addUserButtonToolTip.AutomaticDelay = 200;
-            // 
-            // passCheckBox
-            // 
-            this.passCheckBox.AutoSize = true;
-            this.passCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.passCheckBox.ForeColor = System.Drawing.Color.White;
-            this.passCheckBox.Location = new System.Drawing.Point(434, 29);
-            this.passCheckBox.Name = "passCheckBox";
-            this.passCheckBox.Size = new System.Drawing.Size(141, 29);
-            this.passCheckBox.TabIndex = 5;
-            this.passCheckBox.Text = "Pokaż hasła";
-            this.passCheckBox.UseVisualStyleBackColor = true;
-            this.passCheckBox.CheckedChanged += new System.EventHandler(this.passCheckBox_CheckedChanged);
-            // 
             // idPracownikaDataGridViewTextBoxColumn
             // 
             this.idPracownikaDataGridViewTextBoxColumn.DataPropertyName = "IdPracownika";
@@ -264,6 +260,10 @@
             // pracownicyBindingSource
             // 
             this.pracownicyBindingSource.DataSource = typeof(CarDealerSupportSystem.Models.Pracownicy);
+            // 
+            // addUserButtonToolTip
+            // 
+            this.addUserButtonToolTip.AutomaticDelay = 200;
             // 
             // klienciBindingSource
             // 

@@ -33,14 +33,13 @@ namespace CarDealerSupportSystem.Models
         public virtual DbSet<Uslugi> Uslugi { get; set; }
         public virtual DbSet<UslugiPakiety> UslugiPakiety { get; set; }
         public virtual DbSet<Zamowienia> Zamowienia { get; set; }
-        public virtual DbSet<ZamowieniaUslugi> ZamowieniaUslugi { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseMySql("server=localhost;database=salon_samochodowy;uid=root;pwd=samochody", x => x.ServerVersion("10.4.28-mariadb"));
+                optionsBuilder.UseMySql("server=localhost;database=salon2;uid=root;pwd=samochody", x => x.ServerVersion("10.4.28-mariadb"));
             }
         }
 
@@ -101,7 +100,7 @@ namespace CarDealerSupportSystem.Models
 
                 entity.Property(e => e.DataGodzina)
                     .HasColumnName("Data_godzina")
-                    .HasColumnType("date");
+                    .HasColumnType("datetime");
 
                 entity.Property(e => e.Typ)
                     .IsRequired()
@@ -263,22 +262,29 @@ namespace CarDealerSupportSystem.Models
 
             modelBuilder.Entity<PracownicyUslugi>(entity =>
             {
-                entity.HasKey(e => new { e.IdPracownika, e.IdUslugi })
+                entity.HasKey(e => new { e.IdPracownika, e.IdZamowienia })
                     .HasName("PRIMARY")
                     .HasAnnotation("MySql:IndexPrefixLength", new[] { 0, 0 });
 
                 entity.ToTable("pracownicy_uslugi");
 
-                entity.HasIndex(e => e.IdUslugi)
+                entity.HasIndex(e => e.IdZamowienia)
                     .HasName("FK_ASS_8");
 
                 entity.Property(e => e.IdPracownika)
                     .HasColumnName("id_pracownika")
                     .HasColumnType("int(11)");
 
-                entity.Property(e => e.IdUslugi)
-                    .HasColumnName("id_uslugi")
+                entity.Property(e => e.IdZamowienia)
+                    .HasColumnName("id_zamowienia")
                     .HasColumnType("int(11)");
+
+                entity.Property(e => e.StanZlecenia)
+                    .IsRequired()
+                    .HasColumnName("stan_zlecenia")
+                    .HasColumnType("varchar(15)")
+                    .HasCharSet("utf8")
+                    .HasCollation("utf8_polish_ci");
 
                 entity.HasOne(d => d.IdPracownikaNavigation)
                     .WithMany(p => p.PracownicyUslugi)
@@ -286,9 +292,9 @@ namespace CarDealerSupportSystem.Models
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_ASS_7");
 
-                entity.HasOne(d => d.IdUslugiNavigation)
+                entity.HasOne(d => d.IdZamowieniaNavigation)
                     .WithMany(p => p.PracownicyUslugi)
-                    .HasForeignKey(d => d.IdUslugi)
+                    .HasForeignKey(d => d.IdZamowienia)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_ASS_8");
             });
@@ -466,6 +472,9 @@ namespace CarDealerSupportSystem.Models
 
                 entity.ToTable("samochody_zamowienia");
 
+                entity.HasIndex(e => e.IdUslugi)
+                    .HasName("FK_ASS_55");
+
                 entity.HasIndex(e => e.IdZamowienia)
                     .HasName("FK_ASS_2");
 
@@ -477,11 +486,20 @@ namespace CarDealerSupportSystem.Models
                     .HasColumnName("id_zamowienia")
                     .HasColumnType("int(11)");
 
+                entity.Property(e => e.IdUslugi)
+                    .HasColumnName("id_uslugi")
+                    .HasColumnType("int(11)");
+
                 entity.HasOne(d => d.IdSamochoduNavigation)
                     .WithMany(p => p.SamochodyZamowienia)
                     .HasForeignKey(d => d.IdSamochodu)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_ASS_1");
+
+                entity.HasOne(d => d.IdUslugiNavigation)
+                    .WithMany(p => p.SamochodyZamowienia)
+                    .HasForeignKey(d => d.IdUslugi)
+                    .HasConstraintName("FK_ASS_55");
 
                 entity.HasOne(d => d.IdZamowieniaNavigation)
                     .WithMany(p => p.SamochodyZamowienia)
@@ -598,38 +616,6 @@ namespace CarDealerSupportSystem.Models
                     .HasForeignKey(d => d.IdPracownika)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("Zamowienia_Pracownicy_FK");
-            });
-
-            modelBuilder.Entity<ZamowieniaUslugi>(entity =>
-            {
-                entity.HasKey(e => new { e.IdZamowienia, e.IdUslugi })
-                    .HasName("PRIMARY")
-                    .HasAnnotation("MySql:IndexPrefixLength", new[] { 0, 0 });
-
-                entity.ToTable("zamowienia_uslugi");
-
-                entity.HasIndex(e => e.IdUslugi)
-                    .HasName("FK_ASS_6");
-
-                entity.Property(e => e.IdZamowienia)
-                    .HasColumnName("id_zamowienia")
-                    .HasColumnType("int(11)");
-
-                entity.Property(e => e.IdUslugi)
-                    .HasColumnName("id_uslugi")
-                    .HasColumnType("int(11)");
-
-                entity.HasOne(d => d.IdUslugiNavigation)
-                    .WithMany(p => p.ZamowieniaUslugi)
-                    .HasForeignKey(d => d.IdUslugi)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ASS_6");
-
-                entity.HasOne(d => d.IdZamowieniaNavigation)
-                    .WithMany(p => p.ZamowieniaUslugi)
-                    .HasForeignKey(d => d.IdZamowienia)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ASS_5");
             });
 
             OnModelCreatingPartial(modelBuilder);

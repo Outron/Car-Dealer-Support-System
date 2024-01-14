@@ -15,12 +15,10 @@ namespace CarDealerSupportSystem.SellerFormPanels
 {
     public partial class UsersManagePanel : Form
     {
-        private readonly salon_samochodowyContext db = new salon_samochodowyContext();
+        private readonly salon_samochodowyContext db = new();
         private readonly List<Pracownicy> workers;
         private readonly Color gridDefaultBackColor;
-        private readonly Color backColor;
         private bool passHidden = true;
-        private int lastClickedRowIndex = -1;
         public UsersManagePanel()
         {
             workers=db.Pracownicy.ToList();
@@ -64,11 +62,11 @@ namespace CarDealerSupportSystem.SellerFormPanels
 
         private void addUserButton_Click(object sender, EventArgs e)
         {
-            AddUserForm userForm = new AddUserForm(this);
+            AddUserForm userForm = new(this);
             userForm.ShowDialog();
         }
 
-        private void UsersGridView_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        public void UsersGridView_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -83,7 +81,6 @@ namespace CarDealerSupportSystem.SellerFormPanels
             {
                 UsersGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = gridDefaultBackColor;
             }
-
         }
 
         private void UsersGridView_SelectionChanged(object sender, EventArgs e)
@@ -97,21 +94,16 @@ namespace CarDealerSupportSystem.SellerFormPanels
             {
                 string[] workerToFind;
                 int workerId = (int)UsersGridView.Rows[e.RowIndex].Cells[0].Value;
-                using (salon_samochodowyContext db = new salon_samochodowyContext())
+                using (salon_samochodowyContext db = new())
                 {
-                    //workerToFind = db.Pracownicy
-                    //    .Where(pracownik => pracownik.IdPracownika == workerId)
-                    //    .Select(pracownik => new[] {pracownik.Imie,pracownik.Nazwisko,pracownik.Login,pracownik.Haslo,pracownik.Adres,pracownik.Telefon,pracownik.Email,pracownik.KodRoli})
-                    //    .FirstOrDefault(); //dziala ale dobrze by bylo dorzucic nazwe roli nie skrot
                     workerToFind = (from pracownik in db.Pracownicy
                                    join r in db.Role on pracownik.KodRoli equals r.KodRoli
                                    where pracownik.IdPracownika == workerId
                                    select new string[] { pracownik.Imie, pracownik.Nazwisko, pracownik.Login, pracownik.Haslo, pracownik.Adres, pracownik.Telefon, pracownik.Email, r.Nazwa, pracownik.IdPracownika.ToString() }).FirstOrDefault();
-
                 }
                 // EditUserForm editUserForm= new EditUserForm(this,workerToFind);
                 //editUserForm.ShowDialog();
-                UserInfoForm infoForm = new UserInfoForm(this,workerToFind);
+                UserInfoForm infoForm = new(this,workerToFind);
                 infoForm.Show();
             }
         }

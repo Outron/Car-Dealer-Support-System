@@ -11,8 +11,10 @@ namespace CarDealerSupportSystem.Models
     {
         public int IdSamochodu { get; set; }
         public int IdZamowienia { get; set; }
+        public int? IdUslugi { get; set; }
 
         public virtual Samochody IdSamochoduNavigation { get; set; }
+        public virtual Uslugi IdUslugiNavigation { get; set; }
         public virtual Zamowienia IdZamowieniaNavigation { get; set; }
     }
 }

@@ -11,10 +11,9 @@ namespace CarDealerSupportSystem.Models
     {
         public Uslugi()
         {
-            PracownicyUslugi = new HashSet<PracownicyUslugi>();
             SamochodyUslugi = new HashSet<SamochodyUslugi>();
+            SamochodyZamowienia = new HashSet<SamochodyZamowienia>();
             UslugiPakiety = new HashSet<UslugiPakiety>();
-            ZamowieniaUslugi = new HashSet<ZamowieniaUslugi>();
         }
 
         public int IdUslugi { get; set; }
@@ -22,9 +21,8 @@ namespace CarDealerSupportSystem.Models
         public double? CenaUslugi { get; set; }
         public int? TypUslugi { get; set; }
 
-        public virtual ICollection<PracownicyUslugi> PracownicyUslugi { get; set; }
         public virtual ICollection<SamochodyUslugi> SamochodyUslugi { get; set; }
+        public virtual ICollection<SamochodyZamowienia> SamochodyZamowienia { get; set; }
         public virtual ICollection<UslugiPakiety> UslugiPakiety { get; set; }
-        public virtual ICollection<ZamowieniaUslugi> ZamowieniaUslugi { get; set; }
     }
 }
