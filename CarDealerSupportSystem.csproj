@@ -177,6 +177,42 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ServForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServForm.Designer.cs">
+      <DependentUpon>ServForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServFormPanels\CompletedTasksPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServFormPanels\CompletedTasksPanel.Designer.cs">
+      <DependentUpon>CompletedTasksPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServFormPanels\ServMainPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServFormPanels\ServMainPanel.Designer.cs">
+      <DependentUpon>ServMainPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServFormPanels\SalonOffersPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServFormPanels\SalonOffersPanel.Designer.cs">
+      <DependentUpon>SalonOffersPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServFormPanels\CurrentTasksPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServFormPanels\CurrentTasksPanel.Designer.cs">
+      <DependentUpon>CurrentTasksPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServFormPanels\NewTasksPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServFormPanels\NewTasksPanel.Designer.cs">
+      <DependentUpon>NewTasksPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,6 +316,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ServForm.resx">
+      <DependentUpon>ServForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServFormPanels\CompletedTasksPanel.resx">
+      <DependentUpon>CompletedTasksPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServFormPanels\ServMainPanel.resx">
+      <DependentUpon>ServMainPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServFormPanels\SalonOffersPanel.resx">
+      <DependentUpon>SalonOffersPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServFormPanels\CurrentTasksPanel.resx">
+      <DependentUpon>CurrentTasksPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServFormPanels\NewTasksPanel.resx">
+      <DependentUpon>NewTasksPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserInfoForm.resx">
       <DependentUpon>UserInfoForm.cs</DependentUpon>
     </EmbeddedResource>

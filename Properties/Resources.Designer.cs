@@ -2763,16 +2763,6 @@ namespace CarDealerSupportSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap video_image_rrOpvFHf6 {
-            get {
-                object obj = ResourceManager.GetObject("video_image-rrOpvFHf6", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap video_off {
             get {
                 object obj = ResourceManager.GetObject("video-off", resourceCulture);
