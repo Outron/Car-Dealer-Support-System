@@ -15,55 +15,73 @@ namespace CarDealerSupportSystem.SellerFormPanels
 {
     public partial class MakeOrderPanel : Form
     {
+        private Button currentBtn;
+        private Panel leftBorderBtn;
+        private Form currentChildForm;
 
         private readonly salon_samochodowyContext db = new salon_samochodowyContext();
 
         public MakeOrderPanel()
         {
             InitializeComponent();
+            leftBorderBtn = new Panel();
+            leftBorderBtn.Size = new Size(5, 50);
+            LeftMenuPanel.Controls.Add(leftBorderBtn);
         }
 
 
-        // add to this function parameters to filter cars
-
-        private void ChooseCarPanel(List<Samochody> carData)
+        private struct RGBColors
         {
-            flowLayoutPanel1.Controls.Clear();
+            public static Color color1 = Color.FromArgb(134, 2, 12);
+        }
 
-
-            foreach (var data in carData)
+        private void ActivateButton(object senderBtn, Color color)
+        {
+            if (senderBtn != null)
             {
-                Panel panel = new Panel();
-                panel.Size = new Size(350, 300);
-                panel.BackColor = Color.FromArgb(43, 43, 43);
-                panel.Margin = new Padding(5, 5, 5, 15);
-                panel.Cursor = Cursors.Hand;
+                DisableButton();
+                //Button
+                currentBtn = (Button)senderBtn;
+                currentBtn.BackColor = Color.FromArgb(51, 51, 51);
+                currentBtn.TextAlign = ContentAlignment.MiddleCenter;
 
+                //Left border button
+                leftBorderBtn.BackColor = color;
+                leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
+                leftBorderBtn.Visible = true;
+                leftBorderBtn.BringToFront();
 
-                Label brandLabel = new Label();
-                brandLabel.Text = data.Marka;
-                brandLabel.ForeColor = Color.White;
-                brandLabel.Font = new Font("Segoe UI", 20);
-                brandLabel.AutoSize = true;
-                brandLabel.Dock = DockStyle.Bottom;
-                brandLabel.Padding = new Padding(10, 0, 0, 0);
-
-
-                Label modelLabel = new Label();
-                modelLabel.Text = data.Model;
-                modelLabel.ForeColor = Color.White;
-                modelLabel.Font = new Font("Segoe UI", 15);
-                modelLabel.AutoSize = true;
-                modelLabel.Dock = DockStyle.Bottom;
-                modelLabel.Padding = new Padding(13, 0, 0, 10);
-
-
-
-                panel.Controls.Add(brandLabel);
-                panel.Controls.Add(modelLabel);
-                flowLayoutPanel1.Controls.Add(panel);
             }
         }
+
+        private void DisableButton()
+        {
+            if (currentBtn != null)
+            {
+                currentBtn.BackColor = Color.FromArgb(42, 42, 42);
+                currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            }
+        }
+
+
+        private void OpenChildForm(Form childForm)
+        {
+            if (currentChildForm != null)
+            {
+                //open only one form
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            MakeOrder.Controls.Add(childForm);
+            MakeOrder.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+
 
         private void TopPanel_MouseDown(object sender, MouseEventArgs e)
         {
@@ -78,12 +96,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
 
         private void MakeOrderPanel_Load(object sender, EventArgs e)
         {
-            var carDataList = db.Samochody
-                .Select(c => new Samochody { Marka = c.Marka, Model = c.Model })
-                .Distinct()
-                .ToList();
-            ChooseCarPanel(carDataList);
-            BrandComboBox.DataSource = db.Samochody.Select(c => c.Marka).Distinct().ToList();
+            
         }
 
 
@@ -92,32 +105,15 @@ namespace CarDealerSupportSystem.SellerFormPanels
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
-        private void BrandComboBox_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void ChooseCarButton_Click_1(object sender, EventArgs e)
         {
-            if (BrandComboBox.SelectedItem != null)
-            {
-                ModelComboBox.DataSource = db.Samochody.Where(c => c.Marka == BrandComboBox.SelectedItem.ToString()).Select(c => c.Model).Distinct().ToList();
-            }
-        }
-
-        private void ApplyButton_Click(object sender, EventArgs e)
-        {
-            var cars = db.Samochody.ToList();
-
-            if (BrandComboBox.SelectedItem != null)
-            {
-                cars = cars.Where(c => c.Marka == BrandComboBox.SelectedItem.ToString()).ToList();
-            }
-            if (ModelComboBox.SelectedItem != null)
-            {
-                cars = cars.Where(c => c.Model == ModelComboBox.SelectedItem.ToString()).ToList();
-            }
-
-            ChooseCarPanel(cars);
-
+            ActivateButton(sender, RGBColors.color1);
+            OpenChildForm(new ChooseCar());
         }
     }
 }
+
 
 
 
