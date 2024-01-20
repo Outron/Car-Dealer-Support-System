@@ -64,14 +64,14 @@ namespace CarDealerSupportSystem
                     sellerpanel.Show();
                     this.Hide();
                 }
-                else if (loginData.r.KodRoli == "3")
-                {
-                    ManagerPanel managerpanel = new ManagerPanel();
-                    managerpanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
-                    managerpanel.RoleLabel.Text = loginData.r.Nazwa;
-                    managerpanel.Show();
-                    this.Hide();
-                }
+                //else if (loginData.r.KodRoli == "3")
+                //{
+                //    ManagerPanel managerpanel = new ManagerPanel();
+                //    managerpanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
+                //    managerpanel.RoleLabel.Text = loginData.r.Nazwa;
+                //    managerpanel.Show();
+                //    this.Hide();
+                //}
                 else if (loginData.r.KodRoli == "4")
                 {
                     ServForm servicepanel = new ServForm();

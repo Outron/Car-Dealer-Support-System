@@ -177,6 +177,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SellerFormPanels\MakeOrderPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellerFormPanels\MakeOrderPanel.Designer.cs">
+      <DependentUpon>MakeOrderPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="ServForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -316,6 +322,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="SellerFormPanels\MakeOrderPanel.resx">
+      <DependentUpon>MakeOrderPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ServForm.resx">
       <DependentUpon>ServForm.cs</DependentUpon>
     </EmbeddedResource>
