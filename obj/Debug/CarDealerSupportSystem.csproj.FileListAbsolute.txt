@@ -671,3 +671,4 @@ D:\CDSS BD2\CarDealerSupportSystem\obj\Debug\CarDealerSupportSystem.SellerFormPa
 D:\CDSS BD2\CarDealerSupportSystem\obj\Debug\CarDealerSupportSystem.AdminForm.resources
 D:\CDSS BD2\CarDealerSupportSystem\obj\Debug\CarDealerSupportSystem.AddUserForm.resources
 D:\CDSS BD2\CarDealerSupportSystem\obj\Debug\CarDealerSupportSystem.SellerFormPanels.MakeOrderPanel.resources
+D:\CDSS BD2\CarDealerSupportSystem\obj\Debug\CarDealerSupportSystem.SellerFormPanels.CarConfigurator.resources
