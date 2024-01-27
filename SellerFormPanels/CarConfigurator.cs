@@ -26,9 +26,10 @@ namespace CarDealerSupportSystem.SellerFormPanels
 
         private void CarConfigurator_Load(object sender, EventArgs e)
         {
-           
             Brand.Text = selectedCarInfo.SelectedBrand;
+            Brand.BringToFront();
             Model.Text = selectedCarInfo.SelectedModel;
+            Model.BringToFront();
             CarImageBox.Size = new Size(700, 420);
 
             CarImageBox.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -46,52 +47,15 @@ namespace CarDealerSupportSystem.SellerFormPanels
             priceLabel.Text = db.Samochody.Where(s => s.Marka == selectedCarInfo.SelectedBrand && s.Model == selectedCarInfo.SelectedModel).Select(s => s.CenaPodstawowa).FirstOrDefault().ToString();
             fuelUsageLabel.Text = db.Samochody.Where(s => s.Marka == selectedCarInfo.SelectedBrand && s.Model == selectedCarInfo.SelectedModel).Select(s => s.SrednieSpalanie).FirstOrDefault().ToString() + "l/100km";
             bodyLabel.Text = db.Samochody.Where(s => s.Marka == selectedCarInfo.SelectedBrand && s.Model == selectedCarInfo.SelectedModel).Select(s => s.TypNadwozia).FirstOrDefault();
-
         }
 
-        public class GlassyPanel : Panel
-        {
-            const int WS_EX_TRANSPARENT = 0x20;
-
-            int opacity = 50;
-
-            public int Opacity
-            {
-                get
-                {
-                    return opacity;
-                }
-                set
-                {
-                    if (value < 0 || value > 100) throw new ArgumentException("Value must be between 0 and 100");
-                    opacity = value;
-                }
-            }
-
-            protected override CreateParams CreateParams
-            {
-                get
-                {
-                    var cp = base.CreateParams;
-                    cp.ExStyle = cp.ExStyle | WS_EX_TRANSPARENT;
-
-                    return cp;
-                }
-            }
-
-            protected override void OnPaint(PaintEventArgs e)
-            {
-                using (var b = new SolidBrush(Color.FromArgb(opacity * 255 / 100, BackColor)))
-                {
-                    e.Graphics.FillRectangle(b, ClientRectangle);
-                }
-
-                base.OnPaint(e);
-            }
-        }
-
-
+  
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
