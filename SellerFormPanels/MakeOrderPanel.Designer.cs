@@ -32,10 +32,10 @@
             this.LeftMenuPanel = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.ConfigurationButton = new System.Windows.Forms.Button();
             this.ChooseCarButton = new System.Windows.Forms.Button();
             this.TopPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.TopLabel = new System.Windows.Forms.Label();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.BrandComboBox = new System.Windows.Forms.ComboBox();
             this.samochodyBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -59,7 +59,7 @@
             this.LeftMenuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.LeftMenuPanel.Controls.Add(this.button4);
             this.LeftMenuPanel.Controls.Add(this.button3);
-            this.LeftMenuPanel.Controls.Add(this.button2);
+            this.LeftMenuPanel.Controls.Add(this.ConfigurationButton);
             this.LeftMenuPanel.Controls.Add(this.ChooseCarButton);
             this.LeftMenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.LeftMenuPanel.Location = new System.Drawing.Point(0, 0);
@@ -75,7 +75,7 @@
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Location = new System.Drawing.Point(3, 296);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(144, 50);
+            this.button4.Size = new System.Drawing.Size(148, 50);
             this.button4.TabIndex = 3;
             this.button4.Text = "Podsumowanie";
             this.button4.UseVisualStyleBackColor = true;
@@ -88,23 +88,23 @@
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(3, 240);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(144, 50);
+            this.button3.Size = new System.Drawing.Size(148, 50);
             this.button3.TabIndex = 2;
             this.button3.Text = "Dane klienta";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // ConfigurationButton
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(3, 184);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(144, 50);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Konfiguracja";
-            this.button2.UseVisualStyleBackColor = true;
+            this.ConfigurationButton.FlatAppearance.BorderSize = 0;
+            this.ConfigurationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ConfigurationButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ConfigurationButton.ForeColor = System.Drawing.Color.White;
+            this.ConfigurationButton.Location = new System.Drawing.Point(3, 184);
+            this.ConfigurationButton.Name = "ConfigurationButton";
+            this.ConfigurationButton.Size = new System.Drawing.Size(148, 50);
+            this.ConfigurationButton.TabIndex = 1;
+            this.ConfigurationButton.Text = "Konfiguracja";
+            this.ConfigurationButton.UseVisualStyleBackColor = true;
             // 
             // ChooseCarButton
             // 
@@ -114,7 +114,7 @@
             this.ChooseCarButton.ForeColor = System.Drawing.Color.White;
             this.ChooseCarButton.Location = new System.Drawing.Point(3, 128);
             this.ChooseCarButton.Name = "ChooseCarButton";
-            this.ChooseCarButton.Size = new System.Drawing.Size(144, 50);
+            this.ChooseCarButton.Size = new System.Drawing.Size(148, 50);
             this.ChooseCarButton.TabIndex = 0;
             this.ChooseCarButton.Text = "Wybór samochodu";
             this.ChooseCarButton.UseVisualStyleBackColor = true;
@@ -122,7 +122,7 @@
             // TopPanel
             // 
             this.TopPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.TopPanel.Controls.Add(this.label1);
+            this.TopPanel.Controls.Add(this.TopLabel);
             this.TopPanel.Controls.Add(this.ExitBtn);
             this.TopPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopPanel.Location = new System.Drawing.Point(150, 0);
@@ -131,16 +131,16 @@
             this.TopPanel.TabIndex = 2;
             this.TopPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TopPanel_MouseDown);
             // 
-            // label1
+            // TopLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(15, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(243, 37);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Wybierz samochód";
+            this.TopLabel.AutoSize = true;
+            this.TopLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.TopLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.TopLabel.Location = new System.Drawing.Point(15, 9);
+            this.TopLabel.Name = "TopLabel";
+            this.TopLabel.Size = new System.Drawing.Size(243, 37);
+            this.TopLabel.TabIndex = 1;
+            this.TopLabel.Text = "Wybierz samochód";
             // 
             // ExitBtn
             // 
@@ -310,12 +310,12 @@
         private System.Windows.Forms.Button ExitBtn;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button ConfigurationButton;
         private System.Windows.Forms.Button ChooseCarButton;
         private System.Windows.Forms.ComboBox BrandComboBox;
         private System.Windows.Forms.ComboBox ModelComboBox;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label TopLabel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.BindingSource samochodyBindingSource;

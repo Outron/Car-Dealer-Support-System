@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -28,6 +29,9 @@ namespace CarDealerSupportSystem.SellerFormPanels
         public MakeOrderPanel()
         {
             InitializeComponent();
+            leftBorderBtn = new Panel();
+            leftBorderBtn.Size = new Size(5, 50);
+            LeftMenuPanel.Controls.Add(leftBorderBtn);
         }
         private void OpenChildForm(Form childForm)
         {
@@ -51,6 +55,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
         {
             public string SelectedBrand { get; set; }
             public string SelectedModel { get; set; }
+            public byte[]  SelectedImage { get; set; }
         }
 
         private void ChooseCarPanel(List<Samochody> carData)
@@ -79,6 +84,23 @@ namespace CarDealerSupportSystem.SellerFormPanels
 
                 };
 
+                PictureBox pictureBox = new PictureBox();
+                pictureBox.Size = new Size(350, 220);
+                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                // load image from database
+               
+                if (data.Wyglad != null && data.Wyglad.Length > 0)
+                {
+                    using (MemoryStream memoryStream = new MemoryStream(data.Wyglad))
+                    {
+                        Image image = Image.FromStream(memoryStream);
+
+                        pictureBox.Image = image;
+                    }
+                }
+
+
 
                 Label brandLabel = new Label();
                 brandLabel.Text = data.Marka;
@@ -98,7 +120,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
                 modelLabel.Padding = new Padding(13, 0, 0, 10);
 
 
-
+                panel.Controls.Add(pictureBox);
                 panel.Controls.Add(brandLabel);
                 panel.Controls.Add(modelLabel);
                 flowLayoutPanel1.Controls.Add(panel);
@@ -109,19 +131,21 @@ namespace CarDealerSupportSystem.SellerFormPanels
         {
             if (lastSelectedPanel != null)
             {
-                // Jeśli istnieje poprzednio zaznaczony panel, odznacz go
+                // if lastSelectedPanel is not null, then unselect it
                 lastSelectedPanel.BorderStyle = BorderStyle.None;
             }
 
-            // Zaznacz obecny panel
+            // select new panel
             lastSelectedPanel = panel;
             panel.BorderStyle = BorderStyle.FixedSingle;
 
-            // Zapisz informacje o zaznaczonym samochodzie
+            // save selected car info
             lastSelectedCarInfo = new SelectedCarInfo
             {
                 SelectedBrand = carData.Marka,
-                SelectedModel = carData.Model
+                SelectedModel = carData.Model,
+                SelectedImage = carData.Wyglad
+
             };
         }
 
@@ -131,13 +155,13 @@ namespace CarDealerSupportSystem.SellerFormPanels
             public static Color color1 = Color.FromArgb(134, 2, 12);
         }
 
-        private void ActivateButton(object senderBtn, Color color)
+        private void ActivateButton(object butt, Color color)
         {
-            if (senderBtn != null)
+            if (butt != null)
             {
-                DisableButton();
+                // DisableButton();
                 //Button
-                currentBtn = (Button)senderBtn;
+                currentBtn = (Button)butt;
                 currentBtn.BackColor = Color.FromArgb(51, 51, 51);
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
 
@@ -172,11 +196,13 @@ namespace CarDealerSupportSystem.SellerFormPanels
         private void MakeOrderPanel_Load(object sender, EventArgs e)
         {
             var carDataList = db.Samochody
-                .Select(c => new Samochody { Marka = c.Marka, Model = c.Model })
+                .Select(c => new Samochody { Marka = c.Marka, Model = c.Model, Wyglad = c.Wyglad })
                 .Distinct()
                 .ToList();
             ChooseCarPanel(carDataList);
             BrandComboBox.DataSource = db.Samochody.Select(c => c.Marka).Distinct().ToList();
+            ActivateButton(ChooseCarButton, RGBColors.color1);
+
         }
 
 
@@ -218,6 +244,9 @@ namespace CarDealerSupportSystem.SellerFormPanels
             {
                 OpenChildForm(new CarConfigurator(lastSelectedCarInfo));
                 panel2.Visible = false;
+                DisableButton();
+                ActivateButton(ConfigurationButton, RGBColors.color1);
+                TopLabel.Text = "Konfiguracja samochodu";
             }
            
         }

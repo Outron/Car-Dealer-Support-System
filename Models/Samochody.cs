@@ -31,6 +31,7 @@ namespace CarDealerSupportSystem.Models
         public int? IloscMiejsc { get; set; }
         public string Vin { get; set; }
         public int? Rabat { get; set; }
+        public byte[] Wyglad { get; set; }
 
         public virtual Salony IdSalonuNavigation { get; set; }
         public virtual ICollection<PakietySamochody> PakietySamochody { get; set; }

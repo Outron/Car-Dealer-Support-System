@@ -177,6 +177,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\cdssContext.cs" />
     <Compile Include="SellerFormPanels\CarConfigurator.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1288,6 +1289,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo.ico" />
+    <None Include="Resources\back1.jpg" />
+    <None Include="Resources\360_F_290722607_fXQ9VHKMPEHSvvPHSMlzJpEcUE5v0GiV.jpg" />
     <None Include="Resources\save-file.256x255.png" />
     <None Include="Resources\database-restore.243x256.png" />
     <None Include="Resources\video_image-rrOpvFHf6.jpeg" />
