@@ -184,6 +184,12 @@
     <Compile Include="SellerFormPanels\CarConfigurator.Designer.cs">
       <DependentUpon>CarConfigurator.cs</DependentUpon>
     </Compile>
+    <Compile Include="SellerFormPanels\ClientOrderData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellerFormPanels\ClientOrderData.Designer.cs">
+      <DependentUpon>ClientOrderData.cs</DependentUpon>
+    </Compile>
     <Compile Include="SellerFormPanels\MakeOrderPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -331,6 +337,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="SellerFormPanels\CarConfigurator.resx">
       <DependentUpon>CarConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellerFormPanels\ClientOrderData.resx">
+      <DependentUpon>ClientOrderData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SellerFormPanels\MakeOrderPanel.resx">
       <DependentUpon>MakeOrderPanel.cs</DependentUpon>

@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static CarDealerSupportSystem.SellerFormPanels.MakeOrderPanel;
+using static CarDealerSupportSystem.SellerFormPanels.CarConfigurator;
 
 namespace CarDealerSupportSystem.SellerFormPanels
 {
@@ -47,15 +48,31 @@ namespace CarDealerSupportSystem.SellerFormPanels
             priceLabel.Text = db.Samochody.Where(s => s.Marka == selectedCarInfo.SelectedBrand && s.Model == selectedCarInfo.SelectedModel).Select(s => s.CenaPodstawowa).FirstOrDefault().ToString();
             fuelUsageLabel.Text = db.Samochody.Where(s => s.Marka == selectedCarInfo.SelectedBrand && s.Model == selectedCarInfo.SelectedModel).Select(s => s.SrednieSpalanie).FirstOrDefault().ToString() + "l/100km";
             bodyLabel.Text = db.Samochody.Where(s => s.Marka == selectedCarInfo.SelectedBrand && s.Model == selectedCarInfo.SelectedModel).Select(s => s.TypNadwozia).FirstOrDefault();
+
+            //fill the list of additional services from the database and add them to the listbox on the form 
+            var services = db.Uslugi.ToList();
+            foreach (var service in services)
+            {
+                AddServices.Items.Add(service.Nazwa);
+            }
+   
         }
 
-  
-        private void label1_Click(object sender, EventArgs e)
-        {
+       
+ 
 
+        private void NextButton_Click(object sender, EventArgs e)
+        {   
+            this.Close();
+            var mainForm = Application.OpenForms.OfType<MakeOrderPanel>().Single();
+            mainForm.OpenChildForm(new ClientOrderData());
+            mainForm.DisableButton();
+            mainForm.ActivateButton(mainForm.ClientData, Color.FromArgb(134, 2, 12));
+            // change the label on the top of the form
+            mainForm.TopLabel.Text = "Dane klienta";
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private void AddServices_Click(object sender, EventArgs e)
         {
 
         }

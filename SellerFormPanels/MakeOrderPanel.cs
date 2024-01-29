@@ -34,7 +34,9 @@ namespace CarDealerSupportSystem.SellerFormPanels
             LeftMenuPanel.Controls.Add(leftBorderBtn);
         }
 
-        private void OpenChildForm(Form childForm)
+ 
+
+        public void OpenChildForm(Form childForm)
         {
             if (currentChildForm != null)
             {
@@ -150,7 +152,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
         }
 
 
-        private void ActivateButton(object butt, Color color)
+        public void ActivateButton(object butt, Color color)
         {
             if (butt != null)
             {
@@ -168,7 +170,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
         }
 
 
-        private void DisableButton()
+        public void DisableButton()
         {
             if (currentBtn != null)
             {
@@ -200,8 +202,10 @@ namespace CarDealerSupportSystem.SellerFormPanels
             ChooseCarPanel(carDataList);
             BrandComboBox.DataSource = db.Samochody.Select(c => c.Marka).Distinct().ToList();
             ActivateButton(ChooseCarButton, RGBColors.color1);
+            var additionalServices = db.Uslugi.Select(s => s.Nazwa).ToList();
+         
         }
-
+       
 
         //Drag Form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -247,8 +251,10 @@ namespace CarDealerSupportSystem.SellerFormPanels
                 DisableButton();
                 ActivateButton(ConfigurationButton, RGBColors.color1);
                 TopLabel.Text = "Konfiguracja samochodu";
+                
             }
         }
+        
     }
 }
 

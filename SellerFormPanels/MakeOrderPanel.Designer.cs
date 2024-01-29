@@ -31,14 +31,14 @@
             this.components = new System.ComponentModel.Container();
             this.LeftMenuPanel = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.ClientData = new System.Windows.Forms.Button();
             this.ConfigurationButton = new System.Windows.Forms.Button();
             this.ChooseCarButton = new System.Windows.Forms.Button();
             this.TopPanel = new System.Windows.Forms.Panel();
             this.TopLabel = new System.Windows.Forms.Label();
             this.ExitBtn = new System.Windows.Forms.Button();
-            this.BrandComboBox = new System.Windows.Forms.ComboBox();
             this.samochodyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.BrandComboBox = new System.Windows.Forms.ComboBox();
             this.ModelComboBox = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.NextButton = new System.Windows.Forms.Button();
@@ -47,18 +47,25 @@
             this.label2 = new System.Windows.Forms.Label();
             this.MainCarPanel = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.AddServices = new System.Windows.Forms.CheckedListBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.AddEqLabel = new System.Windows.Forms.Label();
             this.LeftMenuPanel.SuspendLayout();
             this.TopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.samochodyBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             this.MainCarPanel.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // LeftMenuPanel
             // 
             this.LeftMenuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.LeftMenuPanel.Controls.Add(this.button4);
-            this.LeftMenuPanel.Controls.Add(this.button3);
+            this.LeftMenuPanel.Controls.Add(this.ClientData);
             this.LeftMenuPanel.Controls.Add(this.ConfigurationButton);
             this.LeftMenuPanel.Controls.Add(this.ChooseCarButton);
             this.LeftMenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -80,18 +87,18 @@
             this.button4.Text = "Podsumowanie";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // ClientData
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(3, 240);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(148, 50);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Dane klienta";
-            this.button3.UseVisualStyleBackColor = true;
+            this.ClientData.FlatAppearance.BorderSize = 0;
+            this.ClientData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClientData.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ClientData.ForeColor = System.Drawing.Color.White;
+            this.ClientData.Location = new System.Drawing.Point(3, 240);
+            this.ClientData.Name = "ClientData";
+            this.ClientData.Size = new System.Drawing.Size(148, 50);
+            this.ClientData.TabIndex = 2;
+            this.ClientData.Text = "Dane klienta";
+            this.ClientData.UseVisualStyleBackColor = true;
             // 
             // ConfigurationButton
             // 
@@ -155,6 +162,10 @@
             this.ExitBtn.UseVisualStyleBackColor = true;
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
+            // samochodyBindingSource
+            // 
+            this.samochodyBindingSource.DataSource = typeof(CarDealerSupportSystem.Models.Samochody);
+            // 
             // BrandComboBox
             // 
             this.BrandComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
@@ -170,10 +181,6 @@
             this.BrandComboBox.TabIndex = 2;
             this.BrandComboBox.ValueMember = "Marka";
             this.BrandComboBox.SelectedIndexChanged += new System.EventHandler(this.BrandComboBox_SelectedIndexChanged);
-            // 
-            // samochodyBindingSource
-            // 
-            this.samochodyBindingSource.DataSource = typeof(CarDealerSupportSystem.Models.Samochody);
             // 
             // ModelComboBox
             // 
@@ -270,6 +277,7 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 61);
@@ -278,6 +286,70 @@
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(5);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1112, 572);
             this.flowLayoutPanel1.TabIndex = 6;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.AddServices);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.AddEqLabel);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(8, 8);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(229, 0);
+            this.panel1.TabIndex = 7;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(2)))), ((int)(((byte)(12)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(58, 574);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(122, 35);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Dalej";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // AddServices
+            // 
+            this.AddServices.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.AddServices.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.AddServices.CausesValidation = false;
+            this.AddServices.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.samochodyBindingSource, "PakietySamochody", true));
+            this.AddServices.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.AddServices.ForeColor = System.Drawing.Color.White;
+            this.AddServices.ImeMode = System.Windows.Forms.ImeMode.Close;
+            this.AddServices.Location = new System.Drawing.Point(29, 138);
+            this.AddServices.Name = "AddServices";
+            this.AddServices.Size = new System.Drawing.Size(188, 216);
+            this.AddServices.TabIndex = 13;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(24, 110);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(156, 25);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Dostępne usługi:";
+            // 
+            // AddEqLabel
+            // 
+            this.AddEqLabel.AutoSize = true;
+            this.AddEqLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddEqLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.AddEqLabel.ForeColor = System.Drawing.Color.White;
+            this.AddEqLabel.Location = new System.Drawing.Point(22, 19);
+            this.AddEqLabel.Name = "AddEqLabel";
+            this.AddEqLabel.Size = new System.Drawing.Size(173, 74);
+            this.AddEqLabel.TabIndex = 5;
+            this.AddEqLabel.Text = "Dodaj \r\nwyposażenie";
             // 
             // MakeOrderPanel
             // 
@@ -299,6 +371,9 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.MainCarPanel.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -309,13 +384,11 @@
         private System.Windows.Forms.Panel TopPanel;
         private System.Windows.Forms.Button ExitBtn;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button ConfigurationButton;
         private System.Windows.Forms.Button ChooseCarButton;
         private System.Windows.Forms.ComboBox BrandComboBox;
         private System.Windows.Forms.ComboBox ModelComboBox;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label TopLabel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.BindingSource samochodyBindingSource;
@@ -323,5 +396,12 @@
         private System.Windows.Forms.Button NextButton;
         private System.Windows.Forms.Panel MainCarPanel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckedListBox AddServices;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label AddEqLabel;
+        public System.Windows.Forms.Button ClientData;
+        public System.Windows.Forms.Label TopLabel;
     }
 }
