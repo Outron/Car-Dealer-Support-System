@@ -45,16 +45,16 @@
             this.Model = new System.Windows.Forms.Label();
             this.Brand = new System.Windows.Forms.Label();
             this.CarImageBox = new System.Windows.Forms.PictureBox();
-            this.samochodyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.AddEqLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.AddServices = new System.Windows.Forms.CheckedListBox();
             this.NextButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.samochodyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CarImageBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.samochodyBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.samochodyBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -241,10 +241,6 @@
             this.CarImageBox.TabIndex = 1;
             this.CarImageBox.TabStop = false;
             // 
-            // samochodyBindingSource
-            // 
-            this.samochodyBindingSource.DataSource = typeof(CarDealerSupportSystem.Models.Samochody);
-            // 
             // AddEqLabel
             // 
             this.AddEqLabel.AutoSize = true;
@@ -281,11 +277,11 @@
             this.AddServices.Name = "AddServices";
             this.AddServices.Size = new System.Drawing.Size(188, 216);
             this.AddServices.TabIndex = 13;
-            this.AddServices.Click += new System.EventHandler(this.AddServices_Click);
+            this.AddServices.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.AddServices_ItemCheck);
             // 
             // NextButton
             // 
-            this.NextButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(2)))), ((int)(((byte)(12)))));
+            this.NextButton.BackColor = System.Drawing.Color.Maroon;
             this.NextButton.FlatAppearance.BorderSize = 0;
             this.NextButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.NextButton.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -311,6 +307,10 @@
             this.panel1.Size = new System.Drawing.Size(229, 633);
             this.panel1.TabIndex = 6;
             // 
+            // samochodyBindingSource
+            // 
+            this.samochodyBindingSource.DataSource = typeof(CarDealerSupportSystem.Models.Samochody);
+            // 
             // CarConfigurator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -329,9 +329,9 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CarImageBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.samochodyBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.samochodyBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

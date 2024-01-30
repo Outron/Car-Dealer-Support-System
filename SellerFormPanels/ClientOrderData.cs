@@ -15,6 +15,20 @@ namespace CarDealerSupportSystem.SellerFormPanels
         public ClientOrderData()
         {
             InitializeComponent();
+          
+        }
+
+        private void NextButton_Click(object sender, EventArgs e)
+        {
+            if (NameLabel.Text != "" && SurnameLabel.Text != "" && EmailLabel.Text != "" && PhoneLabel.Text != "" && AddressLabel.Text != "" && CityLabel.Text != "" && CodeLabel.Text != "" && PeselLabel.Text != "")
+            {
+            // open the next form
+            }
+            else
+            {
+                MessageLabel.Text = "Wypełnij wszystkie pola!";
+            }
+          
         }
     }
 }

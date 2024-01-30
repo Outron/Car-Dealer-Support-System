@@ -58,11 +58,24 @@ namespace CarDealerSupportSystem.SellerFormPanels
    
         }
 
-       
- 
+        private List<string> SelectedServices = new List<string>();
+
+        // save the checked services to the list
+        private void AddServices_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (e.NewValue == CheckState.Checked)
+            {
+                SelectedServices.Add(AddServices.SelectedItem.ToString());
+            }
+            else
+            {
+                SelectedServices.Remove(AddServices.SelectedItem.ToString());
+            }
+        }
+      
 
         private void NextButton_Click(object sender, EventArgs e)
-        {   
+        {
             this.Close();
             var mainForm = Application.OpenForms.OfType<MakeOrderPanel>().Single();
             mainForm.OpenChildForm(new ClientOrderData());
