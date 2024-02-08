@@ -11,17 +11,17 @@ using System.Windows.Forms;
 
 namespace CarDealerSupportSystem.SellerFormPanels
 {
-    public partial class CarsPanel : Form
+    public partial class CarsCRUD : Form
     {
 
         private readonly salon_samochodowyContext db = new salon_samochodowyContext();
 
-        public CarsPanel()
+        public CarsCRUD()
         {
             InitializeComponent();
         }
 
-        private void CarsPanel_Load_1(object sender, EventArgs e)
+        private void CarsCRUD_Load_1(object sender, EventArgs e)
         {
             var cars = db.Samochody.ToList();
             CarsGridView.DataSource = cars;

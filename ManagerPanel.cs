@@ -54,6 +54,14 @@ namespace CarDealerSupportSystem
                
             }
         }
+        private void ActivateButton2(object senderBtn)
+        {
+            if (senderBtn != null)
+            { 
+                //Button
+                currentBtn = (Button)senderBtn;
+            }
+        }
 
         private void DisableButton()
         {
@@ -84,6 +92,8 @@ namespace CarDealerSupportSystem
         private void LeftMenuBtn3_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
+            SpisSamochodowButton.Visible = true;
+            EditSpisSamochodowButton.Visible = true;
             OpenChildForm(new CarsPanel());
         }
 
@@ -123,6 +133,11 @@ namespace CarDealerSupportSystem
                 currentChildForm.Close();
             }
             currentChildForm = childForm;
+            if(childForm.GetType() != typeof(CarsPanel))
+            {
+                SpisSamochodowButton.Visible = false;
+                EditSpisSamochodowButton.Visible = false;
+            }
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
@@ -131,8 +146,24 @@ namespace CarDealerSupportSystem
             childForm.BringToFront();
             childForm.Show();
             TopLabel.Text = currentBtn.Text;
-        }       
-
+        }
+        private void OpenChildForm2(Form childForm)
+        {
+            if (currentChildForm != null)
+            {
+                //open only one form
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            MainPanel.Controls.Add(childForm);
+            MainPanel.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            TopLabel.Text = currentBtn.Text;
+        }
         // Drag Form
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -150,6 +181,20 @@ namespace CarDealerSupportSystem
         {
 
         }
+
+        private void SpisSamochodowButton_Click(object sender, EventArgs e)
+        {
+            ActivateButton2(sender);
+            OpenChildForm2(new CarsPanel());
+        }
+
+        private void EditSpisSamochodowButton_Click(object sender, EventArgs e)
+        {
+            ActivateButton2(sender);
+            OpenChildForm2(new CarsCRUD());
+        }
+
+
 
 
         // End Drag Form

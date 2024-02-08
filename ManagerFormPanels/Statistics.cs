@@ -29,8 +29,9 @@ namespace CarDealerSupportSystem.ManagerFormPanels
         }
         private class salony
         {
-            public int idsalonu { get; set; }
+            public int miejsceSalonu { get; set; }
             public string miejscowosc { get; set; }
+            public int pracownik { get; set; }   
             public string ulica { get; set; }
             public double? cena { get; set; }
         }
@@ -42,6 +43,7 @@ namespace CarDealerSupportSystem.ManagerFormPanels
         }
         private void Statistics_Load(object sender, EventArgs e)
         {
+              
             List<salony> shops = new List<salony>();
             try
             {
@@ -69,9 +71,10 @@ namespace CarDealerSupportSystem.ManagerFormPanels
                 .GroupBy(y => y.idSalon)
                 .Select(y => new salony
                 {
-                    idsalonu = 1,
+                    miejsceSalonu = 1,
                     miejscowosc = y.FirstOrDefault().salon,
                     ulica = y.FirstOrDefault().uli,
+                    pracownik = y.FirstOrDefault().idSalon,
                     cena = y.Sum(s => s.cena)
                 })
                 .OrderByDescending(y => y.cena)
@@ -85,7 +88,7 @@ namespace CarDealerSupportSystem.ManagerFormPanels
                 return;
 
             int i = 1;
-            shops.ForEach(shop => { shop.idsalonu = i++; });
+            shops.ForEach(shop => { shop.miejsceSalonu = i++; });
 
             List<samochody> cars = new List<samochody>();
 
@@ -125,7 +128,8 @@ namespace CarDealerSupportSystem.ManagerFormPanels
                 (zamPracSalSamZam, samochod) => new
                 {
                     zamPracSalSamZam,samochod
-                }).ToList()
+                })
+                .ToList()
                 .GroupBy(y=>y.samochod.IdSamochodu)
                 .Select(y => new samochody
                 {
@@ -134,6 +138,7 @@ namespace CarDealerSupportSystem.ManagerFormPanels
                 })
                 .OrderByDescending(y=>y.ile)
                 .ToList();
+
             this.BestShopGridView.DataSource = shops;
             this.BestCarGridView.DataSource = cars;
         }
@@ -141,6 +146,16 @@ namespace CarDealerSupportSystem.ManagerFormPanels
         private void samochodyBindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void BestShopGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            BestShopGridView.ClearSelection();
+        }
+
+        private void BestCarGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            BestCarGridView.ClearSelection();
         }
     }
 }

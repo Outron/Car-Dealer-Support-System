@@ -1,6 +1,6 @@
 ﻿namespace CarDealerSupportSystem.SellerFormPanels
 {
-    partial class CarsPanel
+    partial class CarsCRUD
     {
         /// <summary>
         /// Required designer variable.
@@ -610,7 +610,7 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Nadwozie";
             // 
-            // CarsPanel
+            // CarsCRUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -621,9 +621,9 @@
             this.Controls.Add(this.CarsGridView);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "CarsPanel";
-            this.Text = "CarsPanel";
-            this.Load += new System.EventHandler(this.CarsPanel_Load_1);
+            this.Name = "CarsCRUD";
+            this.Text = "CarsCRUD";
+            this.Load += new System.EventHandler(this.CarsCRUD_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.CarsGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.samochodyBindingSource)).EndInit();
             this.CarsMenuPanel.ResumeLayout(false);

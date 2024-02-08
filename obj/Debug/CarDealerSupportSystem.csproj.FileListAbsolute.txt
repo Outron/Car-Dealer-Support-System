@@ -75,3 +75,4 @@ F:\LukaszNo\studia\BD\projekt\Car-Dealer-Support\obj\Debug\CarDealerSupportSyste
 F:\LukaszNo\studia\BD\projekt\Car-Dealer-Support\obj\Debug\CarDealerSupportSystem.csproj.CopyComplete
 F:\LukaszNo\studia\BD\projekt\Car-Dealer-Support\obj\Debug\CarDealerSupportSystem.exe
 F:\LukaszNo\studia\BD\projekt\Car-Dealer-Support\obj\Debug\CarDealerSupportSystem.pdb
+F:\LukaszNo\studia\BD\projekt\Car-Dealer-Support\obj\Debug\CarDealerSupportSystem.SellerFormPanels.CarsCRUD.resources

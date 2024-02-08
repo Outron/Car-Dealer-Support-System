@@ -43,6 +43,7 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.StatisticsRightPanel = new System.Windows.Forms.Panel();
             this.StatisticsLeftPanel = new System.Windows.Forms.Panel();
             this.BestShopGridView = new System.Windows.Forms.DataGridView();
+            this.MiejsceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -102,23 +103,41 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.samochodyUslugiDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.samochodyZamowieniaDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idSalonuNavigationDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idSamochoduDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.markaDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kolorDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typNadwoziaDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mocSilnikaDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wyposazenieDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.srednieSpalanieDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typSilnikaDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cenaPodstawowaDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.liczbaDrzwiDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iloscMiejscDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vinDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rabatDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idSalonuNavigationDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pakietySamochodyDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.samochodyUslugiDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.samochodyZamowieniaDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BestCarGridView = new System.Windows.Forms.DataGridView();
-            this.idSalonuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IleColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MarkaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.samochodyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.miejscowoscDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ulicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salonyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.samochodyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.zamowieniaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pracownicyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ileile = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.markaName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mainPanel.SuspendLayout();
             this.StatisticsRightPanel.SuspendLayout();
             this.StatisticsLeftPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BestShopGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BestCarGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salonyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.samochodyBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salonyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zamowieniaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pracownicyBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -126,7 +145,6 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             // mainPanel
             // 
             this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.mainPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.mainPanel.Controls.Add(this.StatisticsRightPanel);
             this.mainPanel.Controls.Add(this.StatisticsLeftPanel);
             this.mainPanel.Controls.Add(this.label1);
@@ -177,7 +195,7 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.BestShopGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.BestShopGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.BestShopGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idSalonuDataGridViewTextBoxColumn,
+            this.MiejsceColumn,
             this.miejscowoscDataGridViewTextBoxColumn,
             this.ulicaDataGridViewTextBoxColumn,
             this.cena});
@@ -215,6 +233,14 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.BestShopGridView.ShowEditingIcon = false;
             this.BestShopGridView.Size = new System.Drawing.Size(294, 298);
             this.BestShopGridView.TabIndex = 2;
+            this.BestShopGridView.SelectionChanged += new System.EventHandler(this.BestShopGridView_SelectionChanged);
+            // 
+            // MiejsceColumn
+            // 
+            this.MiejsceColumn.DataPropertyName = "miejsceSalonu";
+            this.MiejsceColumn.HeaderText = "Miejsce";
+            this.MiejsceColumn.Name = "MiejsceColumn";
+            this.MiejsceColumn.ReadOnly = true;
             // 
             // cena
             // 
@@ -263,122 +289,71 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             // 
             // idSamochoduDataGridViewTextBoxColumn
             // 
-            this.idSamochoduDataGridViewTextBoxColumn.DataPropertyName = "IdSamochodu";
-            this.idSamochoduDataGridViewTextBoxColumn.HeaderText = "IdSamochodu";
             this.idSamochoduDataGridViewTextBoxColumn.Name = "idSamochoduDataGridViewTextBoxColumn";
-            this.idSamochoduDataGridViewTextBoxColumn.Width = 14;
             // 
             // modelDataGridViewTextBoxColumn
             // 
-            this.modelDataGridViewTextBoxColumn.DataPropertyName = "Model";
-            this.modelDataGridViewTextBoxColumn.HeaderText = "Model";
             this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
-            this.modelDataGridViewTextBoxColumn.Width = 15;
             // 
             // markaDataGridViewTextBoxColumn
             // 
-            this.markaDataGridViewTextBoxColumn.DataPropertyName = "Marka";
-            this.markaDataGridViewTextBoxColumn.HeaderText = "Marka";
             this.markaDataGridViewTextBoxColumn.Name = "markaDataGridViewTextBoxColumn";
-            this.markaDataGridViewTextBoxColumn.Width = 15;
             // 
             // kolorDataGridViewTextBoxColumn
             // 
-            this.kolorDataGridViewTextBoxColumn.DataPropertyName = "Kolor";
-            this.kolorDataGridViewTextBoxColumn.HeaderText = "Kolor";
             this.kolorDataGridViewTextBoxColumn.Name = "kolorDataGridViewTextBoxColumn";
-            this.kolorDataGridViewTextBoxColumn.Width = 14;
             // 
             // typNadwoziaDataGridViewTextBoxColumn
             // 
-            this.typNadwoziaDataGridViewTextBoxColumn.DataPropertyName = "TypNadwozia";
-            this.typNadwoziaDataGridViewTextBoxColumn.HeaderText = "TypNadwozia";
             this.typNadwoziaDataGridViewTextBoxColumn.Name = "typNadwoziaDataGridViewTextBoxColumn";
-            this.typNadwoziaDataGridViewTextBoxColumn.Width = 15;
             // 
             // mocSilnikaDataGridViewTextBoxColumn
             // 
-            this.mocSilnikaDataGridViewTextBoxColumn.DataPropertyName = "MocSilnika";
-            this.mocSilnikaDataGridViewTextBoxColumn.HeaderText = "MocSilnika";
             this.mocSilnikaDataGridViewTextBoxColumn.Name = "mocSilnikaDataGridViewTextBoxColumn";
-            this.mocSilnikaDataGridViewTextBoxColumn.Width = 15;
             // 
             // wyposazenieDataGridViewTextBoxColumn
             // 
-            this.wyposazenieDataGridViewTextBoxColumn.DataPropertyName = "Wyposazenie";
-            this.wyposazenieDataGridViewTextBoxColumn.HeaderText = "Wyposazenie";
             this.wyposazenieDataGridViewTextBoxColumn.Name = "wyposazenieDataGridViewTextBoxColumn";
-            this.wyposazenieDataGridViewTextBoxColumn.Width = 15;
             // 
             // srednieSpalanieDataGridViewTextBoxColumn
             // 
-            this.srednieSpalanieDataGridViewTextBoxColumn.DataPropertyName = "SrednieSpalanie";
-            this.srednieSpalanieDataGridViewTextBoxColumn.HeaderText = "SrednieSpalanie";
             this.srednieSpalanieDataGridViewTextBoxColumn.Name = "srednieSpalanieDataGridViewTextBoxColumn";
-            this.srednieSpalanieDataGridViewTextBoxColumn.Width = 14;
             // 
             // typSilnikaDataGridViewTextBoxColumn
             // 
-            this.typSilnikaDataGridViewTextBoxColumn.DataPropertyName = "TypSilnika";
-            this.typSilnikaDataGridViewTextBoxColumn.HeaderText = "TypSilnika";
             this.typSilnikaDataGridViewTextBoxColumn.Name = "typSilnikaDataGridViewTextBoxColumn";
-            this.typSilnikaDataGridViewTextBoxColumn.Width = 15;
             // 
             // cenaPodstawowaDataGridViewTextBoxColumn
             // 
-            this.cenaPodstawowaDataGridViewTextBoxColumn.DataPropertyName = "CenaPodstawowa";
-            this.cenaPodstawowaDataGridViewTextBoxColumn.HeaderText = "CenaPodstawowa";
             this.cenaPodstawowaDataGridViewTextBoxColumn.Name = "cenaPodstawowaDataGridViewTextBoxColumn";
-            this.cenaPodstawowaDataGridViewTextBoxColumn.Width = 15;
             // 
             // liczbaDrzwiDataGridViewTextBoxColumn
             // 
-            this.liczbaDrzwiDataGridViewTextBoxColumn.DataPropertyName = "LiczbaDrzwi";
-            this.liczbaDrzwiDataGridViewTextBoxColumn.HeaderText = "LiczbaDrzwi";
             this.liczbaDrzwiDataGridViewTextBoxColumn.Name = "liczbaDrzwiDataGridViewTextBoxColumn";
-            this.liczbaDrzwiDataGridViewTextBoxColumn.Width = 15;
             // 
             // iloscMiejscDataGridViewTextBoxColumn
             // 
-            this.iloscMiejscDataGridViewTextBoxColumn.DataPropertyName = "IloscMiejsc";
-            this.iloscMiejscDataGridViewTextBoxColumn.HeaderText = "IloscMiejsc";
             this.iloscMiejscDataGridViewTextBoxColumn.Name = "iloscMiejscDataGridViewTextBoxColumn";
-            this.iloscMiejscDataGridViewTextBoxColumn.Width = 15;
             // 
             // vinDataGridViewTextBoxColumn
             // 
-            this.vinDataGridViewTextBoxColumn.DataPropertyName = "Vin";
-            this.vinDataGridViewTextBoxColumn.HeaderText = "Vin";
             this.vinDataGridViewTextBoxColumn.Name = "vinDataGridViewTextBoxColumn";
-            this.vinDataGridViewTextBoxColumn.Width = 14;
             // 
             // rabatDataGridViewTextBoxColumn
             // 
-            this.rabatDataGridViewTextBoxColumn.DataPropertyName = "Rabat";
-            this.rabatDataGridViewTextBoxColumn.HeaderText = "Rabat";
             this.rabatDataGridViewTextBoxColumn.Name = "rabatDataGridViewTextBoxColumn";
-            this.rabatDataGridViewTextBoxColumn.Width = 15;
             // 
             // pakietySamochodyDataGridViewTextBoxColumn
             // 
-            this.pakietySamochodyDataGridViewTextBoxColumn.DataPropertyName = "PakietySamochody";
-            this.pakietySamochodyDataGridViewTextBoxColumn.HeaderText = "PakietySamochody";
             this.pakietySamochodyDataGridViewTextBoxColumn.Name = "pakietySamochodyDataGridViewTextBoxColumn";
-            this.pakietySamochodyDataGridViewTextBoxColumn.Width = 15;
             // 
             // samochodyUslugiDataGridViewTextBoxColumn
             // 
-            this.samochodyUslugiDataGridViewTextBoxColumn.DataPropertyName = "SamochodyUslugi";
-            this.samochodyUslugiDataGridViewTextBoxColumn.HeaderText = "SamochodyUslugi";
             this.samochodyUslugiDataGridViewTextBoxColumn.Name = "samochodyUslugiDataGridViewTextBoxColumn";
-            this.samochodyUslugiDataGridViewTextBoxColumn.Width = 14;
             // 
             // samochodyZamowieniaDataGridViewTextBoxColumn
             // 
-            this.samochodyZamowieniaDataGridViewTextBoxColumn.DataPropertyName = "SamochodyZamowienia";
-            this.samochodyZamowieniaDataGridViewTextBoxColumn.HeaderText = "SamochodyZamowienia";
             this.samochodyZamowieniaDataGridViewTextBoxColumn.Name = "samochodyZamowieniaDataGridViewTextBoxColumn";
-            this.samochodyZamowieniaDataGridViewTextBoxColumn.Width = 15;
             // 
             // IleName
             // 
@@ -646,12 +621,146 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.idSalonuNavigationDataGridViewTextBoxColumn1.Name = "idSalonuNavigationDataGridViewTextBoxColumn1";
             this.idSalonuNavigationDataGridViewTextBoxColumn1.Width = 15;
             // 
+            // idSamochoduDataGridViewTextBoxColumn2
+            // 
+            this.idSamochoduDataGridViewTextBoxColumn2.DataPropertyName = "IdSamochodu";
+            this.idSamochoduDataGridViewTextBoxColumn2.HeaderText = "IdSamochodu";
+            this.idSamochoduDataGridViewTextBoxColumn2.Name = "idSamochoduDataGridViewTextBoxColumn2";
+            this.idSamochoduDataGridViewTextBoxColumn2.Width = 14;
+            // 
+            // modelDataGridViewTextBoxColumn3
+            // 
+            this.modelDataGridViewTextBoxColumn3.DataPropertyName = "Model";
+            this.modelDataGridViewTextBoxColumn3.HeaderText = "Model";
+            this.modelDataGridViewTextBoxColumn3.Name = "modelDataGridViewTextBoxColumn3";
+            this.modelDataGridViewTextBoxColumn3.Width = 14;
+            // 
+            // markaDataGridViewTextBoxColumn3
+            // 
+            this.markaDataGridViewTextBoxColumn3.DataPropertyName = "Marka";
+            this.markaDataGridViewTextBoxColumn3.HeaderText = "Marka";
+            this.markaDataGridViewTextBoxColumn3.Name = "markaDataGridViewTextBoxColumn3";
+            this.markaDataGridViewTextBoxColumn3.Width = 14;
+            // 
+            // kolorDataGridViewTextBoxColumn3
+            // 
+            this.kolorDataGridViewTextBoxColumn3.DataPropertyName = "Kolor";
+            this.kolorDataGridViewTextBoxColumn3.HeaderText = "Kolor";
+            this.kolorDataGridViewTextBoxColumn3.Name = "kolorDataGridViewTextBoxColumn3";
+            this.kolorDataGridViewTextBoxColumn3.Width = 14;
+            // 
+            // typNadwoziaDataGridViewTextBoxColumn3
+            // 
+            this.typNadwoziaDataGridViewTextBoxColumn3.DataPropertyName = "TypNadwozia";
+            this.typNadwoziaDataGridViewTextBoxColumn3.HeaderText = "TypNadwozia";
+            this.typNadwoziaDataGridViewTextBoxColumn3.Name = "typNadwoziaDataGridViewTextBoxColumn3";
+            this.typNadwoziaDataGridViewTextBoxColumn3.Width = 14;
+            // 
+            // mocSilnikaDataGridViewTextBoxColumn3
+            // 
+            this.mocSilnikaDataGridViewTextBoxColumn3.DataPropertyName = "MocSilnika";
+            this.mocSilnikaDataGridViewTextBoxColumn3.HeaderText = "MocSilnika";
+            this.mocSilnikaDataGridViewTextBoxColumn3.Name = "mocSilnikaDataGridViewTextBoxColumn3";
+            this.mocSilnikaDataGridViewTextBoxColumn3.Width = 14;
+            // 
+            // wyposazenieDataGridViewTextBoxColumn3
+            // 
+            this.wyposazenieDataGridViewTextBoxColumn3.DataPropertyName = "Wyposazenie";
+            this.wyposazenieDataGridViewTextBoxColumn3.HeaderText = "Wyposazenie";
+            this.wyposazenieDataGridViewTextBoxColumn3.Name = "wyposazenieDataGridViewTextBoxColumn3";
+            this.wyposazenieDataGridViewTextBoxColumn3.Width = 14;
+            // 
+            // srednieSpalanieDataGridViewTextBoxColumn3
+            // 
+            this.srednieSpalanieDataGridViewTextBoxColumn3.DataPropertyName = "SrednieSpalanie";
+            this.srednieSpalanieDataGridViewTextBoxColumn3.HeaderText = "SrednieSpalanie";
+            this.srednieSpalanieDataGridViewTextBoxColumn3.Name = "srednieSpalanieDataGridViewTextBoxColumn3";
+            this.srednieSpalanieDataGridViewTextBoxColumn3.Width = 14;
+            // 
+            // typSilnikaDataGridViewTextBoxColumn3
+            // 
+            this.typSilnikaDataGridViewTextBoxColumn3.DataPropertyName = "TypSilnika";
+            this.typSilnikaDataGridViewTextBoxColumn3.HeaderText = "TypSilnika";
+            this.typSilnikaDataGridViewTextBoxColumn3.Name = "typSilnikaDataGridViewTextBoxColumn3";
+            this.typSilnikaDataGridViewTextBoxColumn3.Width = 14;
+            // 
+            // cenaPodstawowaDataGridViewTextBoxColumn3
+            // 
+            this.cenaPodstawowaDataGridViewTextBoxColumn3.DataPropertyName = "CenaPodstawowa";
+            this.cenaPodstawowaDataGridViewTextBoxColumn3.HeaderText = "CenaPodstawowa";
+            this.cenaPodstawowaDataGridViewTextBoxColumn3.Name = "cenaPodstawowaDataGridViewTextBoxColumn3";
+            this.cenaPodstawowaDataGridViewTextBoxColumn3.Width = 14;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "IdSalonu";
+            this.dataGridViewTextBoxColumn1.HeaderText = "IdSalonu";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 14;
+            // 
+            // liczbaDrzwiDataGridViewTextBoxColumn3
+            // 
+            this.liczbaDrzwiDataGridViewTextBoxColumn3.DataPropertyName = "LiczbaDrzwi";
+            this.liczbaDrzwiDataGridViewTextBoxColumn3.HeaderText = "LiczbaDrzwi";
+            this.liczbaDrzwiDataGridViewTextBoxColumn3.Name = "liczbaDrzwiDataGridViewTextBoxColumn3";
+            this.liczbaDrzwiDataGridViewTextBoxColumn3.Width = 14;
+            // 
+            // iloscMiejscDataGridViewTextBoxColumn3
+            // 
+            this.iloscMiejscDataGridViewTextBoxColumn3.DataPropertyName = "IloscMiejsc";
+            this.iloscMiejscDataGridViewTextBoxColumn3.HeaderText = "IloscMiejsc";
+            this.iloscMiejscDataGridViewTextBoxColumn3.Name = "iloscMiejscDataGridViewTextBoxColumn3";
+            this.iloscMiejscDataGridViewTextBoxColumn3.Width = 14;
+            // 
+            // vinDataGridViewTextBoxColumn3
+            // 
+            this.vinDataGridViewTextBoxColumn3.DataPropertyName = "Vin";
+            this.vinDataGridViewTextBoxColumn3.HeaderText = "Vin";
+            this.vinDataGridViewTextBoxColumn3.Name = "vinDataGridViewTextBoxColumn3";
+            this.vinDataGridViewTextBoxColumn3.Width = 14;
+            // 
+            // rabatDataGridViewTextBoxColumn3
+            // 
+            this.rabatDataGridViewTextBoxColumn3.DataPropertyName = "Rabat";
+            this.rabatDataGridViewTextBoxColumn3.HeaderText = "Rabat";
+            this.rabatDataGridViewTextBoxColumn3.Name = "rabatDataGridViewTextBoxColumn3";
+            this.rabatDataGridViewTextBoxColumn3.Width = 14;
+            // 
+            // idSalonuNavigationDataGridViewTextBoxColumn2
+            // 
+            this.idSalonuNavigationDataGridViewTextBoxColumn2.DataPropertyName = "IdSalonuNavigation";
+            this.idSalonuNavigationDataGridViewTextBoxColumn2.HeaderText = "IdSalonuNavigation";
+            this.idSalonuNavigationDataGridViewTextBoxColumn2.Name = "idSalonuNavigationDataGridViewTextBoxColumn2";
+            this.idSalonuNavigationDataGridViewTextBoxColumn2.Width = 14;
+            // 
+            // pakietySamochodyDataGridViewTextBoxColumn3
+            // 
+            this.pakietySamochodyDataGridViewTextBoxColumn3.DataPropertyName = "PakietySamochody";
+            this.pakietySamochodyDataGridViewTextBoxColumn3.HeaderText = "PakietySamochody";
+            this.pakietySamochodyDataGridViewTextBoxColumn3.Name = "pakietySamochodyDataGridViewTextBoxColumn3";
+            this.pakietySamochodyDataGridViewTextBoxColumn3.Width = 14;
+            // 
+            // samochodyUslugiDataGridViewTextBoxColumn3
+            // 
+            this.samochodyUslugiDataGridViewTextBoxColumn3.DataPropertyName = "SamochodyUslugi";
+            this.samochodyUslugiDataGridViewTextBoxColumn3.HeaderText = "SamochodyUslugi";
+            this.samochodyUslugiDataGridViewTextBoxColumn3.Name = "samochodyUslugiDataGridViewTextBoxColumn3";
+            this.samochodyUslugiDataGridViewTextBoxColumn3.Width = 14;
+            // 
+            // samochodyZamowieniaDataGridViewTextBoxColumn3
+            // 
+            this.samochodyZamowieniaDataGridViewTextBoxColumn3.DataPropertyName = "SamochodyZamowienia";
+            this.samochodyZamowieniaDataGridViewTextBoxColumn3.HeaderText = "SamochodyZamowienia";
+            this.samochodyZamowieniaDataGridViewTextBoxColumn3.Name = "samochodyZamowieniaDataGridViewTextBoxColumn3";
+            this.samochodyZamowieniaDataGridViewTextBoxColumn3.Width = 14;
+            // 
             // BestCarGridView
             // 
             this.BestCarGridView.AllowUserToAddRows = false;
             this.BestCarGridView.AllowUserToDeleteRows = false;
             this.BestCarGridView.AllowUserToResizeColumns = false;
             this.BestCarGridView.AllowUserToResizeRows = false;
+            this.BestCarGridView.AutoGenerateColumns = false;
             this.BestCarGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.BestCarGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
             this.BestCarGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -668,8 +777,8 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.BestCarGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.BestCarGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.BestCarGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ileile,
-            this.markaName});
+            this.IleColumn,
+            this.MarkaColumn});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -703,13 +812,26 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.BestCarGridView.ShowEditingIcon = false;
             this.BestCarGridView.Size = new System.Drawing.Size(294, 298);
             this.BestCarGridView.TabIndex = 3;
+            this.BestCarGridView.SelectionChanged += new System.EventHandler(this.BestCarGridView_SelectionChanged);
             // 
-            // idSalonuDataGridViewTextBoxColumn
+            // IleColumn
             // 
-            this.idSalonuDataGridViewTextBoxColumn.DataPropertyName = "IdSalonu";
-            this.idSalonuDataGridViewTextBoxColumn.HeaderText = "Miejsce";
-            this.idSalonuDataGridViewTextBoxColumn.Name = "idSalonuDataGridViewTextBoxColumn";
-            this.idSalonuDataGridViewTextBoxColumn.ReadOnly = true;
+            this.IleColumn.DataPropertyName = "ile";
+            this.IleColumn.HeaderText = "Ile";
+            this.IleColumn.Name = "IleColumn";
+            this.IleColumn.ReadOnly = true;
+            // 
+            // MarkaColumn
+            // 
+            this.MarkaColumn.DataPropertyName = "marka";
+            this.MarkaColumn.HeaderText = "Marka";
+            this.MarkaColumn.Name = "MarkaColumn";
+            this.MarkaColumn.ReadOnly = true;
+            // 
+            // samochodyBindingSource
+            // 
+            this.samochodyBindingSource.DataSource = typeof(CarDealerSupportSystem.Models.Samochody);
+            this.samochodyBindingSource.CurrentChanged += new System.EventHandler(this.samochodyBindingSource_CurrentChanged);
             // 
             // miejscowoscDataGridViewTextBoxColumn
             // 
@@ -729,11 +851,6 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             // 
             this.salonyBindingSource.DataSource = typeof(CarDealerSupportSystem.Models.Salony);
             // 
-            // samochodyBindingSource
-            // 
-            this.samochodyBindingSource.DataSource = typeof(CarDealerSupportSystem.Models.Samochody);
-            this.samochodyBindingSource.CurrentChanged += new System.EventHandler(this.samochodyBindingSource_CurrentChanged);
-            // 
             // zamowieniaBindingSource
             // 
             this.zamowieniaBindingSource.DataSource = typeof(CarDealerSupportSystem.Models.Zamowienia);
@@ -741,20 +858,6 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             // pracownicyBindingSource
             // 
             this.pracownicyBindingSource.DataSource = typeof(CarDealerSupportSystem.Models.Pracownicy);
-            // 
-            // ileile
-            // 
-            this.ileile.DataPropertyName = "ile";
-            this.ileile.HeaderText = "Ile samochodow";
-            this.ileile.Name = "ileile";
-            this.ileile.ReadOnly = true;
-            // 
-            // markaName
-            // 
-            this.markaName.DataPropertyName = "marka";
-            this.markaName.HeaderText = "marka";
-            this.markaName.Name = "markaName";
-            this.markaName.ReadOnly = true;
             // 
             // Statistics
             // 
@@ -772,8 +875,8 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.StatisticsLeftPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BestShopGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BestCarGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salonyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.samochodyBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salonyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zamowieniaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pracownicyBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -789,7 +892,6 @@ namespace CarDealerSupportSystem.ManagerFormPanels
         private System.Windows.Forms.BindingSource salonyBindingSource;
         private Panel StatisticsLeftPanel;
         private DataGridView BestShopGridView;
-        private DataGridViewTextBoxColumn cena;
         private Panel StatisticsRightPanel;
         private DataGridViewTextBoxColumn idSamochoduDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn;
@@ -849,11 +951,31 @@ namespace CarDealerSupportSystem.ManagerFormPanels
         private DataGridViewTextBoxColumn pakietySamochodyDataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn samochodyUslugiDataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn samochodyZamowieniaDataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn idSalonuDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn MiejsceColumn;
         private DataGridViewTextBoxColumn miejscowoscDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn ulicaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn cena;
+        private DataGridViewTextBoxColumn idSamochoduDataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn markaDataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn kolorDataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn typNadwoziaDataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn mocSilnikaDataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn wyposazenieDataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn srednieSpalanieDataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn typSilnikaDataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn cenaPodstawowaDataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn liczbaDrzwiDataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn iloscMiejscDataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn vinDataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn rabatDataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn idSalonuNavigationDataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn pakietySamochodyDataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn samochodyUslugiDataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn samochodyZamowieniaDataGridViewTextBoxColumn3;
         private DataGridView BestCarGridView;
-        private DataGridViewTextBoxColumn ileile;
-        private DataGridViewTextBoxColumn markaName;
+        private DataGridViewTextBoxColumn IleColumn;
+        private DataGridViewTextBoxColumn MarkaColumn;
     }
 }

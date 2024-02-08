@@ -39,6 +39,8 @@
             this.NameLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TopPanel = new System.Windows.Forms.Panel();
+            this.EditSpisSamochodowButton = new System.Windows.Forms.Button();
+            this.SpisSamochodowButton = new System.Windows.Forms.Button();
             this.TopLabel = new System.Windows.Forms.Label();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.MainPanel = new System.Windows.Forms.Panel();
@@ -207,6 +209,8 @@
             // TopPanel
             // 
             this.TopPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.TopPanel.Controls.Add(this.EditSpisSamochodowButton);
+            this.TopPanel.Controls.Add(this.SpisSamochodowButton);
             this.TopPanel.Controls.Add(this.TopLabel);
             this.TopPanel.Controls.Add(this.ExitBtn);
             this.TopPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -215,6 +219,36 @@
             this.TopPanel.Size = new System.Drawing.Size(861, 70);
             this.TopPanel.TabIndex = 1;
             this.TopPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TopPanel_MouseDown);
+            // 
+            // EditSpisSamochodowButton
+            // 
+            this.EditSpisSamochodowButton.FlatAppearance.BorderSize = 0;
+            this.EditSpisSamochodowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditSpisSamochodowButton.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.EditSpisSamochodowButton.ForeColor = System.Drawing.Color.Turquoise;
+            this.EditSpisSamochodowButton.Location = new System.Drawing.Point(564, 12);
+            this.EditSpisSamochodowButton.Name = "EditSpisSamochodowButton";
+            this.EditSpisSamochodowButton.Size = new System.Drawing.Size(229, 37);
+            this.EditSpisSamochodowButton.TabIndex = 4;
+            this.EditSpisSamochodowButton.Text = "Edytuj spis samochodow";
+            this.EditSpisSamochodowButton.UseVisualStyleBackColor = true;
+            this.EditSpisSamochodowButton.Visible = false;
+            this.EditSpisSamochodowButton.Click += new System.EventHandler(this.EditSpisSamochodowButton_Click);
+            // 
+            // SpisSamochodowButton
+            // 
+            this.SpisSamochodowButton.FlatAppearance.BorderSize = 0;
+            this.SpisSamochodowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SpisSamochodowButton.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.SpisSamochodowButton.ForeColor = System.Drawing.Color.Turquoise;
+            this.SpisSamochodowButton.Location = new System.Drawing.Point(286, 12);
+            this.SpisSamochodowButton.Name = "SpisSamochodowButton";
+            this.SpisSamochodowButton.Size = new System.Drawing.Size(201, 37);
+            this.SpisSamochodowButton.TabIndex = 2;
+            this.SpisSamochodowButton.Text = "Spis samochodow";
+            this.SpisSamochodowButton.UseVisualStyleBackColor = true;
+            this.SpisSamochodowButton.Visible = false;
+            this.SpisSamochodowButton.Click += new System.EventHandler(this.SpisSamochodowButton_Click);
             // 
             // TopLabel
             // 
@@ -288,5 +322,7 @@
         public System.Windows.Forms.Label NameLabel;
         public System.Windows.Forms.Label RoleLabel;
         private System.Windows.Forms.Button LeftMenuBtn5;
+        private System.Windows.Forms.Button SpisSamochodowButton;
+        private System.Windows.Forms.Button EditSpisSamochodowButton;
     }
 }
