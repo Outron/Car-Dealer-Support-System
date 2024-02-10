@@ -39,15 +39,15 @@
             this.EmailLabel = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.PaymentLabel = new System.Windows.Forms.ComboBox();
+            this.Discount = new System.Windows.Forms.TextBox();
+            this.DiscountLabel = new System.Windows.Forms.Label();
             this.PeselLabel = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.NextButton = new System.Windows.Forms.Button();
             this.CityLabel = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.PostcodeLabel = new System.Windows.Forms.TextBox();
             this.CodeLabel = new System.Windows.Forms.Label();
             this.MessageLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -169,41 +169,41 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Płatność";
             // 
-            // comboBox1
+            // PaymentLabel
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.DimGray;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.PaymentLabel.BackColor = System.Drawing.Color.DimGray;
+            this.PaymentLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PaymentLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.PaymentLabel.FormattingEnabled = true;
+            this.PaymentLabel.Items.AddRange(new object[] {
             "Karta",
             "Gotówka",
             "Przelew"});
-            this.comboBox1.Location = new System.Drawing.Point(428, 382);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(138, 28);
-            this.comboBox1.TabIndex = 11;
+            this.PaymentLabel.Location = new System.Drawing.Point(428, 382);
+            this.PaymentLabel.Name = "PaymentLabel";
+            this.PaymentLabel.Size = new System.Drawing.Size(138, 28);
+            this.PaymentLabel.TabIndex = 11;
             // 
-            // textBox6
+            // Discount
             // 
-            this.textBox6.BackColor = System.Drawing.Color.DimGray;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox6.ForeColor = System.Drawing.Color.White;
-            this.textBox6.Location = new System.Drawing.Point(427, 478);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(116, 32);
-            this.textBox6.TabIndex = 13;
+            this.Discount.BackColor = System.Drawing.Color.DimGray;
+            this.Discount.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Discount.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Discount.ForeColor = System.Drawing.Color.White;
+            this.Discount.Location = new System.Drawing.Point(427, 478);
+            this.Discount.Name = "Discount";
+            this.Discount.Size = new System.Drawing.Size(116, 32);
+            this.Discount.TabIndex = 13;
             // 
-            // label7
+            // DiscountLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(425, 438);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 37);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Rabat";
+            this.DiscountLabel.AutoSize = true;
+            this.DiscountLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.DiscountLabel.Location = new System.Drawing.Point(425, 438);
+            this.DiscountLabel.Name = "DiscountLabel";
+            this.DiscountLabel.Size = new System.Drawing.Size(88, 37);
+            this.DiscountLabel.TabIndex = 12;
+            this.DiscountLabel.Text = "Rabat";
             // 
             // PeselLabel
             // 
@@ -266,16 +266,16 @@
             this.label9.TabIndex = 24;
             this.label9.Text = "Miasto";
             // 
-            // textBox2
+            // PostcodeLabel
             // 
-            this.textBox2.BackColor = System.Drawing.Color.DimGray;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(92, 478);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(254, 32);
-            this.textBox2.TabIndex = 27;
+            this.PostcodeLabel.BackColor = System.Drawing.Color.DimGray;
+            this.PostcodeLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.PostcodeLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.PostcodeLabel.ForeColor = System.Drawing.Color.White;
+            this.PostcodeLabel.Location = new System.Drawing.Point(92, 478);
+            this.PostcodeLabel.Name = "PostcodeLabel";
+            this.PostcodeLabel.Size = new System.Drawing.Size(254, 32);
+            this.PostcodeLabel.TabIndex = 27;
             // 
             // CodeLabel
             // 
@@ -306,16 +306,16 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
             this.ClientSize = new System.Drawing.Size(1094, 594);
             this.Controls.Add(this.MessageLabel);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.PostcodeLabel);
             this.Controls.Add(this.CodeLabel);
             this.Controls.Add(this.CityLabel);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.NextButton);
             this.Controls.Add(this.PeselLabel);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.Discount);
+            this.Controls.Add(this.DiscountLabel);
+            this.Controls.Add(this.PaymentLabel);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.EmailLabel);
             this.Controls.Add(this.label5);
@@ -349,15 +349,15 @@
         private System.Windows.Forms.TextBox EmailLabel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox PaymentLabel;
+        private System.Windows.Forms.TextBox Discount;
+        private System.Windows.Forms.Label DiscountLabel;
         private System.Windows.Forms.TextBox PeselLabel;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button NextButton;
         private System.Windows.Forms.TextBox CityLabel;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox PostcodeLabel;
         private System.Windows.Forms.Label CodeLabel;
         private System.Windows.Forms.Label MessageLabel;
     }

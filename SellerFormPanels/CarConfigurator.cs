@@ -78,16 +78,18 @@ namespace CarDealerSupportSystem.SellerFormPanels
         {
             this.Close();
             var mainForm = Application.OpenForms.OfType<MakeOrderPanel>().Single();
-            mainForm.OpenChildForm(new ClientOrderData());
+            // after clicking the button, the application will open the next form with SelectedServices list
+            mainForm.OpenChildForm(new ClientOrderData(SelectedServices,selectedCarInfo));
+
+            //mainForm.OpenChildForm(new ClientOrderData(SelectedServices));
+   
             mainForm.DisableButton();
             mainForm.ActivateButton(mainForm.ClientData, Color.FromArgb(134, 2, 12));
             // change the label on the top of the form
             mainForm.TopLabel.Text = "Dane klienta";
         }
 
-        private void AddServices_Click(object sender, EventArgs e)
-        {
-
-        }
+       
+      
     }
 }

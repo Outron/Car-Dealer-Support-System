@@ -82,7 +82,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
 
                     //show in console values of selected car
                     //Console.WriteLine(lastSelectedCarInfo.SelectedBrand);
-                    //Console.WriteLine(lastSelectedCarInfo.SelectedModel
+                    //Console.WriteLine(lastSelectedCarInfo.SelectedModel);
                 };
 
                 PictureBox pictureBox = new PictureBox();
@@ -251,7 +251,6 @@ namespace CarDealerSupportSystem.SellerFormPanels
                 DisableButton();
                 ActivateButton(ConfigurationButton, RGBColors.color1);
                 TopLabel.Text = "Konfiguracja samochodu";
-                
             }
         }
         

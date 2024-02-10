@@ -196,6 +196,12 @@
     <Compile Include="SellerFormPanels\MakeOrderPanel.Designer.cs">
       <DependentUpon>MakeOrderPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="SellerFormPanels\OrderSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellerFormPanels\OrderSummary.Designer.cs">
+      <DependentUpon>OrderSummary.cs</DependentUpon>
+    </Compile>
     <Compile Include="ServForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -343,6 +349,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SellerFormPanels\MakeOrderPanel.resx">
       <DependentUpon>MakeOrderPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellerFormPanels\OrderSummary.resx">
+      <DependentUpon>OrderSummary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ServForm.resx">
       <DependentUpon>ServForm.cs</DependentUpon>

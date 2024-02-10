@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.LeftMenuPanel = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.SummaryButton = new System.Windows.Forms.Button();
             this.ClientData = new System.Windows.Forms.Button();
             this.ConfigurationButton = new System.Windows.Forms.Button();
             this.ChooseCarButton = new System.Windows.Forms.Button();
@@ -64,7 +64,7 @@
             // LeftMenuPanel
             // 
             this.LeftMenuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.LeftMenuPanel.Controls.Add(this.button4);
+            this.LeftMenuPanel.Controls.Add(this.SummaryButton);
             this.LeftMenuPanel.Controls.Add(this.ClientData);
             this.LeftMenuPanel.Controls.Add(this.ConfigurationButton);
             this.LeftMenuPanel.Controls.Add(this.ChooseCarButton);
@@ -74,18 +74,18 @@
             this.LeftMenuPanel.Size = new System.Drawing.Size(150, 693);
             this.LeftMenuPanel.TabIndex = 1;
             // 
-            // button4
+            // SummaryButton
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(3, 296);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(148, 50);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Podsumowanie";
-            this.button4.UseVisualStyleBackColor = true;
+            this.SummaryButton.FlatAppearance.BorderSize = 0;
+            this.SummaryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SummaryButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.SummaryButton.ForeColor = System.Drawing.Color.White;
+            this.SummaryButton.Location = new System.Drawing.Point(3, 296);
+            this.SummaryButton.Name = "SummaryButton";
+            this.SummaryButton.Size = new System.Drawing.Size(148, 50);
+            this.SummaryButton.TabIndex = 3;
+            this.SummaryButton.Text = "Podsumowanie";
+            this.SummaryButton.UseVisualStyleBackColor = true;
             // 
             // ClientData
             // 
@@ -383,7 +383,6 @@
         private System.Windows.Forms.Panel LeftMenuPanel;
         private System.Windows.Forms.Panel TopPanel;
         private System.Windows.Forms.Button ExitBtn;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button ConfigurationButton;
         private System.Windows.Forms.Button ChooseCarButton;
         private System.Windows.Forms.ComboBox BrandComboBox;
@@ -403,5 +402,6 @@
         private System.Windows.Forms.Label AddEqLabel;
         public System.Windows.Forms.Button ClientData;
         public System.Windows.Forms.Label TopLabel;
+        protected internal System.Windows.Forms.Button SummaryButton;
     }
 }
