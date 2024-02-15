@@ -9,17 +9,16 @@ namespace CarDealerSupportSystem
     public partial class ServForm : Form
     {
         private Button currentBtn;
-        private Panel leftBorderBtn;
+        private readonly Panel leftBorderBtn;
         private Form currentChildForm;
-
-
-        public ServForm()
+        private int servId;
+        public ServForm(int id)
         {
+            this.servId = id;
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(5, 57);
             LeftMenuPanel.Controls.Add(leftBorderBtn);
-
         }
 
         private struct RGBColors
@@ -55,33 +54,28 @@ namespace CarDealerSupportSystem
             }
         }
 
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void LeftMenuBtn1_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new MainPanel());
+            OpenChildForm(new ServMianPanel());
         }
 
         private void LeftMenuBtn2_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new NewTasksPanel());
+            OpenChildForm(new NewTasksPanel(servId));
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color1);
+            OpenChildForm(new CompletedTasksPanel(servId));
         }
 
         private void LeftMenuBtn3_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new CarsPanel());
-        }
-
-        private void LeftMenuBtn4_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new ClientsForm());
+            OpenChildForm(new CurrentTasksPanel(servId));
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)
@@ -92,10 +86,9 @@ namespace CarDealerSupportSystem
         private void LogOutBtn_Click(object sender, EventArgs e)
         {
             //after clicking this button, the application will open the first form
-            LoginForm f1 = new LoginForm();
+            LoginForm f1 = new();
             f1.Show();
             this.Hide();
-
         }
 
         private void OpenChildForm(Form childForm)
@@ -128,13 +121,5 @@ namespace CarDealerSupportSystem
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
-        private void MainPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        // End Drag Form
-
     }
 }

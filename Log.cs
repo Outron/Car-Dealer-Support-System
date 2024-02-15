@@ -28,7 +28,7 @@ namespace CarDealerSupportSystem
         //public static readonly string logPath = AppContext.BaseDirectory+@"\log.txt";
         public static void SaveLog(string message, LogType logType)
         {
-            using (salon_samochodowyContext db = new salon_samochodowyContext())
+            using (salon_samochodowyContext db = new())
             {
                 string typeName = Enum.GetName(typeof(LogType), logType);
                 //string formattedMesage = $"{DateTime.Now} - [{typeName}] {message}";
@@ -54,24 +54,24 @@ namespace CarDealerSupportSystem
         }
         
             public static void LoadLogs(RichTextBox richBox)
+        {
+            richBox.Clear();
+            using (salon_samochodowyContext db = new())
             {
-                    richBox.Clear();
-                    using (salon_samochodowyContext db = new salon_samochodowyContext())
-                    {
-                        LogType logType;
-                        var logsList = db.Logi
-                        .Where(log => log.DataGodzina.Date == DateTime.Today)
-                        .Select(log => new { log.DataGodzina, log.Typ, log.Wiadomosc })
-                        .ToList();
-                        foreach (var log in logsList)
-                        {
-                            logType = (LogType)Enum.Parse(typeof(LogType), log.Typ);
-                            richBox.SelectionColor = Color.White;
-                            richBox.AppendText($"{log.DataGodzina} - ");
-                            richBox.SelectionColor = GetColor(logType);
-                            richBox.AppendText($"[{log.Typ}] {log.Wiadomosc}\n");
-                        }
-                    }
+                LogType logType;
+                var logsList = db.Logi
+                .Where(log => log.DataGodzina.Date == DateTime.Today)
+                .Select(log => new { log.DataGodzina, log.Typ, log.Wiadomosc })
+                .ToList();
+                foreach (var log in logsList)
+                {
+                    logType = (LogType)Enum.Parse(typeof(LogType), log.Typ);
+                    richBox.SelectionColor = Color.White;
+                    richBox.AppendText($"{log.DataGodzina} - ");
+                    richBox.SelectionColor = GetColor(logType);
+                    richBox.AppendText($"[{log.Typ}] {log.Wiadomosc}\n");
+                }
             }
+        }
     }
 }

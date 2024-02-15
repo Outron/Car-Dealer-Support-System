@@ -12,7 +12,7 @@ namespace CarDealerSupportSystem.Models
         public PakietyPromocyjne()
         {
             PakietySamochody = new HashSet<PakietySamochody>();
-            UslugiPakiety = new HashSet<UslugiPakiety>();
+            PakietyUslugi = new HashSet<PakietyUslugi>();
         }
 
         public int IdPakietu { get; set; }
@@ -21,6 +21,6 @@ namespace CarDealerSupportSystem.Models
         public DateTime? DataZakonczenia { get; set; }
 
         public virtual ICollection<PakietySamochody> PakietySamochody { get; set; }
-        public virtual ICollection<UslugiPakiety> UslugiPakiety { get; set; }
+        public virtual ICollection<PakietyUslugi> PakietyUslugi { get; set; }
     }
 }

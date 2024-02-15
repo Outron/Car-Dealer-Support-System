@@ -101,7 +101,6 @@
             this.Name = "DatabasePanel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainPanel";
-            this.Load += new System.EventHandler(this.DatabasePanel_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

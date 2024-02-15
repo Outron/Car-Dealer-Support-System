@@ -56,7 +56,7 @@ namespace CarDealerSupportSystem
         private void editUserButton_Click(object sender, EventArgs e)
         {
             this.Close();
-            EditUserForm edit = new EditUserForm(mainForm, workerValues);
+            EditUserForm edit = new(mainForm, workerValues);
             edit.ShowDialog();
         }
 
@@ -65,7 +65,7 @@ namespace CarDealerSupportSystem
             DialogResult result = MessageBox.Show("Czy napewno usunąć wybranego użytkownika? Operacja jest nieodwracalna.", "Ostrzeżenie", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (result == DialogResult.Yes)
             {
-                using (salon_samochodowyContext db = new salon_samochodowyContext())
+                using (salon_samochodowyContext db = new())
                 {
                     var workerToRemove = db.Pracownicy.Find(int.Parse(workerValues[8]));
                     if (workerToRemove != null)

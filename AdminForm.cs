@@ -19,10 +19,8 @@ namespace CarDealerSupportSystem
     public partial class AdminForm : Form
     {
         private Button currentBtn;
-        private Panel leftBorderBtn;
+        private readonly Panel leftBorderBtn;
         private Form currentChildForm;
-
-
         public AdminForm()
         {
             InitializeComponent();
@@ -108,7 +106,7 @@ namespace CarDealerSupportSystem
         private void LogOutBtn_Click(object sender, EventArgs e)
         {
             //after clicking this button, the application will open the first form
-            LoginForm f1 = new LoginForm();
+            LoginForm f1 = new();
             f1.Show();
             this.Hide();
         }
@@ -130,14 +128,6 @@ namespace CarDealerSupportSystem
             childForm.Show();
             TopLabel.Text = currentBtn.Text;
         }       
-
-
-
-
-
-
-
-
         // Drag Form
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -150,13 +140,5 @@ namespace CarDealerSupportSystem
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        // End Drag Form
-
     }
 }

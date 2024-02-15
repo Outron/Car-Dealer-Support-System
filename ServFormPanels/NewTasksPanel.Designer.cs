@@ -49,10 +49,11 @@ namespace CarDealerSupportSystem.SellerFormPanels
             this.idKlientaNavigationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idPracownikaNavigationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TasksGridView = new System.Windows.Forms.DataGridView();
+            this.zamowieniaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.IDzamowienia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Marka = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Model = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nazwa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zamowieniaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ClientsMenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TasksGridView)).BeginInit();
@@ -198,6 +199,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
             this.TasksGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDzamowienia,
             this.Marka,
+            this.Model,
             this.Nazwa});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
@@ -207,7 +209,6 @@ namespace CarDealerSupportSystem.SellerFormPanels
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Transparent;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.TasksGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.TasksGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TasksGridView.EnableHeadersVisualStyles = false;
             this.TasksGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
             this.TasksGridView.Location = new System.Drawing.Point(0, 72);
@@ -233,9 +234,14 @@ namespace CarDealerSupportSystem.SellerFormPanels
             this.TasksGridView.ShowEditingIcon = false;
             this.TasksGridView.Size = new System.Drawing.Size(1147, 565);
             this.TasksGridView.TabIndex = 6;
+            this.TasksGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TasksGridView_CellClick);
             this.TasksGridView.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.TasksGridView_CellMouseEnter);
             this.TasksGridView.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.TasksGridView_CellMouseLeave);
             this.TasksGridView.SelectionChanged += new System.EventHandler(this.TasksGridView_SelectionChanged_1);
+            // 
+            // zamowieniaBindingSource
+            // 
+            this.zamowieniaBindingSource.DataSource = typeof(CarDealerSupportSystem.Models.Zamowienia);
             // 
             // IDzamowienia
             // 
@@ -251,16 +257,18 @@ namespace CarDealerSupportSystem.SellerFormPanels
             this.Marka.Name = "Marka";
             this.Marka.ReadOnly = true;
             // 
+            // Model
+            // 
+            this.Model.HeaderText = "Model";
+            this.Model.MinimumWidth = 6;
+            this.Model.Name = "Model";
+            // 
             // Nazwa
             // 
             this.Nazwa.HeaderText = "Opis";
             this.Nazwa.MinimumWidth = 6;
             this.Nazwa.Name = "Nazwa";
             this.Nazwa.ReadOnly = true;
-            // 
-            // zamowieniaBindingSource
-            // 
-            this.zamowieniaBindingSource.DataSource = typeof(CarDealerSupportSystem.Models.Zamowienia);
             // 
             // NewTasksPanel
             // 
@@ -303,6 +311,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
         public System.Windows.Forms.DataGridView TasksGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDzamowienia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Marka;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Model;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nazwa;
     }
 }

@@ -168,7 +168,6 @@
             this.label3.Size = new System.Drawing.Size(133, 28);
             this.label3.TabIndex = 3;
             this.label3.Text = "Administrator";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label1
             // 

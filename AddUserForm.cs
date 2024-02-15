@@ -18,10 +18,8 @@ namespace CarDealerSupportSystem
 {
     public partial class AddUserForm : Form
     {
-        private UsersManagePanel mainForm;
-        private bool validate = false;
-        private Func<string,bool> isOnlyDigit = phone => phone.All(char.IsDigit);
-        
+        private readonly UsersManagePanel mainForm;
+        private readonly Func<string,bool> isOnlyDigit = phone => phone.All(char.IsDigit);
         private readonly string[] placeholders =
         {
             "Imię","Nazwisko","Login","Hasło","Telefon","Adres","E-mail"
@@ -30,6 +28,7 @@ namespace CarDealerSupportSystem
         {
             this.mainForm = mainForm as UsersManagePanel;
             InitializeComponent();
+            this.rolesComboBox.SelectedItem = "Sprzedawca";
         }
         private void AddUserForm_Load(object sender, EventArgs e)
         {
@@ -67,7 +66,6 @@ namespace CarDealerSupportSystem
             {
                 this.Close();
             }
-            
         }
 
         private void anyTextBox_Enter(object sender, EventArgs e)
@@ -133,22 +131,22 @@ namespace CarDealerSupportSystem
             }
             return roleCode;
         }
-        private void addUserButton_Click(object sender, EventArgs e)
+        private void AddUserButton_Click(object sender, EventArgs e)
         {
             if (ValidateChildren(ValidationConstraints.Enabled) && rolesComboBox.SelectedItem!=null)
             {
-                salon_samochodowyContext db = new salon_samochodowyContext();
+                salon_samochodowyContext db = new();
                 db.Add(new Pracownicy() {Login=usernameTextBox.Text,Haslo=passwordTextBox.Text,Imie=nameTextBox.Text,Nazwisko=surnameTextBox.Text,Adres=addressTextBox.Text,Telefon=phoneTextBox.Text,Email=emailTextBox.Text,KodRoli=roleAbr(),IdSalonu=1});
                 db.SaveChanges();
                 mainForm.UsersGridView.DataSource = null;
                 mainForm.UsersGridView.DataSource = db.Pracownicy.ToList();//insta aktualizacja grida
+                MessageBox.Show("Pomyślnie dodano użytkownika", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
         }
         private bool isEmailValid(string email)
         {
             string pattern = "^([\\w\\.\\-]+)@([\\w\\-]+)((\\.(\\w){2,3})+)$";
-            Regex regex = new Regex(pattern);
+            Regex regex = new (pattern);
             return regex.IsMatch(email);
         }
         
@@ -178,10 +176,9 @@ namespace CarDealerSupportSystem
                 errorProvider1.SetError(phoneTextBox, null);
             }
         }
-
-        private void rolesComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void rolesComboBox_Leave(object sender, EventArgs e)
         {
-
+            label1.Select();
         }
     }
 }

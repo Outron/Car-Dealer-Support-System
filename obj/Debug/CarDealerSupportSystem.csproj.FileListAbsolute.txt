@@ -539,6 +539,7 @@ C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\CarDealerSupp
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\BouncyCastle.Cryptography.dll
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\Google.Protobuf.dll
+C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\itextsharp.dll
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\K4os.Compression.LZ4.dll
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\K4os.Compression.LZ4.Streams.dll
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\K4os.Hash.xxHash.dll
@@ -579,6 +580,7 @@ C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\ZstdSharp.dll
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\BouncyCastle.Cryptography.xml
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\Google.Protobuf.pdb
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\Google.Protobuf.xml
+C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\itextsharp.xml
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\K4os.Compression.LZ4.xml
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\K4os.Compression.LZ4.Streams.xml
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\K4os.Hash.xxHash.xml
@@ -613,6 +615,7 @@ C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\System.Runtim
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.csproj.AssemblyReference.cache
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.csproj.SuggestedBindingRedirects.cache
+C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.TaskInfoForm.resources
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.ServForm.resources
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.CompletedTasksPanel.resources
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.ServMianPanel.resources
@@ -639,4 +642,3 @@ C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\obj\Debug\CarDealerSupp
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.csproj.CopyComplete
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.exe
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.pdb
-C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.TaskInfoForm.resources

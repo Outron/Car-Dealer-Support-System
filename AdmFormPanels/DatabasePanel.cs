@@ -23,26 +23,21 @@ namespace CarDealerSupportSystem.SellerFormPanels
             InitializeComponent();
         }
 
-        private void DatabasePanel_Load(object sender, EventArgs e)
+        private void CreateDumpButton_Click(object sender, EventArgs e)
         {
-            
-        }
-        
-        private void CreateDumpButton_Click(object sender, EventArgs e) 
-        {
-            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            using (SaveFileDialog saveFileDialog = new())
             {
                 saveFileDialog.Filter = "Pliki SQL (*.sql)|*.sql|Wszystkie pliki (*.*)|*.*";
                 saveFileDialog.Title = "Zapisz kopię zapasową";
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    string constring = "server=localhost;user=root;pwd=samochody;database=salon_samochodowy;";
+                    string constring = "server=localhost;user=root;pwd=samochody;database=salon2;";
                     string file = saveFileDialog.FileName;
                     using (mysqldata::MySql.Data.MySqlClient.MySqlConnection conn = new mysqldata::MySql.Data.MySqlClient.MySqlConnection(constring))
                     {
                         using (mysqldata::MySql.Data.MySqlClient.MySqlCommand cmd = new mysqldata::MySql.Data.MySqlClient.MySqlCommand())
                         {
-                            using (MySqlBackup mb = new MySqlBackup(cmd))
+                            using (MySqlBackup mb = new(cmd))
                             {
                                 cmd.Connection = conn;
                                 conn.Open();
@@ -64,20 +59,20 @@ namespace CarDealerSupportSystem.SellerFormPanels
         }
         private void RestoreButton_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            using (OpenFileDialog openFileDialog = new())
             {
                 openFileDialog.Filter = "Pliki SQL (*.sql)|*.sql|Wszystkie pliki (*.*)|*.*";
                 openFileDialog.Title = "Wybierz kopię zapasową do przywrócenia";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    string constring = "server=localhost;user=root;pwd=samochody;database=salon_samochodowy;";
+                    string constring = "server=localhost;user=root;pwd=samochody;database=salon2;";
                     string file = openFileDialog.FileName;
-                    FileInfo fileInfo = new FileInfo(file);
+                    FileInfo fileInfo = new(file);
                     using (mysqldata::MySql.Data.MySqlClient.MySqlConnection conn = new mysqldata::MySql.Data.MySqlClient.MySqlConnection(constring))
                     {
                         using (mysqldata::MySql.Data.MySqlClient.MySqlCommand cmd = new mysqldata::MySql.Data.MySqlClient.MySqlCommand())
                         {
-                            using (MySqlBackup mb = new MySqlBackup(cmd))
+                            using (MySqlBackup mb = new(cmd))
                             {
                                 cmd.Connection = conn;
                                 conn.Open();

@@ -37,7 +37,12 @@
             this.clientPhoneLabel = new System.Windows.Forms.Label();
             this.clientEmailLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.carInfoLabel = new System.Windows.Forms.Label();
+            this.markaLabel = new System.Windows.Forms.Label();
+            this.workerLabel = new System.Windows.Forms.Label();
+            this.modelLabel = new System.Windows.Forms.Label();
+            this.engineTypeLabel = new System.Windows.Forms.Label();
+            this.nadwozieLabel = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.TopLoginPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +62,6 @@
             this.acceptTaskButton.TabIndex = 5;
             this.acceptTaskButton.Text = "Przyjmij zlecenie";
             this.acceptTaskButton.UseVisualStyleBackColor = false;
-            this.acceptTaskButton.Click += new System.EventHandler(this.acceptTaskButton_Click);
             // 
             // taskNumberLabel
             // 
@@ -105,13 +109,12 @@
             this.labelel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.labelel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelel.ForeColor = System.Drawing.Color.White;
-            this.labelel.Location = new System.Drawing.Point(13, 142);
+            this.labelel.Location = new System.Drawing.Point(24, 226);
             this.labelel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelel.Name = "labelel";
             this.labelel.Size = new System.Drawing.Size(155, 31);
             this.labelel.TabIndex = 9;
             this.labelel.Text = "Dane klienta:";
-            this.labelel.Click += new System.EventHandler(this.label2_Click);
             // 
             // clientNameLabel
             // 
@@ -119,7 +122,7 @@
             this.clientNameLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.clientNameLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.clientNameLabel.ForeColor = System.Drawing.Color.White;
-            this.clientNameLabel.Location = new System.Drawing.Point(13, 184);
+            this.clientNameLabel.Location = new System.Drawing.Point(24, 268);
             this.clientNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.clientNameLabel.Name = "clientNameLabel";
             this.clientNameLabel.Size = new System.Drawing.Size(160, 31);
@@ -132,7 +135,7 @@
             this.clientPhoneLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.clientPhoneLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.clientPhoneLabel.ForeColor = System.Drawing.Color.White;
-            this.clientPhoneLabel.Location = new System.Drawing.Point(13, 235);
+            this.clientPhoneLabel.Location = new System.Drawing.Point(24, 319);
             this.clientPhoneLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.clientPhoneLabel.Name = "clientPhoneLabel";
             this.clientPhoneLabel.Size = new System.Drawing.Size(93, 31);
@@ -145,7 +148,7 @@
             this.clientEmailLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.clientEmailLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.clientEmailLabel.ForeColor = System.Drawing.Color.White;
-            this.clientEmailLabel.Location = new System.Drawing.Point(13, 284);
+            this.clientEmailLabel.Location = new System.Drawing.Point(24, 368);
             this.clientEmailLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.clientEmailLabel.Name = "clientEmailLabel";
             this.clientEmailLabel.Size = new System.Drawing.Size(73, 31);
@@ -158,25 +161,87 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(13, 342);
+            this.label1.Location = new System.Drawing.Point(24, 426);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(205, 31);
             this.label1.TabIndex = 13;
             this.label1.Text = "Dane samochodu:";
             // 
-            // carInfoLabel
+            // markaLabel
             // 
-            this.carInfoLabel.AutoSize = true;
-            this.carInfoLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.carInfoLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.carInfoLabel.ForeColor = System.Drawing.Color.White;
-            this.carInfoLabel.Location = new System.Drawing.Point(13, 388);
-            this.carInfoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.carInfoLabel.Name = "carInfoLabel";
-            this.carInfoLabel.Size = new System.Drawing.Size(73, 39);
-            this.carInfoLabel.TabIndex = 14;
-            this.carInfoLabel.Text = "Info";
+            this.markaLabel.AutoSize = true;
+            this.markaLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.markaLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.markaLabel.ForeColor = System.Drawing.Color.White;
+            this.markaLabel.Location = new System.Drawing.Point(24, 472);
+            this.markaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.markaLabel.Name = "markaLabel";
+            this.markaLabel.Size = new System.Drawing.Size(94, 31);
+            this.markaLabel.TabIndex = 14;
+            this.markaLabel.Text = "Marka: ";
+            // 
+            // workerLabel
+            // 
+            this.workerLabel.AutoSize = true;
+            this.workerLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.workerLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.workerLabel.ForeColor = System.Drawing.Color.White;
+            this.workerLabel.Location = new System.Drawing.Point(26, 143);
+            this.workerLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.workerLabel.Name = "workerLabel";
+            this.workerLabel.Size = new System.Drawing.Size(220, 31);
+            this.workerLabel.TabIndex = 15;
+            this.workerLabel.Text = "Wystawione przez: ";
+            // 
+            // modelLabel
+            // 
+            this.modelLabel.AutoSize = true;
+            this.modelLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.modelLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.modelLabel.ForeColor = System.Drawing.Color.White;
+            this.modelLabel.Location = new System.Drawing.Point(24, 516);
+            this.modelLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.modelLabel.Name = "modelLabel";
+            this.modelLabel.Size = new System.Drawing.Size(95, 31);
+            this.modelLabel.TabIndex = 16;
+            this.modelLabel.Text = "Model: ";
+            // 
+            // engineTypeLabel
+            // 
+            this.engineTypeLabel.AutoSize = true;
+            this.engineTypeLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.engineTypeLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.engineTypeLabel.ForeColor = System.Drawing.Color.White;
+            this.engineTypeLabel.Location = new System.Drawing.Point(24, 611);
+            this.engineTypeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.engineTypeLabel.Name = "engineTypeLabel";
+            this.engineTypeLabel.Size = new System.Drawing.Size(140, 31);
+            this.engineTypeLabel.TabIndex = 17;
+            this.engineTypeLabel.Text = "Typ silnika: ";
+            // 
+            // nadwozieLabel
+            // 
+            this.nadwozieLabel.AutoSize = true;
+            this.nadwozieLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.nadwozieLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.nadwozieLabel.ForeColor = System.Drawing.Color.White;
+            this.nadwozieLabel.Location = new System.Drawing.Point(24, 561);
+            this.nadwozieLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nadwozieLabel.Name = "nadwozieLabel";
+            this.nadwozieLabel.Size = new System.Drawing.Size(172, 31);
+            this.nadwozieLabel.TabIndex = 18;
+            this.nadwozieLabel.Text = "Typ nadwozia: ";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Location = new System.Drawing.Point(314, 368);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(472, 274);
+            this.textBox1.TabIndex = 19;
             // 
             // TaskInfoForm
             // 
@@ -186,7 +251,12 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.ClientSize = new System.Drawing.Size(808, 819);
             this.ControlBox = false;
-            this.Controls.Add(this.carInfoLabel);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.nadwozieLabel);
+            this.Controls.Add(this.engineTypeLabel);
+            this.Controls.Add(this.modelLabel);
+            this.Controls.Add(this.workerLabel);
+            this.Controls.Add(this.markaLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.clientEmailLabel);
             this.Controls.Add(this.clientPhoneLabel);
@@ -201,6 +271,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.TaskInfoForm_Load);
             this.TopLoginPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -217,7 +288,12 @@
         private System.Windows.Forms.Label clientPhoneLabel;
         private System.Windows.Forms.Label clientNameLabel;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label carInfoLabel;
+        private System.Windows.Forms.Label markaLabel;
+        private System.Windows.Forms.Label workerLabel;
+        private System.Windows.Forms.Label modelLabel;
+        private System.Windows.Forms.Label engineTypeLabel;
+        private System.Windows.Forms.Label nadwozieLabel;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

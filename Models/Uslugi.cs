@@ -11,18 +11,16 @@ namespace CarDealerSupportSystem.Models
     {
         public Uslugi()
         {
-            SamochodyUslugi = new HashSet<SamochodyUslugi>();
-            SamochodyZamowienia = new HashSet<SamochodyZamowienia>();
-            UslugiPakiety = new HashSet<UslugiPakiety>();
+            Mozliweuslugisamochody = new HashSet<Mozliweuslugisamochody>();
+            PakietyUslugi = new HashSet<PakietyUslugi>();
         }
 
         public int IdUslugi { get; set; }
         public string Nazwa { get; set; }
-        public double? CenaUslugi { get; set; }
-        public int? TypUslugi { get; set; }
+        public int? CenaUslugi { get; set; }
+        public string TypUslugi { get; set; }
 
-        public virtual ICollection<SamochodyUslugi> SamochodyUslugi { get; set; }
-        public virtual ICollection<SamochodyZamowienia> SamochodyZamowienia { get; set; }
-        public virtual ICollection<UslugiPakiety> UslugiPakiety { get; set; }
+        public virtual ICollection<Mozliweuslugisamochody> Mozliweuslugisamochody { get; set; }
+        public virtual ICollection<PakietyUslugi> PakietyUslugi { get; set; }
     }
 }

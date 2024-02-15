@@ -17,9 +17,8 @@ namespace CarDealerSupportSystem.SellerFormPanels
 {
     public partial class LogsPanel : Form
     {
-        private readonly salon_samochodowyContext db = new salon_samochodowyContext();
-        private Timer timer;
-        private int logCount = 0;
+        private readonly salon_samochodowyContext db = new();
+        private readonly Timer timer;
         public LogsPanel()
         {
             InitializeComponent();
@@ -69,7 +68,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
                 MessageBox.Show("Brak zawartości do zapisania.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            SaveFileDialog saveFileDialog = new();
             saveFileDialog.Filter = "Pliki tekstowe (*.txt)|*.txt|Wszystkie pliki (*.*)|*.*";
             saveFileDialog.Title = "Zapisz plik";
             saveFileDialog.FileName = "Log.txt";
@@ -78,7 +77,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
                 try
                 {
                     File.WriteAllText(saveFileDialog.FileName, logsTextBox.Text);
-                    MessageBox.Show("Zapisano plik pomyślnie.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Plik zapisano pomyślnie.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {

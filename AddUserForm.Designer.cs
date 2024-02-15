@@ -134,7 +134,7 @@
             this.addUserButton.TabIndex = 5;
             this.addUserButton.Text = "Zatwierdź";
             this.addUserButton.UseVisualStyleBackColor = false;
-            this.addUserButton.Click += new System.EventHandler(this.addUserButton_Click);
+            this.addUserButton.Click += new System.EventHandler(this.AddUserButton_Click);
             // 
             // label1
             // 
@@ -404,8 +404,8 @@
             this.rolesComboBox.Name = "rolesComboBox";
             this.rolesComboBox.Size = new System.Drawing.Size(211, 33);
             this.rolesComboBox.TabIndex = 27;
-            this.rolesComboBox.SelectedIndexChanged += new System.EventHandler(this.rolesComboBox_SelectedIndexChanged);
             this.rolesComboBox.SelectedValueChanged += new System.EventHandler(this.rolesComboBox_SelectedValueChanged);
+            this.rolesComboBox.Leave += new System.EventHandler(this.rolesComboBox_Leave);
             // 
             // errorProvider1
             // 

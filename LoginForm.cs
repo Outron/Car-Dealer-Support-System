@@ -43,9 +43,9 @@ namespace CarDealerSupportSystem
 
             var db = new salon_samochodowyContext();
             var loginData = db.Pracownicy.Join(db.Role, p => p.KodRoli, r => r.KodRoli, (p, r) => new { p, r }).Where(pr => pr.p.Login == UsernameTextBox.Text).FirstOrDefault();
-
+            int id=db.Pracownicy.Where(x=>x.Login== UsernameTextBox.Text && x.Haslo==PasswordTextBox.Text).Select(x=>x.IdPracownika).SingleOrDefault();
             // check if the login and password are correct then check role and open the correct form
-            if (loginData.p.Login != null && loginData.p.Haslo == PasswordTextBox.Text)
+            if (loginData !=null && loginData.p.Login != null && loginData.p.Haslo == PasswordTextBox.Text)
             {
              /* if (loginData.r.KodRoli == "1")
                 {
@@ -64,23 +64,23 @@ namespace CarDealerSupportSystem
                     sellerpanel.Show();
                     this.Hide();
                 }
-            /*  else if (loginData.r.KodRoli == "3")
+                //else if (loginData.r.KodRoli == "3")
+                //{
+                //    ManagerPanel managerpanel = new ManagerPanel();
+                //    managerpanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
+                //    managerpanel.RoleLabel.Text = loginData.r.Nazwa;
+                //    managerpanel.Show();
+                //    this.Hide();
+                //}
+                else if (loginData.r.KodRoli == "SRW")
                 {
-                     ManagerPanel managerpanel = new ManagerPanel();
-                     managerpanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
-                     managerpanel.RoleLabel.Text = loginData.r.Nazwa;
-                     managerpanel.Show();
-                     this.Hide();
+                    ServForm servicepanel = new(id);
+                    servicepanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
+                    servicepanel.RoleLabel.Text = loginData.r.Nazwa;
+                    servicepanel.Show();
+                    this.Hide();
                 }
-                else if (loginData.r.KodRoli == "4")
-                {
-                     ServicePanel servicepanel = new ServicePanel();
-                     servicepanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
-                     servicepanel.RoleLabel.Text = loginData.r.Nazwa;
-                     servicepanel.Show();
-                     this.Hide();
-                }
-            */
+
                 else
                 {   // role is not correct
                     MessageBox.Show("Nieprawidłowa rola");
