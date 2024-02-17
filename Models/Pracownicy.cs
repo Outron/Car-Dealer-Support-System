@@ -11,7 +11,6 @@ namespace CarDealerSupportSystem.Models
     {
         public Pracownicy()
         {
-            PracownicyUslugi = new HashSet<PracownicyUslugi>();
             Zamowienia = new HashSet<Zamowienia>();
         }
 
@@ -23,12 +22,11 @@ namespace CarDealerSupportSystem.Models
         public string Adres { get; set; }
         public string Telefon { get; set; }
         public string Email { get; set; }
-        public int IdSalonu { get; set; }
         public string KodRoli { get; set; }
+        public int? IdSalonu { get; set; }
 
         public virtual Salony IdSalonuNavigation { get; set; }
         public virtual Role KodRoliNavigation { get; set; }
-        public virtual ICollection<PracownicyUslugi> PracownicyUslugi { get; set; }
         public virtual ICollection<Zamowienia> Zamowienia { get; set; }
     }
 }

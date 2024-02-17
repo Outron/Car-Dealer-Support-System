@@ -9,22 +9,16 @@ namespace CarDealerSupportSystem.Models
 {
     public partial class Zamowienia
     {
-        public Zamowienia()
-        {
-            SamochodyZamowienia = new HashSet<SamochodyZamowienia>();
-            ZamowieniaUslugi = new HashSet<ZamowieniaUslugi>();
-        }
-
         public int IdZamowienia { get; set; }
+        public string RodzajPlatnosci { get; set; }
+        public int? CalkowityKoszt { get; set; }
+        public DateTime? Data { get; set; }
         public int IdKlienta { get; set; }
         public int IdPracownika { get; set; }
-        public string TypZakupu { get; set; }
-        public double? CalkowityKoszt { get; set; }
-        public DateTime? Data { get; set; }
+        public string TypZamowienia { get; set; }
+        public string Status { get; set; }
 
         public virtual Klienci IdKlientaNavigation { get; set; }
         public virtual Pracownicy IdPracownikaNavigation { get; set; }
-        public virtual ICollection<SamochodyZamowienia> SamochodyZamowienia { get; set; }
-        public virtual ICollection<ZamowieniaUslugi> ZamowieniaUslugi { get; set; }
     }
 }

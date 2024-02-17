@@ -48,7 +48,7 @@ namespace CarDealerSupportSystem
             // check if the login and password are correct then check role and open the correct form
             if (loginData != null && loginData.p.Login == UsernameTextBox.Text && ((loginData.p.Haslo == PasswordTextBox.Text) || (loginData.p.Haslo == null && PasswordTextBox.Text == "")))
             {
-                /* if (loginData.r.KodRoli == "1")
+                /* if (loginData.r.KodRoli == "ADM")
                    {
                        AdminPanel adminpanel = new AdminPanel();
                        adminpanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
@@ -57,7 +57,7 @@ namespace CarDealerSupportSystem
                        this.Hide();
                    }
                */
-                /* else */ if (loginData.r.KodRoli == "2")
+                /* else */ if (loginData.r.KodRoli == "SPR")
                 {
                     SellerPanel sellerpanel = new SellerPanel();
                     sellerpanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
@@ -65,7 +65,7 @@ namespace CarDealerSupportSystem
                     sellerpanel.Show();
                     this.Hide();
                 }
-                else if (loginData.r.KodRoli == "3")
+                else if (loginData.r.KodRoli == "KRW")
                 {
                     ManagerPanel managerpanel = new ManagerPanel();
                     managerpanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
@@ -73,7 +73,7 @@ namespace CarDealerSupportSystem
                     managerpanel.Show();
                     this.Hide();
                 }
-                //else if (loginData.r.KodRoli == "4")
+                //else if (loginData.r.KodRoli == "SRW")
                 //{
                 //    ServicePanel servicepanel = new ServicePanel();
                 //    servicepanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;

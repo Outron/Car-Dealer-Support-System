@@ -58,8 +58,6 @@ F:\LukaszNo\studia\BD\projekt\Car-Dealer-Support\bin\Debug\System.Numerics.Vecto
 F:\LukaszNo\studia\BD\projekt\Car-Dealer-Support\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 F:\LukaszNo\studia\BD\projekt\Car-Dealer-Support\bin\Debug\System.Threading.Tasks.Extensions.xml
 F:\LukaszNo\studia\BD\projekt\Car-Dealer-Support\obj\Debug\CarDealerSupportSystem.csproj.AssemblyReference.cache
-F:\LukaszNo\studia\BD\projekt\Car-Dealer-Support\obj\Debug\CarDealerSupportSystem.csproj.SuggestedBindingRedirects.cache
-F:\LukaszNo\studia\BD\projekt\Car-Dealer-Support\obj\Debug\CarDealerSupportSystem.exe.config
 F:\LukaszNo\studia\BD\projekt\Car-Dealer-Support\obj\Debug\CarDealerSupportSystem.LoginForm.resources
 F:\LukaszNo\studia\BD\projekt\Car-Dealer-Support\obj\Debug\CarDealerSupportSystem.SellerFormPanels.CarsPanel.resources
 F:\LukaszNo\studia\BD\projekt\Car-Dealer-Support\obj\Debug\CarDealerSupportSystem.SellerFormPanels.ClientsForm.resources
@@ -75,4 +73,6 @@ F:\LukaszNo\studia\BD\projekt\Car-Dealer-Support\obj\Debug\CarDealerSupportSyste
 F:\LukaszNo\studia\BD\projekt\Car-Dealer-Support\obj\Debug\CarDealerSupportSystem.csproj.CopyComplete
 F:\LukaszNo\studia\BD\projekt\Car-Dealer-Support\obj\Debug\CarDealerSupportSystem.exe
 F:\LukaszNo\studia\BD\projekt\Car-Dealer-Support\obj\Debug\CarDealerSupportSystem.pdb
-F:\LukaszNo\studia\BD\projekt\Car-Dealer-Support\obj\Debug\CarDealerSupportSystem.SellerFormPanels.CarsCRUD.resources
+F:\LukaszNo\studia\BD\projekt\Car-Dealer-Support\obj\Debug\CarDealerSupportSystem.ManagerFormPanels.CarsManager.resources
+F:\LukaszNo\studia\BD\projekt\Car-Dealer-Support\obj\Debug\CarDealerSupportSystem.ManagerFormPanels.AddCarsForm.resources
+F:\LukaszNo\studia\BD\projekt\Car-Dealer-Support\obj\Debug\CarDealerSupportSystem.ManagerFormPanels.paramField.resources

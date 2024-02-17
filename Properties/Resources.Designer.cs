@@ -503,6 +503,16 @@ namespace CarDealerSupportSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap car {
+            get {
+                object obj = ResourceManager.GetObject("car", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cast {
             get {
                 object obj = ResourceManager.GetObject("cast", resourceCulture);
@@ -2016,6 +2026,26 @@ namespace CarDealerSupportSystem.Properties {
         internal static System.Drawing.Bitmap plus_square {
             get {
                 object obj = ResourceManager.GetObject("plus-square", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plus2 {
+            get {
+                object obj = ResourceManager.GetObject("plus2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plus21 {
+            get {
+                object obj = ResourceManager.GetObject("plus21", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

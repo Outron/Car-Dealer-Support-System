@@ -148,7 +148,12 @@ namespace CarDealerSupportSystem.SellerFormPanels
 
         private void CarsGridView_SelectionChanged(object sender, EventArgs e)
         {
-            CarsGridView.ClearSelection();
+
+        }
+
+        private void CarsFilterPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

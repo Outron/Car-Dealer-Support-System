@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections;
 using System.Reflection.Emit;
 using Microsoft.EntityFrameworkCore.Internal;
+using System.Threading;
 
 namespace CarDealerSupportSystem.ManagerFormPanels
 {
@@ -38,20 +39,20 @@ namespace CarDealerSupportSystem.ManagerFormPanels
         private class samochody
         {
             public int idsamochodu { get; set; }
-            public string marka { get; set; }
+            public string model { get; set; }
             public int ile { get; set; }
         }
         private void Statistics_Load(object sender, EventArgs e)
         {
-              
+
             List<salony> shops = new List<salony>();
             try
             {
                 shops = db.Zamowienia
                 .Join(
                 db.Pracownicy,
-                Pracownik => Pracownik.IdPracownika,
                 Zamowienie => Zamowienie.IdPracownika,
+                Pracownik => Pracownik.IdPracownika,
                 (Zamowienie, Pracownik) => new { Zamowienie, Pracownik })
                 .Join(
                 db.Salony,
@@ -90,54 +91,24 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             int i = 1;
             shops.ForEach(shop => { shop.miejsceSalonu = i++; });
 
-            List<samochody> cars = new List<samochody>();
+                var cars = 
+                    (from sort in
+                        (from lista in
+                            (from tabela in
+                                (from zsu in db.ZamowieniaSamochodyUslugi
+                                join z in db.Zamowienia on zsu.IdZamowienia equals z.IdZamowienia
+                                join p in db.Pracownicy on z.IdPracownika equals p.IdPracownika
+                                join s in db.Salony on p.IdSalonu equals s.IdSalonu
+                                join sam in db.Samochody on zsu.IdSamochodu equals sam.IdSamochodu
+                                where s.IdSalonu == 38 && (z.TypZamowienia == "auto+uslug" || z.TypZamowienia == "zakupauta")
+                                select new { id_samochodu = sam.IdSamochodu, model = sam.Model, idZamowienia = zsu.IdZamowienia }).ToList()
+                            group tabela by new { tabela.idZamowienia, tabela.id_samochodu } into g
+                            select new { id_samochodu = g.Key, Model = g.FirstOrDefault().model }).ToList()
+                        group lista by new { lista.Model } into l
+                        select new { idsamochodu = l.Key, m = l.FirstOrDefault().Model, i = l.Count() }).ToList()
+                    orderby sort.i descending
+                    select new {model = sort.m, ile = sort.i }).ToList();
 
-            cars = db.Zamowienia
-                .Join(
-                db.Pracownicy,
-                Pracownik => Pracownik.IdPracownika,
-                Zamowienie => Zamowienie.IdPracownika,
-                (Zamowienie, Pracownik) => new { Zamowienie, Pracownik })
-                .Join(
-                db.Salony,
-                zamPracownik => zamPracownik.Pracownik.IdSalonu,
-                sal => sal.IdSalonu,
-                (zamPracownik, sal) => new
-                {
-                    zamPracownik = zamPracownik.Pracownik,
-                    zamPracId = zamPracownik.Pracownik.IdSalonu,
-                    idSalon = sal.IdSalonu,
-                    salon = sal.Miejscowosc,
-                    uli = sal.Ulica,
-                    cena = zamPracownik.Zamowienie.CalkowityKoszt,
-                    idZam = zamPracownik.Zamowienie.IdZamowienia,
-                })
-                .Join(
-                db.SamochodyZamowienia,
-                zamPracSal => zamPracSal.idZam,
-                samochodZamowienie => samochodZamowienie.IdZamowienia,
-                (zamPracSal, samochodZamowienie) => new
-                {
-                    zamPracSal,
-                    samochodZamowienie
-                })
-                .Join(
-                db.Samochody,
-                zamPracSalSamZam => zamPracSalSamZam.samochodZamowienie.IdSamochodu,
-                samochod => samochod.IdSamochodu,
-                (zamPracSalSamZam, samochod) => new
-                {
-                    zamPracSalSamZam,samochod
-                })
-                .ToList()
-                .GroupBy(y=>y.samochod.IdSamochodu)
-                .Select(y => new samochody
-                {
-                    ile = y.Count(),
-                    marka=y.FirstOrDefault().samochod.Marka,
-                })
-                .OrderByDescending(y=>y.ile)
-                .ToList();
 
             this.BestShopGridView.DataSource = shops;
             this.BestCarGridView.DataSource = cars;

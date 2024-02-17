@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.Extensions.Options;
 
 // Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
 // If you have enabled NRTs for your project, then un-comment the following line:
@@ -11,7 +10,6 @@ namespace CarDealerSupportSystem.Models
 {
     public partial class salon_samochodowyContext : DbContext
     {
-
         public salon_samochodowyContext()
         {
         }
@@ -22,27 +20,25 @@ namespace CarDealerSupportSystem.Models
         }
 
         public virtual DbSet<Klienci> Klienci { get; set; }
+        public virtual DbSet<Logi> Logi { get; set; }
+        public virtual DbSet<Mozliweuslugisamochody> Mozliweuslugisamochody { get; set; }
         public virtual DbSet<PakietyPromocyjne> PakietyPromocyjne { get; set; }
         public virtual DbSet<PakietySamochody> PakietySamochody { get; set; }
+        public virtual DbSet<PakietyUslugi> PakietyUslugi { get; set; }
         public virtual DbSet<Pracownicy> Pracownicy { get; set; }
-        public virtual DbSet<PracownicyUslugi> PracownicyUslugi { get; set; }
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<Salony> Salony { get; set; }
         public virtual DbSet<Samochody> Samochody { get; set; }
-        public virtual DbSet<SamochodyUslugi> SamochodyUslugi { get; set; }
-        public virtual DbSet<SamochodyZamowienia> SamochodyZamowienia { get; set; }
         public virtual DbSet<Uslugi> Uslugi { get; set; }
-        public virtual DbSet<UslugiPakiety> UslugiPakiety { get; set; }
         public virtual DbSet<Zamowienia> Zamowienia { get; set; }
-        public virtual DbSet<ZamowieniaUslugi> ZamowieniaUslugi { get; set; }
+        public virtual DbSet<ZamowieniaSamochodyUslugi> ZamowieniaSamochodyUslugi { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseMySql("server=localhost;database=cdss;uid=root;pwd=", x => x.ServerVersion("10.4.28-mariadb"));
+                optionsBuilder.UseMySql("server=localhost;database=cdss2;uid=root", x => x.ServerVersion("10.4.32-mariadb"));
             }
         }
 
@@ -61,33 +57,91 @@ namespace CarDealerSupportSystem.Models
 
                 entity.Property(e => e.Adres)
                     .HasColumnName("adres")
-                    .HasColumnType("varchar(15)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_polish_ci");
+                    .HasColumnType("varchar(20)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
 
                 entity.Property(e => e.Email)
                     .HasColumnName("email")
                     .HasColumnType("varchar(15)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_polish_ci");
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
 
                 entity.Property(e => e.Imie)
                     .HasColumnName("imie")
                     .HasColumnType("varchar(15)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_polish_ci");
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
 
                 entity.Property(e => e.Nazwisko)
                     .HasColumnName("nazwisko")
                     .HasColumnType("varchar(15)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_polish_ci");
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
 
                 entity.Property(e => e.Telefon)
                     .HasColumnName("telefon")
+                    .HasColumnType("varchar(9)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
+            });
+
+            modelBuilder.Entity<Logi>(entity =>
+            {
+                entity.HasKey(e => e.IdLogu)
+                    .HasName("PRIMARY");
+
+                entity.ToTable("logi");
+
+                entity.Property(e => e.IdLogu)
+                    .HasColumnName("id_logu")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.DataGodzina)
+                    .HasColumnName("Data_godzina")
+                    .HasColumnType("date");
+
+                entity.Property(e => e.Typ)
                     .HasColumnType("varchar(15)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_polish_ci");
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
+
+                entity.Property(e => e.Wiadomosc)
+                    .HasColumnType("varchar(50)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
+            });
+
+            modelBuilder.Entity<Mozliweuslugisamochody>(entity =>
+            {
+                entity.HasKey(e => new { e.IdSamochodu, e.IdUslugi })
+                    .HasName("PRIMARY")
+                    .HasAnnotation("MySql:IndexPrefixLength", new[] { 0, 0 });
+
+                entity.ToTable("mozliweuslugisamochody");
+
+                entity.HasIndex(e => e.IdUslugi)
+                    .HasName("FK_ASS_16");
+
+                entity.Property(e => e.IdSamochodu)
+                    .HasColumnName("id_samochodu")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.IdUslugi)
+                    .HasColumnName("id_uslugi")
+                    .HasColumnType("int(11)");
+
+                entity.HasOne(d => d.IdSamochoduNavigation)
+                    .WithMany(p => p.Mozliweuslugisamochody)
+                    .HasForeignKey(d => d.IdSamochodu)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_ASS_15");
+
+                entity.HasOne(d => d.IdUslugiNavigation)
+                    .WithMany(p => p.Mozliweuslugisamochody)
+                    .HasForeignKey(d => d.IdUslugi)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_ASS_16");
             });
 
             modelBuilder.Entity<PakietyPromocyjne>(entity =>
@@ -112,27 +166,27 @@ namespace CarDealerSupportSystem.Models
                 entity.Property(e => e.NazwaPakietu)
                     .HasColumnName("nazwa_pakietu")
                     .HasColumnType("varchar(15)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_polish_ci");
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
             });
 
             modelBuilder.Entity<PakietySamochody>(entity =>
             {
-                entity.HasKey(e => new { e.IdPakietu, e.IdSamochodu })
+                entity.HasKey(e => new { e.IdSamochodu, e.IdPakietu })
                     .HasName("PRIMARY")
                     .HasAnnotation("MySql:IndexPrefixLength", new[] { 0, 0 });
 
                 entity.ToTable("pakiety_samochody");
 
-                entity.HasIndex(e => e.IdSamochodu)
-                    .HasName("FK_ASS_4");
-
-                entity.Property(e => e.IdPakietu)
-                    .HasColumnName("id_pakietu")
-                    .HasColumnType("int(11)");
+                entity.HasIndex(e => e.IdPakietu)
+                    .HasName("FK_ASS_2");
 
                 entity.Property(e => e.IdSamochodu)
                     .HasColumnName("id_samochodu")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.IdPakietu)
+                    .HasColumnName("id_pakietu")
                     .HasColumnType("int(11)");
 
                 entity.Property(e => e.WysokoscPromocji)
@@ -143,13 +197,49 @@ namespace CarDealerSupportSystem.Models
                     .WithMany(p => p.PakietySamochody)
                     .HasForeignKey(d => d.IdPakietu)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ASS_3");
+                    .HasConstraintName("FK_ASS_2");
 
                 entity.HasOne(d => d.IdSamochoduNavigation)
                     .WithMany(p => p.PakietySamochody)
                     .HasForeignKey(d => d.IdSamochodu)
                     .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_ASS_1");
+            });
+
+            modelBuilder.Entity<PakietyUslugi>(entity =>
+            {
+                entity.HasKey(e => new { e.IdUslugi, e.IdPakietu })
+                    .HasName("PRIMARY")
+                    .HasAnnotation("MySql:IndexPrefixLength", new[] { 0, 0 });
+
+                entity.ToTable("pakiety_uslugi");
+
+                entity.HasIndex(e => e.IdPakietu)
+                    .HasName("FK_ASS_4");
+
+                entity.Property(e => e.IdUslugi)
+                    .HasColumnName("id_uslugi")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.IdPakietu)
+                    .HasColumnName("id_pakietu")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.WysokoscPromocji)
+                    .HasColumnName("wysokosc_promocji")
+                    .HasColumnType("int(11)");
+
+                entity.HasOne(d => d.IdPakietuNavigation)
+                    .WithMany(p => p.PakietyUslugi)
+                    .HasForeignKey(d => d.IdPakietu)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_ASS_4");
+
+                entity.HasOne(d => d.IdUslugiNavigation)
+                    .WithMany(p => p.PakietyUslugi)
+                    .HasForeignKey(d => d.IdUslugi)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_ASS_3");
             });
 
             modelBuilder.Entity<Pracownicy>(entity =>
@@ -171,21 +261,21 @@ namespace CarDealerSupportSystem.Models
 
                 entity.Property(e => e.Adres)
                     .HasColumnName("adres")
-                    .HasColumnType("varchar(15)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_polish_ci");
+                    .HasColumnType("varchar(20)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
 
                 entity.Property(e => e.Email)
                     .HasColumnName("email")
                     .HasColumnType("varchar(15)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_polish_ci");
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
 
                 entity.Property(e => e.Haslo)
                     .HasColumnName("haslo")
                     .HasColumnType("varchar(15)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_polish_ci");
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
 
                 entity.Property(e => e.IdSalonu)
                     .HasColumnName("id_salonu")
@@ -194,38 +284,37 @@ namespace CarDealerSupportSystem.Models
                 entity.Property(e => e.Imie)
                     .HasColumnName("imie")
                     .HasColumnType("varchar(15)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_polish_ci");
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
 
                 entity.Property(e => e.KodRoli)
                     .IsRequired()
                     .HasColumnName("kod_roli")
-                    .HasColumnType("varchar(15)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_polish_ci");
+                    .HasColumnType("varchar(10)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
 
                 entity.Property(e => e.Login)
                     .HasColumnName("login")
                     .HasColumnType("varchar(15)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_polish_ci");
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
 
                 entity.Property(e => e.Nazwisko)
                     .HasColumnName("nazwisko")
                     .HasColumnType("varchar(15)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_polish_ci");
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
 
                 entity.Property(e => e.Telefon)
                     .HasColumnName("telefon")
-                    .HasColumnType("varchar(15)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_polish_ci");
+                    .HasColumnType("varchar(9)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
 
                 entity.HasOne(d => d.IdSalonuNavigation)
                     .WithMany(p => p.Pracownicy)
                     .HasForeignKey(d => d.IdSalonu)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("Pracownicy_Salony_FK");
 
                 entity.HasOne(d => d.KodRoliNavigation)
@@ -233,38 +322,6 @@ namespace CarDealerSupportSystem.Models
                     .HasForeignKey(d => d.KodRoli)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("Pracownicy_Role_FK");
-            });
-
-            modelBuilder.Entity<PracownicyUslugi>(entity =>
-            {
-                entity.HasKey(e => new { e.IdPracownika, e.IdUslugi })
-                    .HasName("PRIMARY")
-                    .HasAnnotation("MySql:IndexPrefixLength", new[] { 0, 0 });
-
-                entity.ToTable("pracownicy_uslugi");
-
-                entity.HasIndex(e => e.IdUslugi)
-                    .HasName("FK_ASS_8");
-
-                entity.Property(e => e.IdPracownika)
-                    .HasColumnName("id_pracownika")
-                    .HasColumnType("int(11)");
-
-                entity.Property(e => e.IdUslugi)
-                    .HasColumnName("id_uslugi")
-                    .HasColumnType("int(11)");
-
-                entity.HasOne(d => d.IdPracownikaNavigation)
-                    .WithMany(p => p.PracownicyUslugi)
-                    .HasForeignKey(d => d.IdPracownika)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ASS_7");
-
-                entity.HasOne(d => d.IdUslugiNavigation)
-                    .WithMany(p => p.PracownicyUslugi)
-                    .HasForeignKey(d => d.IdUslugi)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ASS_8");
             });
 
             modelBuilder.Entity<Role>(entity =>
@@ -276,15 +333,15 @@ namespace CarDealerSupportSystem.Models
 
                 entity.Property(e => e.KodRoli)
                     .HasColumnName("kod_roli")
-                    .HasColumnType("varchar(15)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_polish_ci");
+                    .HasColumnType("varchar(10)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
 
                 entity.Property(e => e.Nazwa)
                     .HasColumnName("nazwa")
                     .HasColumnType("varchar(15)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_polish_ci");
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
             });
 
             modelBuilder.Entity<Salony>(entity =>
@@ -300,21 +357,21 @@ namespace CarDealerSupportSystem.Models
 
                 entity.Property(e => e.KodPocztowy)
                     .HasColumnName("kod_pocztowy")
-                    .HasColumnType("varchar(15)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_polish_ci");
+                    .HasColumnType("varchar(6)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
 
                 entity.Property(e => e.Miejscowosc)
                     .HasColumnName("miejscowosc")
                     .HasColumnType("varchar(15)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_polish_ci");
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
 
                 entity.Property(e => e.Ulica)
                     .HasColumnName("ulica")
                     .HasColumnType("varchar(15)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_polish_ci");
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
             });
 
             modelBuilder.Entity<Samochody>(entity =>
@@ -331,7 +388,15 @@ namespace CarDealerSupportSystem.Models
                     .HasColumnName("id_samochodu")
                     .HasColumnType("int(11)");
 
-                entity.Property(e => e.CenaPodstawowa).HasColumnName("Cena_podstawowa");
+                entity.Property(e => e.CenaPodstawowa)
+                    .HasColumnName("Cena_podstawowa")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.Dostepnosc)
+                    .HasColumnName("dostepnosc")
+                    .HasColumnType("varchar(12)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
 
                 entity.Property(e => e.IdSalonu)
                     .HasColumnName("id_salonu")
@@ -343,8 +408,8 @@ namespace CarDealerSupportSystem.Models
 
                 entity.Property(e => e.Kolor)
                     .HasColumnType("varchar(15)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_polish_ci");
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
 
                 entity.Property(e => e.LiczbaDrzwi)
                     .HasColumnName("liczba_drzwi")
@@ -352,8 +417,8 @@ namespace CarDealerSupportSystem.Models
 
                 entity.Property(e => e.Marka)
                     .HasColumnType("varchar(15)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_polish_ci");
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
 
                 entity.Property(e => e.MocSilnika)
                     .HasColumnName("Moc_silnika")
@@ -361,10 +426,14 @@ namespace CarDealerSupportSystem.Models
 
                 entity.Property(e => e.Model)
                     .HasColumnType("varchar(15)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_polish_ci");
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
 
                 entity.Property(e => e.Rabat).HasColumnType("int(11)");
+
+                entity.Property(e => e.RokProdukcji)
+                    .HasColumnName("rok_produkcji")
+                    .HasColumnType("int(11)");
 
                 entity.Property(e => e.SrednieSpalanie)
                     .HasColumnName("Srednie_spalanie")
@@ -373,95 +442,34 @@ namespace CarDealerSupportSystem.Models
                 entity.Property(e => e.TypNadwozia)
                     .HasColumnName("Typ_nadwozia")
                     .HasColumnType("varchar(15)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_polish_ci");
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
 
                 entity.Property(e => e.TypSilnika)
                     .HasColumnName("Typ_silnika")
                     .HasColumnType("varchar(15)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_polish_ci");
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
 
                 entity.Property(e => e.Vin)
                     .HasColumnName("VIN")
-                    .HasColumnType("varchar(15)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_polish_ci");
+                    .HasColumnType("varchar(17)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
 
                 entity.Property(e => e.Wyposazenie)
                     .HasColumnType("varchar(15)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_polish_ci");
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
+
+                entity.Property(e => e.Zdjecie)
+                    .HasColumnName("zdjecie")
+                    .HasColumnType("blob");
 
                 entity.HasOne(d => d.IdSalonuNavigation)
                     .WithMany(p => p.Samochody)
                     .HasForeignKey(d => d.IdSalonu)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("Samochody_Salony_FK");
-            });
-
-            modelBuilder.Entity<SamochodyUslugi>(entity =>
-            {
-                entity.HasKey(e => new { e.IdSamochodu, e.IdUslugi })
-                    .HasName("PRIMARY")
-                    .HasAnnotation("MySql:IndexPrefixLength", new[] { 0, 0 });
-
-                entity.ToTable("samochody_uslugi");
-
-                entity.HasIndex(e => e.IdUslugi)
-                    .HasName("FK_ASS_12");
-
-                entity.Property(e => e.IdSamochodu)
-                    .HasColumnName("id_samochodu")
-                    .HasColumnType("int(11)");
-
-                entity.Property(e => e.IdUslugi)
-                    .HasColumnName("id_uslugi")
-                    .HasColumnType("int(11)");
-
-                entity.HasOne(d => d.IdSamochoduNavigation)
-                    .WithMany(p => p.SamochodyUslugi)
-                    .HasForeignKey(d => d.IdSamochodu)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ASS_11");
-
-                entity.HasOne(d => d.IdUslugiNavigation)
-                    .WithMany(p => p.SamochodyUslugi)
-                    .HasForeignKey(d => d.IdUslugi)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ASS_12");
-            });
-
-            modelBuilder.Entity<SamochodyZamowienia>(entity =>
-            {
-                entity.HasKey(e => new { e.IdSamochodu, e.IdZamowienia })
-                    .HasName("PRIMARY")
-                    .HasAnnotation("MySql:IndexPrefixLength", new[] { 0, 0 });
-
-                entity.ToTable("samochody_zamowienia");
-
-                entity.HasIndex(e => e.IdZamowienia)
-                    .HasName("FK_ASS_2");
-
-                entity.Property(e => e.IdSamochodu)
-                    .HasColumnName("id_samochodu")
-                    .HasColumnType("int(11)");
-
-                entity.Property(e => e.IdZamowienia)
-                    .HasColumnName("id_zamowienia")
-                    .HasColumnType("int(11)");
-
-                entity.HasOne(d => d.IdSamochoduNavigation)
-                    .WithMany(p => p.SamochodyZamowienia)
-                    .HasForeignKey(d => d.IdSamochodu)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ASS_1");
-
-                entity.HasOne(d => d.IdZamowieniaNavigation)
-                    .WithMany(p => p.SamochodyZamowienia)
-                    .HasForeignKey(d => d.IdZamowienia)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ASS_2");
             });
 
             modelBuilder.Entity<Uslugi>(entity =>
@@ -475,53 +483,21 @@ namespace CarDealerSupportSystem.Models
                     .HasColumnName("id_uslugi")
                     .HasColumnType("int(11)");
 
-                entity.Property(e => e.CenaUslugi).HasColumnName("cena_uslugi");
+                entity.Property(e => e.CenaUslugi)
+                    .HasColumnName("cena_uslugi")
+                    .HasColumnType("int(11)");
 
                 entity.Property(e => e.Nazwa)
                     .HasColumnName("nazwa")
                     .HasColumnType("varchar(15)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_polish_ci");
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
 
                 entity.Property(e => e.TypUslugi)
                     .HasColumnName("typ_uslugi")
-                    .HasColumnType("int(11)");
-            });
-
-            modelBuilder.Entity<UslugiPakiety>(entity =>
-            {
-                entity.HasKey(e => new { e.IdUslugi, e.IdPakietu })
-                    .HasName("PRIMARY")
-                    .HasAnnotation("MySql:IndexPrefixLength", new[] { 0, 0 });
-
-                entity.ToTable("uslugi_pakiety");
-
-                entity.HasIndex(e => e.IdPakietu)
-                    .HasName("FK_ASS_13");
-
-                entity.Property(e => e.IdUslugi)
-                    .HasColumnName("id_uslugi")
-                    .HasColumnType("int(11)");
-
-                entity.Property(e => e.IdPakietu)
-                    .HasColumnName("id_pakietu")
-                    .HasColumnType("int(11)");
-
-                entity.Property(e => e.WysokoscPromocji)
-                    .HasColumnName("wysokosc_promocji")
-                    .HasColumnType("int(11)");
-
-                entity.HasOne(d => d.IdPakietuNavigation)
-                    .WithMany(p => p.UslugiPakiety)
-                    .HasForeignKey(d => d.IdPakietu)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ASS_13");
-
-                entity.HasOne(d => d.IdUslugiNavigation)
-                    .WithMany(p => p.UslugiPakiety)
-                    .HasForeignKey(d => d.IdUslugi)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ASS_10");
+                    .HasColumnType("varchar(15)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
             });
 
             modelBuilder.Entity<Zamowienia>(entity =>
@@ -541,7 +517,9 @@ namespace CarDealerSupportSystem.Models
                     .HasColumnName("id_zamowienia")
                     .HasColumnType("int(11)");
 
-                entity.Property(e => e.CalkowityKoszt).HasColumnName("calkowity_koszt");
+                entity.Property(e => e.CalkowityKoszt)
+                    .HasColumnName("calkowity_koszt")
+                    .HasColumnType("int(11)");
 
                 entity.Property(e => e.Data)
                     .HasColumnName("DATA")
@@ -555,11 +533,23 @@ namespace CarDealerSupportSystem.Models
                     .HasColumnName("id_pracownika")
                     .HasColumnType("int(11)");
 
-                entity.Property(e => e.TypZakupu)
-                    .HasColumnName("typ_zakupu")
-                    .HasColumnType("varchar(15)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_polish_ci");
+                entity.Property(e => e.RodzajPlatnosci)
+                    .HasColumnName("rodzaj_platnosci")
+                    .HasColumnType("varchar(10)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
+
+                entity.Property(e => e.Status)
+                    .HasColumnName("status")
+                    .HasColumnType("varchar(10)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
+
+                entity.Property(e => e.TypZamowienia)
+                    .HasColumnName("typ_zamowienia")
+                    .HasColumnType("varchar(10)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
 
                 entity.HasOne(d => d.IdKlientaNavigation)
                     .WithMany(p => p.Zamowienia)
@@ -574,36 +564,69 @@ namespace CarDealerSupportSystem.Models
                     .HasConstraintName("Zamowienia_Pracownicy_FK");
             });
 
-            modelBuilder.Entity<ZamowieniaUslugi>(entity =>
+            modelBuilder.Entity<ZamowieniaSamochodyUslugi>(entity =>
             {
-                entity.HasKey(e => new { e.IdZamowienia, e.IdUslugi })
-                    .HasName("PRIMARY")
-                    .HasAnnotation("MySql:IndexPrefixLength", new[] { 0, 0 });
+                entity.HasNoKey();
 
-                entity.ToTable("zamowienia_uslugi");
+                entity.ToTable("zamowienia_samochody_uslugi");
+
+                entity.HasIndex(e => e.IdPracownika)
+                    .HasName("zam_sam_usl_Prac_FK");
+
+                entity.HasIndex(e => e.IdSamochodu)
+                    .HasName("zam_sam_usl_Sam_FK");
 
                 entity.HasIndex(e => e.IdUslugi)
-                    .HasName("FK_ASS_6");
+                    .HasName("zam_sam_usl_Usl_FK");
 
-                entity.Property(e => e.IdZamowienia)
-                    .HasColumnName("id_zamowienia")
+                entity.HasIndex(e => e.IdZamowienia)
+                    .HasName("zam_sam_usl_Zam_FK");
+
+                entity.Property(e => e.IdPracownika)
+                    .HasColumnName("id_pracownika")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.IdSamochodu)
+                    .HasColumnName("id_samochodu")
                     .HasColumnType("int(11)");
 
                 entity.Property(e => e.IdUslugi)
                     .HasColumnName("id_uslugi")
                     .HasColumnType("int(11)");
 
+                entity.Property(e => e.IdZamowienia)
+                    .HasColumnName("id_zamowienia")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.Status)
+                    .HasColumnName("status")
+                    .HasColumnType("varchar(10)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_general_ci");
+
+                entity.HasOne(d => d.IdPracownikaNavigation)
+                    .WithMany()
+                    .HasForeignKey(d => d.IdPracownika)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("zam_sam_usl_Prac_FK");
+
+                entity.HasOne(d => d.IdSamochoduNavigation)
+                    .WithMany()
+                    .HasForeignKey(d => d.IdSamochodu)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("zam_sam_usl_Sam_FK");
+
                 entity.HasOne(d => d.IdUslugiNavigation)
-                    .WithMany(p => p.ZamowieniaUslugi)
+                    .WithMany()
                     .HasForeignKey(d => d.IdUslugi)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ASS_6");
+                    .HasConstraintName("zam_sam_usl_Usl_FK");
 
                 entity.HasOne(d => d.IdZamowieniaNavigation)
-                    .WithMany(p => p.ZamowieniaUslugi)
+                    .WithMany()
                     .HasForeignKey(d => d.IdZamowienia)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ASS_5");
+                    .HasConstraintName("zam_sam_usl_Zam_FK");
             });
 
             OnModelCreatingPartial(modelBuilder);

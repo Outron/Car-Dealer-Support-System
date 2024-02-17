@@ -225,7 +225,7 @@
             this.EditSpisSamochodowButton.FlatAppearance.BorderSize = 0;
             this.EditSpisSamochodowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditSpisSamochodowButton.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-            this.EditSpisSamochodowButton.ForeColor = System.Drawing.Color.Turquoise;
+            this.EditSpisSamochodowButton.ForeColor = System.Drawing.Color.White;
             this.EditSpisSamochodowButton.Location = new System.Drawing.Point(564, 12);
             this.EditSpisSamochodowButton.Name = "EditSpisSamochodowButton";
             this.EditSpisSamochodowButton.Size = new System.Drawing.Size(229, 37);
@@ -240,8 +240,8 @@
             this.SpisSamochodowButton.FlatAppearance.BorderSize = 0;
             this.SpisSamochodowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SpisSamochodowButton.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-            this.SpisSamochodowButton.ForeColor = System.Drawing.Color.Turquoise;
-            this.SpisSamochodowButton.Location = new System.Drawing.Point(286, 12);
+            this.SpisSamochodowButton.ForeColor = System.Drawing.Color.White;
+            this.SpisSamochodowButton.Location = new System.Drawing.Point(251, 12);
             this.SpisSamochodowButton.Name = "SpisSamochodowButton";
             this.SpisSamochodowButton.Size = new System.Drawing.Size(201, 37);
             this.SpisSamochodowButton.TabIndex = 2;

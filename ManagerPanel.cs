@@ -191,7 +191,7 @@ namespace CarDealerSupportSystem
         private void EditSpisSamochodowButton_Click(object sender, EventArgs e)
         {
             ActivateButton2(sender);
-            OpenChildForm2(new CarsCRUD());
+            OpenChildForm2(new CarsManager());
         }
 
 
