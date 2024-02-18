@@ -17,27 +17,26 @@ using System.Runtime.InteropServices;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using static System.Net.Mime.MediaTypeNames;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace CarDealerSupportSystem.ManagerFormPanels
 {
 
-    public partial class AddCarsForm : Form
+    public partial class EditCarsForm : Form
     {
         private CarsManager mainform;
         private salon_samochodowyContext db = new salon_samochodowyContext();
         private string currTextBox;
-        private readonly Color gridDefaultCellStyle;
+        private int carId;
         private int errorCount;
-        public AddCarsForm(Form f)
+
+        public EditCarsForm(Form f, int id)
         {
             InitializeComponent();
-            gridDefaultCellStyle = AddCarsGridView.DefaultCellStyle.BackColor;
             currTextBox = "";
-            errorCount = 0;
             mainform = f as CarsManager;
+            carId = id;
         }
-        public AddCarsForm()
+        public EditCarsForm()
         {
             InitializeComponent();
         }
@@ -75,47 +74,41 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             public string liczbamiejsc { get; set; }
             public string vin { get; set; }
             public string rabat { get; set; }
-            public int idsalonu { get; set; }
+            public string idsalonu { get; set; }
             public string dostepnosc { get; set; }
             public string rokprodukcji { get; set; }
-            public samochody(DataGridViewRow cell)
+            public samochody(Samochody cell)
             {
                 //int i = 0;
-                zdjecie= ObjectToByteArray(cell.Cells[0].Value);
-                model = cell.Cells[1].Value.ToString();
-                marka = cell.Cells[2].Value.ToString();
-                typnadwozia = cell.Cells[3].Value.ToString();
-                cenapodstawowa = cell.Cells[4].Value.ToString();
-                vin= cell.Cells[5].Value.ToString();
-                kolor= cell.Cells[6].Value.ToString();
-                mocsilnika= cell.Cells[7].Value.ToString();
-                wyposazenie= cell.Cells[8].Value.ToString();
-                sredniespalanie = cell.Cells[9].Value.ToString();
-                typsilnika= cell.Cells[10].Value.ToString();
-                liczbadrzwi= cell.Cells[11].Value.ToString();
-                liczbamiejsc= cell.Cells[12].Value.ToString();
-                //rabat= cell.Cells[13].Value.ToString();
-                rokprodukcji= cell.Cells[14].Value.ToString();
-                dostepnosc = "dostepny";
-               
+                zdjecie= cell.Zdjecie;
+                model = cell.Model;
+                marka = cell.Marka;
+                typnadwozia = cell.TypNadwozia;
+                cenapodstawowa = cell.CenaPodstawowa.ToString();
+                vin= cell.Vin;
+                kolor= cell.Kolor;
+                mocsilnika = cell.MocSilnika.ToString();
+                wyposazenie= cell.Wyposazenie;
+                sredniespalanie = cell.SrednieSpalanie.ToString();
+                typsilnika= cell.TypSilnika;
+                liczbadrzwi= cell.LiczbaDrzwi.ToString();
+                liczbamiejsc= cell.IloscMiejsc.ToString();
+                rabat= null;
+                rokprodukcji= cell.RokProdukcji.ToString();
             }
         }
-        private void AddCarsForm_Load(object sender, EventArgs e)
+        private void EditCarsForm_Load(object sender, EventArgs e)
         {
-            checkedListBoxUlugi.DataSource = (from uslugi in db.Uslugi select uslugi.Nazwa).ToList();
-            this.TextBcena.Text = " Cena";
-            this.TextBkolor.Text = " Kolor";
-            this.TextBliczbaDrz.Text = " Liczba drzwi";
-            this.TextBliczbaM.Text = " Liczba miejsc";
-            this.TextBmarka.Text = " Marka";
-            this.TextBmocSil.Text = " Moc Silnika";
-            this.TextBmodel.Text = " Model";
-            this.TextBrokProd.Text = " Rok produkcji";
-            this.TextBsredSpala.Text = " Średnie spalanie";
-            this.TextBtypNadw.Text = " Typ nadwozia";
-            this.TextBtypSil.Text = " Typ silnika";
-            this.TextBvin.Text = " VIN";
-            this.TextBwyposaz.Text = " Wyposażenie";
+            var car = (from samochod in db.Samochody
+                       where samochod.IdSamochodu == carId
+                       select samochod).ToList().FirstOrDefault();
+            if (car == null)
+            {
+                MessageBox.Show("Wybrany samochod juz nie istnieje");
+                return;
+            }
+            samochody sam = new samochody(car);
+            TextBoxFill(sam);
             AddCarsBigLabel1.Select();
         }
 
@@ -124,10 +117,7 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.Close();
         }
 
-        private void AddCarsGridView_SelectionChanged(object sender, EventArgs e)
-        {
-            AddCarsGridView.ClearSelection();
-        }
+
         private void TextBoxFill(samochody s)
         {
             TextBcena.Text = s.cenapodstawowa.ToString();
@@ -137,35 +127,18 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             TextBmarka.Text= s.marka;
             TextBmocSil.Text= s.mocsilnika.ToString();
             TextBmodel.Text= s.model;
+            //TextBrabat.Text= s.rabat.ToString();
             TextBrokProd.Text= s.rokprodukcji.ToString();
             TextBsredSpala.Text= s.sredniespalanie.ToString();
             TextBtypNadw.Text= s.typnadwozia;
             TextBtypSil.Text= s.typsilnika;
             TextBvin.Text= s.vin;
             TextBwyposaz.Text= s.wyposazenie;
-            picBoxImg.BackgroundImage = ByteArrayToBitmap(s.zdjecie);
+            if(s.zdjecie!=null)
+                picBoxImg.BackgroundImage = ByteArrayToBitmap(s.zdjecie);
         }
-        private void AddCarsGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == 15)
-                AddCarsGridView.Rows.RemoveAt(e.RowIndex);
-            //else
-            //{
-            //    var row = AddCarsGridView.Rows[e.RowIndex];
-            //    samochody sam = new samochody(AddCarsGridView.Rows[e.RowIndex]);
-            //    TextBoxFill(sam);
-            //}
-        }
-        private void AddCarsGridView_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex != 15)
-            {
 
-                samochody sam = new samochody(AddCarsGridView.Rows[e.RowIndex]);
-                TextBoxFill(sam);
-            }
-        }
-       
+
         // Drag Form
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -204,7 +177,7 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             }
         }
 
-        private void AddCarsForm_Click(object sender, EventArgs e)
+        private void EditCarsForm_Click(object sender, EventArgs e)
         {
             if(currTextBox != "" && !(sender is TextBox))
             {
@@ -215,28 +188,15 @@ namespace CarDealerSupportSystem.ManagerFormPanels
                 
             }
         }
-       
-        private void AddCarButton_Click(object sender, EventArgs e)
-        {
-            if (ValidateChildren(ValidationConstraints.Enabled) && errorCount==0)
-            {
-                this.AddCarsGridView.Rows.Add(ImageToByteArray(this.picBoxImg.BackgroundImage), this.TextBmodel.Text, this.TextBmarka.Text,
-                this.TextBtypNadw.Text, this.TextBcena.Text, this.TextBvin.Text, this.TextBkolor.Text, this.TextBmocSil.Text, 
-                this.TextBwyposaz.Text, this.TextBsredSpala.Text, this.TextBtypSil.Text, this.TextBliczbaDrz.Text, this.TextBliczbaM.Text, null, this.TextBrokProd.Text);
-            }
-            else
-            {
-                errorCount = 0;
-            }
-        }
+
         //Validating metody wszystkie
-        
+
         private void TextBString_Validating(object sender, CancelEventArgs e)
         {
             var textB = sender as TextBox;
             if (string.IsNullOrEmpty(textB.Text) || textB.Text == textB.Tag.ToString())
             {
-                errorProvider1.SetError(textB, "Nie wpisano poprawnej"+textB.Tag);
+                errorProvider1.SetError(textB, "Nie wpisano poprawnej" + textB.Tag);
                 errorCount++;
             }
             else
@@ -261,57 +221,68 @@ namespace CarDealerSupportSystem.ManagerFormPanels
                 errorProvider1.SetError(textB, null);
             }
         }
-        private void AddCarsGridView_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            if(e.RowIndex >= 0)
-            {
-                AddCarsGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Green;
-            }
-        }
-
-        private void AddCarsGridView_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)    
-            {
-                AddCarsGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = gridDefaultCellStyle;
-            }
-        }
-
         private void OkCarButton_Click(object sender, EventArgs e)
         {
-            var query = (from salon in db.Salony
-                                 join pracownik in db.Pracownicy on salon.IdSalonu equals pracownik.IdSalonu
-                                 where pracownik.Login == mainform.login
-                                 select salon.IdSalonu).ToList().FirstOrDefault();
-            foreach (DataGridViewRow row in AddCarsGridView.Rows)
+            if (ValidateChildren(ValidationConstraints.Enabled) && errorCount == 0)
             {
-                samochody car = new samochody(row);          
-
-                db.Add(new Samochody() { IdSalonu = query, CenaPodstawowa = int.Parse(car.cenapodstawowa), Zdjecie = car.zdjecie, Model = car.model, Marka = car.marka,
-                    Kolor = car.kolor, TypNadwozia = car.typnadwozia, MocSilnika = int.Parse(car.mocsilnika), Wyposazenie = car.wyposazenie,
-                    SrednieSpalanie = int.Parse(car.sredniespalanie), TypSilnika = car.typsilnika, LiczbaDrzwi = int.Parse(car.liczbadrzwi),
-                    IloscMiejsc = int.Parse(car.liczbamiejsc), Vin = car.vin, Rabat = null, Dostepnosc = car.dostepnosc,
-                    RokProdukcji = int.Parse(car.rokprodukcji) });
-                db.SaveChanges();
-            }
-            mainform.CarsGridView.DataSource = null; // updatowanie listy w panelu z edycja listy samochodow
-
-            var cars = db.Samochody.Where(sam => sam.Dostepnosc == "tak" || sam.Dostepnosc == "dostepny").Where(d => d.IdSalonu == query).ToList();
-            foreach (Samochody car in cars)
-            {
-                if (car.Zdjecie == null)
+                var carUpdate = db.Samochody.FirstOrDefault(car => car.IdSamochodu == carId);
+                if(carUpdate != null)
                 {
-                    car.Zdjecie = ImageToByteArray(Properties.Resources.car);
+                    carUpdate.IdSamochodu = carId;
+                    carUpdate.Zdjecie = ImageToByteArray(this.picBoxImg.BackgroundImage);
+                    carUpdate.Model = TextBmodel.Text;
+                    carUpdate.Marka = TextBmarka.Text;
+                    carUpdate.Kolor = TextBkolor.Text;
+                    carUpdate.TypNadwozia = TextBtypNadw.Text;
+                    carUpdate.MocSilnika = int.Parse(TextBmocSil.Text);
+
+                    if(TextBwyposaz.Text == "Wyposażenie ")
+                        carUpdate.Wyposazenie = "";
+                    else
+                        carUpdate.Wyposazenie = TextBwyposaz.Text;
+
+                    carUpdate.SrednieSpalanie = int.Parse(TextBsredSpala.Text);
+                    carUpdate.TypSilnika = TextBtypSil.Text;
+                    carUpdate.CenaPodstawowa = int.Parse(TextBcena.Text);
+                    carUpdate.LiczbaDrzwi = int.Parse(TextBliczbaDrz.Text);
+                    carUpdate.IloscMiejsc = int.Parse(TextBliczbaM.Text);
+                    carUpdate.Vin= TextBvin.Text;
+                    //carUpdate.Rabat = int.Parse(TextBrabat.Text);
+                    carUpdate.RokProdukcji = int.Parse(TextBrokProd.Text);
                 }
+                db.Update(carUpdate);
+                db.SaveChanges();          
+
+                mainform.CarsGridView.DataSource = null; // updatowanie samochodu w tabeli samochody
+                var query = (from salon in db.Salony
+                             join pracownik in db.Pracownicy
+                             on salon.IdSalonu equals pracownik.IdSalonu
+                             where pracownik.Login == mainform.login
+                             select salon.IdSalonu).ToList().FirstOrDefault();
+
+                var cars = db.Samochody.Where(sam => sam.Dostepnosc == "tak" || sam.Dostepnosc == "dostepny").Where(d => d.IdSalonu == query).ToList();
+                foreach (Samochody car in cars)
+                {
+                    if (car.Zdjecie == null)
+                    {
+                        car.Zdjecie = ImageToByteArray(Properties.Resources.car);
+                    }
+                }
+                mainform.CarsGridView.DataSource = cars;
+                mainform.CarsGridView.Refresh();
+                mainform.CarsGridView.Update();
+                this.Close();
             }
-            mainform.CarsGridView.DataSource = cars;
-            mainform.CarsGridView.Refresh();
-            mainform.CarsGridView.Update();
-            this.Close();
+            else
+            {
+                errorCount = 0;
+            }
         }
         
         private void carImgButton_Click(object sender, EventArgs e)
         {
+
+
             openFileDialog1.Filter = "Png files|*.png|JPEG files|*.jpg;*.jpeg;*.jpe;*.jfif|All files|*.*";
             openFileDialog1.AddExtension = true;
 
@@ -322,6 +293,35 @@ namespace CarDealerSupportSystem.ManagerFormPanels
 
                 this.picBoxImg.BackgroundImage = img;
             }
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var carRemove = db.Samochody.FirstOrDefault(samochod => samochod.IdSamochodu == carId);
+            if (carRemove != null)
+            {
+                db.Samochody.Remove(carRemove);
+            }
+            db.SaveChanges();
+
+            mainform.CarsGridView.DataSource = null; // usuwanie samochodu
+            var query = (from salon in db.Salony
+                         join pracownik in db.Pracownicy
+                         on salon.IdSalonu equals pracownik.IdSalonu
+                         where pracownik.Login == mainform.login
+                         select salon.IdSalonu).ToList().FirstOrDefault();
+
+            var cars = db.Samochody.Where(sam => sam.Dostepnosc == "tak" || sam.Dostepnosc == "dostepny").Where(d => d.IdSalonu == query).ToList();
+            foreach (Samochody car in cars)
+            {
+                if (car.Zdjecie == null)
+                {
+                    car.Zdjecie = ImageToByteArray(Properties.Resources.car);
+                }
+            }
+            mainform.CarsGridView.DataSource = cars;
+
+            mainform.CarsGridView.Update();
+            this.Close();
         }
     }
 }

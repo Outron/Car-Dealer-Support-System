@@ -31,23 +31,19 @@ namespace CarDealerSupportSystem.ManagerFormPanels
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.StatisticsRightPanel = new System.Windows.Forms.Panel();
             this.BestCarGridView = new System.Windows.Forms.DataGridView();
             this.StatisticsLeftPanel = new System.Windows.Forms.Panel();
             this.BestShopGridView = new System.Windows.Forms.DataGridView();
-            this.MiejsceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.miejscowoscDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ulicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salonyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -131,6 +127,10 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.pracownicyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.IleColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ModelColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MiejsceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.miejscowoscDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ulicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mainPanel.SuspendLayout();
             this.StatisticsRightPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BestCarGridView)).BeginInit();
@@ -159,7 +159,7 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             // StatisticsRightPanel
             // 
             this.StatisticsRightPanel.Controls.Add(this.BestCarGridView);
-            this.StatisticsRightPanel.Location = new System.Drawing.Point(439, 101);
+            this.StatisticsRightPanel.Location = new System.Drawing.Point(497, 101);
             this.StatisticsRightPanel.Name = "StatisticsRightPanel";
             this.StatisticsRightPanel.Size = new System.Drawing.Size(294, 298);
             this.StatisticsRightPanel.TabIndex = 8;
@@ -176,26 +176,26 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.BestCarGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.BestCarGridView.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.BestCarGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.BestCarGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.BestCarGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.BestCarGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.BestCarGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IleColumn,
             this.ModelColumn});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.BestCarGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.BestCarGridView.DefaultCellStyle = dataGridViewCellStyle18;
             this.BestCarGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BestCarGridView.EnableHeadersVisualStyles = false;
             this.BestCarGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
@@ -204,17 +204,17 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.BestCarGridView.Name = "BestCarGridView";
             this.BestCarGridView.ReadOnly = true;
             this.BestCarGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Transparent;
-            this.BestCarGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Transparent;
+            this.BestCarGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.BestCarGridView.RowHeadersVisible = false;
             this.BestCarGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
-            this.BestCarGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle20.Padding = new System.Windows.Forms.Padding(5);
+            this.BestCarGridView.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.BestCarGridView.RowTemplate.Height = 36;
             this.BestCarGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.BestCarGridView.ShowCellToolTips = false;
@@ -226,9 +226,9 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             // StatisticsLeftPanel
             // 
             this.StatisticsLeftPanel.Controls.Add(this.BestShopGridView);
-            this.StatisticsLeftPanel.Location = new System.Drawing.Point(73, 101);
+            this.StatisticsLeftPanel.Location = new System.Drawing.Point(70, 101);
             this.StatisticsLeftPanel.Name = "StatisticsLeftPanel";
-            this.StatisticsLeftPanel.Size = new System.Drawing.Size(294, 298);
+            this.StatisticsLeftPanel.Size = new System.Drawing.Size(400, 298);
             this.StatisticsLeftPanel.TabIndex = 6;
             // 
             // BestShopGridView
@@ -244,14 +244,14 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.BestShopGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.BestShopGridView.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.BestShopGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.BestShopGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle21.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.BestShopGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.BestShopGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.BestShopGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MiejsceColumn,
@@ -259,14 +259,14 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.ulicaDataGridViewTextBoxColumn,
             this.cena});
             this.BestShopGridView.DataSource = this.salonyBindingSource;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.BestShopGridView.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.BestShopGridView.DefaultCellStyle = dataGridViewCellStyle22;
             this.BestShopGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BestShopGridView.EnableHeadersVisualStyles = false;
             this.BestShopGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
@@ -275,52 +275,25 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.BestShopGridView.Name = "BestShopGridView";
             this.BestShopGridView.ReadOnly = true;
             this.BestShopGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Transparent;
-            this.BestShopGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.Transparent;
+            this.BestShopGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
             this.BestShopGridView.RowHeadersVisible = false;
             this.BestShopGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(5);
-            this.BestShopGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle24.Padding = new System.Windows.Forms.Padding(5);
+            this.BestShopGridView.RowsDefaultCellStyle = dataGridViewCellStyle24;
             this.BestShopGridView.RowTemplate.Height = 36;
             this.BestShopGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.BestShopGridView.ShowCellToolTips = false;
             this.BestShopGridView.ShowEditingIcon = false;
-            this.BestShopGridView.Size = new System.Drawing.Size(294, 298);
+            this.BestShopGridView.Size = new System.Drawing.Size(400, 298);
             this.BestShopGridView.TabIndex = 2;
+            this.BestShopGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BestShopGridView_CellContentClick);
             this.BestShopGridView.SelectionChanged += new System.EventHandler(this.BestShopGridView_SelectionChanged);
-            // 
-            // MiejsceColumn
-            // 
-            this.MiejsceColumn.DataPropertyName = "miejsceSalonu";
-            this.MiejsceColumn.HeaderText = "Miejsce";
-            this.MiejsceColumn.Name = "MiejsceColumn";
-            this.MiejsceColumn.ReadOnly = true;
-            // 
-            // miejscowoscDataGridViewTextBoxColumn
-            // 
-            this.miejscowoscDataGridViewTextBoxColumn.DataPropertyName = "Miejscowosc";
-            this.miejscowoscDataGridViewTextBoxColumn.HeaderText = "Miejscowosc";
-            this.miejscowoscDataGridViewTextBoxColumn.Name = "miejscowoscDataGridViewTextBoxColumn";
-            this.miejscowoscDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ulicaDataGridViewTextBoxColumn
-            // 
-            this.ulicaDataGridViewTextBoxColumn.DataPropertyName = "Ulica";
-            this.ulicaDataGridViewTextBoxColumn.HeaderText = "Ulica";
-            this.ulicaDataGridViewTextBoxColumn.Name = "ulicaDataGridViewTextBoxColumn";
-            this.ulicaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cena
-            // 
-            this.cena.DataPropertyName = "Cena";
-            this.cena.HeaderText = "Cena";
-            this.cena.Name = "cena";
-            this.cena.ReadOnly = true;
             // 
             // salonyBindingSource
             // 
@@ -343,12 +316,13 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(244)))));
-            this.button1.Location = new System.Drawing.Point(176, 66);
+            this.button1.Location = new System.Drawing.Point(222, 66);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 29);
             this.button1.TabIndex = 4;
             this.button1.Text = "Salony";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // bt1UpperBar
             // 
@@ -356,7 +330,7 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.bt1UpperBar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt1UpperBar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.bt1UpperBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(244)))));
-            this.bt1UpperBar.Location = new System.Drawing.Point(540, 66);
+            this.bt1UpperBar.Location = new System.Drawing.Point(600, 66);
             this.bt1UpperBar.Name = "bt1UpperBar";
             this.bt1UpperBar.Size = new System.Drawing.Size(97, 29);
             this.bt1UpperBar.TabIndex = 3;
@@ -846,17 +820,54 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             // 
             // IleColumn
             // 
+            this.IleColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.IleColumn.DataPropertyName = "ile";
             this.IleColumn.HeaderText = "Ile";
             this.IleColumn.Name = "IleColumn";
             this.IleColumn.ReadOnly = true;
+            this.IleColumn.Width = 55;
             // 
             // ModelColumn
             // 
+            this.ModelColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ModelColumn.DataPropertyName = "model";
             this.ModelColumn.HeaderText = "Model";
             this.ModelColumn.Name = "ModelColumn";
             this.ModelColumn.ReadOnly = true;
+            // 
+            // MiejsceColumn
+            // 
+            this.MiejsceColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.MiejsceColumn.DataPropertyName = "miejsceSalonu";
+            this.MiejsceColumn.HeaderText = "Miejsce";
+            this.MiejsceColumn.Name = "MiejsceColumn";
+            this.MiejsceColumn.ReadOnly = true;
+            this.MiejsceColumn.Width = 85;
+            // 
+            // miejscowoscDataGridViewTextBoxColumn
+            // 
+            this.miejscowoscDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.miejscowoscDataGridViewTextBoxColumn.DataPropertyName = "Miejscowosc";
+            this.miejscowoscDataGridViewTextBoxColumn.HeaderText = "Miejscowosc";
+            this.miejscowoscDataGridViewTextBoxColumn.Name = "miejscowoscDataGridViewTextBoxColumn";
+            this.miejscowoscDataGridViewTextBoxColumn.ReadOnly = true;
+            this.miejscowoscDataGridViewTextBoxColumn.Width = 121;
+            // 
+            // ulicaDataGridViewTextBoxColumn
+            // 
+            this.ulicaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ulicaDataGridViewTextBoxColumn.DataPropertyName = "Ulica";
+            this.ulicaDataGridViewTextBoxColumn.HeaderText = "Ulica";
+            this.ulicaDataGridViewTextBoxColumn.Name = "ulicaDataGridViewTextBoxColumn";
+            this.ulicaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cena
+            // 
+            this.cena.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cena.DataPropertyName = "Cena";
+            this.cena.HeaderText = "Sprzedarz (PLN)";
+            this.cena.Name = "cena";
+            this.cena.ReadOnly = true;
             // 
             // Statistics
             // 
@@ -950,10 +961,6 @@ namespace CarDealerSupportSystem.ManagerFormPanels
         private DataGridViewTextBoxColumn pakietySamochodyDataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn samochodyUslugiDataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn samochodyZamowieniaDataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn MiejsceColumn;
-        private DataGridViewTextBoxColumn miejscowoscDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn ulicaDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn cena;
         private DataGridViewTextBoxColumn idSamochoduDataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn markaDataGridViewTextBoxColumn3;
@@ -976,5 +983,9 @@ namespace CarDealerSupportSystem.ManagerFormPanels
         private DataGridView BestCarGridView;
         private DataGridViewTextBoxColumn IleColumn;
         private DataGridViewTextBoxColumn ModelColumn;
+        private DataGridViewTextBoxColumn MiejsceColumn;
+        private DataGridViewTextBoxColumn miejscowoscDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn ulicaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn cena;
     }
 }

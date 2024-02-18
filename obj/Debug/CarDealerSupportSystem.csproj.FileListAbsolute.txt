@@ -76,3 +76,4 @@ F:\LukaszNo\studia\BD\projekt\Car-Dealer-Support\obj\Debug\CarDealerSupportSyste
 F:\LukaszNo\studia\BD\projekt\Car-Dealer-Support\obj\Debug\CarDealerSupportSystem.ManagerFormPanels.CarsManager.resources
 F:\LukaszNo\studia\BD\projekt\Car-Dealer-Support\obj\Debug\CarDealerSupportSystem.ManagerFormPanels.AddCarsForm.resources
 F:\LukaszNo\studia\BD\projekt\Car-Dealer-Support\obj\Debug\CarDealerSupportSystem.ManagerFormPanels.paramField.resources
+F:\LukaszNo\studia\BD\projekt\Car-Dealer-Support\obj\Debug\CarDealerSupportSystem.ManagerFormPanels.EditCarsForm.resources

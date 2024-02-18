@@ -3,7 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,22 +17,46 @@ namespace CarDealerSupportSystem.SellerFormPanels
     {
 
         private readonly salon_samochodowyContext db = new salon_samochodowyContext();
-
-        public CarsPanel()
+        private readonly Color gridDefaultCellStyle;
+        public string login;
+        public CarsPanel(string l)
         {
+            login = l;
             InitializeComponent();
+            gridDefaultCellStyle = CarsGridView.DefaultCellStyle.BackColor;
         }
-
+        public byte[] ImageToByteArray(System.Drawing.Image imageIn)
+        {
+            using (var ms = new MemoryStream())
+            {
+                imageIn.Save(ms, imageIn.RawFormat);
+                return ms.ToArray();
+            }
+        }
         private void CarsPanel_Load_1(object sender, EventArgs e)
         {
-            var cars = db.Samochody.ToList();
+        var query = (from salon in db.Salony
+                        join pracownik in db.Pracownicy
+                        on salon.IdSalonu equals pracownik.IdSalonu
+                        where pracownik.Login == login
+                        select salon.IdSalonu).ToList().FirstOrDefault();
+
+            var cars = db.Samochody.Where(sam=>sam.Dostepnosc == "tak" || sam.Dostepnosc == "dostepny").Where(d=>d.IdSalonu == query).ToList();
+            foreach (Samochody car in cars)
+            {
+                if (car.Zdjecie == null)
+                {
+                    car.Zdjecie = ImageToByteArray(Properties.Resources.car);
+                }
+            }
             CarsGridView.DataSource = cars;
-            BrandComboBox.DataSource = db.Samochody.Select(c => c.Marka).Distinct().ToList();
-            ModelComboBox.DataSource = db.Samochody.Select(c => c.Model).Distinct().ToList();
-            EngineComboBox.DataSource = db.Samochody.Select(c => c.TypSilnika).Distinct().ToList();
-            BodyComboBox.DataSource = db.Samochody.Select(c => c.TypNadwozia).Distinct().ToList();
-            ColorComboBox.DataSource = db.Samochody.Select(c => c.Kolor).Distinct().ToList();
-            DoorsComboBox.DataSource = db.Samochody.Select(c => c.LiczbaDrzwi).Distinct().ToList();
+            BrandComboBox.DataSource = cars.Select(c => c.Marka).Distinct().ToList();
+            ModelComboBox.DataSource = cars.Select(c => c.Model).Distinct().ToList();
+            EngineComboBox.DataSource = cars.Select(c => c.TypSilnika).Distinct().ToList();
+            BodyComboBox.DataSource = cars.Select(c => c.TypNadwozia).Distinct().ToList();
+            ColorComboBox.DataSource = cars.Select(c => c.Kolor).Distinct().ToList();
+            DoorsComboBox.DataSource = cars.Select(c => c.LiczbaDrzwi).Distinct().ToList();
+            
         }
 
       
@@ -146,14 +172,25 @@ namespace CarDealerSupportSystem.SellerFormPanels
             }
         }
 
-        private void CarsGridView_SelectionChanged(object sender, EventArgs e)
+        private void CarsGridView_SelectionChanged_1(object sender, EventArgs e)
         {
-
+            CarsGridView.ClearSelection();
         }
 
-        private void CarsFilterPanel_Paint(object sender, PaintEventArgs e)
+        private void CarsGridView_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= 0)
+            {
+                CarsGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Green;
+            }
+        }
 
+        private void CarsGridView_CellMouseLeave_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                CarsGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = gridDefaultCellStyle;
+            }
         }
     }
 }

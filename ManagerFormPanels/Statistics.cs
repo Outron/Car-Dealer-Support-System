@@ -128,5 +128,15 @@ namespace CarDealerSupportSystem.ManagerFormPanels
         {
             BestCarGridView.ClearSelection();
         }
+
+        private void BestShopGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace CarDealerSupportSystem.ManagerFormPanels
 {
-    partial class AddCarsForm
+    partial class EditCarsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,10 +31,6 @@ namespace CarDealerSupportSystem.ManagerFormPanels
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.idSamochoduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.markaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -132,7 +128,6 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.TextBtypNadw = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel25 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.TextBtypSil = new System.Windows.Forms.TextBox();
@@ -166,34 +161,14 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.TextBliczbaDrz = new System.Windows.Forms.TextBox();
             this.panel24 = new System.Windows.Forms.Panel();
             this.AddCarsBigLabel1 = new System.Windows.Forms.Label();
-            this.AddCarsGridPanel = new System.Windows.Forms.Panel();
-            this.AddCarsGridView = new System.Windows.Forms.DataGridView();
-            this.ZdjecieColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ModelColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MarkaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TypNadColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CenaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VinColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KolorColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MocSilColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WyposazenieColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SrednieSpalColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TypSilColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LiczDrzwColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LiczMiejColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RabatColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RokProdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DelColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.TopLoginPanel = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.OkCarButton = new System.Windows.Forms.Button();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.AddCarButton = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.checkedListBoxUlugi = new System.Windows.Forms.CheckedListBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.carParamLeftPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxImg)).BeginInit();
             this.panel17.SuspendLayout();
@@ -206,7 +181,6 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             ((System.ComponentModel.ISupportInitialize)(this.modelPicBox)).BeginInit();
             this.panel27.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel25.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel26.SuspendLayout();
@@ -223,8 +197,6 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            this.AddCarsGridPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AddCarsGridView)).BeginInit();
             this.TopLoginPanel.SuspendLayout();
             this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -707,7 +679,6 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.carParamLeftPanel.Controls.Add(this.panel8);
             this.carParamLeftPanel.Controls.Add(this.panel10);
             this.carParamLeftPanel.Controls.Add(this.panel27);
-            this.carParamLeftPanel.Controls.Add(this.panel25);
             this.carParamLeftPanel.Controls.Add(this.panel2);
             this.carParamLeftPanel.Controls.Add(this.panel26);
             this.carParamLeftPanel.Controls.Add(this.panel5);
@@ -718,9 +689,9 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.carParamLeftPanel.Controls.Add(this.panel11);
             this.carParamLeftPanel.Location = new System.Drawing.Point(0, 96);
             this.carParamLeftPanel.Name = "carParamLeftPanel";
-            this.carParamLeftPanel.Size = new System.Drawing.Size(980, 236);
+            this.carParamLeftPanel.Size = new System.Drawing.Size(983, 246);
             this.carParamLeftPanel.TabIndex = 69;
-            this.carParamLeftPanel.Click += new System.EventHandler(this.AddCarsForm_Click);
+            this.carParamLeftPanel.Click += new System.EventHandler(this.EditCarsForm_Click);
             // 
             // picBoxImg
             // 
@@ -737,7 +708,7 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.panel17.Controls.Add(this.pictureBox14);
             this.panel17.Controls.Add(this.TextBwyposaz);
             this.panel17.Controls.Add(this.panel18);
-            this.panel17.Location = new System.Drawing.Point(784, 12);
+            this.panel17.Location = new System.Drawing.Point(784, 67);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(178, 47);
             this.panel17.TabIndex = 13;
@@ -766,6 +737,7 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.TextBwyposaz.Tag = " Wyposażenie";
             this.TextBwyposaz.Enter += new System.EventHandler(this.TextBsredSpala_Enter);
             this.TextBwyposaz.Leave += new System.EventHandler(this.TextBsredSpala_Leave);
+            this.TextBwyposaz.Validating += new System.ComponentModel.CancelEventHandler(this.TextBString_Validating);
             // 
             // panel18
             // 
@@ -968,15 +940,6 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(150, 1);
             this.panel3.TabIndex = 33;
-            // 
-            // panel25
-            // 
-            this.panel25.Controls.Add(this.button2);
-            this.panel25.Controls.Add(this.checkedListBoxUlugi);
-            this.panel25.Location = new System.Drawing.Point(784, 67);
-            this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(178, 154);
-            this.panel25.TabIndex = 14;
             // 
             // panel2
             // 
@@ -1335,208 +1298,11 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.AddCarsBigLabel1.AutoSize = true;
             this.AddCarsBigLabel1.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold);
             this.AddCarsBigLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(244)))));
-            this.AddCarsBigLabel1.Location = new System.Drawing.Point(75, 40);
+            this.AddCarsBigLabel1.Location = new System.Drawing.Point(87, 40);
             this.AddCarsBigLabel1.Name = "AddCarsBigLabel1";
-            this.AddCarsBigLabel1.Size = new System.Drawing.Size(315, 47);
+            this.AddCarsBigLabel1.Size = new System.Drawing.Size(303, 47);
             this.AddCarsBigLabel1.TabIndex = 18;
-            this.AddCarsBigLabel1.Text = "Dodaj samochody";
-            // 
-            // AddCarsGridPanel
-            // 
-            this.AddCarsGridPanel.Controls.Add(this.AddCarsGridView);
-            this.AddCarsGridPanel.Location = new System.Drawing.Point(15, 379);
-            this.AddCarsGridPanel.Name = "AddCarsGridPanel";
-            this.AddCarsGridPanel.Size = new System.Drawing.Size(957, 245);
-            this.AddCarsGridPanel.TabIndex = 6;
-            // 
-            // AddCarsGridView
-            // 
-            this.AddCarsGridView.AllowUserToAddRows = false;
-            this.AddCarsGridView.AllowUserToDeleteRows = false;
-            this.AddCarsGridView.AllowUserToResizeColumns = false;
-            this.AddCarsGridView.AllowUserToResizeRows = false;
-            this.AddCarsGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.AddCarsGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.AddCarsGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.AddCarsGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.AddCarsGridView.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.AddCarsGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.AddCarsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.AddCarsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.AddCarsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ZdjecieColumn,
-            this.ModelColumn,
-            this.MarkaColumn,
-            this.TypNadColumn,
-            this.CenaColumn,
-            this.VinColumn,
-            this.KolorColumn,
-            this.MocSilColumn,
-            this.WyposazenieColumn,
-            this.SrednieSpalColumn,
-            this.TypSilColumn,
-            this.LiczDrzwColumn,
-            this.LiczMiejColumn,
-            this.RabatColumn,
-            this.RokProdColumn,
-            this.DelColumn});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AddCarsGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.AddCarsGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddCarsGridView.EnableHeadersVisualStyles = false;
-            this.AddCarsGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.AddCarsGridView.Location = new System.Drawing.Point(0, 0);
-            this.AddCarsGridView.MultiSelect = false;
-            this.AddCarsGridView.Name = "AddCarsGridView";
-            this.AddCarsGridView.ReadOnly = true;
-            this.AddCarsGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Transparent;
-            this.AddCarsGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.AddCarsGridView.RowHeadersVisible = false;
-            this.AddCarsGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
-            this.AddCarsGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.AddCarsGridView.RowTemplate.Height = 36;
-            this.AddCarsGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.AddCarsGridView.ShowCellToolTips = false;
-            this.AddCarsGridView.ShowEditingIcon = false;
-            this.AddCarsGridView.Size = new System.Drawing.Size(957, 245);
-            this.AddCarsGridView.TabIndex = 20;
-            this.AddCarsGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AddCarsGridView_CellClick);
-            this.AddCarsGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AddCarsGridView_CellContentClick);
-            this.AddCarsGridView.SelectionChanged += new System.EventHandler(this.AddCarsGridView_SelectionChanged);
-            // 
-            // ZdjecieColumn
-            // 
-            this.ZdjecieColumn.HeaderText = "Zdjecie";
-            this.ZdjecieColumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.ZdjecieColumn.Name = "ZdjecieColumn";
-            this.ZdjecieColumn.ReadOnly = true;
-            this.ZdjecieColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ZdjecieColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // ModelColumn
-            // 
-            this.ModelColumn.HeaderText = "Model";
-            this.ModelColumn.Name = "ModelColumn";
-            this.ModelColumn.ReadOnly = true;
-            // 
-            // MarkaColumn
-            // 
-            this.MarkaColumn.HeaderText = "Marka";
-            this.MarkaColumn.Name = "MarkaColumn";
-            this.MarkaColumn.ReadOnly = true;
-            // 
-            // TypNadColumn
-            // 
-            this.TypNadColumn.DataPropertyName = "IdSalonu";
-            this.TypNadColumn.HeaderText = "Typ nadwozia";
-            this.TypNadColumn.Name = "TypNadColumn";
-            this.TypNadColumn.ReadOnly = true;
-            // 
-            // CenaColumn
-            // 
-            this.CenaColumn.DataPropertyName = "IdSalonu";
-            this.CenaColumn.HeaderText = "Cena";
-            this.CenaColumn.Name = "CenaColumn";
-            this.CenaColumn.ReadOnly = true;
-            // 
-            // VinColumn
-            // 
-            this.VinColumn.DataPropertyName = "IdSalonu";
-            this.VinColumn.HeaderText = "VIN";
-            this.VinColumn.Name = "VinColumn";
-            this.VinColumn.ReadOnly = true;
-            // 
-            // KolorColumn
-            // 
-            this.KolorColumn.HeaderText = "Kolor";
-            this.KolorColumn.Name = "KolorColumn";
-            this.KolorColumn.ReadOnly = true;
-            this.KolorColumn.Visible = false;
-            // 
-            // MocSilColumn
-            // 
-            this.MocSilColumn.HeaderText = "Moc silnika";
-            this.MocSilColumn.Name = "MocSilColumn";
-            this.MocSilColumn.ReadOnly = true;
-            this.MocSilColumn.Visible = false;
-            // 
-            // WyposazenieColumn
-            // 
-            this.WyposazenieColumn.HeaderText = "Wyposazenie";
-            this.WyposazenieColumn.Name = "WyposazenieColumn";
-            this.WyposazenieColumn.ReadOnly = true;
-            this.WyposazenieColumn.Visible = false;
-            // 
-            // SrednieSpalColumn
-            // 
-            this.SrednieSpalColumn.HeaderText = "Srednie spalanie";
-            this.SrednieSpalColumn.Name = "SrednieSpalColumn";
-            this.SrednieSpalColumn.ReadOnly = true;
-            this.SrednieSpalColumn.Visible = false;
-            // 
-            // TypSilColumn
-            // 
-            this.TypSilColumn.HeaderText = "Typ silnika";
-            this.TypSilColumn.Name = "TypSilColumn";
-            this.TypSilColumn.ReadOnly = true;
-            this.TypSilColumn.Visible = false;
-            // 
-            // LiczDrzwColumn
-            // 
-            this.LiczDrzwColumn.HeaderText = "Liczba drzwi";
-            this.LiczDrzwColumn.Name = "LiczDrzwColumn";
-            this.LiczDrzwColumn.ReadOnly = true;
-            this.LiczDrzwColumn.Visible = false;
-            // 
-            // LiczMiejColumn
-            // 
-            this.LiczMiejColumn.HeaderText = "Liczba miejsc";
-            this.LiczMiejColumn.Name = "LiczMiejColumn";
-            this.LiczMiejColumn.ReadOnly = true;
-            this.LiczMiejColumn.Visible = false;
-            // 
-            // RabatColumn
-            // 
-            this.RabatColumn.HeaderText = "Rabat";
-            this.RabatColumn.Name = "RabatColumn";
-            this.RabatColumn.ReadOnly = true;
-            this.RabatColumn.Visible = false;
-            // 
-            // RokProdColumn
-            // 
-            this.RokProdColumn.HeaderText = "Rok produkcji";
-            this.RokProdColumn.Name = "RokProdColumn";
-            this.RokProdColumn.ReadOnly = true;
-            this.RokProdColumn.Visible = false;
-            // 
-            // DelColumn
-            // 
-            this.DelColumn.HeaderText = "";
-            this.DelColumn.Image = global::CarDealerSupportSystem.Properties.Resources.trash;
-            this.DelColumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.DelColumn.Name = "DelColumn";
-            this.DelColumn.ReadOnly = true;
-            this.DelColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.AddCarsBigLabel1.Text = "Edytuj samochód";
             // 
             // TopLoginPanel
             // 
@@ -1545,7 +1311,7 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.TopLoginPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopLoginPanel.Location = new System.Drawing.Point(0, 0);
             this.TopLoginPanel.Name = "TopLoginPanel";
-            this.TopLoginPanel.Size = new System.Drawing.Size(981, 37);
+            this.TopLoginPanel.Size = new System.Drawing.Size(983, 37);
             this.TopLoginPanel.TabIndex = 21;
             this.TopLoginPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TopLoginPanel_MouseDown);
             // 
@@ -1572,45 +1338,45 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.OkCarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OkCarButton.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.OkCarButton.ForeColor = System.Drawing.Color.White;
-            this.OkCarButton.Location = new System.Drawing.Point(864, 630);
+            this.OkCarButton.Location = new System.Drawing.Point(437, 365);
             this.OkCarButton.Name = "OkCarButton";
-            this.OkCarButton.Size = new System.Drawing.Size(88, 30);
+            this.OkCarButton.Size = new System.Drawing.Size(109, 30);
             this.OkCarButton.TabIndex = 17;
-            this.OkCarButton.Text = "DODAJ";
+            this.OkCarButton.Text = "POTWIERDZ";
             this.OkCarButton.UseVisualStyleBackColor = false;
             this.OkCarButton.Click += new System.EventHandler(this.OkCarButton_Click);
             // 
             // mainPanel
             // 
             this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.mainPanel.Controls.Add(this.button2);
             this.mainPanel.Controls.Add(this.OkCarButton);
-            this.mainPanel.Controls.Add(this.AddCarButton);
             this.mainPanel.Controls.Add(this.TopLoginPanel);
-            this.mainPanel.Controls.Add(this.AddCarsGridPanel);
             this.mainPanel.Controls.Add(this.AddCarsBigLabel1);
             this.mainPanel.Controls.Add(this.carParamLeftPanel);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(0, 0);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(981, 665);
+            this.mainPanel.Size = new System.Drawing.Size(983, 407);
             this.mainPanel.TabIndex = 19;
             // 
-            // AddCarButton
+            // button2
             // 
-            this.AddCarButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.AddCarButton.BackgroundImage = global::CarDealerSupportSystem.Properties.Resources.plus2;
-            this.AddCarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.AddCarButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.AddCarButton.FlatAppearance.BorderSize = 0;
-            this.AddCarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddCarButton.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.AddCarButton.ForeColor = System.Drawing.Color.White;
-            this.AddCarButton.Location = new System.Drawing.Point(416, 340);
-            this.AddCarButton.Name = "AddCarButton";
-            this.AddCarButton.Size = new System.Drawing.Size(168, 30);
-            this.AddCarButton.TabIndex = 16;
-            this.AddCarButton.UseVisualStyleBackColor = false;
-            this.AddCarButton.Click += new System.EventHandler(this.AddCarButton_Click);
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.button2.BackgroundImage = global::CarDealerSupportSystem.Properties.Resources.trash_22;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(891, 49);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(33, 33);
+            this.button2.TabIndex = 70;
+            this.button2.Tag = "Zdjecie samochodu";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // openFileDialog1
             // 
@@ -1628,55 +1394,20 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             // 
             // errorProvider1
             // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
             this.errorProvider1.ContainerControl = this;
             // 
-            // checkedListBoxUlugi
+            // EditCarsForm
             // 
-            this.checkedListBoxUlugi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.checkedListBoxUlugi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.checkedListBoxUlugi.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkedListBoxUlugi.ForeColor = System.Drawing.Color.Gray;
-            this.checkedListBoxUlugi.IntegralHeight = false;
-            this.checkedListBoxUlugi.Items.AddRange(new object[] {
-            "tak",
-            "tak",
-            "tak",
-            "tak"});
-            this.checkedListBoxUlugi.Location = new System.Drawing.Point(0, 37);
-            this.checkedListBoxUlugi.Name = "checkedListBoxUlugi";
-            this.checkedListBoxUlugi.Size = new System.Drawing.Size(178, 117);
-            this.checkedListBoxUlugi.TabIndex = 70;
-            this.checkedListBoxUlugi.Visible = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.button2.BackgroundImage = global::CarDealerSupportSystem.Properties.Resources.box;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(75, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(32, 32);
-            this.button2.TabIndex = 71;
-            this.button2.Tag = "Zdjecie samochodu";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // AddCarsForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 665);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(983, 407);
             this.Controls.Add(this.mainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AddCarsForm";
+            this.Name = "EditCarsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "statystyki";
-            this.Load += new System.EventHandler(this.AddCarsForm_Load);
-            this.Click += new System.EventHandler(this.AddCarsForm_Click);
+            this.Load += new System.EventHandler(this.EditCarsForm_Load);
+            this.Click += new System.EventHandler(this.EditCarsForm_Click);
             this.carParamLeftPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxImg)).EndInit();
             this.panel17.ResumeLayout(false);
@@ -1694,7 +1425,6 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.panel27.ResumeLayout(false);
             this.panel27.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel25.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -1719,8 +1449,6 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            this.AddCarsGridPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.AddCarsGridView)).EndInit();
             this.TopLoginPanel.ResumeLayout(false);
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
@@ -1827,7 +1555,6 @@ namespace CarDealerSupportSystem.ManagerFormPanels
         private PictureBox pictureBox3;
         private TextBox TextBtypNadw;
         private Panel panel3;
-        private Panel panel25;
         private Panel panel2;
         private PictureBox pictureBox2;
         private TextBox TextBtypSil;
@@ -1861,33 +1588,13 @@ namespace CarDealerSupportSystem.ManagerFormPanels
         private TextBox TextBliczbaDrz;
         private Panel panel24;
         private Label AddCarsBigLabel1;
-        private Panel AddCarsGridPanel;
-        private DataGridView AddCarsGridView;
         private Panel TopLoginPanel;
         private Button button1;
-        private Button AddCarButton;
         private Button OkCarButton;
         private Panel mainPanel;
         private DataGridViewImageColumn dataGridViewImageColumn1;
         private OpenFileDialog openFileDialog1;
-        private DataGridViewImageColumn ZdjecieColumn;
-        private DataGridViewTextBoxColumn ModelColumn;
-        private DataGridViewTextBoxColumn MarkaColumn;
-        private DataGridViewTextBoxColumn TypNadColumn;
-        private DataGridViewTextBoxColumn CenaColumn;
-        private DataGridViewTextBoxColumn VinColumn;
-        private DataGridViewTextBoxColumn KolorColumn;
-        private DataGridViewTextBoxColumn MocSilColumn;
-        private DataGridViewTextBoxColumn WyposazenieColumn;
-        private DataGridViewTextBoxColumn SrednieSpalColumn;
-        private DataGridViewTextBoxColumn TypSilColumn;
-        private DataGridViewTextBoxColumn LiczDrzwColumn;
-        private DataGridViewTextBoxColumn LiczMiejColumn;
-        private DataGridViewTextBoxColumn RabatColumn;
-        private DataGridViewTextBoxColumn RokProdColumn;
-        private DataGridViewImageColumn DelColumn;
-        private ErrorProvider errorProvider1;
         private Button button2;
-        private CheckedListBox checkedListBoxUlugi;
+        private ErrorProvider errorProvider1;
     }
 }
