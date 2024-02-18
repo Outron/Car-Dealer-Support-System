@@ -24,5 +24,10 @@ namespace CarDealerSupportSystem.SellerFormPanels
             var orders = db.Zamowienia.ToList();
             OrdersGridView.DataSource = orders;
         }
+
+        private void OrdersGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            OrdersGridView.ClearSelection();
+        }
     }
 }
