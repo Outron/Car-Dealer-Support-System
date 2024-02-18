@@ -11,13 +11,12 @@ namespace CarDealerSupportSystem
         private Button currentBtn;
         private readonly Panel leftBorderBtn;
         private Form currentChildForm;
-        private int servId;
+        private readonly int servId;
         public ServForm(int id)
         {
             this.servId = id;
             InitializeComponent();
-            leftBorderBtn = new Panel();
-            leftBorderBtn.Size = new Size(5, 57);
+            leftBorderBtn = new() { Size = new Size(5, 57) };
             LeftMenuPanel.Controls.Add(leftBorderBtn);
         }
 
@@ -41,7 +40,6 @@ namespace CarDealerSupportSystem
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
                 leftBorderBtn.Visible = true;
                 leftBorderBtn.BringToFront();
-
             }
         }
 
@@ -93,9 +91,8 @@ namespace CarDealerSupportSystem
 
         private void OpenChildForm(Form childForm)
         {
-            if (currentChildForm != null)
+            if (currentChildForm is not null)
             {
-                //open only one form
                 currentChildForm.Close();
             }
             currentChildForm = childForm;

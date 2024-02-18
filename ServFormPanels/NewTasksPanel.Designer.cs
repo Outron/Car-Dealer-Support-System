@@ -49,11 +49,11 @@ namespace CarDealerSupportSystem.SellerFormPanels
             this.idKlientaNavigationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idPracownikaNavigationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TasksGridView = new System.Windows.Forms.DataGridView();
-            this.zamowieniaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.IDzamowienia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Marka = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Model = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nazwa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zamowieniaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ClientsMenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TasksGridView)).BeginInit();
@@ -215,6 +215,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
             this.TasksGridView.Margin = new System.Windows.Forms.Padding(4);
             this.TasksGridView.MultiSelect = false;
             this.TasksGridView.Name = "TasksGridView";
+            this.TasksGridView.ReadOnly = true;
             this.TasksGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -234,14 +235,8 @@ namespace CarDealerSupportSystem.SellerFormPanels
             this.TasksGridView.ShowEditingIcon = false;
             this.TasksGridView.Size = new System.Drawing.Size(1147, 565);
             this.TasksGridView.TabIndex = 6;
-            this.TasksGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TasksGridView_CellClick);
-            this.TasksGridView.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.TasksGridView_CellMouseEnter);
             this.TasksGridView.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.TasksGridView_CellMouseLeave);
             this.TasksGridView.SelectionChanged += new System.EventHandler(this.TasksGridView_SelectionChanged_1);
-            // 
-            // zamowieniaBindingSource
-            // 
-            this.zamowieniaBindingSource.DataSource = typeof(CarDealerSupportSystem.Models.Zamowienia);
             // 
             // IDzamowienia
             // 
@@ -262,6 +257,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
             this.Model.HeaderText = "Model";
             this.Model.MinimumWidth = 6;
             this.Model.Name = "Model";
+            this.Model.ReadOnly = true;
             // 
             // Nazwa
             // 
@@ -269,6 +265,10 @@ namespace CarDealerSupportSystem.SellerFormPanels
             this.Nazwa.MinimumWidth = 6;
             this.Nazwa.Name = "Nazwa";
             this.Nazwa.ReadOnly = true;
+            // 
+            // zamowieniaBindingSource
+            // 
+            this.zamowieniaBindingSource.DataSource = typeof(CarDealerSupportSystem.Models.Zamowienia);
             // 
             // NewTasksPanel
             // 

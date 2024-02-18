@@ -1,13 +1,9 @@
 ﻿using CarDealerSupportSystem.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarDealerSupportSystem
@@ -47,18 +43,18 @@ namespace CarDealerSupportSystem
             // check if the login and password are correct then check role and open the correct form
             if (loginData !=null && loginData.p.Login != null && loginData.p.Haslo == PasswordTextBox.Text)
             {
-             /* if (loginData.r.KodRoli == "1")
+                if (loginData.r.KodRoli == "ADM")
                 {
-                    AdminPanel adminpanel = new AdminPanel();
+                    AdminForm adminpanel = new();
                     adminpanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
                     adminpanel.RoleLabel.Text = loginData.r.Nazwa;
                     adminpanel.Show();
                     this.Hide();
                 }
-            */
+
                 if /* else */ (loginData.r.KodRoli == "2")
                 {
-                    SellerPanel sellerpanel = new SellerPanel();
+                    SellerPanel sellerpanel = new();
                     sellerpanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
                     sellerpanel.RoleLabel.Text = loginData.r.Nazwa;
                     sellerpanel.Show();
@@ -89,6 +85,8 @@ namespace CarDealerSupportSystem
             else
             {   // show the label with information about wrong login or password
                 WrongLoginLabel.Visible = true;
+                Log.SaveLog("Niepoprawne logowanie", LogType.Sukces);
+                Log.SaveLog("Niepoprawne logowanie", LogType.Informacja);
             }
         }
 

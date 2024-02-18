@@ -1,31 +1,23 @@
-﻿using CarDealerSupportSystem.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Reflection.Emit;
-using System.Windows.Forms.DataVisualization.Charting;
-using System.Runtime.Remoting.Contexts;
 
 namespace CarDealerSupportSystem.SellerFormPanels
 {
     public partial class LogsPanel : Form
     {
-        private readonly salon_samochodowyContext db = new();
         private readonly Timer timer;
+        private readonly ToolTip toolTip;
         public LogsPanel()
         {
             InitializeComponent();
-            timer=new Timer();
-            timer.Interval = 300000; //co 5min
+            timer = new();
+            timer.Interval = 120000;
             timer.Tick += Timer_Tick;
             timer.Start();
+            toolTip = new() { InitialDelay = 250 };
+            toolTip.SetToolTip(refreshLogsButton, "Odśwież listę");
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
@@ -37,24 +29,9 @@ namespace CarDealerSupportSystem.SellerFormPanels
             RefreshBox();
         }
 
-        private void SearchClientsTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ClientsGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void logsTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (logsTextBox.Text=="Brak danych")
+            if (logsTextBox.Text == "Brak danych")
             {
                 eventsCount.Text = "0";
             }
@@ -63,7 +40,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
 
         private void exportLogsButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(logsTextBox.Text) || logsTextBox.Text=="Brak danych")
+            if (string.IsNullOrWhiteSpace(logsTextBox.Text) || logsTextBox.Text == "Brak danych")
             {
                 MessageBox.Show("Brak zawartości do zapisania.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -77,11 +54,12 @@ namespace CarDealerSupportSystem.SellerFormPanels
                 try
                 {
                     File.WriteAllText(saveFileDialog.FileName, logsTextBox.Text);
-                    MessageBox.Show("Plik zapisano pomyślnie.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Pomyślnie zapisano plik.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch (Exception ex)
+                catch
                 {
-                    MessageBox.Show($"Wystąpił błąd podczas zapisywania pliku: {ex.Message}", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Wystąpił błąd podczas zapisywania pliku. Spróbój ponownie", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
             }
         }
@@ -100,25 +78,15 @@ namespace CarDealerSupportSystem.SellerFormPanels
             RefreshBox();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Log.SaveLog("Dodano rekord do bazy", LogType.Informacja);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Log.SaveLog("Blad logowania", LogType.Blad);
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Log.SaveLog("Udane logowanie", LogType.Sukces);
-
-        }
-
         private void LogsPanel_Shown(object sender, EventArgs e)
         {
             Application.DoEvents();
+        }
+
+        private void LogsPanel_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            timer.Stop();
+            timer.Dispose();
         }
     }
 }

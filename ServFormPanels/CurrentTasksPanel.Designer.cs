@@ -49,11 +49,11 @@ namespace CarDealerSupportSystem.SellerFormPanels
             this.idKlientaNavigationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idPracownikaNavigationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TasksGridView = new System.Windows.Forms.DataGridView();
-            this.zamowieniaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.IDzamowienia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Marka = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Model = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nazwa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zamowieniaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ClientsMenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TasksGridView)).BeginInit();
@@ -209,6 +209,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Transparent;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.TasksGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.TasksGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TasksGridView.EnableHeadersVisualStyles = false;
             this.TasksGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
             this.TasksGridView.Location = new System.Drawing.Point(0, 72);
@@ -232,10 +233,8 @@ namespace CarDealerSupportSystem.SellerFormPanels
             this.TasksGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.TasksGridView.ShowCellToolTips = false;
             this.TasksGridView.ShowEditingIcon = false;
-            this.TasksGridView.Size = new System.Drawing.Size(1134, 552);
+            this.TasksGridView.Size = new System.Drawing.Size(1147, 565);
             this.TasksGridView.TabIndex = 6;
-            this.TasksGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TasksGridView_CellClick);
-            this.TasksGridView.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.TasksGridView_CellMouseEnter);
             this.TasksGridView.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.TasksGridView_CellMouseLeave);
             this.TasksGridView.SelectionChanged += new System.EventHandler(this.TasksGridView_SelectionChanged);
             // 

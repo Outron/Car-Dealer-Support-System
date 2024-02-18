@@ -1,17 +1,7 @@
 ﻿using CarDealerSupportSystem.SellerFormPanels;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Reflection.Emit;
 using System.Runtime.InteropServices;
-using System.Runtime.Remoting.Proxies;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarDealerSupportSystem
@@ -27,7 +17,6 @@ namespace CarDealerSupportSystem
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(5, 57);
             LeftMenuPanel.Controls.Add(leftBorderBtn);
-
         }
 
         private struct RGBColors
@@ -44,13 +33,13 @@ namespace CarDealerSupportSystem
                 currentBtn = (Button)senderBtn;
                 currentBtn.BackColor = Color.FromArgb(51, 51, 51);
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
-               
+
                 //Left border button
                 leftBorderBtn.BackColor = color;
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
                 leftBorderBtn.Visible = true;
                 leftBorderBtn.BringToFront();
-               
+
             }
         }
 
@@ -65,13 +54,7 @@ namespace CarDealerSupportSystem
 
         private void AdminForm_Load(object sender, EventArgs e)
         {
-            //string logFilePath = Log.logPath;
-            //if (!File.Exists(logFilePath))
-            //{
-            //    File.Create(logFilePath);
-            //    Debug.WriteLine("Utworzono plik logow");
-
-            //}
+          
         }
 
         private void LeftMenuBtn1_Click(object sender, EventArgs e)
@@ -127,7 +110,7 @@ namespace CarDealerSupportSystem
             childForm.BringToFront();
             childForm.Show();
             TopLabel.Text = currentBtn.Text;
-        }       
+        }
         // Drag Form
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]

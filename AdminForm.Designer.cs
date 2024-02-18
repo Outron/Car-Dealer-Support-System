@@ -34,8 +34,8 @@
             this.LeftMenuBtn3 = new System.Windows.Forms.Button();
             this.LeftMenuBtn2 = new System.Windows.Forms.Button();
             this.LeftMenuBtn1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.RoleLabel = new System.Windows.Forms.Label();
+            this.NameLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TopPanel = new System.Windows.Forms.Panel();
             this.TopLabel = new System.Windows.Forms.Label();
@@ -54,8 +54,8 @@
             this.LeftMenuPanel.Controls.Add(this.LeftMenuBtn3);
             this.LeftMenuPanel.Controls.Add(this.LeftMenuBtn2);
             this.LeftMenuPanel.Controls.Add(this.LeftMenuBtn1);
-            this.LeftMenuPanel.Controls.Add(this.label3);
-            this.LeftMenuPanel.Controls.Add(this.label1);
+            this.LeftMenuPanel.Controls.Add(this.RoleLabel);
+            this.LeftMenuPanel.Controls.Add(this.NameLabel);
             this.LeftMenuPanel.Controls.Add(this.pictureBox1);
             this.LeftMenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.LeftMenuPanel.Location = new System.Drawing.Point(0, 0);
@@ -157,29 +157,30 @@
             this.LeftMenuBtn1.UseVisualStyleBackColor = true;
             this.LeftMenuBtn1.Click += new System.EventHandler(this.LeftMenuBtn1_Click);
             // 
-            // label3
+            // RoleLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(99, 155);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 28);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Administrator";
+            this.RoleLabel.AutoSize = true;
+            this.RoleLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RoleLabel.ForeColor = System.Drawing.Color.White;
+            this.RoleLabel.Location = new System.Drawing.Point(78, 155);
+            this.RoleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.RoleLabel.Name = "RoleLabel";
+            this.RoleLabel.Size = new System.Drawing.Size(133, 28);
+            this.RoleLabel.TabIndex = 3;
+            this.RoleLabel.Text = "Administrator";
             // 
-            // label1
+            // NameLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(47, 118);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(229, 37);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Zbigniew Kapusta";
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.CausesValidation = false;
+            this.NameLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.NameLabel.ForeColor = System.Drawing.Color.White;
+            this.NameLabel.Location = new System.Drawing.Point(47, 118);
+            this.NameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(229, 37);
+            this.NameLabel.TabIndex = 1;
+            this.NameLabel.Text = "Zbigniew Kapusta";
             // 
             // pictureBox1
             // 
@@ -266,10 +267,10 @@
         #endregion
 
         private System.Windows.Forms.Panel LeftMenuPanel;
-        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel TopPanel;
-        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label RoleLabel;
         private System.Windows.Forms.Button LeftMenuBtn1;
         private System.Windows.Forms.Button LeftMenuBtn2;
         private System.Windows.Forms.Button LeftMenuBtn4;

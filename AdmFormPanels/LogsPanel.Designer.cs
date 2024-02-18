@@ -38,9 +38,6 @@
             this.exportLogsButton = new System.Windows.Forms.Button();
             this.exportLabel = new System.Windows.Forms.Label();
             this.refreshLogsButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.klienciBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ClientsMenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.klienciBindingSource)).BeginInit();
@@ -88,7 +85,6 @@
             this.label2.Size = new System.Drawing.Size(254, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Liczba dzisiejszych zdarzeń:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -157,39 +153,6 @@
             this.refreshLogsButton.UseVisualStyleBackColor = false;
             this.refreshLogsButton.Click += new System.EventHandler(this.refreshLogsButton_Click);
             // 
-            // button1
-            // 
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(934, 241);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 58);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Info";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(934, 339);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(146, 58);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Blad";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(934, 439);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(146, 58);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Sukces";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // klienciBindingSource
             // 
             this.klienciBindingSource.DataSource = typeof(CarDealerSupportSystem.Models.Klienci);
@@ -200,9 +163,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
             this.ClientSize = new System.Drawing.Size(1148, 652);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.refreshLogsButton);
             this.Controls.Add(this.exportLabel);
             this.Controls.Add(this.exportLogsButton);
@@ -214,6 +174,7 @@
             this.Name = "LogsPanel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ClientsForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LogsPanel_FormClosing);
             this.Load += new System.EventHandler(this.LogsPanel_Load);
             this.Shown += new System.EventHandler(this.LogsPanel_Shown);
             this.ClientsMenuPanel.ResumeLayout(false);
@@ -236,8 +197,5 @@
         private System.Windows.Forms.Button exportLogsButton;
         private System.Windows.Forms.Label exportLabel;
         private System.Windows.Forms.Button refreshLogsButton;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
     }
 }

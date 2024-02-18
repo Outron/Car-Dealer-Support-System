@@ -130,6 +130,7 @@
             this.UsersGridView.AllowUserToResizeColumns = false;
             this.UsersGridView.AllowUserToResizeRows = false;
             this.UsersGridView.AutoGenerateColumns = false;
+            this.UsersGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.UsersGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
             this.UsersGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.UsersGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -201,7 +202,6 @@
             this.idPracownikaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idPracownikaDataGridViewTextBoxColumn.Name = "idPracownikaDataGridViewTextBoxColumn";
             this.idPracownikaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idPracownikaDataGridViewTextBoxColumn.Width = 125;
             // 
             // loginDataGridViewTextBoxColumn
             // 
@@ -210,7 +210,6 @@
             this.loginDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
             this.loginDataGridViewTextBoxColumn.ReadOnly = true;
-            this.loginDataGridViewTextBoxColumn.Width = 125;
             // 
             // Haslo
             // 
@@ -219,7 +218,6 @@
             this.Haslo.MinimumWidth = 6;
             this.Haslo.Name = "Haslo";
             this.Haslo.ReadOnly = true;
-            this.Haslo.Width = 125;
             // 
             // imieDataGridViewTextBoxColumn
             // 
@@ -228,7 +226,6 @@
             this.imieDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.imieDataGridViewTextBoxColumn.Name = "imieDataGridViewTextBoxColumn";
             this.imieDataGridViewTextBoxColumn.ReadOnly = true;
-            this.imieDataGridViewTextBoxColumn.Width = 125;
             // 
             // nazwiskoDataGridViewTextBoxColumn
             // 
@@ -237,7 +234,6 @@
             this.nazwiskoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nazwiskoDataGridViewTextBoxColumn.Name = "nazwiskoDataGridViewTextBoxColumn";
             this.nazwiskoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nazwiskoDataGridViewTextBoxColumn.Width = 125;
             // 
             // telefonDataGridViewTextBoxColumn
             // 
@@ -246,7 +242,6 @@
             this.telefonDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.telefonDataGridViewTextBoxColumn.Name = "telefonDataGridViewTextBoxColumn";
             this.telefonDataGridViewTextBoxColumn.ReadOnly = true;
-            this.telefonDataGridViewTextBoxColumn.Width = 125;
             // 
             // kodRoliDataGridViewTextBoxColumn
             // 
@@ -255,7 +250,6 @@
             this.kodRoliDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.kodRoliDataGridViewTextBoxColumn.Name = "kodRoliDataGridViewTextBoxColumn";
             this.kodRoliDataGridViewTextBoxColumn.ReadOnly = true;
-            this.kodRoliDataGridViewTextBoxColumn.Width = 125;
             // 
             // pracownicyBindingSource
             // 

@@ -214,12 +214,6 @@
     <Compile Include="ServFormPanels\ServMainPanel.Designer.cs">
       <DependentUpon>ServMainPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="ServFormPanels\SalonOffersPanel.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ServFormPanels\SalonOffersPanel.Designer.cs">
-      <DependentUpon>SalonOffersPanel.cs</DependentUpon>
-    </Compile>
     <Compile Include="ServFormPanels\CurrentTasksPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -345,9 +339,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ServFormPanels\ServMainPanel.resx">
       <DependentUpon>ServMainPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ServFormPanels\SalonOffersPanel.resx">
-      <DependentUpon>SalonOffersPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ServFormPanels\CurrentTasksPanel.resx">
       <DependentUpon>CurrentTasksPanel.cs</DependentUpon>

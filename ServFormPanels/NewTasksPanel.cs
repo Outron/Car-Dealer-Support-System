@@ -15,8 +15,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
     public partial class NewTasksPanel : Form
     {
         private int _taskId;
-        private string _servName;
-        private int servId;
+        private readonly int servId;
         private readonly Color gridDefaultBackColor;
         public NewTasksPanel(int id)
         {
@@ -32,33 +31,42 @@ namespace CarDealerSupportSystem.SellerFormPanels
 
         public void LoadTasks()
         {
-            using (salon_samochodowyContext db = new())
+            using salon_samochodowyContext db = new();
+            var newTasks = (from z in db.Zamowienia
+                            join szu in db.ZamowieniaSamochodyUslugi on z.IdZamowienia equals szu.IdZamowienia
+                            join u in db.Uslugi on szu.IdUslugi equals u.IdUslugi
+                            join s in db.Samochody on szu.IdSamochodu equals s.IdSamochodu
+                            orderby z.IdZamowienia
+                            where szu.Status == "wolne" && szu.IdPracownika == null
+                            select new { z.IdZamowienia, s.Marka, s.Model, u.Nazwa }).ToList();
+            newTasks = newTasks.Any() ? newTasks : null;
+            TasksGridView.Rows.Clear();
+            TasksGridView.Columns.Clear();
+            TasksGridView.Columns.Add("IdZamowienia", "ID Zamówienia");
+            TasksGridView.Columns.Add("Marka", "Marka samochodu");
+            TasksGridView.Columns.Add("Model", "Model samochodu");
+            TasksGridView.Columns.Add("Nazwa", "Nazwa usługi");
+            TasksGridView.Columns[0].DataPropertyName = "IdZamowienia";
+            TasksGridView.Columns[1].DataPropertyName = "Marka";
+            TasksGridView.Columns[2].DataPropertyName = "Model";
+            TasksGridView.Columns[3].DataPropertyName = "Nazwa";
+            TasksGridView.DefaultCellStyle.ForeColor = Color.White;
+            TasksGridView.CellMouseEnter += TasksGridView_CellMouseEnter1;
+            TasksGridView.CellClick += TasksGridView_CellClick1;
+            if (newTasks is not null)
             {
-                var newTasks = (from z in db.Zamowienia
-                                join szu in db.ZamowieniaSamochodyUslugi on z.IdZamowienia equals szu.IdZamowienia
-                                join u in db.Uslugi on szu.IdUslugi equals u.IdUslugi
-                                join s in db.Samochody on szu.IdSamochodu equals s.IdSamochodu
-                                orderby z.IdZamowienia
-                                where szu.Status == "wolne" && szu.IdPracownika == null
-                                select new { z.IdZamowienia, s.Marka, s.Model, u.Nazwa }).ToList();
-                if (newTasks is not null)
-                {
-                    TasksGridView.Columns.Clear();
-                    TasksGridView.Columns.Add("IdZamowienia", "ID Zamówienia");
-                    TasksGridView.Columns.Add("Marka", "Marka samochodu");
-                    TasksGridView.Columns.Add("Model", "Model samochodu");
-                    TasksGridView.Columns.Add("Nazwa", "Nazwa usługi");
-                    TasksGridView.Columns[0].DataPropertyName = "IdZamowienia";
-                    TasksGridView.Columns[1].DataPropertyName = "Marka";
-                    TasksGridView.Columns[2].DataPropertyName = "Model";
-                    TasksGridView.Columns[3].DataPropertyName = "Nazwa";
-                    TasksGridView.DefaultCellStyle.ForeColor = Color.White;
-                    TasksGridView.DataSource = newTasks;
-                }
+                TasksGridView.DataSource = newTasks;
+            }
+            else
+            {
+                TasksGridView.Rows.Add();
+                TasksGridView.Rows[0].Cells[0].Value = "Brak nowych zleceń";
+                TasksGridView.CellMouseEnter -= TasksGridView_CellMouseEnter1;
+                TasksGridView.CellClick -= TasksGridView_CellClick1;
             }
         }
 
-        private void TasksGridView_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        private void TasksGridView_CellMouseEnter1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -74,13 +82,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
             }
         }
 
-        private void TasksGridView_SelectionChanged(object sender, EventArgs e)
-        {
-            TasksGridView.ClearSelection();
-        }
-
-        //dodatkowe info odnosnie roboty dla serwisanta
-        private void TasksGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void TasksGridView_CellClick1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -94,11 +96,11 @@ namespace CarDealerSupportSystem.SellerFormPanels
                                         join k in db.Klienci on z.IdKlienta equals k.IdKlienta
                                         join p in db.Pracownicy on z.IdPracownika equals p.IdPracownika
                                         join u in db.Uslugi on sz.IdUslugi equals u.IdUslugi
-                                        where z.IdZamowienia == _taskId
+                                        where z.IdZamowienia == _taskId && sz.IdPracownika == null
                                         select new string[] { _taskId.ToString(), k.Imie, k.Nazwisko, k.Telefon, k.Email, s.Marka, s.Model, s.TypSilnika, s.TypNadwozia, p.Imie, p.Nazwisko, s.IdSamochodu.ToString(), u.IdUslugi.ToString() }).FirstOrDefault();
                     taskInfo = taskMoreInfo;
                 }
-                TaskInfoForm infoForm = new(this, taskInfo,servId);
+                TaskInfoForm infoForm = new(this, taskInfo, servId);
                 infoForm.Show();
             }
         }

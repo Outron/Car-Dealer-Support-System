@@ -1,14 +1,9 @@
 ﻿using CarDealerSupportSystem.Models;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarDealerSupportSystem.SellerFormPanels
@@ -18,10 +13,9 @@ namespace CarDealerSupportSystem.SellerFormPanels
         private readonly salon_samochodowyContext db = new();
         private readonly List<Pracownicy> workers;
         private readonly Color gridDefaultBackColor;
-        private bool passHidden = true;
         public UsersManagePanel()
         {
-            workers=db.Pracownicy.ToList();
+            workers = db.Pracownicy.ToList();
             InitializeComponent();
             gridDefaultBackColor = UsersGridView.DefaultCellStyle.BackColor;
         }
@@ -29,10 +23,6 @@ namespace CarDealerSupportSystem.SellerFormPanels
         private void UsersForm_Load(object sender, EventArgs e)
         {
             UsersGridView.DataSource = workers;
-            //foreach(DataGridViewRow row in UsersGridView.Rows)
-            //{
-            //    row.Cells["Haslo"].Value = new string('*', row.Cells["Haslo"].Value.ToString().Length);
-            //}
         }
 
         private void SearchUsersTextBox_TextChanged(object sender, EventArgs e)
@@ -40,24 +30,6 @@ namespace CarDealerSupportSystem.SellerFormPanels
             var searchValue = SearchUsersTextBox.Text.ToLower();
             var clients = db.Pracownicy.Where(c => c.Nazwisko.ToLower().Contains(searchValue)).ToList();
             UsersGridView.DataSource = clients;
-        }
-
-        private void UsersGridView_CellClick(object sender, DataGridViewCellEventArgs e)
-        {//do wywalenia narazie
-            if (e.ColumnIndex == 2 && e.RowIndex>=0)
-            {
-               // DataGridViewCell currCell= UsersGridView.Rows[e.RowIndex].Cells[e.ColumnIndex];
-                if (passHidden)
-                {
-                    UsersGridView.Rows[e.RowIndex].Cells[2].Value= workers[e.RowIndex].Haslo.ToString();
-                    passHidden = false;
-                }
-                else
-                {
-                    UsersGridView.Rows[e.RowIndex].Cells[2].Value = new string('*',workers[e.RowIndex].Haslo.ToString().Length);
-                    passHidden = true;
-                }
-            }
         }
 
         private void addUserButton_Click(object sender, EventArgs e)
@@ -76,7 +48,6 @@ namespace CarDealerSupportSystem.SellerFormPanels
 
         private void UsersGridView_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
-
             if (e.RowIndex >= 0)
             {
                 UsersGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = gridDefaultBackColor;
@@ -97,13 +68,11 @@ namespace CarDealerSupportSystem.SellerFormPanels
                 using (salon_samochodowyContext db = new())
                 {
                     workerToFind = (from pracownik in db.Pracownicy
-                                   join r in db.Role on pracownik.KodRoli equals r.KodRoli
-                                   where pracownik.IdPracownika == workerId
-                                   select new string[] { pracownik.Imie, pracownik.Nazwisko, pracownik.Login, pracownik.Haslo, pracownik.Adres, pracownik.Telefon, pracownik.Email, r.Nazwa, pracownik.IdPracownika.ToString() }).FirstOrDefault();
+                                    join r in db.Role on pracownik.KodRoli equals r.KodRoli
+                                    where pracownik.IdPracownika == workerId
+                                    select new string[] { pracownik.Imie, pracownik.Nazwisko, pracownik.Login, pracownik.Haslo, pracownik.Adres, pracownik.Telefon, pracownik.Email, r.Nazwa, pracownik.IdPracownika.ToString() }).FirstOrDefault();
                 }
-                // EditUserForm editUserForm= new EditUserForm(this,workerToFind);
-                //editUserForm.ShowDialog();
-                UserInfoForm infoForm = new(this,workerToFind);
+                UserInfoForm infoForm = new(this, workerToFind);
                 infoForm.Show();
             }
         }

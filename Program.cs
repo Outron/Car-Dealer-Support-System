@@ -4,9 +4,7 @@ using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace CarDealerSupportSystem
 {
@@ -36,7 +34,7 @@ namespace CarDealerSupportSystem
                                   where z.Status == orderState
                                   select new List<string> { z.IdZamowienia.ToString(), p.Imie, p.Nazwisko, k.Imie, k.Nazwisko, k.Telefon, k.Email, z.TypZamowienia }).ToList();
                 if (ordersInfo is not null)
-                {
+                {   
                     ordersList = ordersInfo;
                 }
                 if (orderState == "zakończone")
@@ -51,8 +49,7 @@ namespace CarDealerSupportSystem
                 //--DATA i HEADER
                 BaseFont bf = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1250, BaseFont.NOT_EMBEDDED);
                 Font fontDate = FontFactory.GetFont(FontFactory.HELVETICA, 10);
-                Paragraph date = new(DateTime.Now.ToString("dd.MM.yyyy"), fontDate);
-                date.Alignment = Element.ALIGN_RIGHT;
+                Paragraph date = new(DateTime.Now.ToString("dd.MM.yyyy"), fontDate) { Alignment = Element.ALIGN_RIGHT };
                 raport.Add(date);
                 Font font = new(bf, 20);
                 font.SetStyle(Font.BOLD);
@@ -67,7 +64,7 @@ namespace CarDealerSupportSystem
                 foreach (List<string> orderData in ordersList)
                 {
                     // Dodanie tytułu "Zamówienie nr x"
-                    Paragraph title = new Paragraph($"Zamówienie nr {orderData[0]}");
+                    Paragraph title = new($"Zamówienie nr {orderData[0]}");
                     title.Font.SetStyle(Font.BOLD);
                     title.Alignment = Element.ALIGN_LEFT;
                     raport.Add(title);

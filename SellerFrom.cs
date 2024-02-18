@@ -11,8 +11,6 @@ namespace CarDealerSupportSystem
         private Button currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
-
-
         public SellerPanel()
         {
             InitializeComponent();
@@ -91,18 +89,15 @@ namespace CarDealerSupportSystem
 
         private void LogOutBtn_Click(object sender, EventArgs e)
         {
-            //after clicking this button, the application will open the first form
             LoginForm f1 = new LoginForm();
             f1.Show();
             this.Hide();
-
         }
 
         private void OpenChildForm(Form childForm)
         {
             if (currentChildForm != null)
             {
-                //open only one form
                 currentChildForm.Close();
             }
             currentChildForm = childForm;
@@ -133,8 +128,5 @@ namespace CarDealerSupportSystem
         {
 
         }
-
-        // End Drag Form
-
     }
 }

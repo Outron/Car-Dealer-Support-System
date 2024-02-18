@@ -1,25 +1,20 @@
 ﻿using CarDealerSupportSystem.Models;
 using CarDealerSupportSystem.SellerFormPanels;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarDealerSupportSystem
 {
     public partial class EditUserForm : Form
     {
-        private UsersManagePanel mainForm;
+        private readonly UsersManagePanel mainForm;
         private readonly string[] userToEditValues;
-        private Func<string, bool> isOnlyDigit = phone => phone.All(char.IsDigit);
+        private readonly Func<string, bool> isOnlyDigit = phone => phone.All(char.IsDigit);
         public EditUserForm(Form mainForm, string[] worker)
         {
             this.mainForm = mainForm as UsersManagePanel;
@@ -33,8 +28,8 @@ namespace CarDealerSupportSystem
             usernameTextBox.Text = userToEditValues[2];
             passwordTextBox.Text = userToEditValues[3];
             addressTextBox.Text = userToEditValues[4];
-            phoneTextBox.Text = userToEditValues[5];  //email i adres nie wyswietlane
-            emailTextBox.Text = userToEditValues[6];  //kod roli bd pod 7 indeksem
+            phoneTextBox.Text = userToEditValues[5];
+            emailTextBox.Text = userToEditValues[6];
             rolesComboBox.SelectedItem = userToEditValues[7];
         }
         private void SetTags()
@@ -44,12 +39,11 @@ namespace CarDealerSupportSystem
             usernameTextBox.Tag = userToEditValues[2];
             passwordTextBox.Tag = userToEditValues[3];
             addressTextBox.Tag = userToEditValues[4];
-            phoneTextBox.Tag = userToEditValues[5];  //email i adres nie wyswietlane
-            emailTextBox.Tag = userToEditValues[6];  //kod roli bd pod 7 indeksem
+            phoneTextBox.Tag = userToEditValues[5];
+            emailTextBox.Tag = userToEditValues[6];
         }
         private void EditUserForm_Load(object sender, EventArgs e)
         {
-            //placeholdery ustawiane
             SetTextBoxes();
             SetTags();
             label1.Select();
@@ -74,10 +68,15 @@ namespace CarDealerSupportSystem
         private void button1_Click_2(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Napewno zamknąć? Niezatwierdzone zmiany zostaną usunięte.", "Ostrzeżenie", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-            if (result == DialogResult.Yes) 
+            if (result == DialogResult.Yes)
             {
                 this.Close();
             }
+        }
+
+        private void anyTextBox_Click(object sender, EventArgs e)
+        {
+            anyTextBox_Enter(sender, e);
         }
 
         private void anyTextBox_Enter(object sender, EventArgs e)
@@ -85,10 +84,6 @@ namespace CarDealerSupportSystem
             var currTextBox = sender as TextBox;
             if (userToEditValues.Contains(currTextBox.Text))
             {
-                if ((string)currTextBox.Tag=="Haslo")
-                {
-                    //currTextBox.PasswordChar = '*';
-                }
                 currTextBox.Text = "";
                 currTextBox.ForeColor = Color.White;
             }
@@ -101,6 +96,21 @@ namespace CarDealerSupportSystem
             {
                 currTextBox.Text = (string)currTextBox.Tag;
                 currTextBox.ForeColor = Color.Silver;
+            }
+        }
+
+        private void EditUserForm_Click(object sender, EventArgs e)
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox textBox)
+                {
+                    if (textBox.Text == "")
+                    {
+                        textBox.Text = (string)textBox.Tag;
+                        textBox.ForeColor = Color.Silver;
+                    }
+                }
             }
         }
 
@@ -121,8 +131,8 @@ namespace CarDealerSupportSystem
                 e.Cancel = false;
                 errorProvider1.SetError(passwordTextBox, null);
             }
-
         }
+
         private string roleAbr()
         {
             string roleCode = string.Empty;
@@ -138,33 +148,33 @@ namespace CarDealerSupportSystem
             {
                 roleCode = "KRW";
             }
+            else if ((rolesComboBox.SelectedItem.ToString() == "Administrator"))
+            {
+                roleCode = "ADM";
+            }
             return roleCode;
         }
         private void editUserButton_Click(object sender, EventArgs e)
         {
             if (ValidateChildren(ValidationConstraints.Enabled) && rolesComboBox.SelectedItem != null)
             {
-                using (salon_samochodowyContext db = new salon_samochodowyContext())
-                {
-                    var recordToUpdate = db.Pracownicy.FirstOrDefault(pracownik => pracownik.IdPracownika == int.Parse(userToEditValues[8]));
-                    if (recordToUpdate != null)
-                    {
-                        recordToUpdate.Imie = nameTextBox.Text; recordToUpdate.Nazwisko = surnameTextBox.Text;
-                        recordToUpdate.Login = usernameTextBox.Text; recordToUpdate.Haslo = passwordTextBox.Text;
-                        recordToUpdate.Email = emailTextBox.Text; recordToUpdate.Adres = addressTextBox.Text;
-                        recordToUpdate.Telefon = phoneTextBox.Text; recordToUpdate.KodRoli = roleAbr();
-                        db.SaveChanges();
-                        mainForm.UsersGridView.DataSource = null;
-                        mainForm.UsersGridView.DataSource = db.Pracownicy.ToList();//insta aktualizacja grida
-                    }
-                }
+                using salon_samochodowyContext db = new();
+                var recordToUpdate = db.Pracownicy.FirstOrDefault(pracownik => pracownik.IdPracownika == int.Parse(userToEditValues[8]));
+                recordToUpdate.Imie = nameTextBox.Text; recordToUpdate.Nazwisko = surnameTextBox.Text;
+                recordToUpdate.Login = usernameTextBox.Text; recordToUpdate.Haslo = passwordTextBox.Text;
+                recordToUpdate.Email = emailTextBox.Text; recordToUpdate.Adres = addressTextBox.Text;
+                recordToUpdate.Telefon = phoneTextBox.Text; recordToUpdate.KodRoli = roleAbr();
+                db.SaveChanges();
+                mainForm.UsersGridView.DataSource = null;
+                mainForm.UsersGridView.DataSource = db.Pracownicy.ToList();
+                MessageBox.Show("Pomyślnie edytowano użytkownika", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
-
         }
         private bool isEmailValid(string email)
         {
             string pattern = "^([\\w\\.\\-]+)@([\\w\\-]+)((\\.(\\w){2,3})+)$";
-            Regex regex = new Regex(pattern);
+            Regex regex = new(pattern);
             return regex.IsMatch(email);
         }
 

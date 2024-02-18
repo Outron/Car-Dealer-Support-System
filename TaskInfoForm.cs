@@ -2,40 +2,31 @@
 using CarDealerSupportSystem.SellerFormPanels;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
-using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Runtime.Remoting.Contexts;
-using System.Security.Authentication.ExtendedProtection;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarDealerSupportSystem
 {
     public partial class TaskInfoForm : Form
     {
-        private NewTasksPanel? mainForm;
-        private CurrentTasksPanel? currMainForm;
-        private int id;
-        private string[] taskInfo;
+        private readonly NewTasksPanel? mainForm;
+        private readonly CurrentTasksPanel? currMainForm;
+        private readonly int id;
+        private readonly string[] taskInfo;
         public TaskInfoForm(Form form, string[] taskInfo, int id)
         {
             InitializeComponent();
             this.id = id;
             this.taskInfo = taskInfo;
-            if(form is NewTasksPanel)
+            if (form is NewTasksPanel)
             {
                 this.mainForm = form as NewTasksPanel;
                 this.acceptTaskButton.Click -= endTaskButton_Click;
                 this.acceptTaskButton.Click += acceptTaskButton_Click;
             }
-            else if(form is CurrentTasksPanel)
+            else if (form is CurrentTasksPanel)
             {
                 this.currMainForm = form as CurrentTasksPanel;
                 this.acceptTaskButton.Click -= acceptTaskButton_Click;
@@ -75,7 +66,7 @@ namespace CarDealerSupportSystem
             DialogResult result = MessageBox.Show("Napewno przypisać zadanie?", "Informacja", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (result == DialogResult.Yes)
             {
-                using (salon_samochodowyContext db = new salon_samochodowyContext())                        //id_pracownika=id
+                using (salon_samochodowyContext db = new())
                 {
                     db.Database.ExecuteSqlRaw($"UPDATE zamowienia_samochody_uslugi SET Status='wtrakcie', id_pracownika={this.id} WHERE id_zamowienia={taskInfo[0]} AND id_samochodu={taskInfo[11]} AND id_uslugi={taskInfo[12]}");
                     this.mainForm.TasksGridView.DataSource = null;
@@ -95,13 +86,37 @@ namespace CarDealerSupportSystem
                     db.Database.ExecuteSqlRaw($"UPDATE zamowienia_samochody_uslugi SET Status='zakończone' WHERE id_zamowienia={taskInfo[0]} AND id_samochodu={taskInfo[11]} AND id_uslugi={taskInfo[12]} AND id_pracownika={this.id}");
                     this.currMainForm.TasksGridView.DataSource = null;
                     currMainForm.LoadCurrentTasks();
+                    //sprawdzamy czy ktores uslugi dla zamowienia zostaly wszystkie zakonczone
+                    var ordersWithCompletedStatus = db.ZamowieniaSamochodyUslugi
+                                               .ToList()
+                                               .GroupBy(o => o.IdZamowienia)
+                                               .Where(g => g.All(o => o.Status == "zakończone"))
+                                               .Select(g => g.Key)
+                                               .OrderBy(id => id)
+                                               .ToList();
+
+                    if (!ordersWithCompletedStatus.Any())
+                    {
+                        ordersWithCompletedStatus = null;
+                    }
+                    else
+                    {
+                        var ordersToUpdate = db.Zamowienia
+                                                .Where(o => ordersWithCompletedStatus.Contains(o.IdZamowienia))
+                                                .ToList();
+                        foreach (var order in ordersToUpdate)
+                        {
+                            order.Status = "zakończone";
+                        }
+                    }
+                    db.SaveChanges();
                 }
                 this.Close();
             }
         }
 
         private void TaskInfoForm_Load(object sender, EventArgs e)
-        {  
+        {
             taskNumberLabel.Text += $" {taskInfo[0]}";
             clientNameLabel.Text = "Imię i nazwisko: " + $"{taskInfo[1]} {taskInfo[2]}";
             clientPhoneLabel.Text = "Telefon: " + taskInfo[3];
