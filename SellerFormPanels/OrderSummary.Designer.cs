@@ -65,7 +65,7 @@
             this.label18 = new System.Windows.Forms.Label();
             this.EmailLabel = new System.Windows.Forms.Label();
             this.AddedServicesLabel = new System.Windows.Forms.Label();
-            this.NextButton = new System.Windows.Forms.Button();
+            this.AddOrderButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // SummaryLabel
@@ -309,7 +309,6 @@
             this.PostcodeLabel.Size = new System.Drawing.Size(77, 37);
             this.PostcodeLabel.TabIndex = 23;
             this.PostcodeLabel.Text = "Imię:";
-            this.PostcodeLabel.Click += new System.EventHandler(this.PostcodeLabel_Click);
             // 
             // PeselLabel
             // 
@@ -475,19 +474,20 @@
             this.AddedServicesLabel.Size = new System.Drawing.Size(0, 32);
             this.AddedServicesLabel.TabIndex = 38;
             // 
-            // NextButton
+            // AddOrderButton
             // 
-            this.NextButton.BackColor = System.Drawing.Color.Maroon;
-            this.NextButton.FlatAppearance.BorderSize = 0;
-            this.NextButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.NextButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.NextButton.ForeColor = System.Drawing.Color.White;
-            this.NextButton.Location = new System.Drawing.Point(876, 548);
-            this.NextButton.Name = "NextButton";
-            this.NextButton.Size = new System.Drawing.Size(209, 63);
-            this.NextButton.TabIndex = 39;
-            this.NextButton.Text = "Złóż zamówienie";
-            this.NextButton.UseVisualStyleBackColor = false;
+            this.AddOrderButton.BackColor = System.Drawing.Color.Maroon;
+            this.AddOrderButton.FlatAppearance.BorderSize = 0;
+            this.AddOrderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddOrderButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.AddOrderButton.ForeColor = System.Drawing.Color.White;
+            this.AddOrderButton.Location = new System.Drawing.Point(876, 548);
+            this.AddOrderButton.Name = "AddOrderButton";
+            this.AddOrderButton.Size = new System.Drawing.Size(209, 63);
+            this.AddOrderButton.TabIndex = 39;
+            this.AddOrderButton.Text = "Złóż zamówienie";
+            this.AddOrderButton.UseVisualStyleBackColor = false;
+            this.AddOrderButton.Click += new System.EventHandler(this.AddOrderButton_Click);
             // 
             // OrderSummary
             // 
@@ -496,7 +496,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
             this.ClientSize = new System.Drawing.Size(1110, 633);
-            this.Controls.Add(this.NextButton);
+            this.Controls.Add(this.AddOrderButton);
             this.Controls.Add(this.AddedServicesLabel);
             this.Controls.Add(this.EmailLabel);
             this.Controls.Add(this.label18);
@@ -583,6 +583,6 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label EmailLabel;
         private System.Windows.Forms.Label AddedServicesLabel;
-        private System.Windows.Forms.Button NextButton;
+        private System.Windows.Forms.Button AddOrderButton;
     }
 }

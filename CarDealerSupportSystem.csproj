@@ -430,6 +430,7 @@
     <None Include="Properties\DataSources\CarDealerSupportSystem.Models.Pracownicy.datasource" />
     <None Include="Properties\DataSources\CarDealerSupportSystem.Models.Samochody.datasource" />
     <None Include="Properties\DataSources\CarDealerSupportSystem.Models.Zamowienia.datasource" />
+    <None Include="Properties\DataSources\CarDealerSupportSystem.Models.ZamowieniaSamochodyUslugi.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

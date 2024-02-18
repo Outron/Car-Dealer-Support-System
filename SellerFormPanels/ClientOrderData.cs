@@ -27,48 +27,68 @@ namespace CarDealerSupportSystem.SellerFormPanels
         //dictionary with all the data from the form
         Dictionary<string, string> clientData = new Dictionary<string, string>();
 
-        // create function that checks validation of textboxes phone if it contains only 9 numbers
+        // create function that checks validation of textboxes phone pesel and email and returns bool
+        private bool ValidateTextBoxes()
+        {
+            if (NameLabel.Text != "" && SurnameLabel.Text != "" && CityLabel.Text != "" && AddressLabel.Text != "" && PostcodeLabel.Text != "" && PaymentLabel.Text != "" && EmailLabel.Text != "" && PhoneLabel.Text != "" && PeselLabel.Text != "")
+            {
+                return true;
+            }
+            else
+            {
+                MessageLabel.Text = "Wypełnij wszystkie pola";
+
+                if (PhoneLabel.Text.Length != 9)
+                {
+                    MessageLabel.Text = "Numer telefonu musi składać się z 9 cyfr";
+                    return false;
+                }
+                if (PeselLabel.Text.Length != 11)
+                {
+                    MessageLabel.Text = "Numer PESEL musi składać się z 11 cyfr";
+                    return false;
+                }
+                if (!EmailLabel.Text.Contains("@"))
+                {
+                    MessageLabel.Text = "Niepoprawny adres email";
+                    return false;
+                }
+
+                return false;
+            }
+          
+        }
        
- 
+       
         private void NextButton_Click(object sender, EventArgs e)
         {
-            bool isFilled = false;
-            //get all data from textboxes and add them to the dictionary
-            foreach (Control control in this.Controls)
+            if(ValidateTextBoxes())
             {
-                if (control is TextBox)
-                {
-                    if (string.IsNullOrEmpty(control.Text))
-                    {
-                        MessageLabel.Text = "Wypełnij wszystkie pola!";
-                        isFilled = false;
-                        break;
-                    }
-                    else
-                    {
-                        clientData.Add(control.Name, control.Text);
-                        isFilled = true;
-                    }
-                }
+                clientData.Add(NameLabel.Name, NameLabel.Text);
+                clientData.Add(SurnameLabel.Name, SurnameLabel.Text);
+                clientData.Add(CityLabel.Name, CityLabel.Text);
+                clientData.Add(AddressLabel.Name, AddressLabel.Text);
+                clientData.Add(PostcodeLabel.Name, PostcodeLabel.Text);
+                clientData.Add(PaymentLabel.Name, PaymentLabel.Text);
+                clientData.Add("Discount", Discount.Text);
+                clientData.Add(EmailLabel.Name, EmailLabel.Text);
+                clientData.Add(PhoneLabel.Name, PhoneLabel.Text);
+                clientData.Add(PeselLabel.Name, PeselLabel.Text);
             }
-            if (isFilled == true)
-            {   
-                // add option from payment combobox to the dictionary
-                if (PaymentLabel.SelectedItem != null)
-                {
-                    clientData.Add("PaymentLabel", PaymentLabel.SelectedItem.ToString());
-                }
-                
-                this.Close();
-                var mainForm = Application.OpenForms.OfType<MakeOrderPanel>().Single();
-                mainForm.OpenChildForm(new OrderSummary(clientData, selectedServices, selectedCarInfo));
-                mainForm.DisableButton();
-                mainForm.ActivateButton(mainForm.SummaryButton, Color.FromArgb(134, 2, 12));
-                mainForm.TopLabel.Text = "Podsumowanie zamówienia";
+            else
+            {
+                return;
             }
 
-                
+            this.Close();
+            var mainForm = Application.OpenForms.OfType<MakeOrderPanel>().Single();
+            mainForm.OpenChildForm(new OrderSummary(clientData, selectedServices, selectedCarInfo));
+            mainForm.DisableButton();
+            mainForm.ActivateButton(mainForm.SummaryButton, Color.FromArgb(134, 2, 12));
+            mainForm.TopLabel.Text = "Podsumowanie zamówienia";
         }
-         
+
+                
     }
-}
+         
+ }
