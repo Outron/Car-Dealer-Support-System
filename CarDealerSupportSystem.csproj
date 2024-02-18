@@ -185,6 +185,7 @@
   <ItemGroup>
     <Compile Include="Models\Mozliweuslugisamochody.cs" />
     <Compile Include="Models\PakietyUslugi.cs" />
+<<<<<<< HEAD
     <Compile Include="Models\PracownicyZlecenia.cs" />
     <Compile Include="Models\salon_samochodowyContext.cs" />
     <Compile Include="Models\SamochodyZamowieniaUslugi.cs" />
@@ -195,6 +196,33 @@
     </Compile>
     <Compile Include="TaskInfoForm.Designer.cs">
       <DependentUpon>TaskInfoForm.cs</DependentUpon>
+=======
+    <Compile Include="Models\salon_samochodowyContext.cs" />
+    <Compile Include="Models\ZamowieniaSamochodyUslugi.cs" />
+    <Compile Include="SellerFormPanels\CarConfigurator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellerFormPanels\CarConfigurator.Designer.cs">
+      <DependentUpon>CarConfigurator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SellerFormPanels\ClientOrderData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellerFormPanels\ClientOrderData.Designer.cs">
+      <DependentUpon>ClientOrderData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SellerFormPanels\MakeOrderPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellerFormPanels\MakeOrderPanel.Designer.cs">
+      <DependentUpon>MakeOrderPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SellerFormPanels\OrderSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellerFormPanels\OrderSummary.Designer.cs">
+      <DependentUpon>OrderSummary.cs</DependentUpon>
+>>>>>>> main
     </Compile>
     <Compile Include="ServForm.cs">
       <SubType>Form</SubType>
@@ -328,8 +356,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <EmbeddedResource Include="TaskInfoForm.resx">
       <DependentUpon>TaskInfoForm.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="SellerFormPanels\CarConfigurator.resx">
+      <DependentUpon>CarConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellerFormPanels\ClientOrderData.resx">
+      <DependentUpon>ClientOrderData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellerFormPanels\MakeOrderPanel.resx">
+      <DependentUpon>MakeOrderPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellerFormPanels\OrderSummary.resx">
+      <DependentUpon>OrderSummary.cs</DependentUpon>
+>>>>>>> main
     </EmbeddedResource>
     <EmbeddedResource Include="ServForm.resx">
       <DependentUpon>ServForm.cs</DependentUpon>
@@ -403,6 +445,7 @@
     <None Include="Properties\DataSources\CarDealerSupportSystem.Models.Pracownicy.datasource" />
     <None Include="Properties\DataSources\CarDealerSupportSystem.Models.Samochody.datasource" />
     <None Include="Properties\DataSources\CarDealerSupportSystem.Models.Zamowienia.datasource" />
+    <None Include="Properties\DataSources\CarDealerSupportSystem.Models.ZamowieniaSamochodyUslugi.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -1282,6 +1325,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo.ico" />
+    <None Include="Resources\back1.jpg" />
+    <None Include="Resources\360_F_290722607_fXQ9VHKMPEHSvvPHSMlzJpEcUE5v0GiV.jpg" />
     <None Include="Resources\save-file.256x255.png" />
     <None Include="Resources\database-restore.243x256.png" />
     <None Include="Resources\video_image-rrOpvFHf6.jpeg" />

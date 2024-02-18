@@ -11,13 +11,21 @@ namespace CarDealerSupportSystem
         private Button currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
+
         public SellerPanel()
+
+        
+        // get the id of the logged user
+        public readonly int id;
+
+
+
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(5, 57);
             LeftMenuPanel.Controls.Add(leftBorderBtn);
-
+            this.id = id;
         }
 
         private struct RGBColors

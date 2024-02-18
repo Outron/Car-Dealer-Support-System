@@ -16,5 +16,11 @@ namespace CarDealerSupportSystem.SellerFormPanels
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MakeOrderPanel makeorderpanel = new MakeOrderPanel();
+            makeorderpanel.Show();
+        }
     }
 }
