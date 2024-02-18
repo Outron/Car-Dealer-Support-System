@@ -91,9 +91,9 @@ namespace CarDealerSupportSystem.SellerFormPanels
 
                 // load image from database
                
-                if (data.Wyglad != null && data.Wyglad.Length > 0)
+                if (data.Zdjecie != null && data.Zdjecie.Length > 0)
                 {
-                    using (MemoryStream memoryStream = new MemoryStream(data.Wyglad))
+                    using (MemoryStream memoryStream = new MemoryStream(data.Zdjecie))
                     {
                         Image image = Image.FromStream(memoryStream);
                         pictureBox.Image = image;
@@ -141,7 +141,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
             {
                 SelectedBrand = carData.Marka,
                 SelectedModel = carData.Model,
-                SelectedImage = carData.Wyglad
+                SelectedImage = carData.Zdjecie
             };
         }
 
@@ -196,7 +196,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
         private void MakeOrderPanel_Load(object sender, EventArgs e)
         {
             var carDataList = db.Samochody
-                .Select(c => new Samochody { Marka = c.Marka, Model = c.Model, Wyglad = c.Wyglad })
+                .Select(c => new Samochody { Marka = c.Marka, Model = c.Model, Zdjecie = c.Zdjecie })
                 .Distinct()
                 .ToList();
             ChooseCarPanel(carDataList);

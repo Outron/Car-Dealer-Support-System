@@ -7,18 +7,17 @@ using System.Collections.Generic;
 
 namespace CarDealerSupportSystem.Models
 {
-    public partial class Zamowienia
+    public partial class ZamowieniaSamochodyUslugi
     {
+        public int IdSamochodu { get; set; }
+        public int IdUslugi { get; set; }
         public int IdZamowienia { get; set; }
-        public string RodzajPlatnosci { get; set; }
-        public int? CalkowityKoszt { get; set; }
-        public DateTime? Data { get; set; }
-        public int IdKlienta { get; set; }
-        public int IdPracownika { get; set; }
-        public string TypZamowienia { get; set; }
+        public int? IdPracownika { get; set; }
         public string Status { get; set; }
 
-        public virtual Klienci IdKlientaNavigation { get; set; }
         public virtual Pracownicy IdPracownikaNavigation { get; set; }
+        public virtual Samochody IdSamochoduNavigation { get; set; }
+        public virtual Uslugi IdUslugiNavigation { get; set; }
+        public virtual Zamowienia IdZamowieniaNavigation { get; set; }
     }
 }

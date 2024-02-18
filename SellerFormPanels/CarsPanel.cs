@@ -145,6 +145,11 @@ namespace CarDealerSupportSystem.SellerFormPanels
                 }
             }
         }
+
+        private void CarsGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            CarsGridView.ClearSelection();
+        }
     }
 }
 

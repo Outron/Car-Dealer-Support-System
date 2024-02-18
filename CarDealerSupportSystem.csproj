@@ -177,7 +177,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\cdssContext.cs" />
+    <Compile Include="Models\Mozliweuslugisamochody.cs" />
+    <Compile Include="Models\PakietyUslugi.cs" />
+    <Compile Include="Models\salon_samochodowyContext.cs" />
+    <Compile Include="Models\ZamowieniaSamochodyUslugi.cs" />
     <Compile Include="SellerFormPanels\CarConfigurator.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -301,7 +304,6 @@
     <Compile Include="Models\PracownicyUslugi.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Salony.cs" />
-    <Compile Include="Models\salon_samochodowyContext.cs" />
     <Compile Include="Models\Samochody.cs" />
     <Compile Include="Models\SamochodyUslugi.cs" />
     <Compile Include="Models\SamochodyZamowienia.cs" />
