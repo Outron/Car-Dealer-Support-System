@@ -1,4 +1,5 @@
 ﻿using CarDealerSupportSystem.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,36 +22,34 @@ namespace CarDealerSupportSystem.SellerFormPanels
 
         private void OrdersPanel_Load(object sender, EventArgs e)
         {
-           // var orders = db.Zamowienia.Join(db.ZamowieniaSamochodyUslugi, z => z.IdZamowienia, s => s.IdZamowienia, (z, s) => new { z, s }).Join(db.Samochody, z => z.s.IdSamochodu, s => s.IdSamochodu, (z, s) => new { z, s }).ToList();
-           var orders = db.Zamowienia.ToList();
-            //OrdersGridView.DataSource = orders;
+            var CarNameOrders = db.Zamowienia
+                 .Join(db.ZamowieniaSamochodyUslugi,
+                       z => z.IdZamowienia,
+                       s => s.IdZamowienia,
+                       (z, s) => new { z, s })
+                 .Join(db.Samochody,
+                       zs => zs.s.IdSamochodu,
+                       s => s.IdSamochodu,
+                       (zs, s) => new { zs, s })
+                 .Select(result => new { result.s.Marka, result.s.Model })
+                 .ToList();
 
-            
-            // column samochod in orders gridview has to be filled with the data from the Samochody table but it must be connected with the ZamowieniaSamochodyUslugi table and the Zamowienia table
-            var order2s = orders.Join(db.ZamowieniaSamochodyUslugi, z => z.IdZamowienia, s => s.IdZamowienia, (z, s) => new { z, s }).Join(db.Samochody, z => z.s.IdSamochodu, s => s.IdSamochodu, (z, s) => new { z, s }).ToList();
-            OrdersGridView.DataSource = order2s;
 
 
-            
-
-
-
-           //disp orders in console
-           //foreach (var order in orders)
-           // {
-           //     Console.WriteLine(order.z.z.IdZamowienia + " " + order.s.IdSamochodu + " " + order.s.Marka);
-           // }
-
-        }
-
-        private void OrdersGridView_SelectionChanged(object sender, EventArgs e)
-        {
-            OrdersGridView.ClearSelection();
-        }
-
-        private void zamowieniaSamochodyUslugiBindingSource2_CurrentChanged(object sender, EventArgs e)
-        {
+            //var Orders = db.Database.ExecuteSqlRaw("SELECT * FROM zamowienia zam JOIN zamowienia_samochody_uslugi zsu ON zam.id_zamowienia = zsu.id_zamowienia JOIN samochody s ON zsu.id_samochodu = s.id_samochodu;");
+            var orders = db.Zamowienia.ToList();
+            OrdersGridView.DataSource = orders;
+           
+            //disp orders in console
+            foreach (var name in CarNameOrders)
+            {
+                Console.WriteLine(name.Marka + " " + name.Model);
+            }
 
         }
+
+     
+
+      
     }
 }

@@ -22,6 +22,11 @@ namespace CarDealerSupportSystem
             leftBorderBtn.Size = new Size(5, 57);
             LeftMenuPanel.Controls.Add(leftBorderBtn);
             this.id = id;
+            //open the main panel by default
+
+            
+
+            
         }
 
         private struct RGBColors

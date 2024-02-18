@@ -49,12 +49,16 @@ namespace CarDealerSupportSystem.SellerFormPanels
             fuelUsageLabel.Text = db.Samochody.Where(s => s.Marka == selectedCarInfo.SelectedBrand && s.Model == selectedCarInfo.SelectedModel).Select(s => s.SrednieSpalanie).FirstOrDefault().ToString() + "l/100km";
             bodyLabel.Text = db.Samochody.Where(s => s.Marka == selectedCarInfo.SelectedBrand && s.Model == selectedCarInfo.SelectedModel).Select(s => s.TypNadwozia).FirstOrDefault();
 
-            //fill the list of additional services from the database and add them to the listbox on the form 
-            var services = db.Uslugi.ToList();
-            foreach (var service in services)
+            
+
+
+            var available_services = db.Uslugi.Join(db.Mozliweuslugisamochody, u => u.IdUslugi, m => m.IdUslugi, (u, m) => new { u.Nazwa, m.IdSamochodu }).Where(m => m.IdSamochodu == selectedCarInfo.SelectedCarId).ToList();
+          
+            foreach (var service in available_services)
             {
                 AddServices.Items.Add(service.Nazwa);
             }
+         
    
         }
 
@@ -80,11 +84,9 @@ namespace CarDealerSupportSystem.SellerFormPanels
             var mainForm = Application.OpenForms.OfType<MakeOrderPanel>().Single();
             // after clicking the button, the application will open the next form with SelectedServices list
             mainForm.OpenChildForm(new ClientOrderData(SelectedServices,selectedCarInfo));
-
-            //mainForm.OpenChildForm(new ClientOrderData(SelectedServices));
-   
             mainForm.DisableButton();
             mainForm.ActivateButton(mainForm.ClientData, Color.FromArgb(134, 2, 12));
+
             // change the label on the top of the form
             mainForm.TopLabel.Text = "Dane klienta";
         }

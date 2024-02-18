@@ -58,6 +58,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
             public string SelectedBrand { get; set; }
             public string SelectedModel { get; set; }
             public byte[]  SelectedImage { get; set; }
+            public int SelectedCarId { get; set; }
         }
 
 
@@ -141,7 +142,8 @@ namespace CarDealerSupportSystem.SellerFormPanels
             {
                 SelectedBrand = carData.Marka,
                 SelectedModel = carData.Model,
-                SelectedImage = carData.Zdjecie
+                SelectedImage = carData.Zdjecie,
+                SelectedCarId = carData.IdSamochodu
             };
         }
 
@@ -196,7 +198,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
         private void MakeOrderPanel_Load(object sender, EventArgs e)
         {
             var carDataList = db.Samochody
-                .Select(c => new Samochody { Marka = c.Marka, Model = c.Model, Zdjecie = c.Zdjecie })
+                .Select(c => new Samochody { Marka = c.Marka, Model = c.Model, Zdjecie = c.Zdjecie, IdSamochodu = c.IdSamochodu })
                 .Distinct()
                 .ToList();
             ChooseCarPanel(carDataList);

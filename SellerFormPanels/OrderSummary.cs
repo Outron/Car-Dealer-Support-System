@@ -196,9 +196,6 @@ namespace CarDealerSupportSystem.SellerFormPanels
                 db.SaveChanges();
             }
 
-           
-            
-
             MessageBox.Show("Zamówienie zostało dodane pomyślnie!");
             //close the form and makeorderpanel
             this.Close();
