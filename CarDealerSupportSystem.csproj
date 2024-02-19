@@ -191,18 +191,13 @@
   <ItemGroup>
     <Compile Include="Models\Mozliweuslugisamochody.cs" />
     <Compile Include="Models\PakietyUslugi.cs" />
-<<<<<<< HEAD
-    <Compile Include="Models\PracownicyZlecenia.cs" />
-    <Compile Include="Models\salon_samochodowyContext.cs" />
-    <Compile Include="Models\SamochodyZamowieniaUslugi.cs" />
-    <Compile Include="Models\ZamowieniaSamochodyUslugi.cs" />
     <Compile Include="PdfCreator.cs" />
     <Compile Include="TaskInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TaskInfoForm.Designer.cs">
       <DependentUpon>TaskInfoForm.cs</DependentUpon>
-=======
+	</Compile>
     <Compile Include="Models\salon_samochodowyContext.cs" />
     <Compile Include="Models\ZamowieniaSamochodyUslugi.cs" />
     <Compile Include="SellerFormPanels\CarConfigurator.cs">
@@ -228,7 +223,6 @@
     </Compile>
     <Compile Include="SellerFormPanels\OrderSummary.Designer.cs">
       <DependentUpon>OrderSummary.cs</DependentUpon>
->>>>>>> main
     </Compile>
     <Compile Include="ServForm.cs">
       <SubType>Form</SubType>
@@ -362,10 +356,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
+
     <EmbeddedResource Include="TaskInfoForm.resx">
       <DependentUpon>TaskInfoForm.cs</DependentUpon>
-=======
+	</EmbeddedResource>
     <EmbeddedResource Include="SellerFormPanels\CarConfigurator.resx">
       <DependentUpon>CarConfigurator.cs</DependentUpon>
     </EmbeddedResource>
@@ -376,8 +370,7 @@
       <DependentUpon>MakeOrderPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SellerFormPanels\OrderSummary.resx">
-      <DependentUpon>OrderSummary.cs</DependentUpon>
->>>>>>> main
+
     </EmbeddedResource>
     <EmbeddedResource Include="ServForm.resx">
       <DependentUpon>ServForm.cs</DependentUpon>

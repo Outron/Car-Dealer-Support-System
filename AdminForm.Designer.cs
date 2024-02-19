@@ -273,7 +273,5 @@
         private System.Windows.Forms.Button LogOutBtn;
         private System.Windows.Forms.Label TopLabel;
         private System.Windows.Forms.Panel MainPanel;
-        public System.Windows.Forms.Label NameLabel;
-        public System.Windows.Forms.Label RoleLabel;
     }
 }
