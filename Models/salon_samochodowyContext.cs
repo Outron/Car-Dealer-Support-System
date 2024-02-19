@@ -108,7 +108,7 @@ namespace CarDealerSupportSystem.Models
                     .HasCollation("utf8mb4_general_ci");
 
                 entity.Property(e => e.Wiadomosc)
-                    .HasColumnType("varchar(50)")
+                    .HasColumnType("varchar(100)")
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_general_ci");
             });

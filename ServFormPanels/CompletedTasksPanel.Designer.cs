@@ -34,15 +34,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ClientsMenuPanel = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.SearchClientsTextBox = new System.Windows.Forms.TextBox();
             this.CompletedTasksGridView = new System.Windows.Forms.DataGridView();
             this.IdZamowienia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nazwa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.klienciBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ClientsMenuPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompletedTasksGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.klienciBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -50,38 +46,12 @@
             // ClientsMenuPanel
             // 
             this.ClientsMenuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.ClientsMenuPanel.Controls.Add(this.pictureBox2);
-            this.ClientsMenuPanel.Controls.Add(this.SearchClientsTextBox);
             this.ClientsMenuPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.ClientsMenuPanel.Location = new System.Drawing.Point(0, 0);
             this.ClientsMenuPanel.Margin = new System.Windows.Forms.Padding(4);
             this.ClientsMenuPanel.Name = "ClientsMenuPanel";
             this.ClientsMenuPanel.Size = new System.Drawing.Size(1148, 48);
             this.ClientsMenuPanel.TabIndex = 3;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::CarDealerSupportSystem.Properties.Resources.search;
-            this.pictureBox2.Location = new System.Drawing.Point(5, 4);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(49, 41);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            // 
-            // SearchClientsTextBox
-            // 
-            this.SearchClientsTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.SearchClientsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.SearchClientsTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.SearchClientsTextBox.ForeColor = System.Drawing.Color.White;
-            this.SearchClientsTextBox.Location = new System.Drawing.Point(63, 7);
-            this.SearchClientsTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.SearchClientsTextBox.Name = "SearchClientsTextBox";
-            this.SearchClientsTextBox.Size = new System.Drawing.Size(332, 32);
-            this.SearchClientsTextBox.TabIndex = 1;
-            this.SearchClientsTextBox.TextChanged += new System.EventHandler(this.SearchClientsTextBox_TextChanged);
             // 
             // CompletedTasksGridView
             // 
@@ -184,9 +154,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ClientsForm";
             this.Load += new System.EventHandler(this.CompletedTasksPanel_Load);
-            this.ClientsMenuPanel.ResumeLayout(false);
-            this.ClientsMenuPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompletedTasksGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.klienciBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -196,8 +163,6 @@
         #endregion
 
         private System.Windows.Forms.Panel ClientsMenuPanel;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox SearchClientsTextBox;
         private System.Windows.Forms.DataGridView CompletedTasksGridView;
         private System.Windows.Forms.BindingSource klienciBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdZamowienia;

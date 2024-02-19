@@ -1,6 +1,8 @@
-﻿using CarDealerSupportSystem.SellerFormPanels;
+﻿using CarDealerSupportSystem.Models;
+using CarDealerSupportSystem.SellerFormPanels;
 using System;
 using System.Drawing;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -46,7 +48,6 @@ namespace CarDealerSupportSystem
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
                 leftBorderBtn.Visible = true;
                 leftBorderBtn.BringToFront();
-
             }
         }
 
@@ -58,10 +59,16 @@ namespace CarDealerSupportSystem
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
+        private string GetServInfo()
+        {
+            using salon_samochodowyContext db = new();
+            var servName = db.Pracownicy.Where(p => p.IdPracownika == id).Select(c => (c.Imie + " " + c.Nazwisko)).FirstOrDefault();
+            return servName;
+        }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            Log.SaveLog("Wykryto logowanie do systemu, pracownik: " + GetServInfo(), LogType.Informacja);
         }
 
         private void LeftMenuBtn1_Click(object sender, EventArgs e)

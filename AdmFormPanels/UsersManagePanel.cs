@@ -11,8 +11,9 @@ namespace CarDealerSupportSystem.SellerFormPanels
     public partial class UsersManagePanel : Form
     {
         private readonly salon_samochodowyContext db = new();
-        private readonly List<Pracownicy> workers;
-        private readonly int adminID;
+        public  List<Pracownicy> workers;
+        public readonly int adminID;
+        public readonly int? salonid;
         private readonly Color gridDefaultBackColor;
         public UsersManagePanel(int id)
         {
@@ -21,6 +22,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
                            join s in db.Salony on p.IdSalonu equals s.IdSalonu
                            where p.IdPracownika == adminID
                            select p.IdSalonu).FirstOrDefault();
+            salonid = salonID;
             workers = (from p in db.Pracownicy
                        join s in db.Salony on p.IdSalonu equals s.IdSalonu
                        where p.IdSalonu == salonID && p.IdPracownika != adminID
@@ -28,6 +30,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
             InitializeComponent();
             gridDefaultBackColor = UsersGridView.DefaultCellStyle.BackColor;
         }
+       
 
         private void UsersForm_Load(object sender, EventArgs e)
         {
@@ -37,7 +40,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
         private void SearchUsersTextBox_TextChanged(object sender, EventArgs e)
         {
             var searchValue = SearchUsersTextBox.Text.ToLower();
-            var clients = db.Pracownicy.Where(c => c.Nazwisko.ToLower().Contains(searchValue)).ToList();
+            var clients = db.Pracownicy.Where(c => c.Nazwisko.ToLower().Contains(searchValue) && c.IdSalonu==salonid && c.IdPracownika!=adminID).ToList();
             UsersGridView.DataSource = clients;
         }
 
