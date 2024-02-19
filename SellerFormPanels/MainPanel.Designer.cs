@@ -28,37 +28,200 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.LastOrdersGrid = new System.Windows.Forms.DataGridView();
+            this.zamowieniaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.zamowieniaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.IdKlienta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idZamowieniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rodzajPlatnosciDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.LastOrdersGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zamowieniaBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zamowieniaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(140, 110);
+            this.button1.BackColor = System.Drawing.Color.Maroon;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(78, 68);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 51);
+            this.button1.Size = new System.Drawing.Size(216, 82);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Text = "Dodaj zamówienie";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // monthCalendar1
             // 
-            this.button2.Location = new System.Drawing.Point(311, 110);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 51);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.monthCalendar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.monthCalendar1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.monthCalendar1.Location = new System.Drawing.Point(574, 29);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.RightToLeftLayout = true;
+            this.monthCalendar1.TabIndex = 1;
+            this.monthCalendar1.TitleBackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.monthCalendar1.TitleForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.monthCalendar1.TrailingForeColor = System.Drawing.Color.Gray;
             // 
-            // button3
+            // label1
             // 
-            this.button3.Location = new System.Drawing.Point(506, 110);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(116, 51);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 212);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(304, 40);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Ostatnie zamówienia";
+            // 
+            // LastOrdersGrid
+            // 
+            this.LastOrdersGrid.AllowUserToAddRows = false;
+            this.LastOrdersGrid.AllowUserToDeleteRows = false;
+            this.LastOrdersGrid.AllowUserToResizeColumns = false;
+            this.LastOrdersGrid.AllowUserToResizeRows = false;
+            this.LastOrdersGrid.AutoGenerateColumns = false;
+            this.LastOrdersGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.LastOrdersGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.LastOrdersGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LastOrdersGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.LastOrdersGrid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.LastOrdersGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(20, 5, 5, 10);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.LastOrdersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.LastOrdersGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.LastOrdersGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdKlienta,
+            this.idZamowieniaDataGridViewTextBoxColumn,
+            this.rodzajPlatnosciDataGridViewTextBoxColumn,
+            this.Column1,
+            this.Data,
+            this.statusDataGridViewTextBoxColumn});
+            this.LastOrdersGrid.DataSource = this.zamowieniaBindingSource1;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.LastOrdersGrid.DefaultCellStyle = dataGridViewCellStyle8;
+            this.LastOrdersGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.LastOrdersGrid.EnableHeadersVisualStyles = false;
+            this.LastOrdersGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.LastOrdersGrid.Location = new System.Drawing.Point(0, 267);
+            this.LastOrdersGrid.MultiSelect = false;
+            this.LastOrdersGrid.Name = "LastOrdersGrid";
+            this.LastOrdersGrid.ReadOnly = true;
+            this.LastOrdersGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Transparent;
+            this.LastOrdersGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.LastOrdersGrid.RowHeadersVisible = false;
+            this.LastOrdersGrid.RowHeadersWidth = 51;
+            this.LastOrdersGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(5);
+            this.LastOrdersGrid.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.LastOrdersGrid.RowTemplate.Height = 36;
+            this.LastOrdersGrid.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.LastOrdersGrid.ShowCellToolTips = false;
+            this.LastOrdersGrid.ShowEditingIcon = false;
+            this.LastOrdersGrid.Size = new System.Drawing.Size(861, 263);
+            this.LastOrdersGrid.TabIndex = 6;
+            // 
+            // zamowieniaBindingSource1
+            // 
+            this.zamowieniaBindingSource1.DataSource = typeof(CarDealerSupportSystem.Models.Zamowienia);
+            // 
+            // zamowieniaBindingSource
+            // 
+            this.zamowieniaBindingSource.DataSource = typeof(CarDealerSupportSystem.Models.Zamowienia);
+            // 
+            // IdKlienta
+            // 
+            this.IdKlienta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.IdKlienta.DataPropertyName = "IdKlienta";
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            this.IdKlienta.DefaultCellStyle = dataGridViewCellStyle2;
+            this.IdKlienta.HeaderText = "IDk";
+            this.IdKlienta.Name = "IdKlienta";
+            this.IdKlienta.ReadOnly = true;
+            this.IdKlienta.Width = 89;
+            // 
+            // idZamowieniaDataGridViewTextBoxColumn
+            // 
+            this.idZamowieniaDataGridViewTextBoxColumn.DataPropertyName = "IdZamowienia";
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            this.idZamowieniaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.idZamowieniaDataGridViewTextBoxColumn.HeaderText = "IDz";
+            this.idZamowieniaDataGridViewTextBoxColumn.Name = "idZamowieniaDataGridViewTextBoxColumn";
+            this.idZamowieniaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // rodzajPlatnosciDataGridViewTextBoxColumn
+            // 
+            this.rodzajPlatnosciDataGridViewTextBoxColumn.DataPropertyName = "RodzajPlatnosci";
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            this.rodzajPlatnosciDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.rodzajPlatnosciDataGridViewTextBoxColumn.HeaderText = "Płatność";
+            this.rodzajPlatnosciDataGridViewTextBoxColumn.Name = "rodzajPlatnosciDataGridViewTextBoxColumn";
+            this.rodzajPlatnosciDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "CalkowityKoszt";
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Column1.HeaderText = "Koszt";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Data
+            // 
+            this.Data.DataPropertyName = "Data";
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            this.Data.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Data.HeaderText = "Data";
+            this.Data.Name = "Data";
+            this.Data.ReadOnly = true;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            this.statusDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // MainPanel
             // 
@@ -66,21 +229,36 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
             this.ClientSize = new System.Drawing.Size(861, 530);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.LastOrdersGrid);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainPanel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainPanel";
+            this.Load += new System.EventHandler(this.MainPanel_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.LastOrdersGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zamowieniaBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zamowieniaBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.BindingSource zamowieniaBindingSource;
+        private System.Windows.Forms.DataGridView LastOrdersGrid;
+        private System.Windows.Forms.BindingSource zamowieniaBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdKlienta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idZamowieniaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rodzajPlatnosciDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
     }
 }
