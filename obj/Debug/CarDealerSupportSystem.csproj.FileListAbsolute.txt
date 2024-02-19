@@ -537,6 +537,7 @@ C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\CarDealerSupp
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\BouncyCastle.Cryptography.dll
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\Google.Protobuf.dll
+C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\itextsharp.dll
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\K4os.Compression.LZ4.dll
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\K4os.Compression.LZ4.Streams.dll
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\K4os.Hash.xxHash.dll
@@ -577,6 +578,7 @@ C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\ZstdSharp.dll
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\BouncyCastle.Cryptography.xml
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\Google.Protobuf.pdb
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\Google.Protobuf.xml
+C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\itextsharp.xml
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\K4os.Compression.LZ4.xml
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\K4os.Compression.LZ4.Streams.xml
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\K4os.Hash.xxHash.xml
@@ -611,10 +613,10 @@ C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\System.Runtim
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.csproj.AssemblyReference.cache
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.csproj.SuggestedBindingRedirects.cache
+C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.TaskInfoForm.resources
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.ServForm.resources
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.CompletedTasksPanel.resources
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.ServMianPanel.resources
-C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.SalonOffersPanel.resources
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.CurrentTasksPanel.resources
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.NewTasksPanel.resources
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.UserInfoForm.resources
@@ -637,6 +639,224 @@ C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\obj\Debug\CarDealerSupp
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.csproj.CopyComplete
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.exe
 C:\Users\Admin\Desktop\BDSalon\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.pdb
+<<<<<<< HEAD
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\CarDealerSupportSystem.exe.config
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\CarDealerSupportSystem.exe
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\CarDealerSupportSystem.pdb
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Google.Protobuf.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\itextsharp.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Bcl.HashCode.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.EntityFrameworkCore.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Configuration.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\MySql.Data.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\MySqlBackup.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\MySqlConnector.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Pomelo.JsonObject.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\System.Buffers.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\System.Collections.Immutable.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\System.IO.Pipelines.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\System.Memory.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\ZstdSharp.dll
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Google.Protobuf.pdb
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Google.Protobuf.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\itextsharp.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Bcl.HashCode.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.EntityFrameworkCore.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.EntityFrameworkCore.Design.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.EntityFrameworkCore.Relational.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Configuration.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Configuration.Binder.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\MySql.Data.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\MySqlConnector.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\Pomelo.EntityFrameworkCore.MySql.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\System.Buffers.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\System.Collections.Immutable.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\System.IO.Pipelines.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\System.Memory.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.csproj.SuggestedBindingRedirects.cache
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.TaskInfoForm.resources
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.ServForm.resources
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.CompletedTasksPanel.resources
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.ServMianPanel.resources
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.CurrentTasksPanel.resources
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.NewTasksPanel.resources
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.UserInfoForm.resources
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.EditUserForm.resources
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.AdmMainPanel.resources
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.UsersManagePanel.resources
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.LogsPanel.resources
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.DatabasePanel.resources
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.AdminForm.resources
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.AddUserForm.resources
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.LoginForm.resources
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.CarsPanel.resources
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.ClientsForm.resources
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.MainPanel.resources
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.OrdersPanel.resources
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerPanel.resources
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.Properties.Resources.resources
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.csproj.CopyComplete
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.exe
+C:\Users\Admin\Desktop\BDSalon — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.pdb
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\CarDealerSupportSystem.exe.config
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\CarDealerSupportSystem.exe
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\CarDealerSupportSystem.pdb
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Google.Protobuf.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\itextsharp.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Bcl.HashCode.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.EntityFrameworkCore.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Configuration.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\MySql.Data.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\MySqlBackup.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\MySqlConnector.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Pomelo.JsonObject.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\System.Buffers.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\System.Collections.Immutable.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\System.IO.Pipelines.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\System.Memory.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\ZstdSharp.dll
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Google.Protobuf.pdb
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Google.Protobuf.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\itextsharp.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Bcl.HashCode.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.EntityFrameworkCore.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.EntityFrameworkCore.Design.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.EntityFrameworkCore.Relational.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Configuration.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Configuration.Binder.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\MySql.Data.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\MySqlConnector.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\Pomelo.EntityFrameworkCore.MySql.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\System.Buffers.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\System.Collections.Immutable.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\System.IO.Pipelines.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\System.Memory.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.csproj.SuggestedBindingRedirects.cache
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.TaskInfoForm.resources
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.ServForm.resources
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.CompletedTasksPanel.resources
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.ServMianPanel.resources
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.CurrentTasksPanel.resources
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.NewTasksPanel.resources
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.UserInfoForm.resources
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.EditUserForm.resources
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.AdmMainPanel.resources
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.UsersManagePanel.resources
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.LogsPanel.resources
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.DatabasePanel.resources
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.AdminForm.resources
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.AddUserForm.resources
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.LoginForm.resources
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.CarsPanel.resources
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.ClientsForm.resources
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.MainPanel.resources
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.OrdersPanel.resources
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerPanel.resources
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.Properties.Resources.resources
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.csproj.CopyComplete
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.exe
+C:\Users\Admin\Desktop\BDSalon — kopia — kopia\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.pdb
+=======
 D:\CDSS BD2\CarDealerSupportSystem\bin\Debug\BouncyCastle.Crypto.dll
 D:\CDSS BD2\CarDealerSupportSystem\bin\Debug\BouncyCastle.Cryptography.dll
 D:\CDSS BD2\CarDealerSupportSystem\bin\Debug\Google.Protobuf.dll
@@ -784,3 +1004,4 @@ C:\Users\Admin\Desktop\projektbddawidproblem\Car-Dealer-Support-System\obj\Debug
 C:\Users\Admin\Desktop\projektbddawidproblem\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.csproj.CopyComplete
 C:\Users\Admin\Desktop\projektbddawidproblem\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.exe
 C:\Users\Admin\Desktop\projektbddawidproblem\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.pdb
+>>>>>>> main

@@ -1,17 +1,7 @@
 ﻿using CarDealerSupportSystem.SellerFormPanels;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Reflection.Emit;
 using System.Runtime.InteropServices;
-using System.Runtime.Remoting.Proxies;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarDealerSupportSystem
@@ -19,17 +9,16 @@ namespace CarDealerSupportSystem
     public partial class AdminForm : Form
     {
         private Button currentBtn;
-        private Panel leftBorderBtn;
+        private readonly Panel leftBorderBtn;
         private Form currentChildForm;
-
-
-        public AdminForm()
+        private readonly int adminID;
+        public AdminForm(int id)
         {
+            adminID = id;
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(5, 57);
             LeftMenuPanel.Controls.Add(leftBorderBtn);
-
         }
 
         private struct RGBColors
@@ -46,13 +35,13 @@ namespace CarDealerSupportSystem
                 currentBtn = (Button)senderBtn;
                 currentBtn.BackColor = Color.FromArgb(51, 51, 51);
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
-               
+
                 //Left border button
                 leftBorderBtn.BackColor = color;
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
                 leftBorderBtn.Visible = true;
                 leftBorderBtn.BringToFront();
-               
+
             }
         }
 
@@ -67,13 +56,7 @@ namespace CarDealerSupportSystem
 
         private void AdminForm_Load(object sender, EventArgs e)
         {
-            //string logFilePath = Log.logPath;
-            //if (!File.Exists(logFilePath))
-            //{
-            //    File.Create(logFilePath);
-            //    Debug.WriteLine("Utworzono plik logow");
 
-            //}
         }
 
         private void LeftMenuBtn1_Click(object sender, EventArgs e)
@@ -97,7 +80,7 @@ namespace CarDealerSupportSystem
         private void LeftMenuBtn4_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new UsersManagePanel());
+            OpenChildForm(new UsersManagePanel(adminID));
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)
@@ -108,18 +91,15 @@ namespace CarDealerSupportSystem
         private void LogOutBtn_Click(object sender, EventArgs e)
         {
             //after clicking this button, the application will open the first form
-            LoginForm f1 = new LoginForm();
+            LoginForm f1 = new();
             f1.Show();
             this.Hide();
         }
 
         private void OpenChildForm(Form childForm)
         {
-            if (currentChildForm != null)
-            {
-                //open only one form
-                currentChildForm.Close();
-            }
+            //open only one form
+            currentChildForm?.Close();
             currentChildForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -129,15 +109,7 @@ namespace CarDealerSupportSystem
             childForm.BringToFront();
             childForm.Show();
             TopLabel.Text = currentBtn.Text;
-        }       
-
-
-
-
-
-
-
-
+        }
         // Drag Form
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -150,13 +122,5 @@ namespace CarDealerSupportSystem
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        // End Drag Form
-
     }
 }

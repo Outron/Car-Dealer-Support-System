@@ -100,6 +100,7 @@
             this.usernameTextBox.Size = new System.Drawing.Size(348, 35);
             this.usernameTextBox.TabIndex = 2;
             this.usernameTextBox.Tag = "Login";
+            this.usernameTextBox.Click += new System.EventHandler(this.anyTextBox_Click);
             this.usernameTextBox.Enter += new System.EventHandler(this.anyTextBox_Enter);
             this.usernameTextBox.Leave += new System.EventHandler(this.anyTextBox_Leave);
             // 
@@ -116,6 +117,7 @@
             this.passwordTextBox.Size = new System.Drawing.Size(348, 35);
             this.passwordTextBox.TabIndex = 3;
             this.passwordTextBox.Tag = "Haslo";
+            this.passwordTextBox.Click += new System.EventHandler(this.anyTextBox_Click);
             this.passwordTextBox.Enter += new System.EventHandler(this.anyTextBox_Enter);
             this.passwordTextBox.Leave += new System.EventHandler(this.anyTextBox_Leave);
             this.passwordTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.passwordTextBox_Validating);
@@ -223,6 +225,7 @@
             this.emailTextBox.Size = new System.Drawing.Size(348, 35);
             this.emailTextBox.TabIndex = 12;
             this.emailTextBox.Tag = "E-mail";
+            this.emailTextBox.Click += new System.EventHandler(this.anyTextBox_Click);
             this.emailTextBox.Enter += new System.EventHandler(this.anyTextBox_Enter);
             this.emailTextBox.Leave += new System.EventHandler(this.anyTextBox_Leave);
             this.emailTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.emailTextBox_Validating);
@@ -259,6 +262,7 @@
             this.phoneTextBox.Size = new System.Drawing.Size(348, 35);
             this.phoneTextBox.TabIndex = 15;
             this.phoneTextBox.Tag = "Telefon";
+            this.phoneTextBox.Click += new System.EventHandler(this.anyTextBox_Click);
             this.phoneTextBox.Enter += new System.EventHandler(this.anyTextBox_Enter);
             this.phoneTextBox.Leave += new System.EventHandler(this.anyTextBox_Leave);
             this.phoneTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.phoneTextBox_Validating);
@@ -295,6 +299,7 @@
             this.addressTextBox.Size = new System.Drawing.Size(348, 35);
             this.addressTextBox.TabIndex = 18;
             this.addressTextBox.Tag = "Adres";
+            this.addressTextBox.Click += new System.EventHandler(this.anyTextBox_Click);
             this.addressTextBox.Enter += new System.EventHandler(this.anyTextBox_Enter);
             this.addressTextBox.Leave += new System.EventHandler(this.anyTextBox_Leave);
             // 
@@ -330,6 +335,7 @@
             this.nameTextBox.Size = new System.Drawing.Size(348, 35);
             this.nameTextBox.TabIndex = 21;
             this.nameTextBox.Tag = "Imię";
+            this.nameTextBox.Click += new System.EventHandler(this.anyTextBox_Click);
             this.nameTextBox.Enter += new System.EventHandler(this.anyTextBox_Enter);
             this.nameTextBox.Leave += new System.EventHandler(this.anyTextBox_Leave);
             // 
@@ -365,6 +371,7 @@
             this.surnameTextBox.Size = new System.Drawing.Size(348, 35);
             this.surnameTextBox.TabIndex = 24;
             this.surnameTextBox.Tag = "Nazwisko";
+            this.surnameTextBox.Click += new System.EventHandler(this.anyTextBox_Click);
             this.surnameTextBox.Enter += new System.EventHandler(this.anyTextBox_Enter);
             this.surnameTextBox.Leave += new System.EventHandler(this.anyTextBox_Leave);
             // 
@@ -401,7 +408,8 @@
             this.rolesComboBox.Items.AddRange(new object[] {
             "Sprzedawca",
             "Kierownik",
-            "Serwisant"});
+            "Serwisant",
+            "Administrator"});
             this.rolesComboBox.Location = new System.Drawing.Point(561, 199);
             this.rolesComboBox.Name = "rolesComboBox";
             this.rolesComboBox.Size = new System.Drawing.Size(211, 33);
@@ -467,6 +475,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.EditUserForm_Load);
+            this.Click += new System.EventHandler(this.EditUserForm_Click);
             this.TopLoginPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

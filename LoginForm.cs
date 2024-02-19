@@ -1,14 +1,10 @@
 ﻿using CarDealerSupportSystem.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarDealerSupportSystem
@@ -93,7 +89,6 @@ namespace CarDealerSupportSystem
                         WrongLoginLabel.Visible = true;
                         break;
                 }
-
             }
             catch (Exception ex)
             {
@@ -103,7 +98,6 @@ namespace CarDealerSupportSystem
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            //quit the application
             Application.Exit();
         }
     }

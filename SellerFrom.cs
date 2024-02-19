@@ -11,11 +11,12 @@ namespace CarDealerSupportSystem
         private Button currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
-        
+
         // get the id of the logged user
         public readonly int id;
 
         public SellerPanel(int id)
+
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
@@ -23,10 +24,6 @@ namespace CarDealerSupportSystem
             LeftMenuPanel.Controls.Add(leftBorderBtn);
             this.id = id;
             //open the main panel by default
-
-            
-
-            
         }
 
         private struct RGBColors
@@ -98,18 +95,15 @@ namespace CarDealerSupportSystem
 
         private void LogOutBtn_Click(object sender, EventArgs e)
         {
-            //after clicking this button, the application will open the first form
             LoginForm f1 = new LoginForm();
             f1.Show();
             this.Hide();
-
         }
 
         private void OpenChildForm(Form childForm)
         {
             if (currentChildForm != null)
             {
-                //open only one form
                 currentChildForm.Close();
             }
             currentChildForm = childForm;
@@ -140,13 +134,5 @@ namespace CarDealerSupportSystem
         {
 
         }
-
-        private void RoleLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        // End Drag Form
-
     }
 }

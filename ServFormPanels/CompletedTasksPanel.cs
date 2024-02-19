@@ -13,23 +13,38 @@ namespace CarDealerSupportSystem.SellerFormPanels
 {
     public partial class CompletedTasksPanel : Form
     {
-        private readonly salon_samochodowyContext db = new salon_samochodowyContext();
-        public CompletedTasksPanel()
+        private readonly int id;
+        public CompletedTasksPanel(int id)
         {
+            this.id = id;
             InitializeComponent();
         }
-
-        private void ClientsForm_Load(object sender, EventArgs e)
-        {
-            var clients = db.Klienci.ToList();
-            ClientsGridView.DataSource = clients;
-        }
-
         private void SearchClientsTextBox_TextChanged(object sender, EventArgs e)
         {
-            var searchValue = SearchClientsTextBox.Text.ToLower();
-            var clients = db.Klienci.Where(c => c.Telefon.ToLower().Contains(searchValue)).ToList();
-            ClientsGridView.DataSource = clients;
+
+        }
+
+        private void CompletedTasksPanel_Load(object sender, EventArgs e)
+        {
+            using salon_samochodowyContext db = new();
+            var completedTasks = (from szu in db.ZamowieniaSamochodyUslugi
+                                  join u in db.Uslugi on szu.IdUslugi equals u.IdUslugi
+                                  where szu.Status == "zakończone" && szu.IdPracownika == this.id
+                                  select new { szu.IdZamowienia, u.Nazwa, szu.Status }).ToList();
+            CompletedTasksGridView.Columns.Clear();
+            CompletedTasksGridView.Columns.Add("IdZamowienia", "ID Zamówienia");
+            CompletedTasksGridView.Columns.Add("Nazwa", "Nazwa usługi");
+            CompletedTasksGridView.Columns.Add("Status", "Status");
+            CompletedTasksGridView.Columns[0].DataPropertyName = "IdZamowienia";
+            CompletedTasksGridView.Columns[1].DataPropertyName = "Nazwa";
+            CompletedTasksGridView.Columns[2].DataPropertyName = "Status";
+            CompletedTasksGridView.DefaultCellStyle.ForeColor = Color.White;
+            CompletedTasksGridView.DataSource = completedTasks;
+        }
+
+        private void CompletedTasksGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            CompletedTasksGridView.ClearSelection();
         }
     }
 }

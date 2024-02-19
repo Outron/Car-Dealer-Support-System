@@ -156,21 +156,27 @@
             this.RoleLabel.AutoSize = true;
             this.RoleLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.RoleLabel.ForeColor = System.Drawing.Color.White;
-            this.RoleLabel.Location = new System.Drawing.Point(74, 126);
+            this.RoleLabel.Location = new System.Drawing.Point(78, 155);
+            this.RoleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.RoleLabel.Name = "RoleLabel";
-            this.RoleLabel.Size = new System.Drawing.Size(106, 21);
+            this.RoleLabel.Size = new System.Drawing.Size(133, 28);
             this.RoleLabel.TabIndex = 3;
             this.RoleLabel.Text = "Administrator";
-            this.RoleLabel.Click += new System.EventHandler(this.label3_Click);
+
+
             // 
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
+
+            this.NameLabel.CausesValidation = false;
             this.NameLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.NameLabel.ForeColor = System.Drawing.Color.White;
-            this.NameLabel.Location = new System.Drawing.Point(35, 96);
+            this.NameLabel.Location = new System.Drawing.Point(47, 118);
+            this.NameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(177, 30);
+            this.NameLabel.Size = new System.Drawing.Size(229, 37);
+
             this.NameLabel.TabIndex = 1;
             this.NameLabel.Text = "Zbigniew Kapusta";
             // 
@@ -253,8 +259,12 @@
         #endregion
 
         private System.Windows.Forms.Panel LeftMenuPanel;
+
+        public System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel TopPanel;
+        public System.Windows.Forms.Label RoleLabel;
+
         private System.Windows.Forms.Button LeftMenuBtn1;
         private System.Windows.Forms.Button LeftMenuBtn2;
         private System.Windows.Forms.Button LeftMenuBtn4;

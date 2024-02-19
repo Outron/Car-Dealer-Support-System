@@ -1,8 +1,6 @@
 ﻿using CarDealerSupportSystem.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarDealerSupportSystem
@@ -15,12 +13,11 @@ namespace CarDealerSupportSystem
         [STAThread]
         static void Main()
         {
-            //salon_samochodowyContext db=new salon_samochodowyContext();
-            //db.Add(new Pracownicy() { Imie = "Grzegorz", Nazwisko = "Kowalski", Login = "grzeg23", Haslo = "grzegorz123", Adres = "xd", Telefon = "123456789", IdSalonu=1, Email = "grzegorz@aaa.pl", KodRoli = "KRW" });
-            //db.SaveChanges();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());//LOginFOrm
+            Application.Run(new LoginForm());
+
         }
+        
     }
 }
