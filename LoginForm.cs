@@ -37,21 +37,20 @@ namespace CarDealerSupportSystem
         private void button2_Click(object sender, EventArgs e)
         {
             //after clicking this button, the application will open the second form after successful login
-
-            var db = new salon_samochodowyContext();
+            try
+            {
+                var db = new salon_samochodowyContext();
             // join role to pracownicy
             var loginData = db.Pracownicy.Join(db.Role, p => p.KodRoli, r => r.KodRoli, (p, r) => new { p, r }).Where(p => p.p.Login == UsernameTextBox.Text && p.p.Haslo == PasswordTextBox.Text).FirstOrDefault();
           
             // get id of the logged user
             var id = db.Pracownicy.Where(p => p.Login == UsernameTextBox.Text && p.Haslo == PasswordTextBox.Text).Select(p => p.IdPracownika).FirstOrDefault();
 
-
-            try
-            {
                 if (loginData == null)
                 {
                     WrongLoginLabel.Text = "Logowanie nie powiodło się!";
                     WrongLoginLabel.Visible = true;
+                    Log.SaveLog("Logowanie pracownika nie powiodło się", LogType.Blad);
                     return;
                 }
                 switch (loginData.r.KodRoli)
@@ -93,6 +92,7 @@ namespace CarDealerSupportSystem
             catch (Exception ex)
             {
                 MessageBox.Show(text: ex.Message, caption: "Logowanie się nie powiodło");
+                Log.SaveLog("Logowanie pracownika nie powiodło się", LogType.Blad);
             }
        }
 

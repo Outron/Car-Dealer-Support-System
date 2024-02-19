@@ -37,7 +37,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
             {
                 Console.WriteLine("ZakupAuta");
                 return "ZakupAuta";
-                
+
             }
             else
             {
@@ -54,7 +54,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
                 return false;
             }
             else
-            {   
+            {
                 return true;
             }
         }
@@ -62,11 +62,11 @@ namespace CarDealerSupportSystem.SellerFormPanels
         private void OrderSummary_Load(object sender, EventArgs e)
         {
             Label[] Clientlabels = { NameLabel, SurnameLabel, EmailLabel, PhoneLabel, CityLabel, AddressLabel, PostcodeLabel, PeselLabel, PaymentLabel };
-            
+
             //fill the labels with the data from the dictionary
             for (int i = 0; i < Clientlabels.Length; i++)
             {
-                
+
                 if (clientData.ContainsKey(Clientlabels[i].Name))
                 {
                     Clientlabels[i].Text = clientData[Clientlabels[i].Name];
@@ -114,12 +114,12 @@ namespace CarDealerSupportSystem.SellerFormPanels
                 }
                 PriceLabel.Text = price.ToString();
             }
-        
+
             foreach (var service in selectedServices)
             {
                 AddedServicesLabel.Text += service + "\n";
             }
-            
+
 
 
             ///////////////////////////////////////////////////////////////////////////////////////
@@ -134,7 +134,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
             }                                                                                    //
             ///////////////////////////////////////////////////////////////////////////////////////
         }
-         // write a method that adds client to the database and returns id of the client
+        // write a method that adds client to the database and returns id of the client
         private int AddClientToDatabase()
         {
             var client = new Klienci
@@ -148,6 +148,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
             };
             db.Klienci.Add(client);
             db.SaveChanges();
+            Log.SaveLog("Dodano klienta do bazy", LogType.Informacja);
             return client.IdKlienta;
         }
 
@@ -168,7 +169,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
 
 
             var order = new Zamowienia
-            {   
+            {
                 IdZamowienia = db.Zamowienia.Max(z => z.IdZamowienia) + 1,
                 IdKlienta = ClientID,
                 IdPracownika = id,
@@ -181,9 +182,9 @@ namespace CarDealerSupportSystem.SellerFormPanels
             db.Zamowienia.Add(order);
             db.SaveChanges();
 
-           
+
             if (TypeOfSell == "Auto+Uslugi")
-            {   
+            {
                 for (int i = 0; i < selectedServices.Count; i++)
                 {
                     db.Database.ExecuteSqlRaw("INSERT INTO zamowienia_samochody_uslugi values('" + db.Samochody.Where(s => s.Marka == selectedCarInfo.SelectedBrand && s.Model == selectedCarInfo.SelectedModel).Select(s => s.IdSamochodu).FirstOrDefault() + "', '" + db.Uslugi.Where(u => u.Nazwa == selectedServices[i]).Select(u => u.IdUslugi).FirstOrDefault() + "', '" + order.IdZamowienia + "', NULL, 'wolne')");
@@ -192,11 +193,12 @@ namespace CarDealerSupportSystem.SellerFormPanels
             }
             else if (TypeOfSell == "ZakupAuta")
             {
-                db.Database.ExecuteSqlRaw("INSERT INTO zamowienia_samochody_uslugi values('" + db.Samochody.Where(s => s.Marka == selectedCarInfo.SelectedBrand && s.Model == selectedCarInfo.SelectedModel).Select(s => s.IdSamochodu).FirstOrDefault() + "', NULL, '" + order.IdZamowienia + "', NULL, 'zakonczone')");
+                db.Database.ExecuteSqlRaw("INSERT INTO zamowienia_samochody_uslugi values('" + db.Samochody.Where(s => s.Marka == selectedCarInfo.SelectedBrand && s.Model == selectedCarInfo.SelectedModel).Select(s => s.IdSamochodu).FirstOrDefault() + "', NULL, '" + order.IdZamowienia + "', NULL, 'zakończone')");
                 db.SaveChanges();
             }
 
             MessageBox.Show("Zamówienie zostało dodane pomyślnie!");
+            Log.SaveLog("Pomyślnie dodano nowe zamówienie, id=" + order.IdZamowienia.ToString(), LogType.Sukces);
             //close the form and makeorderpanel
             this.Close();
             var mainForm = Application.OpenForms.OfType<MakeOrderPanel>().Single();

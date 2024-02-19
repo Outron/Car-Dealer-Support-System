@@ -23,19 +23,23 @@ namespace CarDealerSupportSystem.SellerFormPanels
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string file = saveFileDialog.FileName;
-                using (mysqldata::MySql.Data.MySqlClient.MySqlConnection conn = new(conString))
+                try
                 {
-                    using mysqldata::MySql.Data.MySqlClient.MySqlCommand cmd = new();
+                    using (mysqldata::MySql.Data.MySqlClient.MySqlConnection conn = new(conString))
                     {
-                        using MySqlBackup mb = new(cmd);
+                        using mysqldata::MySql.Data.MySqlClient.MySqlCommand cmd = new();
                         {
-                            cmd.Connection = conn;
-                            conn.Open();
-                            mb.ExportToFile(file);
-                            conn.Close();
+                            using MySqlBackup mb = new(cmd);
+                            {
+                                cmd.Connection = conn;
+                                conn.Open();
+                                mb.ExportToFile(file);
+                                conn.Close();
+                            }
                         }
                     }
                 }
+                catch { MessageBox.Show("Wystąpił błąd. Upewnij się że masz połączenie.", "Błąd zapisu", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
                 if (File.Exists(file))
                 {
                     MessageBox.Show("Pomyślnie utworzono kopię bazy.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -43,6 +47,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
                 else
                 {
                     MessageBox.Show("Wystąpił błąd. Spróbuj ponownie.", "Błąd zapisu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
             }
 
@@ -73,7 +78,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
                 }
                 catch
                 {
-                    MessageBox.Show($"Wystąpił błąd podczas przywracania bazy danych. Upewnij się, że wybrano odpowiedni plik", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Wystąpił błąd podczas przywracania bazy danych. Upewnij się, że wybrano odpowiedni plik i że masz połączenie.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

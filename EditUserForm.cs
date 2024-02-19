@@ -63,8 +63,6 @@ namespace CarDealerSupportSystem
 
         // End Drag Form
 
-
-
         private void button1_Click_2(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Napewno zamknąć? Niezatwierdzone zmiany zostaną usunięte.", "Ostrzeżenie", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
@@ -166,7 +164,11 @@ namespace CarDealerSupportSystem
                 recordToUpdate.Telefon = phoneTextBox.Text; recordToUpdate.KodRoli = roleAbr();
                 db.SaveChanges();
                 mainForm.UsersGridView.DataSource = null;
-                mainForm.UsersGridView.DataSource = db.Pracownicy.ToList();
+                var workers = (from p in db.Pracownicy
+                               join s in db.Salony on p.IdSalonu equals s.IdSalonu
+                               where p.IdSalonu == mainForm.salonid && p.IdPracownika != mainForm.adminID
+                               select p).ToList();
+                mainForm.UsersGridView.DataSource =workers;
                 MessageBox.Show("Pomyślnie edytowano użytkownika", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }

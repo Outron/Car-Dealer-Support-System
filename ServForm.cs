@@ -1,6 +1,8 @@
-﻿using CarDealerSupportSystem.SellerFormPanels;
+﻿using CarDealerSupportSystem.Models;
+using CarDealerSupportSystem.SellerFormPanels;
 using System;
 using System.Drawing;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -116,10 +118,16 @@ namespace CarDealerSupportSystem
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
+        private string GetServInfo()
+        {
+            using salon_samochodowyContext db = new();
+            var servName = db.Pracownicy.Where(p => p.IdPracownika == servId).Select(c => (c.Imie + " " + c.Nazwisko)).FirstOrDefault();
+            return servName;
+        }
         private void ServForm_Load(object sender, EventArgs e)
         {
             OpenChildForm(new NewTasksPanel(servId));
+            Log.SaveLog("Wykryto logowanie do systemu, pracownik: " + GetServInfo(),LogType.Informacja);
         }
     }
 }

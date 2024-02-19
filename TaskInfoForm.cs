@@ -72,6 +72,7 @@ namespace CarDealerSupportSystem
                     this.mainForm.TasksGridView.DataSource = null;
                     mainForm.LoadTasks();
                 }
+                Log.SaveLog("Pomyślny update tabeli Zamowienie_Samocohody_Usługi", LogType.Sukces);
                 this.Close();
             }
         }
