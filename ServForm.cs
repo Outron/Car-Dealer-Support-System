@@ -52,12 +52,6 @@ namespace CarDealerSupportSystem
             }
         }
 
-        private void LeftMenuBtn1_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new ServMianPanel());
-        }
-
         private void LeftMenuBtn2_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
@@ -100,7 +94,14 @@ namespace CarDealerSupportSystem
             MainPanel.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            TopLabel.Text = currentBtn.Text;
+            if (childForm is NewTasksPanel)
+            {
+                TopLabel.Text = "Nowe zlecenia";
+            }
+            else
+            {
+                TopLabel.Text = currentBtn.Text;
+            }
         }
 
         // Drag Form
@@ -114,6 +115,11 @@ namespace CarDealerSupportSystem
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void ServForm_Load(object sender, EventArgs e)
+        {
+            OpenChildForm(new NewTasksPanel(servId));
         }
     }
 }

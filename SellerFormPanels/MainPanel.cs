@@ -34,5 +34,10 @@ namespace CarDealerSupportSystem.SellerFormPanels
             LastOrdersGrid.DataSource = LastOrders;
 
         }
+
+        private void LastOrdersGrid_SelectionChanged(object sender, EventArgs e)
+        {
+            LastOrdersGrid.ClearSelection();
+        }
     }
 }

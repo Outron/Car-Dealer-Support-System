@@ -33,7 +33,6 @@
             this.LogOutBtn = new System.Windows.Forms.Button();
             this.LeftMenuBtn3 = new System.Windows.Forms.Button();
             this.LeftMenuBtn2 = new System.Windows.Forms.Button();
-            this.LeftMenuBtn1 = new System.Windows.Forms.Button();
             this.RoleLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -53,7 +52,6 @@
             this.LeftMenuPanel.Controls.Add(this.LogOutBtn);
             this.LeftMenuPanel.Controls.Add(this.LeftMenuBtn3);
             this.LeftMenuPanel.Controls.Add(this.LeftMenuBtn2);
-            this.LeftMenuPanel.Controls.Add(this.LeftMenuBtn1);
             this.LeftMenuPanel.Controls.Add(this.RoleLabel);
             this.LeftMenuPanel.Controls.Add(this.NameLabel);
             this.LeftMenuPanel.Controls.Add(this.pictureBox1);
@@ -73,7 +71,7 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = global::CarDealerSupportSystem.Properties.Resources.check_circle;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(4, 498);
+            this.button1.Location = new System.Drawing.Point(4, 443);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(311, 70);
@@ -109,7 +107,7 @@
             this.LeftMenuBtn3.ForeColor = System.Drawing.Color.White;
             this.LeftMenuBtn3.Image = global::CarDealerSupportSystem.Properties.Resources.tool;
             this.LeftMenuBtn3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LeftMenuBtn3.Location = new System.Drawing.Point(4, 410);
+            this.LeftMenuBtn3.Location = new System.Drawing.Point(4, 343);
             this.LeftMenuBtn3.Margin = new System.Windows.Forms.Padding(4);
             this.LeftMenuBtn3.Name = "LeftMenuBtn3";
             this.LeftMenuBtn3.Size = new System.Drawing.Size(311, 70);
@@ -128,7 +126,7 @@
             this.LeftMenuBtn2.ForeColor = System.Drawing.Color.White;
             this.LeftMenuBtn2.Image = global::CarDealerSupportSystem.Properties.Resources.clipboard;
             this.LeftMenuBtn2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LeftMenuBtn2.Location = new System.Drawing.Point(4, 319);
+            this.LeftMenuBtn2.Location = new System.Drawing.Point(4, 246);
             this.LeftMenuBtn2.Margin = new System.Windows.Forms.Padding(4);
             this.LeftMenuBtn2.Name = "LeftMenuBtn2";
             this.LeftMenuBtn2.Size = new System.Drawing.Size(311, 70);
@@ -137,25 +135,6 @@
             this.LeftMenuBtn2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.LeftMenuBtn2.UseVisualStyleBackColor = true;
             this.LeftMenuBtn2.Click += new System.EventHandler(this.LeftMenuBtn2_Click);
-            // 
-            // LeftMenuBtn1
-            // 
-            this.LeftMenuBtn1.FlatAppearance.BorderSize = 0;
-            this.LeftMenuBtn1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.LeftMenuBtn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LeftMenuBtn1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LeftMenuBtn1.ForeColor = System.Drawing.Color.White;
-            this.LeftMenuBtn1.Image = global::CarDealerSupportSystem.Properties.Resources.home;
-            this.LeftMenuBtn1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LeftMenuBtn1.Location = new System.Drawing.Point(4, 228);
-            this.LeftMenuBtn1.Margin = new System.Windows.Forms.Padding(4);
-            this.LeftMenuBtn1.Name = "LeftMenuBtn1";
-            this.LeftMenuBtn1.Size = new System.Drawing.Size(311, 70);
-            this.LeftMenuBtn1.TabIndex = 4;
-            this.LeftMenuBtn1.Text = "    Panel główny";
-            this.LeftMenuBtn1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.LeftMenuBtn1.UseVisualStyleBackColor = true;
-            this.LeftMenuBtn1.Click += new System.EventHandler(this.LeftMenuBtn1_Click);
             // 
             // RoleLabel
             // 
@@ -255,6 +234,7 @@
             this.Name = "ServForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.ServForm_Load);
             this.LeftMenuPanel.ResumeLayout(false);
             this.LeftMenuPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -267,7 +247,6 @@
         private System.Windows.Forms.Panel LeftMenuPanel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel TopPanel;
-        private System.Windows.Forms.Button LeftMenuBtn1;
         private System.Windows.Forms.Button LeftMenuBtn2;
         private System.Windows.Forms.Button LeftMenuBtn3;
         private System.Windows.Forms.Button ExitBtn;
