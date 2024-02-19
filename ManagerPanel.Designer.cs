@@ -34,11 +34,12 @@
             this.LeftMenuBtn4 = new System.Windows.Forms.Button();
             this.LeftMenuBtn3 = new System.Windows.Forms.Button();
             this.LeftMenuBtn2 = new System.Windows.Forms.Button();
-            this.LeftMenuBtn1 = new System.Windows.Forms.Button();
             this.RoleLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TopPanel = new System.Windows.Forms.Panel();
+            this.EditSpisSamochodowButton = new System.Windows.Forms.Button();
+            this.SpisSamochodowButton = new System.Windows.Forms.Button();
             this.TopLabel = new System.Windows.Forms.Label();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.MainPanel = new System.Windows.Forms.Panel();
@@ -55,7 +56,6 @@
             this.LeftMenuPanel.Controls.Add(this.LeftMenuBtn4);
             this.LeftMenuPanel.Controls.Add(this.LeftMenuBtn3);
             this.LeftMenuPanel.Controls.Add(this.LeftMenuBtn2);
-            this.LeftMenuPanel.Controls.Add(this.LeftMenuBtn1);
             this.LeftMenuPanel.Controls.Add(this.RoleLabel);
             this.LeftMenuPanel.Controls.Add(this.NameLabel);
             this.LeftMenuPanel.Controls.Add(this.pictureBox1);
@@ -74,7 +74,7 @@
             this.LeftMenuBtn5.ForeColor = System.Drawing.Color.White;
             this.LeftMenuBtn5.Image = global::CarDealerSupportSystem.Properties.Resources.bar_chart_21;
             this.LeftMenuBtn5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LeftMenuBtn5.Location = new System.Drawing.Point(3, 402);
+            this.LeftMenuBtn5.Location = new System.Drawing.Point(3, 375);
             this.LeftMenuBtn5.Name = "LeftMenuBtn5";
             this.LeftMenuBtn5.Size = new System.Drawing.Size(233, 57);
             this.LeftMenuBtn5.TabIndex = 9;
@@ -108,9 +108,9 @@
             this.LeftMenuBtn4.ForeColor = System.Drawing.Color.White;
             this.LeftMenuBtn4.Image = global::CarDealerSupportSystem.Properties.Resources.users;
             this.LeftMenuBtn4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LeftMenuBtn4.Location = new System.Drawing.Point(3, 348);
+            this.LeftMenuBtn4.Location = new System.Drawing.Point(3, 312);
             this.LeftMenuBtn4.Name = "LeftMenuBtn4";
-            this.LeftMenuBtn4.Size = new System.Drawing.Size(236, 57);
+            this.LeftMenuBtn4.Size = new System.Drawing.Size(233, 57);
             this.LeftMenuBtn4.TabIndex = 7;
             this.LeftMenuBtn4.Text = "    Klienci";
             this.LeftMenuBtn4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -126,7 +126,7 @@
             this.LeftMenuBtn3.ForeColor = System.Drawing.Color.White;
             this.LeftMenuBtn3.Image = global::CarDealerSupportSystem.Properties.Resources.life_buoy;
             this.LeftMenuBtn3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LeftMenuBtn3.Location = new System.Drawing.Point(3, 285);
+            this.LeftMenuBtn3.Location = new System.Drawing.Point(3, 186);
             this.LeftMenuBtn3.Name = "LeftMenuBtn3";
             this.LeftMenuBtn3.Size = new System.Drawing.Size(233, 57);
             this.LeftMenuBtn3.TabIndex = 6;
@@ -144,7 +144,7 @@
             this.LeftMenuBtn2.ForeColor = System.Drawing.Color.White;
             this.LeftMenuBtn2.Image = global::CarDealerSupportSystem.Properties.Resources.package;
             this.LeftMenuBtn2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LeftMenuBtn2.Location = new System.Drawing.Point(3, 222);
+            this.LeftMenuBtn2.Location = new System.Drawing.Point(3, 249);
             this.LeftMenuBtn2.Name = "LeftMenuBtn2";
             this.LeftMenuBtn2.Size = new System.Drawing.Size(233, 57);
             this.LeftMenuBtn2.TabIndex = 5;
@@ -152,24 +152,6 @@
             this.LeftMenuBtn2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.LeftMenuBtn2.UseVisualStyleBackColor = true;
             this.LeftMenuBtn2.Click += new System.EventHandler(this.LeftMenuBtn2_Click);
-            // 
-            // LeftMenuBtn1
-            // 
-            this.LeftMenuBtn1.FlatAppearance.BorderSize = 0;
-            this.LeftMenuBtn1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.LeftMenuBtn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LeftMenuBtn1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LeftMenuBtn1.ForeColor = System.Drawing.Color.White;
-            this.LeftMenuBtn1.Image = global::CarDealerSupportSystem.Properties.Resources.home;
-            this.LeftMenuBtn1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LeftMenuBtn1.Location = new System.Drawing.Point(3, 159);
-            this.LeftMenuBtn1.Name = "LeftMenuBtn1";
-            this.LeftMenuBtn1.Size = new System.Drawing.Size(233, 57);
-            this.LeftMenuBtn1.TabIndex = 4;
-            this.LeftMenuBtn1.Text = "    Panel główny";
-            this.LeftMenuBtn1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.LeftMenuBtn1.UseVisualStyleBackColor = true;
-            this.LeftMenuBtn1.Click += new System.EventHandler(this.LeftMenuBtn1_Click);
             // 
             // RoleLabel
             // 
@@ -207,6 +189,8 @@
             // TopPanel
             // 
             this.TopPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.TopPanel.Controls.Add(this.EditSpisSamochodowButton);
+            this.TopPanel.Controls.Add(this.SpisSamochodowButton);
             this.TopPanel.Controls.Add(this.TopLabel);
             this.TopPanel.Controls.Add(this.ExitBtn);
             this.TopPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -215,6 +199,36 @@
             this.TopPanel.Size = new System.Drawing.Size(861, 70);
             this.TopPanel.TabIndex = 1;
             this.TopPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TopPanel_MouseDown);
+            // 
+            // EditSpisSamochodowButton
+            // 
+            this.EditSpisSamochodowButton.FlatAppearance.BorderSize = 0;
+            this.EditSpisSamochodowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditSpisSamochodowButton.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.EditSpisSamochodowButton.ForeColor = System.Drawing.Color.White;
+            this.EditSpisSamochodowButton.Location = new System.Drawing.Point(564, 12);
+            this.EditSpisSamochodowButton.Name = "EditSpisSamochodowButton";
+            this.EditSpisSamochodowButton.Size = new System.Drawing.Size(229, 37);
+            this.EditSpisSamochodowButton.TabIndex = 4;
+            this.EditSpisSamochodowButton.Text = "Edytuj spis samochodow";
+            this.EditSpisSamochodowButton.UseVisualStyleBackColor = true;
+            this.EditSpisSamochodowButton.Visible = false;
+            this.EditSpisSamochodowButton.Click += new System.EventHandler(this.EditSpisSamochodowButton_Click);
+            // 
+            // SpisSamochodowButton
+            // 
+            this.SpisSamochodowButton.FlatAppearance.BorderSize = 0;
+            this.SpisSamochodowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SpisSamochodowButton.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.SpisSamochodowButton.ForeColor = System.Drawing.Color.White;
+            this.SpisSamochodowButton.Location = new System.Drawing.Point(286, 12);
+            this.SpisSamochodowButton.Name = "SpisSamochodowButton";
+            this.SpisSamochodowButton.Size = new System.Drawing.Size(201, 37);
+            this.SpisSamochodowButton.TabIndex = 2;
+            this.SpisSamochodowButton.Text = "Spis samochodow";
+            this.SpisSamochodowButton.UseVisualStyleBackColor = true;
+            this.SpisSamochodowButton.Visible = false;
+            this.SpisSamochodowButton.Click += new System.EventHandler(this.SpisSamochodowButton_Click);
             // 
             // TopLabel
             // 
@@ -262,7 +276,7 @@
             this.Name = "ManagerPanel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.Load += new System.EventHandler(this.ManagerPanel_Load);
             this.LeftMenuPanel.ResumeLayout(false);
             this.LeftMenuPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -277,7 +291,6 @@
         private System.Windows.Forms.Panel LeftMenuPanel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel TopPanel;
-        private System.Windows.Forms.Button LeftMenuBtn1;
         private System.Windows.Forms.Button LeftMenuBtn2;
         private System.Windows.Forms.Button LeftMenuBtn4;
         private System.Windows.Forms.Button LeftMenuBtn3;
@@ -288,5 +301,7 @@
         public System.Windows.Forms.Label NameLabel;
         public System.Windows.Forms.Label RoleLabel;
         private System.Windows.Forms.Button LeftMenuBtn5;
+        private System.Windows.Forms.Button SpisSamochodowButton;
+        private System.Windows.Forms.Button EditSpisSamochodowButton;
     }
 }

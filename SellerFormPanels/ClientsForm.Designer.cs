@@ -151,6 +151,7 @@
             this.ClientsGridView.ShowEditingIcon = false;
             this.ClientsGridView.Size = new System.Drawing.Size(861, 491);
             this.ClientsGridView.TabIndex = 4;
+            this.ClientsGridView.SelectionChanged += new System.EventHandler(this.ClientsGridView_SelectionChanged);
             // 
             // idKlientaDataGridViewTextBoxColumn
             // 

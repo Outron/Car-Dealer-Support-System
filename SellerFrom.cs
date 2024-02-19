@@ -19,15 +19,15 @@ namespace CarDealerSupportSystem
         private Button currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
+        public string login;
 
-
-        public SellerPanel()
+        public SellerPanel(string l)
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(5, 57);
             LeftMenuPanel.Controls.Add(leftBorderBtn);
-
+            login = l;
         }
 
         private struct RGBColors
@@ -83,7 +83,7 @@ namespace CarDealerSupportSystem
         private void LeftMenuBtn3_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new CarsPanel());
+            OpenChildForm(new CarsPanel(login));
         }
 
         private void LeftMenuBtn4_Click(object sender, EventArgs e)

@@ -15,6 +15,7 @@ namespace CarDealerSupportSystem
 {
     public partial class LoginForm : Form
     {
+        public string login;
         public LoginForm()
         {
             InitializeComponent();
@@ -44,11 +45,11 @@ namespace CarDealerSupportSystem
 
             var db = new salon_samochodowyContext();
             var loginData = db.Pracownicy.Join(db.Role, p => p.KodRoli, r => r.KodRoli, (p, r) => new { p, r }).Where(pr => pr.p.Login == UsernameTextBox.Text).FirstOrDefault();
-
+            login = loginData.ToString();
             // check if the login and password are correct then check role and open the correct form
-            if (loginData.p.Login != null && ((loginData.p.Haslo == PasswordTextBox.Text) || (loginData.p.Haslo == null && PasswordTextBox.Text == "")))
+            if (loginData != null && loginData.p.Login == UsernameTextBox.Text && ((loginData.p.Haslo == PasswordTextBox.Text) || (loginData.p.Haslo == null && PasswordTextBox.Text == "")))
             {
-                /* if (loginData.r.KodRoli == "1")
+                /* if (loginData.r.KodRoli == "ADM")
                    {
                        AdminPanel adminpanel = new AdminPanel();
                        adminpanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
@@ -57,23 +58,23 @@ namespace CarDealerSupportSystem
                        this.Hide();
                    }
                */
-                /* else */ if (loginData.r.KodRoli == "2")
+                /* else */ if (loginData.r.KodRoli == "SPR")
                 {
-                    SellerPanel sellerpanel = new SellerPanel();
+                    SellerPanel sellerpanel = new SellerPanel(login);
                     sellerpanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
                     sellerpanel.RoleLabel.Text = loginData.r.Nazwa;
                     sellerpanel.Show();
                     this.Hide();
                 }
-                else if (loginData.r.KodRoli == "3")
+                else if (loginData.r.KodRoli == "KRW")
                 {
-                    ManagerPanel managerpanel = new ManagerPanel();
+                    ManagerPanel managerpanel = new ManagerPanel(login);
                     managerpanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
                     managerpanel.RoleLabel.Text = loginData.r.Nazwa;
                     managerpanel.Show();
                     this.Hide();
                 }
-                //else if (loginData.r.KodRoli == "4")
+                //else if (loginData.r.KodRoli == "SRW")
                 //{
                 //    ServicePanel servicepanel = new ServicePanel();
                 //    servicepanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
@@ -99,5 +100,6 @@ namespace CarDealerSupportSystem
             //quit the application
             Application.Exit();
         }
+
     }
 }

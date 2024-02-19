@@ -139,27 +139,62 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="flatBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerFormPanels\.Designer - Copy - Copy.cs">
+      <DependentUpon>EditCarsForm.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerFormPanels\.Designer - Copy.cs">
+      <DependentUpon>AddCarsForm.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerFormPanels\EditCarsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerFormPanels\AddCarsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerFormPanels\paramField.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManagerFormPanels\paramField.Designer.cs">
+      <DependentUpon>paramField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\salon_samochodowyContext.cs" />
+    <Compile Include="Models\Logi.cs" />
     <Compile Include="Models\Klienci.cs" />
+    <Compile Include="Models\Mozliweuslugisamochody.cs" />
     <Compile Include="Models\PakietyPromocyjne.cs" />
     <Compile Include="Models\PakietySamochody.cs" />
+    <Compile Include="Models\PakietyUslugi.cs" />
     <Compile Include="Models\Pracownicy.cs" />
     <Compile Include="Models\PracownicyUslugi.cs" />
+    <Compile Include="Models\PracownicyZlecenia.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Salony.cs" />
-    <Compile Include="Models\salon_samochodowyContext.cs" />
     <Compile Include="Models\Samochody.cs" />
     <Compile Include="Models\SamochodyUslugi.cs" />
     <Compile Include="Models\SamochodyZamowienia.cs" />
+    <Compile Include="Models\SamochodyZamowieniaUslugi.cs" />
     <Compile Include="Models\Uslugi.cs" />
     <Compile Include="Models\UslugiPakiety.cs" />
     <Compile Include="Models\Zamowienia.cs" />
+    <Compile Include="Models\ZamowieniaSamochodyUslugi.cs" />
     <Compile Include="Models\ZamowieniaUslugi.cs" />
+    <Compile Include="ManagerFormPanels\CarsManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerFormPanels\CarsManager.Designer.cs">
+      <DependentUpon>CarsManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="SellerFormPanels\CarsPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,12 +244,22 @@
       <DependentUpon>Statistics.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Program.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerFormPanels\EditCarsForm.resx">
+      <DependentUpon>EditCarsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerFormPanels\CarsManager.resx">
+      <DependentUpon>CarsManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerFormPanels\AddCarsForm.resx">
+      <DependentUpon>AddCarsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerFormPanels\paramField.resx">
+      <DependentUpon>paramField.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SellerFormPanels\CarsPanel.resx">
       <DependentUpon>CarsPanel.cs</DependentUpon>
@@ -1132,6 +1177,30 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\plus2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\car.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\carDoor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\carSeat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\horse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\paintCan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\flame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\trash-22.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
