@@ -971,3 +971,10 @@ C:\Users\Admin\Desktop\test\Car-Dealer-Support-System\obj\Debug\CarDealerSupport
 C:\Users\Admin\Desktop\test\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.exe
 C:\Users\Admin\Desktop\test\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.pdb
 >>>>>>> 3f5ff89a65bcc7c7c00d60ff8dea86a0dea26ae9
+F:\LukaszNo\studia\BD\Car-Dealer-Support-System\bin\Debug\itextsharp.dll
+F:\LukaszNo\studia\BD\Car-Dealer-Support-System\bin\Debug\itextsharp.xml
+F:\LukaszNo\studia\BD\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.TaskInfoForm.resources
+F:\LukaszNo\studia\BD\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.CarConfigurator.resources
+F:\LukaszNo\studia\BD\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.ClientOrderData.resources
+F:\LukaszNo\studia\BD\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.MakeOrderPanel.resources
+F:\LukaszNo\studia\BD\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.SellerFormPanels.OrderSummary.resources
