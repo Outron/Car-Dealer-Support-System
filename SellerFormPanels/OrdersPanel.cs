@@ -48,8 +48,9 @@ namespace CarDealerSupportSystem.SellerFormPanels
 
         }
 
-     
-
-      
+        private void OrdersGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            OrdersGridView.ClearSelection();
+        }
     }
 }

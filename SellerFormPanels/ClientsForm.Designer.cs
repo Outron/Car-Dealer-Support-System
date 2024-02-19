@@ -63,16 +63,18 @@
             this.ClientsMenuPanel.Controls.Add(this.SearchClientsTextBox);
             this.ClientsMenuPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.ClientsMenuPanel.Location = new System.Drawing.Point(0, 0);
+            this.ClientsMenuPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ClientsMenuPanel.Name = "ClientsMenuPanel";
-            this.ClientsMenuPanel.Size = new System.Drawing.Size(861, 39);
+            this.ClientsMenuPanel.Size = new System.Drawing.Size(1148, 48);
             this.ClientsMenuPanel.TabIndex = 3;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::CarDealerSupportSystem.Properties.Resources.search;
-            this.pictureBox2.Location = new System.Drawing.Point(4, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(5, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(37, 33);
+            this.pictureBox2.Size = new System.Drawing.Size(49, 41);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
@@ -83,9 +85,10 @@
             this.SearchClientsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.SearchClientsTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.SearchClientsTextBox.ForeColor = System.Drawing.Color.White;
-            this.SearchClientsTextBox.Location = new System.Drawing.Point(47, 6);
+            this.SearchClientsTextBox.Location = new System.Drawing.Point(63, 7);
+            this.SearchClientsTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SearchClientsTextBox.Name = "SearchClientsTextBox";
-            this.SearchClientsTextBox.Size = new System.Drawing.Size(249, 26);
+            this.SearchClientsTextBox.Size = new System.Drawing.Size(332, 32);
             this.SearchClientsTextBox.TabIndex = 1;
             this.SearchClientsTextBox.TextChanged += new System.EventHandler(this.SearchClientsTextBox_TextChanged);
             // 
@@ -129,7 +132,8 @@
             this.ClientsGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ClientsGridView.EnableHeadersVisualStyles = false;
             this.ClientsGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.ClientsGridView.Location = new System.Drawing.Point(0, 39);
+            this.ClientsGridView.Location = new System.Drawing.Point(0, 48);
+            this.ClientsGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ClientsGridView.MultiSelect = false;
             this.ClientsGridView.Name = "ClientsGridView";
             this.ClientsGridView.ReadOnly = true;
@@ -142,6 +146,7 @@
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Transparent;
             this.ClientsGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.ClientsGridView.RowHeadersVisible = false;
+            this.ClientsGridView.RowHeadersWidth = 51;
             this.ClientsGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(5);
             this.ClientsGridView.RowsDefaultCellStyle = dataGridViewCellStyle10;
@@ -149,8 +154,9 @@
             this.ClientsGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.ClientsGridView.ShowCellToolTips = false;
             this.ClientsGridView.ShowEditingIcon = false;
-            this.ClientsGridView.Size = new System.Drawing.Size(861, 491);
+            this.ClientsGridView.Size = new System.Drawing.Size(1148, 604);
             this.ClientsGridView.TabIndex = 4;
+            this.ClientsGridView.SelectionChanged += new System.EventHandler(this.ClientsGridView_SelectionChanged);
             // 
             // idKlientaDataGridViewTextBoxColumn
             // 
@@ -158,8 +164,10 @@
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             this.idKlientaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.idKlientaDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.idKlientaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idKlientaDataGridViewTextBoxColumn.Name = "idKlientaDataGridViewTextBoxColumn";
             this.idKlientaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idKlientaDataGridViewTextBoxColumn.Width = 125;
             // 
             // imieDataGridViewTextBoxColumn
             // 
@@ -167,6 +175,7 @@
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
             this.imieDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.imieDataGridViewTextBoxColumn.HeaderText = "Imie";
+            this.imieDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.imieDataGridViewTextBoxColumn.Name = "imieDataGridViewTextBoxColumn";
             this.imieDataGridViewTextBoxColumn.ReadOnly = true;
             this.imieDataGridViewTextBoxColumn.Width = 143;
@@ -177,6 +186,7 @@
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
             this.nazwiskoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.nazwiskoDataGridViewTextBoxColumn.HeaderText = "Nazwisko";
+            this.nazwiskoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nazwiskoDataGridViewTextBoxColumn.Name = "nazwiskoDataGridViewTextBoxColumn";
             this.nazwiskoDataGridViewTextBoxColumn.ReadOnly = true;
             this.nazwiskoDataGridViewTextBoxColumn.Width = 144;
@@ -187,6 +197,7 @@
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
             this.adresDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.adresDataGridViewTextBoxColumn.HeaderText = "Adres";
+            this.adresDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.adresDataGridViewTextBoxColumn.Name = "adresDataGridViewTextBoxColumn";
             this.adresDataGridViewTextBoxColumn.ReadOnly = true;
             this.adresDataGridViewTextBoxColumn.Width = 167;
@@ -197,6 +208,7 @@
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
             this.telefonDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.telefonDataGridViewTextBoxColumn.HeaderText = "Telefon";
+            this.telefonDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.telefonDataGridViewTextBoxColumn.Name = "telefonDataGridViewTextBoxColumn";
             this.telefonDataGridViewTextBoxColumn.ReadOnly = true;
             this.telefonDataGridViewTextBoxColumn.Width = 144;
@@ -207,6 +219,7 @@
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
             this.emailDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
             this.emailDataGridViewTextBoxColumn.ReadOnly = true;
             this.emailDataGridViewTextBoxColumn.Width = 165;
@@ -217,14 +230,15 @@
             // 
             // ClientsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.ClientSize = new System.Drawing.Size(861, 530);
+            this.ClientSize = new System.Drawing.Size(1148, 652);
             this.Controls.Add(this.ClientsGridView);
             this.Controls.Add(this.ClientsMenuPanel);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ClientsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ClientsForm";

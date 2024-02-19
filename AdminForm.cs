@@ -41,7 +41,6 @@ namespace CarDealerSupportSystem
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
                 leftBorderBtn.Visible = true;
                 leftBorderBtn.BringToFront();
-
             }
         }
 
@@ -56,13 +55,7 @@ namespace CarDealerSupportSystem
 
         private void AdminForm_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void LeftMenuBtn1_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new AdmMainPanel());
+            OpenChildForm(new LogsPanel());
         }
 
         private void LeftMenuBtn2_Click(object sender, EventArgs e)
@@ -108,7 +101,14 @@ namespace CarDealerSupportSystem
             MainPanel.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            TopLabel.Text = currentBtn.Text;
+            if(childForm is LogsPanel)
+            {
+                TopLabel.Text = "Logi systemowe";
+            }
+            else
+            {
+                TopLabel.Text = currentBtn.Text;
+            }
         }
         // Drag Form
 
