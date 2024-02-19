@@ -44,6 +44,8 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.BestCarGridView = new System.Windows.Forms.DataGridView();
             this.StatisticsLeftPanel = new System.Windows.Forms.Panel();
             this.BestShopGridView = new System.Windows.Forms.DataGridView();
+            this.miejscowoscDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ulicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salonyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -256,8 +258,7 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             this.BestShopGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MiejsceColumn,
             this.miejscowoscDataGridViewTextBoxColumn,
-            this.ulicaDataGridViewTextBoxColumn,
-            this.cena});
+            this.ulicaDataGridViewTextBoxColumn});
             this.BestShopGridView.DataSource = this.salonyBindingSource;
             dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));

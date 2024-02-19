@@ -44,6 +44,7 @@ namespace CarDealerSupportSystem.ManagerFormPanels
         }
         private void Statistics_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
 
             List<salony> shops = new List<salony>();
             try
@@ -112,6 +113,19 @@ namespace CarDealerSupportSystem.ManagerFormPanels
 
             this.BestShopGridView.DataSource = shops;
             this.BestCarGridView.DataSource = cars;
+=======
+            var shops = db.Zamowienia.Join(
+                db.Pracownicy,
+                p => p.IdPracownika,
+                z => z.IdPracownika,
+                (z, p) => new { Zamowienie = z, Pracownik = p })
+                .Join(
+                db.Salony,
+                pS => pS.Pracownik.IdSalonu,
+                S => S.IdSalonu,
+                (pS, S) => new { Pracownik = pS, Salon = S }).Select(x => new { x.Salon.IdSalonu, x.Salon.Miejscowosc, x.Salon.Ulica }).ToList();
+                this.BestShopGridView.DataSource = shops;
+>>>>>>> 490c330e6cd302de561f28652fa2dd6664ccac6d
         }
 
         private void samochodyBindingSource_CurrentChanged(object sender, EventArgs e)
