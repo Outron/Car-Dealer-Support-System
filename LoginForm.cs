@@ -57,7 +57,7 @@ namespace CarDealerSupportSystem
                 switch (loginData.r.KodRoli)
                 {
                     case "ADM":
-                        AdminForm adminpanel = new AdminForm();
+                        AdminForm adminpanel = new AdminForm(id);
                         adminpanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
                         adminpanel.RoleLabel.Text = loginData.r.Nazwa;
                         adminpanel.Show();
@@ -78,7 +78,7 @@ namespace CarDealerSupportSystem
                         //this.Hide();
                         break;
                     case "SRW":
-                        ServForm servicepanel = new ServForm();
+                        ServForm servicepanel = new ServForm(id);
                         servicepanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
                         servicepanel.RoleLabel.Text = loginData.r.Nazwa;
                         servicepanel.Show();

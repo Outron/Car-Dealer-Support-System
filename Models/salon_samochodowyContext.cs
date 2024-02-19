@@ -38,11 +38,8 @@ namespace CarDealerSupportSystem.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-<<<<<<< HEAD
                 optionsBuilder.UseMySql("server=localhost;database=sam;uid=root;pwd=samochody", x => x.ServerVersion("10.4.28-mariadb"));
-=======
-                optionsBuilder.UseMySql("server=localhost;database=cdss;uid=root", x => x.ServerVersion("10.4.28-mariadb"));
->>>>>>> main
+
             }
         }
 
@@ -61,41 +58,25 @@ namespace CarDealerSupportSystem.Models
 
                 entity.Property(e => e.Adres)
                     .HasColumnName("adres")
-<<<<<<< HEAD
-                    .HasColumnType("varchar(20)")
-=======
                     .HasColumnType("varchar(50)")
->>>>>>> main
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_general_ci");
 
                 entity.Property(e => e.Email)
                     .HasColumnName("email")
-<<<<<<< HEAD
-                    .HasColumnType("varchar(15)")
-=======
                     .HasColumnType("varchar(50)")
->>>>>>> main
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_general_ci");
 
                 entity.Property(e => e.Imie)
                     .HasColumnName("imie")
-<<<<<<< HEAD
-                    .HasColumnType("varchar(15)")
-=======
                     .HasColumnType("varchar(50)")
->>>>>>> main
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_general_ci");
 
                 entity.Property(e => e.Nazwisko)
                     .HasColumnName("nazwisko")
-<<<<<<< HEAD
-                    .HasColumnType("varchar(15)")
-=======
                     .HasColumnType("varchar(50)")
->>>>>>> main
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_general_ci");
 
@@ -281,21 +262,13 @@ namespace CarDealerSupportSystem.Models
 
                 entity.Property(e => e.Adres)
                     .HasColumnName("adres")
-<<<<<<< HEAD
-                    .HasColumnType("varchar(20)")
-=======
                     .HasColumnType("varchar(50)")
->>>>>>> main
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_general_ci");
 
                 entity.Property(e => e.Email)
                     .HasColumnName("email")
-<<<<<<< HEAD
-                    .HasColumnType("varchar(15)")
-=======
                     .HasColumnType("varchar(50)")
->>>>>>> main
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_general_ci");
 
@@ -311,11 +284,7 @@ namespace CarDealerSupportSystem.Models
 
                 entity.Property(e => e.Imie)
                     .HasColumnName("imie")
-<<<<<<< HEAD
-                    .HasColumnType("varchar(15)")
-=======
                     .HasColumnType("varchar(50)")
->>>>>>> main
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_general_ci");
 
@@ -328,21 +297,13 @@ namespace CarDealerSupportSystem.Models
 
                 entity.Property(e => e.Login)
                     .HasColumnName("login")
-<<<<<<< HEAD
-                    .HasColumnType("varchar(15)")
-=======
                     .HasColumnType("varchar(30)")
->>>>>>> main
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_general_ci");
 
                 entity.Property(e => e.Nazwisko)
                     .HasColumnName("nazwisko")
-<<<<<<< HEAD
-                    .HasColumnType("varchar(15)")
-=======
                     .HasColumnType("varchar(50)")
->>>>>>> main
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_general_ci");
 
@@ -403,21 +364,13 @@ namespace CarDealerSupportSystem.Models
 
                 entity.Property(e => e.Miejscowosc)
                     .HasColumnName("miejscowosc")
-<<<<<<< HEAD
-                    .HasColumnType("varchar(15)")
-=======
                     .HasColumnType("varchar(40)")
->>>>>>> main
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_general_ci");
 
                 entity.Property(e => e.Ulica)
                     .HasColumnName("ulica")
-<<<<<<< HEAD
-                    .HasColumnType("varchar(15)")
-=======
                     .HasColumnType("varchar(50)")
->>>>>>> main
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_general_ci");
             });
@@ -537,11 +490,7 @@ namespace CarDealerSupportSystem.Models
 
                 entity.Property(e => e.Nazwa)
                     .HasColumnName("nazwa")
-<<<<<<< HEAD
-                    .HasColumnType("varchar(15)")
-=======
                     .HasColumnType("varchar(50)")
->>>>>>> main
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_general_ci");
 
@@ -659,10 +608,7 @@ namespace CarDealerSupportSystem.Models
                 entity.HasOne(d => d.IdPracownikaNavigation)
                     .WithMany()
                     .HasForeignKey(d => d.IdPracownika)
-<<<<<<< HEAD
                     .OnDelete(DeleteBehavior.ClientSetNull)
-=======
->>>>>>> main
                     .HasConstraintName("zam_sam_usl_Prac_FK");
 
                 entity.HasOne(d => d.IdSamochoduNavigation)

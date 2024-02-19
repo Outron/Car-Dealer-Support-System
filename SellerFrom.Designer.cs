@@ -161,7 +161,6 @@
             this.RoleLabel.Size = new System.Drawing.Size(93, 21);
             this.RoleLabel.TabIndex = 3;
             this.RoleLabel.Text = "Sprzedawca";
-            this.RoleLabel.Click += new System.EventHandler(this.RoleLabel_Click);
             // 
             // NameLabel
             // 
