@@ -10,9 +10,10 @@ namespace CarDealerSupportSystem.Models
     public partial class PracownicyUslugi
     {
         public int IdPracownika { get; set; }
-        public int IdUslugi { get; set; }
+        public int IdZamowienia { get; set; }
+        public string StanZlecenia { get; set; }
 
         public virtual Pracownicy IdPracownikaNavigation { get; set; }
-        public virtual Uslugi IdUslugiNavigation { get; set; }
+        public virtual Zamowienia IdZamowieniaNavigation { get; set; }
     }
 }

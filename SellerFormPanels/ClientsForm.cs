@@ -31,5 +31,10 @@ namespace CarDealerSupportSystem.SellerFormPanels
             var clients = db.Klienci.Where(c => c.Telefon.ToLower().Contains(searchValue)).ToList();
             ClientsGridView.DataSource = clients;
         }
+
+        private void ClientsGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            ClientsGridView.ClearSelection();
+        }
     }
 }

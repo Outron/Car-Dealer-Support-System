@@ -11,12 +11,12 @@ namespace CarDealerSupportSystem.Models
     {
         public Samochody()
         {
+            Mozliweuslugisamochody = new HashSet<Mozliweuslugisamochody>();
             PakietySamochody = new HashSet<PakietySamochody>();
-            SamochodyUslugi = new HashSet<SamochodyUslugi>();
-            SamochodyZamowienia = new HashSet<SamochodyZamowienia>();
         }
 
         public int IdSamochodu { get; set; }
+        public byte[] Zdjecie { get; set; }
         public string Model { get; set; }
         public string Marka { get; set; }
         public string Kolor { get; set; }
@@ -25,16 +25,17 @@ namespace CarDealerSupportSystem.Models
         public string Wyposazenie { get; set; }
         public int? SrednieSpalanie { get; set; }
         public string TypSilnika { get; set; }
-        public double? CenaPodstawowa { get; set; }
-        public int IdSalonu { get; set; }
+        public int? CenaPodstawowa { get; set; }
         public int? LiczbaDrzwi { get; set; }
         public int? IloscMiejsc { get; set; }
         public string Vin { get; set; }
         public int? Rabat { get; set; }
+        public int? IdSalonu { get; set; }
+        public string Dostepnosc { get; set; }
+        public int? RokProdukcji { get; set; }
 
         public virtual Salony IdSalonuNavigation { get; set; }
+        public virtual ICollection<Mozliweuslugisamochody> Mozliweuslugisamochody { get; set; }
         public virtual ICollection<PakietySamochody> PakietySamochody { get; set; }
-        public virtual ICollection<SamochodyUslugi> SamochodyUslugi { get; set; }
-        public virtual ICollection<SamochodyZamowienia> SamochodyZamowienia { get; set; }
     }
 }

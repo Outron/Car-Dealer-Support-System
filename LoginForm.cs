@@ -1,13 +1,10 @@
 ﻿using CarDealerSupportSystem.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarDealerSupportSystem
@@ -40,61 +37,67 @@ namespace CarDealerSupportSystem
         private void button2_Click(object sender, EventArgs e)
         {
             //after clicking this button, the application will open the second form after successful login
-
-            var db = new salon_samochodowyContext();
-            var loginData = db.Pracownicy.Join(db.Role, p => p.KodRoli, r => r.KodRoli, (p, r) => new { p, r }).Where(pr => pr.p.Login == UsernameTextBox.Text).FirstOrDefault();
-
-            // check if the login and password are correct then check role and open the correct form
-            if (loginData.p.Login != null && loginData.p.Haslo == PasswordTextBox.Text)
+            try
             {
-             /* if (loginData.r.KodRoli == "1")
+                var db = new salon_samochodowyContext();
+            // join role to pracownicy
+            var loginData = db.Pracownicy.Join(db.Role, p => p.KodRoli, r => r.KodRoli, (p, r) => new { p, r }).Where(p => p.p.Login == UsernameTextBox.Text && p.p.Haslo == PasswordTextBox.Text).FirstOrDefault();
+          
+            // get id of the logged user
+            var id = db.Pracownicy.Where(p => p.Login == UsernameTextBox.Text && p.Haslo == PasswordTextBox.Text).Select(p => p.IdPracownika).FirstOrDefault();
+
+                if (loginData == null)
                 {
-                    AdminPanel adminpanel = new AdminPanel();
-                    adminpanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
-                    adminpanel.RoleLabel.Text = loginData.r.Nazwa;
-                    adminpanel.Show();
-                    this.Hide();
+                    WrongLoginLabel.Text = "Logowanie nie powiodło się!";
+                    WrongLoginLabel.Visible = true;
+                    Log.SaveLog("Logowanie pracownika nie powiodło się", LogType.Blad);
+                    return;
                 }
-            */
-                if /* else */ (loginData.r.KodRoli == "2")
+                switch (loginData.r.KodRoli)
                 {
-                    SellerPanel sellerpanel = new SellerPanel();
-                    sellerpanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
-                    sellerpanel.RoleLabel.Text = loginData.r.Nazwa;
-                    sellerpanel.Show();
-                    this.Hide();
-                }
-            /*  else if (loginData.r.KodRoli == "3")
-                {
-                     ManagerPanel managerpanel = new ManagerPanel();
-                     managerpanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
-                     managerpanel.RoleLabel.Text = loginData.r.Nazwa;
-                     managerpanel.Show();
-                     this.Hide();
-                }
-                else if (loginData.r.KodRoli == "4")
-                {
-                     ServicePanel servicepanel = new ServicePanel();
-                     servicepanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
-                     servicepanel.RoleLabel.Text = loginData.r.Nazwa;
-                     servicepanel.Show();
-                     this.Hide();
-                }
-            */
-                else
-                {   // role is not correct
-                    MessageBox.Show("Nieprawidłowa rola");
+                    case "ADM":
+                        AdminForm adminpanel = new AdminForm(id);
+                        adminpanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
+                        adminpanel.RoleLabel.Text = loginData.r.Nazwa;
+                        adminpanel.Show();
+                        this.Hide();
+                        break;
+                    case "SPR":
+                        SellerPanel sellerpanel = new SellerPanel(id);
+                        sellerpanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
+                        sellerpanel.RoleLabel.Text = loginData.r.Nazwa;
+                        sellerpanel.Show();
+                        this.Hide();
+                        break;
+                    case "KRW":
+                        //ManagerPanel managerpanel = new ManagerPanel();
+                        //managerpanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
+                        //managerpanel.RoleLabel.Text = loginData.r.Nazwa;
+                        //managerpanel.Show();
+                        //this.Hide();
+                        break;
+                    case "SRW":
+                        ServForm servicepanel = new ServForm(id);
+                        servicepanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
+                        servicepanel.RoleLabel.Text = loginData.r.Nazwa;
+                        servicepanel.Show();
+                        this.Hide();
+                        break;
+                    default:
+                        WrongLoginLabel.Text = "Nieprawidłowa rola";
+                        WrongLoginLabel.Visible = true;
+                        break;
                 }
             }
-            else
-            {   // show the label with information about wrong login or password
-                WrongLoginLabel.Visible = true;
+            catch (Exception ex)
+            {
+                MessageBox.Show(text: ex.Message, caption: "Logowanie się nie powiodło");
+                Log.SaveLog("Logowanie pracownika nie powiodło się", LogType.Blad);
             }
-        }
+       }
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            //quit the application
             Application.Exit();
         }
     }

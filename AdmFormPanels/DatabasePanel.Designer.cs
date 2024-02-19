@@ -40,12 +40,11 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(179, 374);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(221, 460);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 20);
+            this.label1.Size = new System.Drawing.Size(240, 25);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Kopia bazy danych";
+            this.label1.Text = "Utwórz kopię bazy danych";
             // 
             // label2
             // 
@@ -104,7 +103,6 @@
             this.Name = "DatabasePanel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainPanel";
-            this.Load += new System.EventHandler(this.DatabasePanel_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

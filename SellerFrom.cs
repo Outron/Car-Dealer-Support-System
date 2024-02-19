@@ -1,6 +1,8 @@
-﻿using CarDealerSupportSystem.SellerFormPanels;
+﻿using CarDealerSupportSystem.Models;
+using CarDealerSupportSystem.SellerFormPanels;
 using System;
 using System.Drawing;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -12,14 +14,18 @@ namespace CarDealerSupportSystem
         private Panel leftBorderBtn;
         private Form currentChildForm;
 
+        // get the id of the logged user
+        public readonly int id;
 
-        public SellerPanel()
+        public SellerPanel(int id)
+
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(5, 57);
             LeftMenuPanel.Controls.Add(leftBorderBtn);
-
+            this.id = id;
+            //open the main panel by default
         }
 
         private struct RGBColors
@@ -42,7 +48,6 @@ namespace CarDealerSupportSystem
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
                 leftBorderBtn.Visible = true;
                 leftBorderBtn.BringToFront();
-
             }
         }
 
@@ -54,10 +59,16 @@ namespace CarDealerSupportSystem
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
+        private string GetServInfo()
+        {
+            using salon_samochodowyContext db = new();
+            var servName = db.Pracownicy.Where(p => p.IdPracownika == id).Select(c => (c.Imie + " " + c.Nazwisko)).FirstOrDefault();
+            return servName;
+        }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            Log.SaveLog("Wykryto logowanie do systemu, pracownik: " + GetServInfo(), LogType.Informacja);
         }
 
         private void LeftMenuBtn1_Click(object sender, EventArgs e)
@@ -91,18 +102,15 @@ namespace CarDealerSupportSystem
 
         private void LogOutBtn_Click(object sender, EventArgs e)
         {
-            //after clicking this button, the application will open the first form
             LoginForm f1 = new LoginForm();
             f1.Show();
             this.Hide();
-
         }
 
         private void OpenChildForm(Form childForm)
         {
             if (currentChildForm != null)
             {
-                //open only one form
                 currentChildForm.Close();
             }
             currentChildForm = childForm;
@@ -133,8 +141,5 @@ namespace CarDealerSupportSystem
         {
 
         }
-
-        // End Drag Form
-
     }
 }

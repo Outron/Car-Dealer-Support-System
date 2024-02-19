@@ -14,7 +14,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
     public partial class CarsPanel : Form
     {
 
-        private readonly salon_samochodowyContext db = new salon_samochodowyContext();
+        private readonly salon_samochodowyContext db = new();
 
         public CarsPanel()
         {
@@ -144,6 +144,11 @@ namespace CarDealerSupportSystem.SellerFormPanels
                     CarsGridView.DataSource = cars;
                 }
             }
+        }
+
+        private void CarsGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            CarsGridView.ClearSelection();
         }
     }
 }

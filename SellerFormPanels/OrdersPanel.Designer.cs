@@ -43,17 +43,17 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.SearchClientsTextBox = new System.Windows.Forms.TextBox();
             this.OrdersGridView = new System.Windows.Forms.DataGridView();
-            this.zamowieniaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.IdKlienta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idZamowieniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idKlientaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Samochód = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typZakupuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.calkowityKosztDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RodzajPlatnosci = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zamowieniaSamochodyUslugiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ClientsMenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zamowieniaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zamowieniaSamochodyUslugiBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ClientsMenuPanel
@@ -63,16 +63,18 @@
             this.ClientsMenuPanel.Controls.Add(this.SearchClientsTextBox);
             this.ClientsMenuPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.ClientsMenuPanel.Location = new System.Drawing.Point(0, 0);
+            this.ClientsMenuPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ClientsMenuPanel.Name = "ClientsMenuPanel";
-            this.ClientsMenuPanel.Size = new System.Drawing.Size(861, 39);
+            this.ClientsMenuPanel.Size = new System.Drawing.Size(1148, 48);
             this.ClientsMenuPanel.TabIndex = 4;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::CarDealerSupportSystem.Properties.Resources.search;
-            this.pictureBox2.Location = new System.Drawing.Point(4, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(5, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(37, 33);
+            this.pictureBox2.Size = new System.Drawing.Size(49, 41);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
@@ -83,9 +85,10 @@
             this.SearchClientsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.SearchClientsTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.SearchClientsTextBox.ForeColor = System.Drawing.Color.White;
-            this.SearchClientsTextBox.Location = new System.Drawing.Point(47, 6);
+            this.SearchClientsTextBox.Location = new System.Drawing.Point(63, 7);
+            this.SearchClientsTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SearchClientsTextBox.Name = "SearchClientsTextBox";
-            this.SearchClientsTextBox.Size = new System.Drawing.Size(249, 26);
+            this.SearchClientsTextBox.Size = new System.Drawing.Size(332, 32);
             this.SearchClientsTextBox.TabIndex = 1;
             // 
             // OrdersGridView
@@ -111,13 +114,13 @@
             this.OrdersGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.OrdersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.OrdersGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdKlienta,
             this.idZamowieniaDataGridViewTextBoxColumn,
-            this.idKlientaDataGridViewTextBoxColumn,
-            this.Samochód,
-            this.typZakupuDataGridViewTextBoxColumn,
-            this.calkowityKosztDataGridViewTextBoxColumn,
-            this.dataDataGridViewTextBoxColumn});
-            this.OrdersGridView.DataSource = this.zamowieniaBindingSource;
+            this.RodzajPlatnosci,
+            this.Column1,
+            this.Data,
+            this.statusDataGridViewTextBoxColumn});
+            this.OrdersGridView.DataSource = this.zamowieniaSamochodyUslugiBindingSource;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -128,7 +131,8 @@
             this.OrdersGridView.DefaultCellStyle = dataGridViewCellStyle8;
             this.OrdersGridView.EnableHeadersVisualStyles = false;
             this.OrdersGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.OrdersGridView.Location = new System.Drawing.Point(0, 38);
+            this.OrdersGridView.Location = new System.Drawing.Point(0, 47);
+            this.OrdersGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.OrdersGridView.MultiSelect = false;
             this.OrdersGridView.Name = "OrdersGridView";
             this.OrdersGridView.ReadOnly = true;
@@ -141,6 +145,7 @@
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Transparent;
             this.OrdersGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.OrdersGridView.RowHeadersVisible = false;
+            this.OrdersGridView.RowHeadersWidth = 51;
             this.OrdersGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(5);
             this.OrdersGridView.RowsDefaultCellStyle = dataGridViewCellStyle10;
@@ -148,82 +153,86 @@
             this.OrdersGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.OrdersGridView.ShowCellToolTips = false;
             this.OrdersGridView.ShowEditingIcon = false;
-            this.OrdersGridView.Size = new System.Drawing.Size(861, 493);
+            this.OrdersGridView.Size = new System.Drawing.Size(1148, 607);
             this.OrdersGridView.TabIndex = 5;
+            this.OrdersGridView.SelectionChanged += new System.EventHandler(this.OrdersGridView_SelectionChanged);
             // 
-            // zamowieniaBindingSource
+            // IdKlienta
             // 
-            this.zamowieniaBindingSource.DataSource = typeof(CarDealerSupportSystem.Models.Zamowienia);
+            this.IdKlienta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.IdKlienta.DataPropertyName = "IdKlienta";
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            this.IdKlienta.DefaultCellStyle = dataGridViewCellStyle2;
+            this.IdKlienta.HeaderText = "ID klienta";
+            this.IdKlienta.MinimumWidth = 6;
+            this.IdKlienta.Name = "IdKlienta";
+            this.IdKlienta.ReadOnly = true;
+            this.IdKlienta.Width = 171;
             // 
             // idZamowieniaDataGridViewTextBoxColumn
             // 
-            this.idZamowieniaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.idZamowieniaDataGridViewTextBoxColumn.DataPropertyName = "IdZamowienia";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            this.idZamowieniaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.idZamowieniaDataGridViewTextBoxColumn.FillWeight = 96.27338F;
-            this.idZamowieniaDataGridViewTextBoxColumn.HeaderText = "Zamówienie";
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            this.idZamowieniaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.idZamowieniaDataGridViewTextBoxColumn.HeaderText = "ID zamówienia";
+            this.idZamowieniaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idZamowieniaDataGridViewTextBoxColumn.Name = "idZamowieniaDataGridViewTextBoxColumn";
             this.idZamowieniaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // idKlientaDataGridViewTextBoxColumn
+            // RodzajPlatnosci
             // 
-            this.idKlientaDataGridViewTextBoxColumn.DataPropertyName = "IdKlienta";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            this.idKlientaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.idKlientaDataGridViewTextBoxColumn.FillWeight = 99.28191F;
-            this.idKlientaDataGridViewTextBoxColumn.HeaderText = "ID klienta";
-            this.idKlientaDataGridViewTextBoxColumn.Name = "idKlientaDataGridViewTextBoxColumn";
-            this.idKlientaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // Samochód
-            // 
+            this.RodzajPlatnosci.DataPropertyName = "RodzajPlatnosci";
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            this.Samochód.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Samochód.FillWeight = 106.599F;
-            this.Samochód.HeaderText = "Samochód";
-            this.Samochód.Name = "Samochód";
-            this.Samochód.ReadOnly = true;
+            this.RodzajPlatnosci.DefaultCellStyle = dataGridViewCellStyle4;
+            this.RodzajPlatnosci.HeaderText = "Płatność";
+            this.RodzajPlatnosci.MinimumWidth = 6;
+            this.RodzajPlatnosci.Name = "RodzajPlatnosci";
+            this.RodzajPlatnosci.ReadOnly = true;
             // 
-            // typZakupuDataGridViewTextBoxColumn
+            // Column1
             // 
-            this.typZakupuDataGridViewTextBoxColumn.DataPropertyName = "TypZakupu";
+            this.Column1.DataPropertyName = "CalkowityKoszt";
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            this.typZakupuDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.typZakupuDataGridViewTextBoxColumn.FillWeight = 99.28191F;
-            this.typZakupuDataGridViewTextBoxColumn.HeaderText = "Płatność";
-            this.typZakupuDataGridViewTextBoxColumn.Name = "typZakupuDataGridViewTextBoxColumn";
-            this.typZakupuDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Column1.HeaderText = "Koszt";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
-            // calkowityKosztDataGridViewTextBoxColumn
+            // Data
             // 
-            this.calkowityKosztDataGridViewTextBoxColumn.DataPropertyName = "CalkowityKoszt";
+            this.Data.DataPropertyName = "Data";
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            this.calkowityKosztDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            this.calkowityKosztDataGridViewTextBoxColumn.FillWeight = 99.28191F;
-            this.calkowityKosztDataGridViewTextBoxColumn.HeaderText = "Koszt";
-            this.calkowityKosztDataGridViewTextBoxColumn.Name = "calkowityKosztDataGridViewTextBoxColumn";
-            this.calkowityKosztDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Data.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Data.HeaderText = "Data";
+            this.Data.MinimumWidth = 6;
+            this.Data.Name = "Data";
+            this.Data.ReadOnly = true;
             // 
-            // dataDataGridViewTextBoxColumn
+            // statusDataGridViewTextBoxColumn
             // 
-            this.dataDataGridViewTextBoxColumn.DataPropertyName = "Data";
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            this.dataDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dataDataGridViewTextBoxColumn.FillWeight = 99.28191F;
-            this.dataDataGridViewTextBoxColumn.HeaderText = "Data";
-            this.dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
-            this.dataDataGridViewTextBoxColumn.ReadOnly = true;
+            this.statusDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // zamowieniaSamochodyUslugiBindingSource
+            // 
+            this.zamowieniaSamochodyUslugiBindingSource.DataSource = typeof(CarDealerSupportSystem.Models.ZamowieniaSamochodyUslugi);
             // 
             // OrdersPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.ClientSize = new System.Drawing.Size(861, 530);
+            this.ClientSize = new System.Drawing.Size(1148, 652);
             this.Controls.Add(this.OrdersGridView);
             this.Controls.Add(this.ClientsMenuPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "OrdersPanel";
             this.Text = "OrdersPanel";
             this.Load += new System.EventHandler(this.OrdersPanel_Load);
@@ -231,7 +240,7 @@
             this.ClientsMenuPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zamowieniaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zamowieniaSamochodyUslugiBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -242,12 +251,13 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox SearchClientsTextBox;
         private System.Windows.Forms.DataGridView OrdersGridView;
-        private System.Windows.Forms.BindingSource zamowieniaBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idZamowieniaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idKlientaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Samochód;
         private System.Windows.Forms.DataGridViewTextBoxColumn typZakupuDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn calkowityKosztDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource zamowieniaSamochodyUslugiBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdKlienta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idZamowieniaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RodzajPlatnosci;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
     }
 }
