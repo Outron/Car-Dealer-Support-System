@@ -1,32 +1,34 @@
-﻿using CarDealerSupportSystem.Models;
-using CarDealerSupportSystem.SellerFormPanels;
+﻿using CarDealerSupportSystem.SellerFormPanels;
+using CarDealerSupportSystem.ManagerFormPanels;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Runtime.InteropServices;
+using System.Runtime.Remoting.Proxies;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarDealerSupportSystem
 {
-    public partial class SellerPanel : Form
+    public partial class ManagerPanel : Form
     {
         private Button currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
         public string login;
 
-        // get the id of the logged user
-        public readonly int id;
-
-        public SellerPanel(int id)
+        public ManagerPanel(string l)
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(5, 57);
             LeftMenuPanel.Controls.Add(leftBorderBtn);
-
-            this.id = id;
-            //open the main panel by default
+            login = l;
         }
 
         private struct RGBColors
@@ -43,12 +45,21 @@ namespace CarDealerSupportSystem
                 currentBtn = (Button)senderBtn;
                 currentBtn.BackColor = Color.FromArgb(51, 51, 51);
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
-
+               
                 //Left border button
                 leftBorderBtn.BackColor = color;
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
                 leftBorderBtn.Visible = true;
                 leftBorderBtn.BringToFront();
+               
+            }
+        }
+        private void ActivateButton2(object senderBtn)
+        {
+            if (senderBtn != null)
+            { 
+                //Button
+                currentBtn = (Button)senderBtn;
             }
         }
 
@@ -60,16 +71,21 @@ namespace CarDealerSupportSystem
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
-        private string GetServInfo()
-        {
-            using salon_samochodowyContext db = new();
-            var servName = db.Pracownicy.Where(p => p.IdPracownika == id).Select(c => (c.Imie + " " + c.Nazwisko)).FirstOrDefault();
-            return servName;
-        }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void ManagerPanel_Load(object sender, EventArgs e)
         {
-            Log.SaveLog("Wykryto logowanie do systemu, pracownik: " + GetServInfo(), LogType.Informacja);
+            ActivateButton(LeftMenuBtn3, RGBColors.color1);
+            SpisSamochodowButton.Visible = true;
+            EditSpisSamochodowButton.Visible = true;
+            try
+            {
+                OpenChildForm(new CarsPanel(login));
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
         }
 
         private void LeftMenuBtn1_Click(object sender, EventArgs e)
@@ -87,7 +103,17 @@ namespace CarDealerSupportSystem
         private void LeftMenuBtn3_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new CarsPanel());
+            SpisSamochodowButton.Visible = true;
+            EditSpisSamochodowButton.Visible = true;
+            try
+            {
+                OpenChildForm(new CarsPanel(login));
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
         }
 
         private void LeftMenuBtn4_Click(object sender, EventArgs e)
@@ -96,6 +122,14 @@ namespace CarDealerSupportSystem
             OpenChildForm(new ClientsForm());
         }
 
+        private void LeftMenuBtn5_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color1);
+            OpenChildForm(new Statistics());
+        }
+
+
+
         private void ExitBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -103,15 +137,40 @@ namespace CarDealerSupportSystem
 
         private void LogOutBtn_Click(object sender, EventArgs e)
         {
+            //after clicking this button, the application will open the first form
             LoginForm f1 = new LoginForm();
             f1.Show();
             this.Hide();
+
         }
 
         private void OpenChildForm(Form childForm)
         {
             if (currentChildForm != null)
             {
+                //open only one form
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            if(childForm.GetType() != typeof(CarsPanel))
+            {
+                SpisSamochodowButton.Visible = false;
+                EditSpisSamochodowButton.Visible = false;
+            }
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            MainPanel.Controls.Add(childForm);
+            MainPanel.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            TopLabel.Text = currentBtn.Text;
+        }
+        private void OpenChildForm2(Form childForm)
+        {
+            if (currentChildForm != null)
+            {
+                //open only one form
                 currentChildForm.Close();
             }
             currentChildForm = childForm;
@@ -122,9 +181,7 @@ namespace CarDealerSupportSystem
             MainPanel.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            TopLabel.Text = currentBtn.Text;
         }
-
         // Drag Form
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -142,5 +199,23 @@ namespace CarDealerSupportSystem
         {
 
         }
+
+        private void SpisSamochodowButton_Click(object sender, EventArgs e)
+        {
+            ActivateButton2(sender);
+            OpenChildForm2(new CarsPanel(login));
+        }
+
+        private void EditSpisSamochodowButton_Click(object sender, EventArgs e)
+        {
+            ActivateButton2(sender);
+            OpenChildForm2(new CarsManager(login));
+        }
+
+
+
+
+        // End Drag Form
+
     }
 }

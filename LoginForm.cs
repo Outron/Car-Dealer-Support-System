@@ -11,6 +11,7 @@ namespace CarDealerSupportSystem
 {
     public partial class LoginForm : Form
     {
+        public string login;
         public LoginForm()
         {
             InitializeComponent();
@@ -100,5 +101,6 @@ namespace CarDealerSupportSystem
         {
             Application.Exit();
         }
+
     }
 }
