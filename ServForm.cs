@@ -91,10 +91,7 @@ namespace CarDealerSupportSystem
 
         private void OpenChildForm(Form childForm)
         {
-            if (currentChildForm is not null)
-            {
-                currentChildForm.Close();
-            }
+            currentChildForm?.Close();
             currentChildForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;

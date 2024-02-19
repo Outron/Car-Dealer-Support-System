@@ -11,8 +11,10 @@ namespace CarDealerSupportSystem
         private Button currentBtn;
         private readonly Panel leftBorderBtn;
         private Form currentChildForm;
-        public AdminForm()
+        private readonly int adminID;
+        public AdminForm(int id)
         {
+            adminID = id;
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(5, 57);
@@ -54,7 +56,7 @@ namespace CarDealerSupportSystem
 
         private void AdminForm_Load(object sender, EventArgs e)
         {
-          
+
         }
 
         private void LeftMenuBtn1_Click(object sender, EventArgs e)
@@ -78,7 +80,7 @@ namespace CarDealerSupportSystem
         private void LeftMenuBtn4_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new UsersManagePanel());
+            OpenChildForm(new UsersManagePanel(adminID));
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)
@@ -96,11 +98,8 @@ namespace CarDealerSupportSystem
 
         private void OpenChildForm(Form childForm)
         {
-            if (currentChildForm != null)
-            {
-                //open only one form
-                currentChildForm.Close();
-            }
+            //open only one form
+            currentChildForm?.Close();
             currentChildForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;

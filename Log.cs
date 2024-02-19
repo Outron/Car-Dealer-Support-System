@@ -18,11 +18,9 @@ namespace CarDealerSupportSystem
         public static void SaveLog(string message, LogType logType)
         {
             using salon_samochodowyContext db = new();
-            {
-                string typeName = Enum.GetName(typeof(LogType), logType);
-                db.Add(new Logi() { DataGodzina = DateTime.Now, Wiadomosc = message, Typ = typeName });
-                db.SaveChanges();
-            }
+            string typeName = Enum.GetName(typeof(LogType), logType);
+            db.Add(new Logi() { DataGodzina = DateTime.Now, Wiadomosc = message, Typ = typeName });
+            db.SaveChanges();
         }
         private static Color GetColor(LogType logType)
         {

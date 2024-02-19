@@ -12,10 +12,19 @@ namespace CarDealerSupportSystem.SellerFormPanels
     {
         private readonly salon_samochodowyContext db = new();
         private readonly List<Pracownicy> workers;
+        private readonly int adminID;
         private readonly Color gridDefaultBackColor;
-        public UsersManagePanel()
+        public UsersManagePanel(int id)
         {
-            workers = db.Pracownicy.ToList();
+            this.adminID = id;
+            var salonID = (from p in db.Pracownicy
+                           join s in db.Salony on p.IdSalonu equals s.IdSalonu
+                           where p.IdPracownika == adminID
+                           select p.IdSalonu).FirstOrDefault();
+            workers = (from p in db.Pracownicy
+                       join s in db.Salony on p.IdSalonu equals s.IdSalonu
+                       where p.IdSalonu == salonID && p.IdPracownika != adminID
+                       select p).ToList();
             InitializeComponent();
             gridDefaultBackColor = UsersGridView.DefaultCellStyle.BackColor;
         }
@@ -93,7 +102,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
         private void passCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             UsersGridView.DataSource = null;
-            UsersGridView.DataSource = db.Pracownicy.ToList();
+            UsersGridView.DataSource = workers;
         }
     }
 }

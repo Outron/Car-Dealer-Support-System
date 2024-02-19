@@ -48,10 +48,11 @@ namespace CarDealerSupportSystem.SellerFormPanels
             TasksGridView.Columns[2].DataPropertyName = "Model";
             TasksGridView.Columns[3].DataPropertyName = "Nazwa";
             TasksGridView.DefaultCellStyle.ForeColor = Color.White;
-            TasksGridView.CellMouseEnter += TasksGridView_CellMouseEnter1;
-            TasksGridView.CellClick += TasksGridView_CellClick1;
+           
             if (currentTasks is not null)
             {
+                TasksGridView.CellMouseEnter += TasksGridView_CellMouseEnter1;
+                TasksGridView.CellClick += TasksGridView_CellClick1;
                 TasksGridView.DataSource = currentTasks;
             }
             else

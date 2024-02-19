@@ -39,13 +39,13 @@ namespace CarDealerSupportSystem
 
             var db = new salon_samochodowyContext();
             var loginData = db.Pracownicy.Join(db.Role, p => p.KodRoli, r => r.KodRoli, (p, r) => new { p, r }).Where(pr => pr.p.Login == UsernameTextBox.Text).FirstOrDefault();
-            int id=db.Pracownicy.Where(x=>x.Login== UsernameTextBox.Text && x.Haslo==PasswordTextBox.Text).Select(x=>x.IdPracownika).SingleOrDefault();
+            int id = db.Pracownicy.Where(x => x.Login == UsernameTextBox.Text && x.Haslo == PasswordTextBox.Text).Select(x => x.IdPracownika).SingleOrDefault();
             // check if the login and password are correct then check role and open the correct form
-            if (loginData !=null && loginData.p.Login != null && loginData.p.Haslo == PasswordTextBox.Text)
+            if (loginData != null && loginData.p.Login != null && loginData.p.Haslo == PasswordTextBox.Text)
             {
                 if (loginData.r.KodRoli == "ADM")
                 {
-                    AdminForm adminpanel = new();
+                    AdminForm adminpanel = new(id);
                     adminpanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
                     adminpanel.RoleLabel.Text = loginData.r.Nazwa;
                     adminpanel.Show();
@@ -77,10 +77,10 @@ namespace CarDealerSupportSystem
                     this.Hide();
                 }
 
-                else
-                {   // role is not correct
-                    MessageBox.Show("Nieprawidłowa rola");
-                }
+                //else
+                //{   // role is not correct
+                //    MessageBox.Show("Nieprawidłowa rola");
+                //}
             }
             else
             {   // show the label with information about wrong login or password
@@ -92,7 +92,6 @@ namespace CarDealerSupportSystem
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            //quit the application
             Application.Exit();
         }
     }

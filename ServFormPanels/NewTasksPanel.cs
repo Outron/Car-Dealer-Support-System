@@ -1,13 +1,9 @@
 ﻿using CarDealerSupportSystem.Models;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarDealerSupportSystem.SellerFormPanels
@@ -15,12 +11,12 @@ namespace CarDealerSupportSystem.SellerFormPanels
     public partial class NewTasksPanel : Form
     {
         private int _taskId;
-        private readonly int servId;
+        private readonly int servID;
         private readonly Color gridDefaultBackColor;
         public NewTasksPanel(int id)
         {
             InitializeComponent();
-            this.servId = id;
+            this.servID = id;
             gridDefaultBackColor = TasksGridView.DefaultCellStyle.BackColor;
         }
 
@@ -32,12 +28,17 @@ namespace CarDealerSupportSystem.SellerFormPanels
         public void LoadTasks()
         {
             using salon_samochodowyContext db = new();
+            var salonID = (from p in db.Pracownicy
+                           join s in db.Salony on p.IdSalonu equals s.IdSalonu
+                           where p.IdPracownika == servID
+                           select p.IdSalonu).FirstOrDefault();
             var newTasks = (from z in db.Zamowienia
                             join szu in db.ZamowieniaSamochodyUslugi on z.IdZamowienia equals szu.IdZamowienia
                             join u in db.Uslugi on szu.IdUslugi equals u.IdUslugi
                             join s in db.Samochody on szu.IdSamochodu equals s.IdSamochodu
+                            join p in db.Pracownicy on z.IdPracownika equals p.IdPracownika
                             orderby z.IdZamowienia
-                            where szu.Status == "wolne" && szu.IdPracownika == null
+                            where szu.Status == "wolne" && szu.IdPracownika == null && p.IdSalonu == salonID
                             select new { z.IdZamowienia, s.Marka, s.Model, u.Nazwa }).ToList();
             newTasks = newTasks.Any() ? newTasks : null;
             TasksGridView.Rows.Clear();
@@ -51,10 +52,10 @@ namespace CarDealerSupportSystem.SellerFormPanels
             TasksGridView.Columns[2].DataPropertyName = "Model";
             TasksGridView.Columns[3].DataPropertyName = "Nazwa";
             TasksGridView.DefaultCellStyle.ForeColor = Color.White;
-            TasksGridView.CellMouseEnter += TasksGridView_CellMouseEnter1;
-            TasksGridView.CellClick += TasksGridView_CellClick1;
             if (newTasks is not null)
             {
+                TasksGridView.CellMouseEnter += TasksGridView_CellMouseEnter1;
+                TasksGridView.CellClick += TasksGridView_CellClick1;
                 TasksGridView.DataSource = newTasks;
             }
             else
@@ -100,7 +101,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
                                         select new string[] { _taskId.ToString(), k.Imie, k.Nazwisko, k.Telefon, k.Email, s.Marka, s.Model, s.TypSilnika, s.TypNadwozia, p.Imie, p.Nazwisko, s.IdSamochodu.ToString(), u.IdUslugi.ToString() }).FirstOrDefault();
                     taskInfo = taskMoreInfo;
                 }
-                TaskInfoForm infoForm = new(this, taskInfo, servId);
+                TaskInfoForm infoForm = new(this, taskInfo, servID);
                 infoForm.Show();
             }
         }

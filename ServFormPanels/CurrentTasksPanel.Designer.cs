@@ -216,6 +216,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
             this.TasksGridView.Margin = new System.Windows.Forms.Padding(4);
             this.TasksGridView.MultiSelect = false;
             this.TasksGridView.Name = "TasksGridView";
+            this.TasksGridView.ReadOnly = true;
             this.TasksGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -257,6 +258,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
             this.Model.HeaderText = "Model";
             this.Model.MinimumWidth = 6;
             this.Model.Name = "Model";
+            this.Model.ReadOnly = true;
             // 
             // Nazwa
             // 

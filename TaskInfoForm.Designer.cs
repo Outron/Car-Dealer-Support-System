@@ -42,7 +42,6 @@
             this.modelLabel = new System.Windows.Forms.Label();
             this.engineTypeLabel = new System.Windows.Forms.Label();
             this.nadwozieLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.TopLoginPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -118,66 +117,61 @@
             // 
             // clientNameLabel
             // 
-            this.clientNameLabel.AutoSize = true;
             this.clientNameLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.clientNameLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.clientNameLabel.ForeColor = System.Drawing.Color.White;
             this.clientNameLabel.Location = new System.Drawing.Point(24, 268);
             this.clientNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.clientNameLabel.Name = "clientNameLabel";
-            this.clientNameLabel.Size = new System.Drawing.Size(160, 31);
+            this.clientNameLabel.Size = new System.Drawing.Size(403, 31);
             this.clientNameLabel.TabIndex = 10;
             this.clientNameLabel.Text = "Imienazwisko";
             // 
             // clientPhoneLabel
             // 
-            this.clientPhoneLabel.AutoSize = true;
             this.clientPhoneLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.clientPhoneLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.clientPhoneLabel.ForeColor = System.Drawing.Color.White;
             this.clientPhoneLabel.Location = new System.Drawing.Point(24, 319);
             this.clientPhoneLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.clientPhoneLabel.Name = "clientPhoneLabel";
-            this.clientPhoneLabel.Size = new System.Drawing.Size(93, 31);
+            this.clientPhoneLabel.Size = new System.Drawing.Size(452, 31);
             this.clientPhoneLabel.TabIndex = 11;
             this.clientPhoneLabel.Text = "Telefon";
             // 
             // clientEmailLabel
             // 
-            this.clientEmailLabel.AutoSize = true;
             this.clientEmailLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.clientEmailLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.clientEmailLabel.ForeColor = System.Drawing.Color.White;
             this.clientEmailLabel.Location = new System.Drawing.Point(24, 368);
             this.clientEmailLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.clientEmailLabel.Name = "clientEmailLabel";
-            this.clientEmailLabel.Size = new System.Drawing.Size(73, 31);
+            this.clientEmailLabel.Size = new System.Drawing.Size(698, 31);
             this.clientEmailLabel.TabIndex = 12;
             this.clientEmailLabel.Text = "Email";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(24, 426);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(205, 31);
+            this.label1.Size = new System.Drawing.Size(206, 31);
             this.label1.TabIndex = 13;
             this.label1.Text = "Dane samochodu:";
             // 
             // markaLabel
             // 
-            this.markaLabel.AutoSize = true;
             this.markaLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.markaLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.markaLabel.ForeColor = System.Drawing.Color.White;
             this.markaLabel.Location = new System.Drawing.Point(24, 472);
             this.markaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.markaLabel.Name = "markaLabel";
-            this.markaLabel.Size = new System.Drawing.Size(94, 31);
+            this.markaLabel.Size = new System.Drawing.Size(240, 31);
             this.markaLabel.TabIndex = 14;
             this.markaLabel.Text = "Marka: ";
             // 
@@ -196,52 +190,39 @@
             // 
             // modelLabel
             // 
-            this.modelLabel.AutoSize = true;
             this.modelLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.modelLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.modelLabel.ForeColor = System.Drawing.Color.White;
             this.modelLabel.Location = new System.Drawing.Point(24, 516);
             this.modelLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.modelLabel.Name = "modelLabel";
-            this.modelLabel.Size = new System.Drawing.Size(95, 31);
+            this.modelLabel.Size = new System.Drawing.Size(222, 31);
             this.modelLabel.TabIndex = 16;
             this.modelLabel.Text = "Model: ";
             // 
             // engineTypeLabel
             // 
-            this.engineTypeLabel.AutoSize = true;
             this.engineTypeLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.engineTypeLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.engineTypeLabel.ForeColor = System.Drawing.Color.White;
             this.engineTypeLabel.Location = new System.Drawing.Point(24, 611);
             this.engineTypeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.engineTypeLabel.Name = "engineTypeLabel";
-            this.engineTypeLabel.Size = new System.Drawing.Size(140, 31);
+            this.engineTypeLabel.Size = new System.Drawing.Size(273, 31);
             this.engineTypeLabel.TabIndex = 17;
             this.engineTypeLabel.Text = "Typ silnika: ";
             // 
             // nadwozieLabel
             // 
-            this.nadwozieLabel.AutoSize = true;
             this.nadwozieLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.nadwozieLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.nadwozieLabel.ForeColor = System.Drawing.Color.White;
             this.nadwozieLabel.Location = new System.Drawing.Point(24, 561);
             this.nadwozieLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nadwozieLabel.Name = "nadwozieLabel";
-            this.nadwozieLabel.Size = new System.Drawing.Size(172, 31);
+            this.nadwozieLabel.Size = new System.Drawing.Size(261, 31);
             this.nadwozieLabel.TabIndex = 18;
             this.nadwozieLabel.Text = "Typ nadwozia: ";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(314, 368);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(472, 274);
-            this.textBox1.TabIndex = 19;
             // 
             // TaskInfoForm
             // 
@@ -251,7 +232,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.ClientSize = new System.Drawing.Size(808, 819);
             this.ControlBox = false;
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.nadwozieLabel);
             this.Controls.Add(this.engineTypeLabel);
             this.Controls.Add(this.modelLabel);
@@ -293,7 +273,6 @@
         private System.Windows.Forms.Label modelLabel;
         private System.Windows.Forms.Label engineTypeLabel;
         private System.Windows.Forms.Label nadwozieLabel;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
