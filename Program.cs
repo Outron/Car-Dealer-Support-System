@@ -20,7 +20,7 @@ namespace CarDealerSupportSystem
             //db.SaveChanges();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ServForm());//LOginFOrm
+            Application.Run(new SellerPanel());//LOginFOrm
         }
     }
 }

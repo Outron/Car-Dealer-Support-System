@@ -31,6 +31,10 @@ namespace CarDealerSupportSystem
             this.mainForm = mainForm as UsersManagePanel;
             InitializeComponent();
         }
+        public AddUserForm()
+        {
+            InitializeComponent();
+        }
         private void AddUserForm_Load(object sender, EventArgs e)
         {
             //placeholdery ustawiane

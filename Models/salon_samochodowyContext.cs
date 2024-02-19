@@ -40,7 +40,7 @@ namespace CarDealerSupportSystem.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseMySql("server=localhost;database=salon_samochodowy;uid=root;pwd=samochody", x => x.ServerVersion("10.4.28-mariadb"));
+                optionsBuilder.UseMySql("server=localhost;database=cdss2;uid=root;", x => x.ServerVersion("10.4.32-mariadb"));
             }
         }
 
