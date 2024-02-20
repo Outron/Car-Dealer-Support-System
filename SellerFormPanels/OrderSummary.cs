@@ -177,22 +177,26 @@ namespace CarDealerSupportSystem.SellerFormPanels
                 TypZamowienia = TypeOfSell,
                 Data = DateTime.Now,
                 CalkowityKoszt = int.Parse(PriceLabel.Text),
-                Status = "Wolne"
+                //Status = "Wolne"
             };
-            db.Zamowienia.Add(order);
-            db.SaveChanges();
+            //db.Zamowienia.Add(order);
+            //db.SaveChanges();
 
 
             if (TypeOfSell == "Auto+Uslugi")
             {
                 for (int i = 0; i < selectedServices.Count; i++)
                 {
+                    order.Status = "wtrakcie";
                     db.Database.ExecuteSqlRaw("INSERT INTO zamowienia_samochody_uslugi values('" + db.Samochody.Where(s => s.Marka == selectedCarInfo.SelectedBrand && s.Model == selectedCarInfo.SelectedModel).Select(s => s.IdSamochodu).FirstOrDefault() + "', '" + db.Uslugi.Where(u => u.Nazwa == selectedServices[i]).Select(u => u.IdUslugi).FirstOrDefault() + "', '" + order.IdZamowienia + "', NULL, 'wolne')");
+                    db.Zamowienia.Add(order);
                     db.SaveChanges();
                 }
             }
             else if (TypeOfSell == "ZakupAuta")
             {
+                order.Status = "zakończone";
+                db.Zamowienia.Add(order);
                 db.Database.ExecuteSqlRaw("INSERT INTO zamowienia_samochody_uslugi values('" + db.Samochody.Where(s => s.Marka == selectedCarInfo.SelectedBrand && s.Model == selectedCarInfo.SelectedModel).Select(s => s.IdSamochodu).FirstOrDefault() + "', NULL, '" + order.IdZamowienia + "', NULL, 'zakończone')");
                 db.SaveChanges();
             }

@@ -154,6 +154,7 @@ namespace CarDealerSupportSystem
         }
         private void editUserButton_Click(object sender, EventArgs e)
         {
+            mainForm.isEditing = true;
             if (ValidateChildren(ValidationConstraints.Enabled) && rolesComboBox.SelectedItem != null)
             {
                 using salon_samochodowyContext db = new();
@@ -168,11 +169,14 @@ namespace CarDealerSupportSystem
                                join s in db.Salony on p.IdSalonu equals s.IdSalonu
                                where p.IdSalonu == mainForm.salonid && p.IdPracownika != mainForm.adminID
                                select p).ToList();
-                mainForm.UsersGridView.DataSource =workers;
+                mainForm.UsersGridView.DataSource = workers;
                 MessageBox.Show("Pomyślnie edytowano użytkownika", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
+            mainForm.isEditing = false;
         }
+
+        
         private bool isEmailValid(string email)
         {
             string pattern = "^([\\w\\.\\-]+)@([\\w\\-]+)((\\.(\\w){2,3})+)$";
