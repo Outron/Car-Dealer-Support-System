@@ -189,8 +189,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="flatBox.cs">
-      <SubType>Component</SubType>
+    <Compile Include="ManagerFormPanels\ManagerPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerFormPanels\ManagerPanel.Designer.cs">
+      <DependentUpon>ManagerPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Mozliweuslugisamochody.cs" />
     <Compile Include="Models\PakietyUslugi.cs" />
@@ -200,7 +203,7 @@
     </Compile>
     <Compile Include="TaskInfoForm.Designer.cs">
       <DependentUpon>TaskInfoForm.cs</DependentUpon>
-	</Compile>
+    </Compile>
     <Compile Include="Models\salon_samochodowyContext.cs" />
     <Compile Include="Models\ZamowieniaSamochodyUslugi.cs" />
     <Compile Include="SellerFormPanels\CarConfigurator.cs">
@@ -263,10 +266,10 @@
     <Compile Include="UserInfoForm.Designer.cs">
       <DependentUpon>UserInfoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditUserForm.cs">
+    <Compile Include="AdmFormPanels\EditUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditUserForm.Designer.cs">
+    <Compile Include="AdmFormPanels\EditUserForm.Designer.cs">
       <DependentUpon>EditUserForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AdmFormPanels\AdmMainPanel.cs">
@@ -300,10 +303,10 @@
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Log.cs" />
-    <Compile Include="AddUserForm.cs">
+    <Compile Include="AdmFormPanels\AddUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddUserForm.Designer.cs">
+    <Compile Include="AdmFormPanels\AddUserForm.Designer.cs">
       <DependentUpon>AddUserForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
@@ -390,12 +393,6 @@
     <Compile Include="SellerFrom.Designer.cs">
       <DependentUpon>SellerFrom.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerFormPanels\klienciControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ManagerFormPanels\klienciControl.Designer.cs">
-      <DependentUpon>klienciControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="ManagerFormPanels\Statistics.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -405,10 +402,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-
+    <EmbeddedResource Include="ManagerFormPanels\Statistics.resx">
+      <DependentUpon>Statistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerFormPanels\ManagerPanel.resx">
+      <DependentUpon>ManagerPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TaskInfoForm.resx">
       <DependentUpon>TaskInfoForm.cs</DependentUpon>
-	</EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="SellerFormPanels\CarConfigurator.resx">
       <DependentUpon>CarConfigurator.cs</DependentUpon>
     </EmbeddedResource>
@@ -419,7 +421,6 @@
       <DependentUpon>MakeOrderPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SellerFormPanels\OrderSummary.resx">
-
     </EmbeddedResource>
     <EmbeddedResource Include="ServForm.resx">
       <DependentUpon>ServForm.cs</DependentUpon>
@@ -439,7 +440,7 @@
     <EmbeddedResource Include="UserInfoForm.resx">
       <DependentUpon>UserInfoForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditUserForm.resx">
+    <EmbeddedResource Include="AdmFormPanels\EditUserForm.resx">
       <DependentUpon>EditUserForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdmFormPanels\AdmMainPanel.resx">
@@ -457,7 +458,7 @@
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddUserForm.resx">
+    <EmbeddedResource Include="AdmFormPanels\AddUserForm.resx">
       <DependentUpon>AddUserForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">

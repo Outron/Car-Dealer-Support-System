@@ -26,7 +26,7 @@ namespace CarDealerSupportSystem.ManagerFormPanels
         private CarsManager mainform;
         private salon_samochodowyContext db = new salon_samochodowyContext();
         private string currTextBox;
-        private int carId;
+        private readonly int carId;
         private int errorCount;
 
         public EditCarsForm(Form f, int id)
@@ -257,7 +257,7 @@ namespace CarDealerSupportSystem.ManagerFormPanels
                 var query = (from salon in db.Salony
                              join pracownik in db.Pracownicy
                              on salon.IdSalonu equals pracownik.IdSalonu
-                             where pracownik.Login == mainform.login
+                             where pracownik.IdPracownika == mainform.id
                              select salon.IdSalonu).ToList().FirstOrDefault();
 
                 var cars = db.Samochody.Where(sam => sam.Dostepnosc == "tak" || sam.Dostepnosc == "dostepny").Where(d => d.IdSalonu == query).ToList();
@@ -307,7 +307,7 @@ namespace CarDealerSupportSystem.ManagerFormPanels
             var query = (from salon in db.Salony
                          join pracownik in db.Pracownicy
                          on salon.IdSalonu equals pracownik.IdSalonu
-                         where pracownik.Login == mainform.login
+                         where pracownik.IdPracownika == mainform.id
                          select salon.IdSalonu).ToList().FirstOrDefault();
 
             var cars = db.Samochody.Where(sam => sam.Dostepnosc == "tak" || sam.Dostepnosc == "dostepny").Where(d => d.IdSalonu == query).ToList();

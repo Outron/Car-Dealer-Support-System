@@ -281,7 +281,7 @@ namespace CarDealerSupportSystem.ManagerFormPanels
         {
             var query = (from salon in db.Salony
                                  join pracownik in db.Pracownicy on salon.IdSalonu equals pracownik.IdSalonu
-                                 where pracownik.Login == mainform.login
+                                 where pracownik.IdPracownika== mainform.id
                                  select salon.IdSalonu).ToList().FirstOrDefault();
             foreach (DataGridViewRow row in AddCarsGridView.Rows)
             {

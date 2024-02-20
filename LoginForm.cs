@@ -71,11 +71,11 @@ namespace CarDealerSupportSystem
                         this.Hide();
                         break;
                     case "KRW":
-                        //ManagerPanel managerpanel = new ManagerPanel();
-                        //managerpanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
-                        //managerpanel.RoleLabel.Text = loginData.r.Nazwa;
-                        //managerpanel.Show();
-                        //this.Hide();
+                        ManagerPanel managerpanel = new ManagerPanel(id);
+                        managerpanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
+                        managerpanel.RoleLabel.Text = loginData.r.Nazwa;
+                        managerpanel.Show();
+                        this.Hide();
                         break;
                     case "SRW":
                         ServForm servicepanel = new ServForm(id);

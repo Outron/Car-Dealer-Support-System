@@ -67,8 +67,12 @@ namespace CarDealerSupportSystem
                     }
                 }
                 catch { MessageBox.Show("Wystąpił błąd. Pracownik jest odpowiedzialny za zamówienie. Brak możliwości usunięcia.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
+                var workers = (from p in db.Pracownicy
+                               join s in db.Salony on p.IdSalonu equals s.IdSalonu
+                               where p.IdSalonu == mainForm.salonid && p.IdPracownika != mainForm.adminID
+                               select p).ToList();
                 mainForm.UsersGridView.DataSource = null;
-                mainForm.UsersGridView.DataSource = db.Pracownicy.ToList();
+                mainForm.UsersGridView.DataSource = workers;
                 MessageBox.Show("Pomyślnie usunięto użytkownika", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }

@@ -18,10 +18,10 @@ namespace CarDealerSupportSystem.SellerFormPanels
 
         private readonly salon_samochodowyContext db = new salon_samochodowyContext();
         private readonly Color gridDefaultCellStyle;
-        public string login;
-        public CarsPanel(string l)
+        public readonly int id;
+        public CarsPanel(int i)
         {
-            login = l;
+            id = i;
             InitializeComponent();
             gridDefaultCellStyle = CarsGridView.DefaultCellStyle.BackColor;
         }
@@ -38,7 +38,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
         var query = (from salon in db.Salony
                         join pracownik in db.Pracownicy
                         on salon.IdSalonu equals pracownik.IdSalonu
-                        where pracownik.Login == login
+                        where pracownik.IdPracownika == id
                         select salon.IdSalonu).ToList().FirstOrDefault();
 
             var cars = db.Samochody.Where(sam=>sam.Dostepnosc == "tak" || sam.Dostepnosc == "dostepny").Where(d=>d.IdSalonu == query).ToList();
@@ -158,13 +158,13 @@ namespace CarDealerSupportSystem.SellerFormPanels
             if (CarSortComboBox.SelectedItem != null)
             {
 
-                if (CarSortComboBox.SelectedItem == "Cena rosnąco")
+                if (CarSortComboBox.SelectedItem.ToString() == "Cena rosnąco")
                 {
                     var cars = db.Samochody.OrderBy(c => c.CenaPodstawowa).ToList();
                     CarsGridView.DataSource = cars;
                 }
 
-                if (CarSortComboBox.SelectedItem == "Cena malejąco")
+                if (CarSortComboBox.SelectedItem.ToString() == "Cena malejąco")
                 {
                     var cars = db.Samochody.OrderByDescending(c => c.CenaPodstawowa).ToList();
                     CarsGridView.DataSource = cars;
@@ -172,7 +172,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
             }
         }
 
-        private void CarsGridView_SelectionChanged_1(object sender, EventArgs e)
+        private void CarsGridView_SelectionChanged(object sender, EventArgs e)
         {
             CarsGridView.ClearSelection();
         }

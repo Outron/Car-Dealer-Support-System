@@ -72,7 +72,7 @@
             this.LeftMenuBtn5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LeftMenuBtn5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LeftMenuBtn5.ForeColor = System.Drawing.Color.White;
-            this.LeftMenuBtn5.Image = global::CarDealerSupportSystem.Properties.Resources.bar_chart_21;
+            this.LeftMenuBtn5.Image = global::CarDealerSupportSystem.Properties.Resources.bar_chart_2;
             this.LeftMenuBtn5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.LeftMenuBtn5.Location = new System.Drawing.Point(3, 375);
             this.LeftMenuBtn5.Name = "LeftMenuBtn5";

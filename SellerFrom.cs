@@ -87,7 +87,7 @@ namespace CarDealerSupportSystem
         private void LeftMenuBtn3_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new CarsPanel());
+            OpenChildForm(new CarsPanel(id));
         }
 
         private void LeftMenuBtn4_Click(object sender, EventArgs e)
