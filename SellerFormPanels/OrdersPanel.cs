@@ -52,5 +52,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
         {
             OrdersGridView.ClearSelection();
         }
+
+
     }
 }

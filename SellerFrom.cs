@@ -13,17 +13,18 @@ namespace CarDealerSupportSystem
         private Button currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
+        public string login;
 
         // get the id of the logged user
         public readonly int id;
 
         public SellerPanel(int id)
-
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(5, 57);
             LeftMenuPanel.Controls.Add(leftBorderBtn);
+
             this.id = id;
             //open the main panel by default
         }
@@ -68,7 +69,6 @@ namespace CarDealerSupportSystem
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            Log.SaveLog("Wykryto logowanie do systemu, pracownik: " + GetServInfo(), LogType.Informacja);
         }
 
         private void LeftMenuBtn1_Click(object sender, EventArgs e)
@@ -86,7 +86,7 @@ namespace CarDealerSupportSystem
         private void LeftMenuBtn3_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new CarsPanel());
+            OpenChildForm(new CarsPanel(id));
         }
 
         private void LeftMenuBtn4_Click(object sender, EventArgs e)

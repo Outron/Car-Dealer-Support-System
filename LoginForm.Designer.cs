@@ -72,7 +72,7 @@
             this.UsernameTextBox.Location = new System.Drawing.Point(67, 248);
             this.UsernameTextBox.Name = "UsernameTextBox";
             this.UsernameTextBox.Size = new System.Drawing.Size(261, 28);
-            this.UsernameTextBox.TabIndex = 2;
+            this.UsernameTextBox.TabIndex = 1;
             // 
             // PasswordTextBox
             // 
@@ -84,7 +84,7 @@
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.PasswordChar = '*';
             this.PasswordTextBox.Size = new System.Drawing.Size(261, 28);
-            this.PasswordTextBox.TabIndex = 3;
+            this.PasswordTextBox.TabIndex = 2;
             // 
             // LoginButton
             // 
@@ -98,7 +98,7 @@
             this.LoginButton.Location = new System.Drawing.Point(99, 386);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(170, 42);
-            this.LoginButton.TabIndex = 5;
+            this.LoginButton.TabIndex = 3;
             this.LoginButton.Text = "ZALOGUJ";
             this.LoginButton.UseVisualStyleBackColor = false;
             this.LoginButton.Click += new System.EventHandler(this.button2_Click);
@@ -184,6 +184,7 @@
             // 
             // LoginForm
             // 
+            this.AcceptButton = this.LoginButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));

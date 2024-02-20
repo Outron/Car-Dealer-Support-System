@@ -55,6 +55,7 @@ namespace CarDealerSupportSystem
 
         private void AdminForm_Load(object sender, EventArgs e)
         {
+            ActivateButton(LeftMenuBtn2, RGBColors.color1);
             OpenChildForm(new LogsPanel());
         }
 

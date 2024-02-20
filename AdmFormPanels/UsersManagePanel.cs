@@ -112,7 +112,6 @@ namespace CarDealerSupportSystem.SellerFormPanels
                          where p.IdSalonu == salonid && p.IdPracownika != adminID
                          select p).ToList();
             UsersGridView.DataSource = worke;
-
         }
     }
 }

@@ -20,16 +20,18 @@ namespace CarDealerSupportSystem
             InitializeComponent();
             this.id = id;
             this.taskInfo = taskInfo;
+            this.acceptTaskButton.Click -= acceptTaskButton_Click;
+            this.acceptTaskButton.Click -= endTaskButton_Click;
             if (form is NewTasksPanel)
             {
                 this.mainForm = form as NewTasksPanel;
-                this.acceptTaskButton.Click -= endTaskButton_Click;
+                //this.acceptTaskButton.Click -= endTaskButton_Click;
                 this.acceptTaskButton.Click += acceptTaskButton_Click;
             }
             else if (form is CurrentTasksPanel)
             {
                 this.currMainForm = form as CurrentTasksPanel;
-                this.acceptTaskButton.Click -= acceptTaskButton_Click;
+                //this.acceptTaskButton.Click -= acceptTaskButton_Click;
                 this.acceptTaskButton.Click += endTaskButton_Click;
                 this.acceptTaskButton.Text = "Zakończ zadanie";
             }

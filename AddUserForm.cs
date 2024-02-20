@@ -127,10 +127,14 @@ namespace CarDealerSupportSystem
             if (ValidateChildren(ValidationConstraints.Enabled) && rolesComboBox.SelectedItem != null)
             {
                 salon_samochodowyContext db = new();
-                db.Add(new Pracownicy() { Login = usernameTextBox.Text, Haslo = passwordTextBox.Text, Imie = nameTextBox.Text, Nazwisko = surnameTextBox.Text, Adres = addressTextBox.Text, Telefon = phoneTextBox.Text, Email = emailTextBox.Text, KodRoli = roleAbr(), IdSalonu = 1 });
+                db.Add(new Pracownicy() { Login = usernameTextBox.Text, Haslo = passwordTextBox.Text, Imie = nameTextBox.Text, Nazwisko = surnameTextBox.Text, Adres = addressTextBox.Text, Telefon = phoneTextBox.Text, Email = emailTextBox.Text, KodRoli = roleAbr(), IdSalonu = mainForm.salonid });
                 db.SaveChanges();
                 mainForm.UsersGridView.DataSource = null;
-                mainForm.UsersGridView.DataSource = db.Pracownicy.ToList();
+                var workers = (from p in db.Pracownicy
+                               join s in db.Salony on p.IdSalonu equals s.IdSalonu
+                               where p.IdSalonu == mainForm.salonid && p.IdPracownika != mainForm.adminID
+                               select p).ToList();
+                mainForm.UsersGridView.DataSource = workers;
                 MessageBox.Show("Pomyślnie dodano użytkownika", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

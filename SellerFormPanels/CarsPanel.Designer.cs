@@ -41,13 +41,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.CarsGridView = new System.Windows.Forms.DataGridView();
-            this.markaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typNadwoziaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kolorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mocSilnikaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typSilnikaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cenaPodstawowaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.samochodyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SearchCarsTextBox = new System.Windows.Forms.TextBox();
             this.CarsMenuPanel = new System.Windows.Forms.Panel();
@@ -78,6 +71,14 @@
             this.ModelComboBox = new System.Windows.Forms.ComboBox();
             this.BrandComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.ZdjecieColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.markaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typNadwoziaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kolorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mocSilnikaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typSilnikaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cenaPodstawowaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.CarsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.samochodyBindingSource)).BeginInit();
             this.CarsMenuPanel.SuspendLayout();
@@ -107,6 +108,7 @@
             this.CarsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.CarsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CarsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ZdjecieColumn,
             this.markaDataGridViewTextBoxColumn,
             this.modelDataGridViewTextBoxColumn,
             this.typNadwoziaDataGridViewTextBoxColumn,
@@ -125,8 +127,7 @@
             this.CarsGridView.DefaultCellStyle = dataGridViewCellStyle9;
             this.CarsGridView.EnableHeadersVisualStyles = false;
             this.CarsGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.CarsGridView.Location = new System.Drawing.Point(0, 48);
-            this.CarsGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CarsGridView.Location = new System.Drawing.Point(0, 39);
             this.CarsGridView.MultiSelect = false;
             this.CarsGridView.Name = "CarsGridView";
             this.CarsGridView.ReadOnly = true;
@@ -147,119 +148,9 @@
             this.CarsGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.CarsGridView.ShowCellToolTips = false;
             this.CarsGridView.ShowEditingIcon = false;
-            this.CarsGridView.Size = new System.Drawing.Size(1148, 604);
+            this.CarsGridView.Size = new System.Drawing.Size(861, 491);
             this.CarsGridView.TabIndex = 0;
             this.CarsGridView.SelectionChanged += new System.EventHandler(this.CarsGridView_SelectionChanged);
-            // 
-            // markaDataGridViewTextBoxColumn
-            // 
-            this.markaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.markaDataGridViewTextBoxColumn.DataPropertyName = "Marka";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            this.markaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.markaDataGridViewTextBoxColumn.FillWeight = 156.1083F;
-            this.markaDataGridViewTextBoxColumn.HeaderText = "Marka";
-            this.markaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.markaDataGridViewTextBoxColumn.Name = "markaDataGridViewTextBoxColumn";
-            this.markaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.markaDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // modelDataGridViewTextBoxColumn
-            // 
-            this.modelDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.modelDataGridViewTextBoxColumn.DataPropertyName = "Model";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            this.modelDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.modelDataGridViewTextBoxColumn.FillWeight = 137.8736F;
-            this.modelDataGridViewTextBoxColumn.HeaderText = "Model";
-            this.modelDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
-            this.modelDataGridViewTextBoxColumn.ReadOnly = true;
-            this.modelDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.modelDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // typNadwoziaDataGridViewTextBoxColumn
-            // 
-            this.typNadwoziaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.typNadwoziaDataGridViewTextBoxColumn.DataPropertyName = "TypNadwozia";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            this.typNadwoziaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.typNadwoziaDataGridViewTextBoxColumn.FillWeight = 112.4991F;
-            this.typNadwoziaDataGridViewTextBoxColumn.HeaderText = "Nadwozie";
-            this.typNadwoziaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.typNadwoziaDataGridViewTextBoxColumn.Name = "typNadwoziaDataGridViewTextBoxColumn";
-            this.typNadwoziaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.typNadwoziaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // kolorDataGridViewTextBoxColumn
-            // 
-            this.kolorDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.kolorDataGridViewTextBoxColumn.DataPropertyName = "Kolor";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            this.kolorDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.kolorDataGridViewTextBoxColumn.FillWeight = 74.08795F;
-            this.kolorDataGridViewTextBoxColumn.HeaderText = "Kolor";
-            this.kolorDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.kolorDataGridViewTextBoxColumn.Name = "kolorDataGridViewTextBoxColumn";
-            this.kolorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.kolorDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.kolorDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // mocSilnikaDataGridViewTextBoxColumn
-            // 
-            this.mocSilnikaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.mocSilnikaDataGridViewTextBoxColumn.DataPropertyName = "MocSilnika";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            this.mocSilnikaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            this.mocSilnikaDataGridViewTextBoxColumn.FillWeight = 53.2995F;
-            this.mocSilnikaDataGridViewTextBoxColumn.HeaderText = "Moc";
-            this.mocSilnikaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.mocSilnikaDataGridViewTextBoxColumn.Name = "mocSilnikaDataGridViewTextBoxColumn";
-            this.mocSilnikaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.mocSilnikaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.mocSilnikaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // typSilnikaDataGridViewTextBoxColumn
-            // 
-            this.typSilnikaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.typSilnikaDataGridViewTextBoxColumn.DataPropertyName = "TypSilnika";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            this.typSilnikaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            this.typSilnikaDataGridViewTextBoxColumn.FillWeight = 83.06579F;
-            this.typSilnikaDataGridViewTextBoxColumn.HeaderText = "Silnik";
-            this.typSilnikaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.typSilnikaDataGridViewTextBoxColumn.Name = "typSilnikaDataGridViewTextBoxColumn";
-            this.typSilnikaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.typSilnikaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.typSilnikaDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // cenaPodstawowaDataGridViewTextBoxColumn
-            // 
-            this.cenaPodstawowaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.cenaPodstawowaDataGridViewTextBoxColumn.DataPropertyName = "CenaPodstawowa";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            this.cenaPodstawowaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
-            this.cenaPodstawowaDataGridViewTextBoxColumn.FillWeight = 83.06579F;
-            this.cenaPodstawowaDataGridViewTextBoxColumn.HeaderText = "Cena";
-            this.cenaPodstawowaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.cenaPodstawowaDataGridViewTextBoxColumn.Name = "cenaPodstawowaDataGridViewTextBoxColumn";
-            this.cenaPodstawowaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cenaPodstawowaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cenaPodstawowaDataGridViewTextBoxColumn.Width = 120;
             // 
             // samochodyBindingSource
             // 
@@ -271,10 +162,9 @@
             this.SearchCarsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.SearchCarsTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.SearchCarsTextBox.ForeColor = System.Drawing.Color.White;
-            this.SearchCarsTextBox.Location = new System.Drawing.Point(63, 7);
-            this.SearchCarsTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SearchCarsTextBox.Location = new System.Drawing.Point(47, 6);
             this.SearchCarsTextBox.Name = "SearchCarsTextBox";
-            this.SearchCarsTextBox.Size = new System.Drawing.Size(332, 32);
+            this.SearchCarsTextBox.Size = new System.Drawing.Size(249, 26);
             this.SearchCarsTextBox.TabIndex = 1;
             this.SearchCarsTextBox.TextChanged += new System.EventHandler(this.SearchCarsTextBox_TextChanged);
             // 
@@ -287,9 +177,8 @@
             this.CarsMenuPanel.Controls.Add(this.SearchCarsTextBox);
             this.CarsMenuPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.CarsMenuPanel.Location = new System.Drawing.Point(0, 0);
-            this.CarsMenuPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CarsMenuPanel.Name = "CarsMenuPanel";
-            this.CarsMenuPanel.Size = new System.Drawing.Size(1148, 48);
+            this.CarsMenuPanel.Size = new System.Drawing.Size(861, 39);
             this.CarsMenuPanel.TabIndex = 2;
             // 
             // CarSortComboBox
@@ -300,10 +189,9 @@
             this.CarSortComboBox.Items.AddRange(new object[] {
             "Cena malejąco",
             "Cena rosnąco"});
-            this.CarSortComboBox.Location = new System.Drawing.Point(876, 7);
-            this.CarSortComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CarSortComboBox.Location = new System.Drawing.Point(657, 6);
             this.CarSortComboBox.Name = "CarSortComboBox";
-            this.CarSortComboBox.Size = new System.Drawing.Size(160, 24);
+            this.CarSortComboBox.Size = new System.Drawing.Size(121, 21);
             this.CarSortComboBox.TabIndex = 26;
             this.CarSortComboBox.Text = "Sortowanie";
             this.CarSortComboBox.SelectedIndexChanged += new System.EventHandler(this.CarSortComboBox_SelectedIndexChanged);
@@ -311,10 +199,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::CarDealerSupportSystem.Properties.Resources.search;
-            this.pictureBox2.Location = new System.Drawing.Point(5, 4);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(4, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(49, 41);
+            this.pictureBox2.Size = new System.Drawing.Size(37, 33);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
@@ -322,10 +209,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CarDealerSupportSystem.Properties.Resources.sliders;
-            this.pictureBox1.Location = new System.Drawing.Point(1069, 4);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(802, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(53, 41);
+            this.pictureBox1.Size = new System.Drawing.Size(40, 33);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -356,10 +242,9 @@
             this.CarsFilterPanel.Controls.Add(this.BodyComboBox);
             this.CarsFilterPanel.Controls.Add(this.ModelComboBox);
             this.CarsFilterPanel.Controls.Add(this.BrandComboBox);
-            this.CarsFilterPanel.Location = new System.Drawing.Point(0, 48);
-            this.CarsFilterPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CarsFilterPanel.Location = new System.Drawing.Point(0, 39);
             this.CarsFilterPanel.Name = "CarsFilterPanel";
-            this.CarsFilterPanel.Size = new System.Drawing.Size(1148, 129);
+            this.CarsFilterPanel.Size = new System.Drawing.Size(861, 105);
             this.CarsFilterPanel.TabIndex = 3;
             this.CarsFilterPanel.Visible = false;
             // 
@@ -368,10 +253,9 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(689, 0);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(517, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(102, 23);
+            this.label10.Size = new System.Drawing.Size(79, 17);
             this.label10.TabIndex = 25;
             this.label10.Text = "Liczba drzwi";
             // 
@@ -381,10 +265,9 @@
             this.DoorsComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DoorsComboBox.ForeColor = System.Drawing.Color.White;
             this.DoorsComboBox.FormattingEnabled = true;
-            this.DoorsComboBox.Location = new System.Drawing.Point(679, 25);
-            this.DoorsComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DoorsComboBox.Location = new System.Drawing.Point(509, 20);
             this.DoorsComboBox.Name = "DoorsComboBox";
-            this.DoorsComboBox.Size = new System.Drawing.Size(129, 24);
+            this.DoorsComboBox.Size = new System.Drawing.Size(98, 21);
             this.DoorsComboBox.TabIndex = 24;
             // 
             // label9
@@ -392,10 +275,9 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(192, 64);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(144, 52);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(142, 23);
+            this.label9.Size = new System.Drawing.Size(109, 17);
             this.label9.TabIndex = 23;
             this.label9.Text = "Maksymalna moc";
             // 
@@ -405,10 +287,9 @@
             this.MaxPowerTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MaxPowerTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.MaxPowerTextBox.ForeColor = System.Drawing.Color.White;
-            this.MaxPowerTextBox.Location = new System.Drawing.Point(188, 90);
-            this.MaxPowerTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaxPowerTextBox.Location = new System.Drawing.Point(141, 73);
             this.MaxPowerTextBox.Name = "MaxPowerTextBox";
-            this.MaxPowerTextBox.Size = new System.Drawing.Size(149, 23);
+            this.MaxPowerTextBox.Size = new System.Drawing.Size(112, 20);
             this.MaxPowerTextBox.TabIndex = 22;
             // 
             // MinPowerTextBox
@@ -417,10 +298,9 @@
             this.MinPowerTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MinPowerTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.MinPowerTextBox.ForeColor = System.Drawing.Color.White;
-            this.MinPowerTextBox.Location = new System.Drawing.Point(25, 90);
-            this.MinPowerTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinPowerTextBox.Location = new System.Drawing.Point(19, 73);
             this.MinPowerTextBox.Name = "MinPowerTextBox";
-            this.MinPowerTextBox.Size = new System.Drawing.Size(138, 23);
+            this.MinPowerTextBox.Size = new System.Drawing.Size(104, 20);
             this.MinPowerTextBox.TabIndex = 21;
             // 
             // ApplyButton
@@ -430,10 +310,9 @@
             this.ApplyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ApplyButton.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ApplyButton.ForeColor = System.Drawing.Color.White;
-            this.ApplyButton.Location = new System.Drawing.Point(969, 78);
-            this.ApplyButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ApplyButton.Location = new System.Drawing.Point(727, 63);
             this.ApplyButton.Name = "ApplyButton";
-            this.ApplyButton.Size = new System.Drawing.Size(163, 43);
+            this.ApplyButton.Size = new System.Drawing.Size(122, 35);
             this.ApplyButton.TabIndex = 20;
             this.ApplyButton.Text = "Zastosuj";
             this.ApplyButton.UseVisualStyleBackColor = false;
@@ -444,10 +323,9 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(1028, 0);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(771, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(68, 23);
+            this.label8.Size = new System.Drawing.Size(52, 17);
             this.label8.TabIndex = 19;
             this.label8.Text = "Rocznik";
             // 
@@ -457,10 +335,9 @@
             this.YearComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.YearComboBox.ForeColor = System.Drawing.Color.White;
             this.YearComboBox.FormattingEnabled = true;
-            this.YearComboBox.Location = new System.Drawing.Point(1001, 25);
-            this.YearComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.YearComboBox.Location = new System.Drawing.Point(751, 20);
             this.YearComboBox.Name = "YearComboBox";
-            this.YearComboBox.Size = new System.Drawing.Size(120, 24);
+            this.YearComboBox.Size = new System.Drawing.Size(91, 21);
             this.YearComboBox.TabIndex = 18;
             // 
             // MaxPriceTextBox
@@ -469,10 +346,9 @@
             this.MaxPriceTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MaxPriceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.MaxPriceTextBox.ForeColor = System.Drawing.Color.White;
-            this.MaxPriceTextBox.Location = new System.Drawing.Point(524, 90);
-            this.MaxPriceTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaxPriceTextBox.Location = new System.Drawing.Point(393, 73);
             this.MaxPriceTextBox.Name = "MaxPriceTextBox";
-            this.MaxPriceTextBox.Size = new System.Drawing.Size(154, 23);
+            this.MaxPriceTextBox.Size = new System.Drawing.Size(116, 20);
             this.MaxPriceTextBox.TabIndex = 17;
             // 
             // MinPriceTextBox
@@ -481,10 +357,9 @@
             this.MinPriceTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MinPriceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.MinPriceTextBox.ForeColor = System.Drawing.Color.White;
-            this.MinPriceTextBox.Location = new System.Drawing.Point(357, 90);
-            this.MinPriceTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinPriceTextBox.Location = new System.Drawing.Point(268, 73);
             this.MinPriceTextBox.Name = "MinPriceTextBox";
-            this.MinPriceTextBox.Size = new System.Drawing.Size(145, 23);
+            this.MinPriceTextBox.Size = new System.Drawing.Size(109, 20);
             this.MinPriceTextBox.TabIndex = 16;
             // 
             // label7
@@ -492,10 +367,9 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(529, 65);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(397, 53);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(148, 23);
+            this.label7.Size = new System.Drawing.Size(112, 17);
             this.label7.TabIndex = 15;
             this.label7.Text = "Cena maksymalna";
             // 
@@ -504,10 +378,9 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(369, 64);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(277, 52);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(134, 23);
+            this.label6.Size = new System.Drawing.Size(100, 17);
             this.label6.TabIndex = 13;
             this.label6.Text = "Cena minimalna";
             // 
@@ -516,10 +389,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(872, 0);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(654, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 23);
+            this.label5.Size = new System.Drawing.Size(37, 17);
             this.label5.TabIndex = 12;
             this.label5.Text = "Silnik";
             // 
@@ -528,10 +400,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(31, 64);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(23, 52);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(128, 23);
+            this.label4.Size = new System.Drawing.Size(97, 17);
             this.label4.TabIndex = 11;
             this.label4.Text = "Minimalna moc";
             // 
@@ -540,10 +411,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(557, 0);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(418, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 23);
+            this.label3.Size = new System.Drawing.Size(40, 17);
             this.label3.TabIndex = 10;
             this.label3.Text = "Kolor";
             // 
@@ -552,10 +422,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(232, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(174, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 23);
+            this.label1.Size = new System.Drawing.Size(46, 17);
             this.label1.TabIndex = 8;
             this.label1.Text = "Model";
             // 
@@ -564,10 +433,9 @@
             this.CarBrandFilter.AutoSize = true;
             this.CarBrandFilter.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.CarBrandFilter.ForeColor = System.Drawing.Color.White;
-            this.CarBrandFilter.Location = new System.Drawing.Point(59, 0);
-            this.CarBrandFilter.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.CarBrandFilter.Location = new System.Drawing.Point(44, 0);
             this.CarBrandFilter.Name = "CarBrandFilter";
-            this.CarBrandFilter.Size = new System.Drawing.Size(57, 23);
+            this.CarBrandFilter.Size = new System.Drawing.Size(45, 17);
             this.CarBrandFilter.TabIndex = 7;
             this.CarBrandFilter.Text = "Marka";
             // 
@@ -577,10 +445,9 @@
             this.EngineComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EngineComboBox.ForeColor = System.Drawing.Color.White;
             this.EngineComboBox.FormattingEnabled = true;
-            this.EngineComboBox.Location = new System.Drawing.Point(839, 25);
-            this.EngineComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EngineComboBox.Location = new System.Drawing.Point(629, 20);
             this.EngineComboBox.Name = "EngineComboBox";
-            this.EngineComboBox.Size = new System.Drawing.Size(129, 24);
+            this.EngineComboBox.Size = new System.Drawing.Size(98, 21);
             this.EngineComboBox.TabIndex = 6;
             // 
             // ColorComboBox
@@ -589,10 +456,9 @@
             this.ColorComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ColorComboBox.ForeColor = System.Drawing.Color.White;
             this.ColorComboBox.FormattingEnabled = true;
-            this.ColorComboBox.Location = new System.Drawing.Point(524, 25);
-            this.ColorComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ColorComboBox.Location = new System.Drawing.Point(393, 20);
             this.ColorComboBox.Name = "ColorComboBox";
-            this.ColorComboBox.Size = new System.Drawing.Size(132, 24);
+            this.ColorComboBox.Size = new System.Drawing.Size(100, 21);
             this.ColorComboBox.TabIndex = 4;
             // 
             // BodyComboBox
@@ -601,10 +467,9 @@
             this.BodyComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BodyComboBox.ForeColor = System.Drawing.Color.White;
             this.BodyComboBox.FormattingEnabled = true;
-            this.BodyComboBox.Location = new System.Drawing.Point(357, 25);
-            this.BodyComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BodyComboBox.Location = new System.Drawing.Point(268, 20);
             this.BodyComboBox.Name = "BodyComboBox";
-            this.BodyComboBox.Size = new System.Drawing.Size(144, 24);
+            this.BodyComboBox.Size = new System.Drawing.Size(109, 21);
             this.BodyComboBox.TabIndex = 3;
             // 
             // ModelComboBox
@@ -613,10 +478,9 @@
             this.ModelComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ModelComboBox.ForeColor = System.Drawing.Color.White;
             this.ModelComboBox.FormattingEnabled = true;
-            this.ModelComboBox.Location = new System.Drawing.Point(188, 25);
-            this.ModelComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ModelComboBox.Location = new System.Drawing.Point(141, 20);
             this.ModelComboBox.Name = "ModelComboBox";
-            this.ModelComboBox.Size = new System.Drawing.Size(148, 24);
+            this.ModelComboBox.Size = new System.Drawing.Size(112, 21);
             this.ModelComboBox.TabIndex = 2;
             this.ModelComboBox.SelectedIndexChanged += new System.EventHandler(this.ModelComboBox_SelectedIndexChanged);
             // 
@@ -629,10 +493,9 @@
             this.BrandComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.BrandComboBox.ForeColor = System.Drawing.Color.White;
             this.BrandComboBox.FormattingEnabled = true;
-            this.BrandComboBox.Location = new System.Drawing.Point(25, 25);
-            this.BrandComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BrandComboBox.Location = new System.Drawing.Point(19, 20);
             this.BrandComboBox.Name = "BrandComboBox";
-            this.BrandComboBox.Size = new System.Drawing.Size(137, 25);
+            this.BrandComboBox.Size = new System.Drawing.Size(104, 21);
             this.BrandComboBox.TabIndex = 1;
             this.BrandComboBox.ValueMember = "Marka";
             this.BrandComboBox.SelectedIndexChanged += new System.EventHandler(this.BrandComboBox_SelectedIndexChanged);
@@ -642,25 +505,143 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(381, 47);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(286, 38);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 23);
+            this.label2.Size = new System.Drawing.Size(66, 17);
             this.label2.TabIndex = 9;
             this.label2.Text = "Nadwozie";
             // 
+            // ZdjecieColumn
+            // 
+            this.ZdjecieColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ZdjecieColumn.DataPropertyName = "Zdjecie";
+            this.ZdjecieColumn.HeaderText = "";
+            this.ZdjecieColumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.ZdjecieColumn.Name = "ZdjecieColumn";
+            this.ZdjecieColumn.ReadOnly = true;
+            // 
+            // markaDataGridViewTextBoxColumn
+            // 
+            this.markaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.markaDataGridViewTextBoxColumn.DataPropertyName = "Marka";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            this.markaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.markaDataGridViewTextBoxColumn.FillWeight = 156.1083F;
+            this.markaDataGridViewTextBoxColumn.HeaderText = "Marka";
+            this.markaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.markaDataGridViewTextBoxColumn.Name = "markaDataGridViewTextBoxColumn";
+            this.markaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.markaDataGridViewTextBoxColumn.Width = 115;
+            // 
+            // modelDataGridViewTextBoxColumn
+            // 
+            this.modelDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.modelDataGridViewTextBoxColumn.DataPropertyName = "Model";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            this.modelDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.modelDataGridViewTextBoxColumn.FillWeight = 137.8736F;
+            this.modelDataGridViewTextBoxColumn.HeaderText = "Model";
+            this.modelDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
+            this.modelDataGridViewTextBoxColumn.ReadOnly = true;
+            this.modelDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.modelDataGridViewTextBoxColumn.Width = 117;
+            // 
+            // typNadwoziaDataGridViewTextBoxColumn
+            // 
+            this.typNadwoziaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.typNadwoziaDataGridViewTextBoxColumn.DataPropertyName = "TypNadwozia";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            this.typNadwoziaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.typNadwoziaDataGridViewTextBoxColumn.FillWeight = 112.4991F;
+            this.typNadwoziaDataGridViewTextBoxColumn.HeaderText = "Nadwozie";
+            this.typNadwoziaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.typNadwoziaDataGridViewTextBoxColumn.Name = "typNadwoziaDataGridViewTextBoxColumn";
+            this.typNadwoziaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.typNadwoziaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.typNadwoziaDataGridViewTextBoxColumn.Width = 147;
+            // 
+            // kolorDataGridViewTextBoxColumn
+            // 
+            this.kolorDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.kolorDataGridViewTextBoxColumn.DataPropertyName = "Kolor";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            this.kolorDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.kolorDataGridViewTextBoxColumn.FillWeight = 74.08795F;
+            this.kolorDataGridViewTextBoxColumn.HeaderText = "Kolor";
+            this.kolorDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.kolorDataGridViewTextBoxColumn.Name = "kolorDataGridViewTextBoxColumn";
+            this.kolorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.kolorDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.kolorDataGridViewTextBoxColumn.Width = 108;
+            // 
+            // mocSilnikaDataGridViewTextBoxColumn
+            // 
+            this.mocSilnikaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.mocSilnikaDataGridViewTextBoxColumn.DataPropertyName = "MocSilnika";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            this.mocSilnikaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            this.mocSilnikaDataGridViewTextBoxColumn.FillWeight = 53.2995F;
+            this.mocSilnikaDataGridViewTextBoxColumn.HeaderText = "Moc";
+            this.mocSilnikaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.mocSilnikaDataGridViewTextBoxColumn.Name = "mocSilnikaDataGridViewTextBoxColumn";
+            this.mocSilnikaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.mocSilnikaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.mocSilnikaDataGridViewTextBoxColumn.Width = 99;
+            // 
+            // typSilnikaDataGridViewTextBoxColumn
+            // 
+            this.typSilnikaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.typSilnikaDataGridViewTextBoxColumn.DataPropertyName = "TypSilnika";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            this.typSilnikaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            this.typSilnikaDataGridViewTextBoxColumn.FillWeight = 83.06579F;
+            this.typSilnikaDataGridViewTextBoxColumn.HeaderText = "Silnik";
+            this.typSilnikaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.typSilnikaDataGridViewTextBoxColumn.Name = "typSilnikaDataGridViewTextBoxColumn";
+            this.typSilnikaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.typSilnikaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.typSilnikaDataGridViewTextBoxColumn.Width = 107;
+            // 
+            // cenaPodstawowaDataGridViewTextBoxColumn
+            // 
+            this.cenaPodstawowaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cenaPodstawowaDataGridViewTextBoxColumn.DataPropertyName = "CenaPodstawowa";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            this.cenaPodstawowaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            this.cenaPodstawowaDataGridViewTextBoxColumn.FillWeight = 83.06579F;
+            this.cenaPodstawowaDataGridViewTextBoxColumn.HeaderText = "Cena";
+            this.cenaPodstawowaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.cenaPodstawowaDataGridViewTextBoxColumn.Name = "cenaPodstawowaDataGridViewTextBoxColumn";
+            this.cenaPodstawowaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cenaPodstawowaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cenaPodstawowaDataGridViewTextBoxColumn.Width = 103;
+            // 
             // CarsPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.ClientSize = new System.Drawing.Size(1148, 652);
+            this.ClientSize = new System.Drawing.Size(861, 530);
             this.Controls.Add(this.CarsFilterPanel);
             this.Controls.Add(this.CarsMenuPanel);
             this.Controls.Add(this.CarsGridView);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CarsPanel";
             this.Text = "CarsPanel";
             this.Load += new System.EventHandler(this.CarsPanel_Load_1);
@@ -685,13 +666,6 @@
         private System.Windows.Forms.Panel CarsMenuPanel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel CarsFilterPanel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn markaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn typNadwoziaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kolorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mocSilnikaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn typSilnikaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cenaPodstawowaDataGridViewTextBoxColumn;
         private System.Windows.Forms.ComboBox BodyComboBox;
         private System.Windows.Forms.ComboBox ModelComboBox;
         private System.Windows.Forms.ComboBox BrandComboBox;
@@ -717,5 +691,13 @@
         private System.Windows.Forms.ComboBox DoorsComboBox;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ComboBox CarSortComboBox;
+        private System.Windows.Forms.DataGridViewImageColumn ZdjecieColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn markaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typNadwoziaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kolorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mocSilnikaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typSilnikaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cenaPodstawowaDataGridViewTextBoxColumn;
     }
 }

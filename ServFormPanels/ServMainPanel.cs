@@ -132,13 +132,13 @@ namespace CarDealerSupportSystem.SellerFormPanels
             if (CarSortComboBox.SelectedItem != null)
             {
 
-                if (CarSortComboBox.SelectedItem == "Cena rosnąco")
+                if (CarSortComboBox.SelectedItem.ToString() == "Cena rosnąco")
                 {
                     var cars = db.Samochody.OrderBy(c => c.CenaPodstawowa).ToList();
                     CarsGridView.DataSource = cars;
                 }
 
-                if (CarSortComboBox.SelectedItem == "Cena malejąco")
+                if (CarSortComboBox.SelectedItem.ToString() == "Cena malejąco")
                 {
                     var cars = db.Samochody.OrderByDescending(c => c.CenaPodstawowa).ToList();
                     CarsGridView.DataSource = cars;

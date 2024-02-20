@@ -3,7 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,30 +16,58 @@ namespace CarDealerSupportSystem.SellerFormPanels
     public partial class CarsPanel : Form
     {
 
-        private readonly salon_samochodowyContext db = new();
-
-        public CarsPanel()
+        private readonly salon_samochodowyContext db = new salon_samochodowyContext();
+        private readonly Color gridDefaultCellStyle;
+        public readonly int id;
+        public int idSalonu;
+        public CarsPanel(int i)
         {
+            id = i;
             InitializeComponent();
+            gridDefaultCellStyle = CarsGridView.DefaultCellStyle.BackColor;
         }
-
+        public byte[] ImageToByteArray(System.Drawing.Image imageIn)
+        {
+            using (var ms = new MemoryStream())
+            {
+                imageIn.Save(ms, imageIn.RawFormat);
+                return ms.ToArray();
+            }
+        }
         private void CarsPanel_Load_1(object sender, EventArgs e)
         {
-            var cars = db.Samochody.ToList();
+            idSalonu = (from salon in db.Salony
+                        join pracownik in db.Pracownicy
+                        on salon.IdSalonu equals pracownik.IdSalonu
+                        where pracownik.IdPracownika == id
+                        select salon.IdSalonu).ToList().FirstOrDefault();
+
+            var cars = db.Samochody.Where(sam=>sam.Dostepnosc == "tak" || sam.Dostepnosc == "dostepny").Where(d=>d.IdSalonu == idSalonu).ToList();
+            foreach (Samochody car in cars)
+            {
+                if (car.Zdjecie == null)
+                {
+                    car.Zdjecie = ImageToByteArray(Properties.Resources.car);
+                }
+            }
             CarsGridView.DataSource = cars;
-            BrandComboBox.DataSource = db.Samochody.Select(c => c.Marka).Distinct().ToList();
-            ModelComboBox.DataSource = db.Samochody.Select(c => c.Model).Distinct().ToList();
-            EngineComboBox.DataSource = db.Samochody.Select(c => c.TypSilnika).Distinct().ToList();
-            BodyComboBox.DataSource = db.Samochody.Select(c => c.TypNadwozia).Distinct().ToList();
-            ColorComboBox.DataSource = db.Samochody.Select(c => c.Kolor).Distinct().ToList();
-            DoorsComboBox.DataSource = db.Samochody.Select(c => c.LiczbaDrzwi).Distinct().ToList();
+            BrandComboBox.DataSource = cars.Select(c => c.Marka).Distinct().ToList();
+            ModelComboBox.DataSource = cars.Select(c => c.Model).Distinct().ToList();
+            EngineComboBox.DataSource = cars.Select(c => c.TypSilnika).Distinct().ToList();
+            BodyComboBox.DataSource = cars.Select(c => c.TypNadwozia).Distinct().ToList();
+            ColorComboBox.DataSource = cars.Select(c => c.Kolor).Distinct().ToList();
+            DoorsComboBox.DataSource = cars.Select(c => c.LiczbaDrzwi).Distinct().ToList();
+            
         }
 
       
         private void SearchCarsTextBox_TextChanged(object sender, EventArgs e)
         {
             var searchValue = SearchCarsTextBox.Text.ToLower();
-            var cars = db.Samochody.Where(c =>c.Marka.ToLower().Contains(searchValue) 
+
+            var carsRight = db.Samochody.Where(sam => sam.Dostepnosc == "tak" || sam.Dostepnosc == "dostepny").Where(d => d.IdSalonu == idSalonu).ToList();
+
+            var cars = carsRight.Where(c =>c.Marka.ToLower().Contains(searchValue) 
             || c.Model.ToLower().Contains(searchValue) || c.Kolor.ToLower().Contains(searchValue) 
             || c.TypNadwozia.ToLower().Contains(searchValue) 
             || c.TypSilnika.ToLower().Contains(searchValue)).ToList();
@@ -64,14 +94,17 @@ namespace CarDealerSupportSystem.SellerFormPanels
         {
             if (BrandComboBox.SelectedItem != null)
             { 
-                ModelComboBox.DataSource = db.Samochody.Where(c => c.Marka == BrandComboBox.SelectedItem.ToString()).Select(c => c.Model).Distinct().ToList();
+                var carsRight = db.Samochody.Where(sam => sam.Dostepnosc == "tak" || sam.Dostepnosc == "dostepny").Where(d => d.IdSalonu == idSalonu).ToList();
+                ModelComboBox.DataSource = carsRight.Where(c => c.Marka == BrandComboBox.SelectedItem.ToString()).Select(c => c.Model).Distinct().ToList();
             }
         }
 
         private void ModelComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             if(ModelComboBox.SelectedItem != null)
             {
+                var carsRight = db.Samochody.Where(sam => sam.Dostepnosc == "tak" || sam.Dostepnosc == "dostepny").Where(d => d.IdSalonu == idSalonu).ToList();
                 BodyComboBox.DataSource = db.Samochody.Where(c => c.Model == ModelComboBox.SelectedItem.ToString()).Select(c => c.TypNadwozia).Distinct().ToList();
                 EngineComboBox.DataSource = db.Samochody.Where(c => c.Model == ModelComboBox.SelectedItem.ToString()).Select(c => c.TypSilnika).Distinct().ToList();
                 DoorsComboBox.DataSource = db.Samochody.Where(c => c.Model == ModelComboBox.SelectedItem.ToString()).Select(c => c.LiczbaDrzwi).Distinct().ToList();
@@ -82,7 +115,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
 
         private void ApplyButton_Click(object sender, EventArgs e)
         {
-            var cars = db.Samochody.ToList();
+            var cars = db.Samochody.Where(sam => sam.Dostepnosc == "tak" || sam.Dostepnosc == "dostepny").Where(d => d.IdSalonu == idSalonu).ToList();
 
             if (BrandComboBox.SelectedItem != null)
             {
@@ -131,16 +164,17 @@ namespace CarDealerSupportSystem.SellerFormPanels
 
             if (CarSortComboBox.SelectedItem != null)
             {
+                var carsRight = db.Samochody.Where(sam => sam.Dostepnosc == "tak" || sam.Dostepnosc == "dostepny").Where(d => d.IdSalonu == idSalonu).ToList();
 
-                if (CarSortComboBox.SelectedItem == "Cena rosnąco")
+                if (CarSortComboBox.SelectedItem.ToString() == "Cena rosnąco")
                 {
-                    var cars = db.Samochody.OrderBy(c => c.CenaPodstawowa).ToList();
+                    var cars = carsRight.OrderBy(c => c.CenaPodstawowa).ToList();
                     CarsGridView.DataSource = cars;
                 }
 
-                if (CarSortComboBox.SelectedItem == "Cena malejąco")
+                if (CarSortComboBox.SelectedItem.ToString() == "Cena malejąco")
                 {
-                    var cars = db.Samochody.OrderByDescending(c => c.CenaPodstawowa).ToList();
+                    var cars = carsRight.OrderByDescending(c => c.CenaPodstawowa).ToList();
                     CarsGridView.DataSource = cars;
                 }
             }

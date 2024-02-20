@@ -189,6 +189,48 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ManagerFormPanels\.Designer - Copy - Copy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerFormPanels\.Designer - Copy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerFormPanels\.Designer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerFormPanels\AddCarsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerFormPanels\CarsManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerFormPanels\CarsManager.Designer.cs">
+      <DependentUpon>CarsManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerFormPanels\EditCarsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerFormPanels\ManagerPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerFormPanels\ManagerPanel.Designer.cs">
+      <DependentUpon>ManagerPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerFormPanels\paramField.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManagerFormPanels\paramField.Designer.cs">
+      <DependentUpon>paramField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerFormPanels\RaportyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerFormPanels\RaportyForm.Designer.cs">
+      <DependentUpon>RaportyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerFormPanels\Statistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Models\Mozliweuslugisamochody.cs" />
     <Compile Include="Models\PakietyUslugi.cs" />
     <Compile Include="PdfCreator.cs" />
@@ -197,7 +239,7 @@
     </Compile>
     <Compile Include="TaskInfoForm.Designer.cs">
       <DependentUpon>TaskInfoForm.cs</DependentUpon>
-	</Compile>
+    </Compile>
     <Compile Include="Models\salon_samochodowyContext.cs" />
     <Compile Include="Models\ZamowieniaSamochodyUslugi.cs" />
     <Compile Include="SellerFormPanels\CarConfigurator.cs">
@@ -356,10 +398,30 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-
+    <EmbeddedResource Include="ManagerFormPanels\AddCarsForm.resx">
+      <DependentUpon>AddCarsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerFormPanels\CarsManager.resx">
+      <DependentUpon>CarsManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerFormPanels\EditCarsForm.resx">
+      <DependentUpon>EditCarsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerFormPanels\ManagerPanel.resx">
+      <DependentUpon>ManagerPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerFormPanels\paramField.resx">
+      <DependentUpon>paramField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerFormPanels\RaportyForm.resx">
+      <DependentUpon>RaportyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerFormPanels\Statistics.resx">
+      <DependentUpon>Statistics.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TaskInfoForm.resx">
       <DependentUpon>TaskInfoForm.cs</DependentUpon>
-	</EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="SellerFormPanels\CarConfigurator.resx">
       <DependentUpon>CarConfigurator.cs</DependentUpon>
     </EmbeddedResource>
@@ -370,7 +432,6 @@
       <DependentUpon>MakeOrderPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SellerFormPanels\OrderSummary.resx">
-
     </EmbeddedResource>
     <EmbeddedResource Include="ServForm.resx">
       <DependentUpon>ServForm.cs</DependentUpon>
