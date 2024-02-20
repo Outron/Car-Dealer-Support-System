@@ -130,12 +130,24 @@ namespace CarDealerSupportSystem
         {
             if (ValidateChildren(ValidationConstraints.Enabled) && rolesComboBox.SelectedItem != null)
             {
-                salon_samochodowyContext db = new();
-                db.Add(new Pracownicy() { Login = usernameTextBox.Text, Haslo = passwordTextBox.Text, Imie = nameTextBox.Text, Nazwisko = surnameTextBox.Text, Adres = addressTextBox.Text, Telefon = phoneTextBox.Text, Email = emailTextBox.Text, KodRoli = roleAbr(), IdSalonu = 1 });
+                salon_samochodowyContext db = new(); //uzupelnione o dodawanie uzytkownika do salonu w ktorym jest tez admin
+                db.Add(new Pracownicy() { Login = usernameTextBox.Text, Haslo = passwordTextBox.Text, Imie = nameTextBox.Text, Nazwisko = surnameTextBox.Text, Adres = addressTextBox.Text, Telefon = phoneTextBox.Text, Email = emailTextBox.Text, KodRoli = roleAbr(), IdSalonu = mainForm.salonid });
                 db.SaveChanges();
                 mainForm.UsersGridView.DataSource = null;
-                mainForm.UsersGridView.DataSource = db.Pracownicy.ToList();
-                MessageBox.Show("Pomyślnie dodano użytkownika", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                if (mainForm.salonid != null)
+                {
+                    var workers = (from p in db.Pracownicy
+                                   join s in db.Salony on p.IdSalonu equals s.IdSalonu
+                                   where p.IdSalonu == mainForm.salonid && p.IdPracownika != mainForm.adminID
+                                   select p).ToList();
+                    mainForm.UsersGridView.DataSource = workers;
+                }
+                else
+                {
+                    mainForm.UsersGridView.DataSource = db.Pracownicy.ToList();
+                }
+                    MessageBox.Show("Pomyślnie dodano użytkownika", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         private bool isEmailValid(string email)
