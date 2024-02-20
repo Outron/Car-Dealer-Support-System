@@ -15,7 +15,7 @@ namespace CarDealerSupportSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ManagerPanel(2));
+            Application.Run(new LoginForm());
 
         }
         

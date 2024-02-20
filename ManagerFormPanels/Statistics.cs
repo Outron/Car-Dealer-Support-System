@@ -19,8 +19,10 @@ namespace CarDealerSupportSystem.ManagerFormPanels
     public partial class Statistics : Form
     {
         private readonly salon_samochodowyContext db = new salon_samochodowyContext();
-        public Statistics()
+        public readonly int id;
+        public Statistics(int i)
         {
+            id = i;
             InitializeComponent();
         }
 
@@ -137,6 +139,12 @@ namespace CarDealerSupportSystem.ManagerFormPanels
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void raportButton_Click(object sender, EventArgs e)
+        {
+            RaportyForm raport = new RaportyForm(this);
+            raport.ShowDialog();
         }
     }
 }

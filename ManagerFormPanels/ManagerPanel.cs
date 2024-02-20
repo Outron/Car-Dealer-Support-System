@@ -125,7 +125,7 @@ namespace CarDealerSupportSystem
         private void LeftMenuBtn5_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new Statistics());
+            OpenChildForm(new Statistics(id));
         }
 
 

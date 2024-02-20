@@ -19,6 +19,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
         private readonly salon_samochodowyContext db = new salon_samochodowyContext();
         private readonly Color gridDefaultCellStyle;
         public readonly int id;
+        public int idSalonu;
         public CarsPanel(int i)
         {
             id = i;
@@ -35,13 +36,13 @@ namespace CarDealerSupportSystem.SellerFormPanels
         }
         private void CarsPanel_Load_1(object sender, EventArgs e)
         {
-        var query = (from salon in db.Salony
+            idSalonu = (from salon in db.Salony
                         join pracownik in db.Pracownicy
                         on salon.IdSalonu equals pracownik.IdSalonu
                         where pracownik.IdPracownika == id
                         select salon.IdSalonu).ToList().FirstOrDefault();
 
-            var cars = db.Samochody.Where(sam=>sam.Dostepnosc == "tak" || sam.Dostepnosc == "dostepny").Where(d=>d.IdSalonu == query).ToList();
+            var cars = db.Samochody.Where(sam=>sam.Dostepnosc == "tak" || sam.Dostepnosc == "dostepny").Where(d=>d.IdSalonu == idSalonu).ToList();
             foreach (Samochody car in cars)
             {
                 if (car.Zdjecie == null)
@@ -63,7 +64,10 @@ namespace CarDealerSupportSystem.SellerFormPanels
         private void SearchCarsTextBox_TextChanged(object sender, EventArgs e)
         {
             var searchValue = SearchCarsTextBox.Text.ToLower();
-            var cars = db.Samochody.Where(c =>c.Marka.ToLower().Contains(searchValue) 
+
+            var carsRight = db.Samochody.Where(sam => sam.Dostepnosc == "tak" || sam.Dostepnosc == "dostepny").Where(d => d.IdSalonu == idSalonu).ToList();
+
+            var cars = carsRight.Where(c =>c.Marka.ToLower().Contains(searchValue) 
             || c.Model.ToLower().Contains(searchValue) || c.Kolor.ToLower().Contains(searchValue) 
             || c.TypNadwozia.ToLower().Contains(searchValue) 
             || c.TypSilnika.ToLower().Contains(searchValue)).ToList();
@@ -90,14 +94,17 @@ namespace CarDealerSupportSystem.SellerFormPanels
         {
             if (BrandComboBox.SelectedItem != null)
             { 
-                ModelComboBox.DataSource = db.Samochody.Where(c => c.Marka == BrandComboBox.SelectedItem.ToString()).Select(c => c.Model).Distinct().ToList();
+                var carsRight = db.Samochody.Where(sam => sam.Dostepnosc == "tak" || sam.Dostepnosc == "dostepny").Where(d => d.IdSalonu == idSalonu).ToList();
+                ModelComboBox.DataSource = carsRight.Where(c => c.Marka == BrandComboBox.SelectedItem.ToString()).Select(c => c.Model).Distinct().ToList();
             }
         }
 
         private void ModelComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             if(ModelComboBox.SelectedItem != null)
             {
+                var carsRight = db.Samochody.Where(sam => sam.Dostepnosc == "tak" || sam.Dostepnosc == "dostepny").Where(d => d.IdSalonu == idSalonu).ToList();
                 BodyComboBox.DataSource = db.Samochody.Where(c => c.Model == ModelComboBox.SelectedItem.ToString()).Select(c => c.TypNadwozia).Distinct().ToList();
                 EngineComboBox.DataSource = db.Samochody.Where(c => c.Model == ModelComboBox.SelectedItem.ToString()).Select(c => c.TypSilnika).Distinct().ToList();
                 DoorsComboBox.DataSource = db.Samochody.Where(c => c.Model == ModelComboBox.SelectedItem.ToString()).Select(c => c.LiczbaDrzwi).Distinct().ToList();
@@ -108,7 +115,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
 
         private void ApplyButton_Click(object sender, EventArgs e)
         {
-            var cars = db.Samochody.ToList();
+            var cars = db.Samochody.Where(sam => sam.Dostepnosc == "tak" || sam.Dostepnosc == "dostepny").Where(d => d.IdSalonu == idSalonu).ToList();
 
             if (BrandComboBox.SelectedItem != null)
             {
@@ -157,16 +164,17 @@ namespace CarDealerSupportSystem.SellerFormPanels
 
             if (CarSortComboBox.SelectedItem != null)
             {
+                var carsRight = db.Samochody.Where(sam => sam.Dostepnosc == "tak" || sam.Dostepnosc == "dostepny").Where(d => d.IdSalonu == idSalonu).ToList();
 
                 if (CarSortComboBox.SelectedItem.ToString() == "Cena rosnąco")
                 {
-                    var cars = db.Samochody.OrderBy(c => c.CenaPodstawowa).ToList();
+                    var cars = carsRight.OrderBy(c => c.CenaPodstawowa).ToList();
                     CarsGridView.DataSource = cars;
                 }
 
                 if (CarSortComboBox.SelectedItem.ToString() == "Cena malejąco")
                 {
-                    var cars = db.Samochody.OrderByDescending(c => c.CenaPodstawowa).ToList();
+                    var cars = carsRight.OrderByDescending(c => c.CenaPodstawowa).ToList();
                     CarsGridView.DataSource = cars;
                 }
             }
@@ -175,22 +183,6 @@ namespace CarDealerSupportSystem.SellerFormPanels
         private void CarsGridView_SelectionChanged(object sender, EventArgs e)
         {
             CarsGridView.ClearSelection();
-        }
-
-        private void CarsGridView_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                CarsGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Green;
-            }
-        }
-
-        private void CarsGridView_CellMouseLeave_1(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                CarsGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = gridDefaultCellStyle;
-            }
         }
     }
 }

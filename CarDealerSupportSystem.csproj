@@ -195,6 +195,12 @@
     <Compile Include="ManagerFormPanels\ManagerPanel.Designer.cs">
       <DependentUpon>ManagerPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerFormPanels\RaportyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerFormPanels\RaportyForm.Designer.cs">
+      <DependentUpon>RaportyForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Mozliweuslugisamochody.cs" />
     <Compile Include="Models\PakietyUslugi.cs" />
     <Compile Include="PdfCreator.cs" />
@@ -204,7 +210,6 @@
     <Compile Include="TaskInfoForm.Designer.cs">
       <DependentUpon>TaskInfoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\salon_samochodowyContext.cs" />
     <Compile Include="Models\ZamowieniaSamochodyUslugi.cs" />
     <Compile Include="SellerFormPanels\CarConfigurator.cs">
       <SubType>Form</SubType>
@@ -407,6 +412,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerFormPanels\ManagerPanel.resx">
       <DependentUpon>ManagerPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerFormPanels\RaportyForm.resx">
+      <DependentUpon>RaportyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TaskInfoForm.resx">
       <DependentUpon>TaskInfoForm.cs</DependentUpon>

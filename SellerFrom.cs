@@ -69,7 +69,6 @@ namespace CarDealerSupportSystem
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            Log.SaveLog("Wykryto logowanie do systemu, pracownik: " + GetServInfo(), LogType.Informacja);
         }
 
         private void LeftMenuBtn1_Click(object sender, EventArgs e)
