@@ -94,7 +94,7 @@ namespace CarDealerSupportSystem
                 MessageBox.Show("Brak danych do wygenerowania raportu", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if (orderState == "zakończone")
+            if (orderState == "zakończone" || orderState == "zakonczone")
             {
                 orderState = "zakończonych";
             }

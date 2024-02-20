@@ -28,6 +28,7 @@ namespace CarDealerSupportSystem.ManagerFormPanels
         private string currTextBox;
         private readonly int carId;
         private int errorCount;
+        private int idSalonu;
 
         public EditCarsForm(Form f, int id)
         {
@@ -99,6 +100,12 @@ namespace CarDealerSupportSystem.ManagerFormPanels
         }
         private void EditCarsForm_Load(object sender, EventArgs e)
         {
+            var idSalonu = (from salon in db.Salony
+                         join pracownik in db.Pracownicy
+                         on salon.IdSalonu equals pracownik.IdSalonu
+                         where pracownik.IdPracownika == mainform.id
+                         select salon.IdSalonu).ToList().FirstOrDefault();
+
             var car = (from samochod in db.Samochody
                        where samochod.IdSamochodu == carId
                        select samochod).ToList().FirstOrDefault();
@@ -254,13 +261,8 @@ namespace CarDealerSupportSystem.ManagerFormPanels
                 db.SaveChanges();          
 
                 mainform.CarsGridView.DataSource = null; // updatowanie samochodu w tabeli samochody
-                var query = (from salon in db.Salony
-                             join pracownik in db.Pracownicy
-                             on salon.IdSalonu equals pracownik.IdSalonu
-                             where pracownik.IdPracownika == mainform.id
-                             select salon.IdSalonu).ToList().FirstOrDefault();
 
-                var cars = db.Samochody.Where(sam => sam.Dostepnosc == "tak" || sam.Dostepnosc == "dostepny").Where(d => d.IdSalonu == query).ToList();
+                var cars = db.Samochody.Where(sam => sam.Dostepnosc == "tak" || sam.Dostepnosc == "dostepny").Where(d => d.IdSalonu == idSalonu).ToList();
                 foreach (Samochody car in cars)
                 {
                     if (car.Zdjecie == null)
@@ -302,15 +304,11 @@ namespace CarDealerSupportSystem.ManagerFormPanels
                 db.Samochody.Remove(carRemove);
             }
             db.SaveChanges();
-
+            Log.SaveLog("Usunięto samochod id="+carId+".", LogType.Sukces);
             mainform.CarsGridView.DataSource = null; // usuwanie samochodu
-            var query = (from salon in db.Salony
-                         join pracownik in db.Pracownicy
-                         on salon.IdSalonu equals pracownik.IdSalonu
-                         where pracownik.IdPracownika == mainform.id
-                         select salon.IdSalonu).ToList().FirstOrDefault();
 
-            var cars = db.Samochody.Where(sam => sam.Dostepnosc == "tak" || sam.Dostepnosc == "dostepny").Where(d => d.IdSalonu == query).ToList();
+
+            var cars = db.Samochody.Where(sam => sam.Dostepnosc == "tak" || sam.Dostepnosc == "dostepny").Where(d => d.IdSalonu == idSalonu).ToList();
             foreach (Samochody car in cars)
             {
                 if (car.Zdjecie == null)

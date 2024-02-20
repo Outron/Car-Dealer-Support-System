@@ -115,3 +115,4 @@ F:\LukaszNo\studia\BD\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem
 F:\LukaszNo\studia\BD\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.exe
 F:\LukaszNo\studia\BD\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.pdb
 F:\LukaszNo\studia\BD\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.ManagerFormPanels.Statistics.resources
+F:\LukaszNo\studia\BD\Car-Dealer-Support-System\obj\Debug\CarDealerSupportSystem.RaportyForm.resources

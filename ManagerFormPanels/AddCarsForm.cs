@@ -29,6 +29,7 @@ namespace CarDealerSupportSystem.ManagerFormPanels
         private string currTextBox;
         private readonly Color gridDefaultCellStyle;
         private int errorCount;
+        private int idSalonu;
         public AddCarsForm(Form f)
         {
             InitializeComponent();
@@ -102,6 +103,7 @@ namespace CarDealerSupportSystem.ManagerFormPanels
         }
         private void AddCarsForm_Load(object sender, EventArgs e)
         {
+
             checkedListBoxUlugi.DataSource = (from uslugi in db.Uslugi select uslugi.Nazwa).ToList();
             this.TextBcena.Text = " Cena";
             this.TextBkolor.Text = " Kolor";
@@ -283,6 +285,7 @@ namespace CarDealerSupportSystem.ManagerFormPanels
                                  join pracownik in db.Pracownicy on salon.IdSalonu equals pracownik.IdSalonu
                                  where pracownik.IdPracownika== mainform.id
                                  select salon.IdSalonu).ToList().FirstOrDefault();
+            int i = 0;
             foreach (DataGridViewRow row in AddCarsGridView.Rows)
             {
                 samochody car = new samochody(row);          
@@ -293,7 +296,9 @@ namespace CarDealerSupportSystem.ManagerFormPanels
                     IloscMiejsc = int.Parse(car.liczbamiejsc), Vin = car.vin, Rabat = null, Dostepnosc = car.dostepnosc,
                     RokProdukcji = int.Parse(car.rokprodukcji) });
                 db.SaveChanges();
+                i++;
             }
+            Log.SaveLog("Dodano "+i+" nowe samochody.", LogType.Sukces);
             mainform.CarsGridView.DataSource = null; // updatowanie listy w panelu z edycja listy samochodow
 
             var cars = db.Samochody.Where(sam => sam.Dostepnosc == "tak" || sam.Dostepnosc == "dostepny").Where(d => d.IdSalonu == query).ToList();

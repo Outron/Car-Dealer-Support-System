@@ -58,6 +58,7 @@ namespace CarDealerSupportSystem
                 {
                     case "ADM":
                         AdminForm adminpanel = new AdminForm(id);
+                        Log.SaveLog("Wykryto logowanie do systemu, pracownik: " + loginData.p.Login, LogType.Informacja);
                         adminpanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
                         adminpanel.RoleLabel.Text = loginData.r.Nazwa;
                         adminpanel.Show();
@@ -65,6 +66,7 @@ namespace CarDealerSupportSystem
                         break;
                     case "SPR":
                         SellerPanel sellerpanel = new SellerPanel(id);
+                        Log.SaveLog("Wykryto logowanie do systemu, pracownik: " + loginData.p.Login, LogType.Informacja);
                         sellerpanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
                         sellerpanel.RoleLabel.Text = loginData.r.Nazwa;
                         sellerpanel.Show();
@@ -72,6 +74,7 @@ namespace CarDealerSupportSystem
                         break;
                     case "KRW":
                         ManagerPanel managerpanel = new ManagerPanel(id);
+                        Log.SaveLog("Wykryto logowanie do systemu, pracownik: " + loginData.p.Login, LogType.Informacja);
                         managerpanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
                         managerpanel.RoleLabel.Text = loginData.r.Nazwa;
                         managerpanel.Show();
@@ -79,12 +82,14 @@ namespace CarDealerSupportSystem
                         break;
                     case "SRW":
                         ServForm servicepanel = new ServForm(id);
+                        Log.SaveLog("Wykryto logowanie do systemu, pracownik: " + loginData.p.Login, LogType.Informacja);
                         servicepanel.NameLabel.Text = loginData.p.Imie + " " + loginData.p.Nazwisko;
                         servicepanel.RoleLabel.Text = loginData.r.Nazwa;
                         servicepanel.Show();
                         this.Hide();
                         break;
                     default:
+                        Log.SaveLog("Logowanie pracownika nie powiodło się", LogType.Blad);
                         WrongLoginLabel.Text = "Nieprawidłowa rola";
                         WrongLoginLabel.Visible = true;
                         break;

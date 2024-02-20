@@ -43,16 +43,15 @@
             this.CarSortComboBox = new System.Windows.Forms.ComboBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.CarsGridView = new System.Windows.Forms.DataGridView();
+            this.AddButton = new System.Windows.Forms.Button();
+            this.samochodyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.IdSamochodColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ZdjecieColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.DostepnyColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AddButton = new System.Windows.Forms.Button();
             this.markaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typNadwoziaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kolorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cenaPodstawowaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.samochodyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CarsMenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CarsGridView)).BeginInit();
@@ -135,8 +134,7 @@
             this.modelDataGridViewTextBoxColumn,
             this.typNadwoziaDataGridViewTextBoxColumn,
             this.kolorDataGridViewTextBoxColumn,
-            this.cenaPodstawowaDataGridViewTextBoxColumn,
-            this.DostepnyColumn});
+            this.cenaPodstawowaDataGridViewTextBoxColumn});
             this.CarsGridView.DataSource = this.samochodyBindingSource;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
@@ -173,6 +171,26 @@
             this.CarsGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CarsGridView_CellClick);
             this.CarsGridView.SelectionChanged += new System.EventHandler(this.CarsGridView_SelectionChanged);
             // 
+            // AddButton
+            // 
+            this.AddButton.BackColor = System.Drawing.Color.Silver;
+            this.AddButton.BackgroundImage = global::CarDealerSupportSystem.Properties.Resources.plus;
+            this.AddButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.AddButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddButton.ForeColor = System.Drawing.Color.Black;
+            this.AddButton.Location = new System.Drawing.Point(37, 53);
+            this.AddButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(776, 39);
+            this.AddButton.TabIndex = 13;
+            this.AddButton.UseVisualStyleBackColor = false;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
+            // 
+            // samochodyBindingSource
+            // 
+            this.samochodyBindingSource.DataSource = typeof(CarDealerSupportSystem.Models.Samochody);
+            // 
             // IdSamochodColumn
             // 
             this.IdSamochodColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -190,31 +208,6 @@
             this.ZdjecieColumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.ZdjecieColumn.Name = "ZdjecieColumn";
             this.ZdjecieColumn.ReadOnly = true;
-            // 
-            // DostepnyColumn
-            // 
-            this.DostepnyColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.DostepnyColumn.DataPropertyName = "Dostepnosc";
-            this.DostepnyColumn.HeaderText = "Dostepnosc";
-            this.DostepnyColumn.Name = "DostepnyColumn";
-            this.DostepnyColumn.ReadOnly = true;
-            this.DostepnyColumn.Width = 163;
-            // 
-            // AddButton
-            // 
-            this.AddButton.BackColor = System.Drawing.Color.Silver;
-            this.AddButton.BackgroundImage = global::CarDealerSupportSystem.Properties.Resources.plus;
-            this.AddButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.AddButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddButton.ForeColor = System.Drawing.Color.Black;
-            this.AddButton.Location = new System.Drawing.Point(37, 53);
-            this.AddButton.Margin = new System.Windows.Forms.Padding(2);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(776, 39);
-            this.AddButton.TabIndex = 13;
-            this.AddButton.UseVisualStyleBackColor = false;
-            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // markaDataGridViewTextBoxColumn
             // 
@@ -285,10 +278,6 @@
             this.cenaPodstawowaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.cenaPodstawowaDataGridViewTextBoxColumn.Width = 103;
             // 
-            // samochodyBindingSource
-            // 
-            this.samochodyBindingSource.DataSource = typeof(CarDealerSupportSystem.Models.Samochody);
-            // 
             // CarsManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -327,6 +316,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn typNadwoziaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kolorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cenaPodstawowaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DostepnyColumn;
     }
 }

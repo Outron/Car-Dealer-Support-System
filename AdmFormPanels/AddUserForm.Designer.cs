@@ -71,19 +71,17 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gray;
-            this.panel1.Location = new System.Drawing.Point(38, 351);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(28, 285);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(400, 1);
+            this.panel1.Size = new System.Drawing.Size(300, 1);
             this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gray;
-            this.panel2.Location = new System.Drawing.Point(38, 425);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(28, 345);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(400, 1);
+            this.panel2.Size = new System.Drawing.Size(300, 1);
             this.panel2.TabIndex = 0;
             // 
             // usernameTextBox
@@ -93,11 +91,10 @@
             this.usernameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.usernameTextBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.usernameTextBox.ForeColor = System.Drawing.Color.Silver;
-            this.usernameTextBox.Location = new System.Drawing.Point(90, 300);
-            this.usernameTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.usernameTextBox.Location = new System.Drawing.Point(68, 244);
             this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(348, 35);
-            this.usernameTextBox.TabIndex = 2;
+            this.usernameTextBox.Size = new System.Drawing.Size(261, 28);
+            this.usernameTextBox.TabIndex = 3;
             this.usernameTextBox.Tag = "Login";
             this.usernameTextBox.Enter += new System.EventHandler(this.anyTextBox_Enter);
             this.usernameTextBox.Leave += new System.EventHandler(this.anyTextBox_Leave);
@@ -108,11 +105,10 @@
             this.passwordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.passwordTextBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.passwordTextBox.ForeColor = System.Drawing.Color.Silver;
-            this.passwordTextBox.Location = new System.Drawing.Point(90, 375);
-            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.passwordTextBox.Location = new System.Drawing.Point(68, 305);
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(348, 35);
-            this.passwordTextBox.TabIndex = 3;
+            this.passwordTextBox.Size = new System.Drawing.Size(261, 28);
+            this.passwordTextBox.TabIndex = 4;
             this.passwordTextBox.Tag = "Hasło";
             this.passwordTextBox.Enter += new System.EventHandler(this.anyTextBox_Enter);
             this.passwordTextBox.Leave += new System.EventHandler(this.anyTextBox_Leave);
@@ -127,11 +123,10 @@
             this.addUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addUserButton.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.addUserButton.ForeColor = System.Drawing.Color.White;
-            this.addUserButton.Location = new System.Drawing.Point(318, 722);
-            this.addUserButton.Margin = new System.Windows.Forms.Padding(4);
+            this.addUserButton.Location = new System.Drawing.Point(238, 587);
             this.addUserButton.Name = "addUserButton";
-            this.addUserButton.Size = new System.Drawing.Size(227, 52);
-            this.addUserButton.TabIndex = 5;
+            this.addUserButton.Size = new System.Drawing.Size(170, 42);
+            this.addUserButton.TabIndex = 9;
             this.addUserButton.Text = "Zatwierdź";
             this.addUserButton.UseVisualStyleBackColor = false;
             this.addUserButton.Click += new System.EventHandler(this.AddUserButton_Click);
@@ -142,10 +137,9 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.label1.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(203, 49);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(152, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(424, 60);
+            this.label1.Size = new System.Drawing.Size(338, 47);
             this.label1.TabIndex = 7;
             this.label1.Text = "Dodaj użytkownika";
             // 
@@ -155,9 +149,8 @@
             this.TopLoginPanel.Controls.Add(this.button1);
             this.TopLoginPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopLoginPanel.Location = new System.Drawing.Point(0, 0);
-            this.TopLoginPanel.Margin = new System.Windows.Forms.Padding(4);
             this.TopLoginPanel.Name = "TopLoginPanel";
-            this.TopLoginPanel.Size = new System.Drawing.Size(808, 45);
+            this.TopLoginPanel.Size = new System.Drawing.Size(606, 37);
             this.TopLoginPanel.TabIndex = 8;
             this.TopLoginPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TopLoginPanel_MouseDown);
             // 
@@ -168,10 +161,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button1.Image = global::CarDealerSupportSystem.Properties.Resources.x;
-            this.button1.Location = new System.Drawing.Point(780, 9);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(585, 7);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(24, 23);
+            this.button1.Size = new System.Drawing.Size(18, 19);
             this.button1.TabIndex = 5;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_2);
@@ -179,10 +171,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CarDealerSupportSystem.Properties.Resources.user;
-            this.pictureBox1.Location = new System.Drawing.Point(38, 292);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(28, 237);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(44, 43);
+            this.pictureBox1.Size = new System.Drawing.Size(33, 35);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
@@ -190,10 +181,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::CarDealerSupportSystem.Properties.Resources._lock;
-            this.pictureBox2.Location = new System.Drawing.Point(38, 375);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Location = new System.Drawing.Point(28, 305);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(44, 43);
+            this.pictureBox2.Size = new System.Drawing.Size(33, 35);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
@@ -201,10 +191,9 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::CarDealerSupportSystem.Properties.Resources.at_sign;
-            this.pictureBox3.Location = new System.Drawing.Point(38, 447);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Location = new System.Drawing.Point(28, 363);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(44, 43);
+            this.pictureBox3.Size = new System.Drawing.Size(33, 35);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 13;
             this.pictureBox3.TabStop = false;
@@ -215,11 +204,10 @@
             this.emailTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.emailTextBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.emailTextBox.ForeColor = System.Drawing.Color.Silver;
-            this.emailTextBox.Location = new System.Drawing.Point(90, 447);
-            this.emailTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.emailTextBox.Location = new System.Drawing.Point(68, 363);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(348, 35);
-            this.emailTextBox.TabIndex = 12;
+            this.emailTextBox.Size = new System.Drawing.Size(261, 28);
+            this.emailTextBox.TabIndex = 5;
             this.emailTextBox.Tag = "E-mail";
             this.emailTextBox.Enter += new System.EventHandler(this.anyTextBox_Enter);
             this.emailTextBox.Leave += new System.EventHandler(this.anyTextBox_Leave);
@@ -228,19 +216,17 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Gray;
-            this.panel3.Location = new System.Drawing.Point(38, 497);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Location = new System.Drawing.Point(28, 404);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(400, 1);
+            this.panel3.Size = new System.Drawing.Size(300, 1);
             this.panel3.TabIndex = 11;
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::CarDealerSupportSystem.Properties.Resources.phone;
-            this.pictureBox4.Location = new System.Drawing.Point(37, 528);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox4.Location = new System.Drawing.Point(28, 429);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(44, 43);
+            this.pictureBox4.Size = new System.Drawing.Size(33, 35);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 16;
             this.pictureBox4.TabStop = false;
@@ -251,11 +237,10 @@
             this.phoneTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.phoneTextBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.phoneTextBox.ForeColor = System.Drawing.Color.Silver;
-            this.phoneTextBox.Location = new System.Drawing.Point(89, 528);
-            this.phoneTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.phoneTextBox.Location = new System.Drawing.Point(67, 429);
             this.phoneTextBox.Name = "phoneTextBox";
-            this.phoneTextBox.Size = new System.Drawing.Size(348, 35);
-            this.phoneTextBox.TabIndex = 15;
+            this.phoneTextBox.Size = new System.Drawing.Size(261, 28);
+            this.phoneTextBox.TabIndex = 6;
             this.phoneTextBox.Tag = "Telefon";
             this.phoneTextBox.Enter += new System.EventHandler(this.anyTextBox_Enter);
             this.phoneTextBox.Leave += new System.EventHandler(this.anyTextBox_Leave);
@@ -264,19 +249,17 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Gray;
-            this.panel4.Location = new System.Drawing.Point(37, 578);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Location = new System.Drawing.Point(28, 470);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(400, 1);
+            this.panel4.Size = new System.Drawing.Size(300, 1);
             this.panel4.TabIndex = 14;
             // 
             // pictureBox5
             // 
             this.pictureBox5.Image = global::CarDealerSupportSystem.Properties.Resources.home;
-            this.pictureBox5.Location = new System.Drawing.Point(37, 605);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox5.Location = new System.Drawing.Point(28, 492);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(44, 43);
+            this.pictureBox5.Size = new System.Drawing.Size(33, 35);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 19;
             this.pictureBox5.TabStop = false;
@@ -287,11 +270,10 @@
             this.addressTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.addressTextBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.addressTextBox.ForeColor = System.Drawing.Color.Silver;
-            this.addressTextBox.Location = new System.Drawing.Point(89, 605);
-            this.addressTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.addressTextBox.Location = new System.Drawing.Point(67, 492);
             this.addressTextBox.Name = "addressTextBox";
-            this.addressTextBox.Size = new System.Drawing.Size(348, 35);
-            this.addressTextBox.TabIndex = 18;
+            this.addressTextBox.Size = new System.Drawing.Size(261, 28);
+            this.addressTextBox.TabIndex = 7;
             this.addressTextBox.Tag = "Adres";
             this.addressTextBox.Enter += new System.EventHandler(this.anyTextBox_Enter);
             this.addressTextBox.Leave += new System.EventHandler(this.anyTextBox_Leave);
@@ -299,19 +281,17 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Gray;
-            this.panel5.Location = new System.Drawing.Point(37, 655);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4);
+            this.panel5.Location = new System.Drawing.Point(28, 532);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(400, 1);
+            this.panel5.Size = new System.Drawing.Size(300, 1);
             this.panel5.TabIndex = 17;
             // 
             // pictureBox6
             // 
             this.pictureBox6.Image = global::CarDealerSupportSystem.Properties.Resources.clipboard;
-            this.pictureBox6.Location = new System.Drawing.Point(38, 149);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox6.Location = new System.Drawing.Point(28, 121);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(44, 43);
+            this.pictureBox6.Size = new System.Drawing.Size(33, 35);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 22;
             this.pictureBox6.TabStop = false;
@@ -322,11 +302,10 @@
             this.nameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nameTextBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.nameTextBox.ForeColor = System.Drawing.Color.Silver;
-            this.nameTextBox.Location = new System.Drawing.Point(90, 149);
-            this.nameTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.nameTextBox.Location = new System.Drawing.Point(68, 121);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(348, 35);
-            this.nameTextBox.TabIndex = 21;
+            this.nameTextBox.Size = new System.Drawing.Size(261, 28);
+            this.nameTextBox.TabIndex = 1;
             this.nameTextBox.Tag = "Imię";
             this.nameTextBox.Enter += new System.EventHandler(this.anyTextBox_Enter);
             this.nameTextBox.Leave += new System.EventHandler(this.anyTextBox_Leave);
@@ -334,19 +313,17 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Gray;
-            this.panel6.Location = new System.Drawing.Point(38, 199);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4);
+            this.panel6.Location = new System.Drawing.Point(28, 162);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(400, 1);
+            this.panel6.Size = new System.Drawing.Size(300, 1);
             this.panel6.TabIndex = 20;
             // 
             // pictureBox7
             // 
             this.pictureBox7.Image = global::CarDealerSupportSystem.Properties.Resources.clipboard;
-            this.pictureBox7.Location = new System.Drawing.Point(38, 223);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox7.Location = new System.Drawing.Point(28, 181);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(44, 43);
+            this.pictureBox7.Size = new System.Drawing.Size(33, 35);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 25;
             this.pictureBox7.TabStop = false;
@@ -357,11 +334,10 @@
             this.surnameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.surnameTextBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.surnameTextBox.ForeColor = System.Drawing.Color.Silver;
-            this.surnameTextBox.Location = new System.Drawing.Point(90, 223);
-            this.surnameTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.surnameTextBox.Location = new System.Drawing.Point(68, 181);
             this.surnameTextBox.Name = "surnameTextBox";
-            this.surnameTextBox.Size = new System.Drawing.Size(348, 35);
-            this.surnameTextBox.TabIndex = 24;
+            this.surnameTextBox.Size = new System.Drawing.Size(261, 28);
+            this.surnameTextBox.TabIndex = 2;
             this.surnameTextBox.Tag = "Nazwisko";
             this.surnameTextBox.Enter += new System.EventHandler(this.anyTextBox_Enter);
             this.surnameTextBox.Leave += new System.EventHandler(this.anyTextBox_Leave);
@@ -369,10 +345,9 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Gray;
-            this.panel7.Location = new System.Drawing.Point(38, 273);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4);
+            this.panel7.Location = new System.Drawing.Point(28, 222);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(400, 1);
+            this.panel7.Size = new System.Drawing.Size(300, 1);
             this.panel7.TabIndex = 23;
             // 
             // label2
@@ -381,10 +356,9 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(517, 156);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(388, 127);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(264, 28);
+            this.label2.Size = new System.Drawing.Size(213, 21);
             this.label2.TabIndex = 26;
             this.label2.Text = "Wybierz rolę użytkownika:";
             // 
@@ -400,10 +374,11 @@
             "Sprzedawca",
             "Kierownik",
             "Serwisant"});
-            this.rolesComboBox.Location = new System.Drawing.Point(540, 199);
+            this.rolesComboBox.Location = new System.Drawing.Point(405, 162);
+            this.rolesComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rolesComboBox.Name = "rolesComboBox";
-            this.rolesComboBox.Size = new System.Drawing.Size(211, 33);
-            this.rolesComboBox.TabIndex = 27;
+            this.rolesComboBox.Size = new System.Drawing.Size(159, 27);
+            this.rolesComboBox.TabIndex = 8;
             this.rolesComboBox.SelectedValueChanged += new System.EventHandler(this.rolesComboBox_SelectedValueChanged);
             this.rolesComboBox.Leave += new System.EventHandler(this.rolesComboBox_Leave);
             // 
@@ -413,11 +388,11 @@
             // 
             // AddUserForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.ClientSize = new System.Drawing.Size(808, 819);
+            this.ClientSize = new System.Drawing.Size(606, 665);
             this.ControlBox = false;
             this.Controls.Add(this.rolesComboBox);
             this.Controls.Add(this.label2);
@@ -446,7 +421,6 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddUserForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
