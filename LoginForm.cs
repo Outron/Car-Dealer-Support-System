@@ -32,20 +32,17 @@ namespace CarDealerSupportSystem
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
+        //button2_Click
         // End Drag Form
+
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //after clicking this button, the application will open the second form after successful login
             try
             {
                 var db = new salon_samochodowyContext();
-            // join role to pracownicy
-            var loginData = db.Pracownicy.Join(db.Role, p => p.KodRoli, r => r.KodRoli, (p, r) => new { p, r }).Where(p => p.p.Login == UsernameTextBox.Text && p.p.Haslo == PasswordTextBox.Text).FirstOrDefault();
-          
-            // get id of the logged user
-            var id = db.Pracownicy.Where(p => p.Login == UsernameTextBox.Text && p.Haslo == PasswordTextBox.Text).Select(p => p.IdPracownika).FirstOrDefault();
+                var loginData = db.Pracownicy.Join(db.Role, p => p.KodRoli, r => r.KodRoli, (p, r) => new { p, r }).Where(p => p.p.Login == UsernameTextBox.Text && p.p.Haslo == PasswordTextBox.Text).FirstOrDefault();
+                var id = db.Pracownicy.Where(p => p.Login == UsernameTextBox.Text && p.Haslo == PasswordTextBox.Text).Select(p => p.IdPracownika).FirstOrDefault();
 
                 if (loginData == null)
                 {
@@ -99,7 +96,7 @@ namespace CarDealerSupportSystem
             {
                 MessageBox.Show(text: ex.Message, caption: "Logowanie się nie powiodło");
             }
-       }
+        }
 
         private void button1_Click_2(object sender, EventArgs e)
         {

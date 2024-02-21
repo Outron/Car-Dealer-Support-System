@@ -164,7 +164,8 @@ namespace CarDealerSupportSystem.SellerFormPanels
             }
             else
             {
-                ClientID = db.Klienci.Where(k => k.Imie == clientData["NameLabel"] && k.Nazwisko == clientData["SurnameLabel"] && k.Telefon == clientData["PhoneLabel"]).Select(k => k.IdKlienta).FirstOrDefault();
+                ClientID = db.Klienci.Where(k => k.Imie == clientData["NameLabel"] && k.Nazwisko == clientData["SurnameLabel"] && k.Telefon == clientData["PhoneLabel"])
+                    .Select(k => k.IdKlienta).FirstOrDefault();
             }
 
 
@@ -180,10 +181,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
                 Status = selectedServices.Count > 0 ? "wtrakcie" : "zakończone"
 
             };
-            db.Zamowienia.Add(order);
-            db.SaveChanges();
-
-
+        
             if (TypeOfSell == "Auto+Uslugi")
             {
                 for (int i = 0; i < selectedServices.Count; i++)
@@ -194,7 +192,12 @@ namespace CarDealerSupportSystem.SellerFormPanels
             }
             else if (TypeOfSell == "ZakupAuta")
             {
-                db.Database.ExecuteSqlRaw("INSERT INTO zamowienia_samochody_uslugi values('" + db.Samochody.Where(s => s.Marka == selectedCarInfo.SelectedBrand && s.Model == selectedCarInfo.SelectedModel).Select(s => s.IdSamochodu).FirstOrDefault() + "', NULL, '" + order.IdZamowienia + "', NULL, 'zakończone')");
+                order.Status = "zakończone";
+                db.Zamowienia.Add(order);
+                db.SaveChanges();
+                db.Database.ExecuteSqlRaw("INSERT INTO zamowienia_samochody_uslugi values('" + db.Samochody
+                    .Where(s => s.Marka == selectedCarInfo.SelectedBrand && s.Model == selectedCarInfo.SelectedModel)
+                    .Select(s => s.IdSamochodu).FirstOrDefault() + "', NULL, '" + order.IdZamowienia + "', NULL, 'zakończone')");
                 db.SaveChanges();
             }
 
