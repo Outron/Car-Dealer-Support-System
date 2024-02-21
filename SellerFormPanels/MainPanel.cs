@@ -14,16 +14,17 @@ namespace CarDealerSupportSystem.SellerFormPanels
     public partial class MainPanel : Form
     {
         salon_samochodowyContext db = new salon_samochodowyContext();
-
-        public MainPanel()
+        public int idPrac;
+        public MainPanel(int id)
         {
+            idPrac = id;
             InitializeComponent();
         }
 
         
         private void button1_Click(object sender, EventArgs e)
         {
-            MakeOrderPanel makeorderpanel = new MakeOrderPanel();
+            MakeOrderPanel makeorderpanel = new MakeOrderPanel(idPrac);
             makeorderpanel.Show();
         }
 

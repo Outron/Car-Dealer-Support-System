@@ -88,16 +88,11 @@ namespace CarDealerSupportSystem
             }
         }
 
-        private void LeftMenuBtn1_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new MainPanel());
-        }
-
         private void LeftMenuBtn2_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new OrdersPanel());
+            OpenChildForm(new OrdersPanel(id));
+            DodajZamowienieButton.Visible = true;
         }
 
         private void LeftMenuBtn3_Click(object sender, EventArgs e)
@@ -156,6 +151,7 @@ namespace CarDealerSupportSystem
             {
                 SpisSamochodowButton.Visible = false;
                 EditSpisSamochodowButton.Visible = false;
+                DodajZamowienieButton.Visible = false;
             }
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -210,6 +206,12 @@ namespace CarDealerSupportSystem
         {
             ActivateButton2(sender);
             OpenChildForm2(new CarsManager(id));
+        }
+
+        private void DodajZamowienieButton_Click(object sender, EventArgs e)
+        {
+            MakeOrderPanel makeorderpanel = new MakeOrderPanel(id);
+            makeorderpanel.Show();
         }
     }
 }

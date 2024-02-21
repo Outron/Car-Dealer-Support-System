@@ -23,11 +23,12 @@ namespace CarDealerSupportSystem.SellerFormPanels
         private Panel lastSelectedPanel;
         private SelectedCarInfo lastSelectedCarInfo;
         private Form currentChildForm;
-
+        public int idPrac;
         private readonly salon_samochodowyContext db = new salon_samochodowyContext();
 
-        public MakeOrderPanel()
+        public MakeOrderPanel(int id)
         {
+            idPrac = id;
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(5, 50);
@@ -197,10 +198,17 @@ namespace CarDealerSupportSystem.SellerFormPanels
 
         private void MakeOrderPanel_Load(object sender, EventArgs e)
         {
-            var carDataList = db.Samochody
-                .Select(c => new Samochody { Marka = c.Marka, Model = c.Model, Zdjecie = c.Zdjecie, IdSamochodu = c.IdSamochodu })
+            var idSalon = (from salon in db.Salony
+                        join pracownik in db.Pracownicy
+                        on salon.IdSalonu equals pracownik.IdSalonu
+                        where pracownik.IdPracownika == idPrac
+                        select salon.IdSalonu).ToList().FirstOrDefault();
+
+            var carDataList = db.Samochody.Where(s=>s.IdSalonu==idSalon && s.Dostepnosc == "dostepny")
+                .Select(c => new Samochody { Marka = c.Marka, Model = c.Model, Zdjecie = c.Zdjecie, IdSamochodu = c.IdSamochodu})
                 .Distinct()
                 .ToList();
+
             ChooseCarPanel(carDataList);
             BrandComboBox.DataSource = db.Samochody.Select(c => c.Marka).Distinct().ToList();
             ActivateButton(ChooseCarButton, RGBColors.color1);

@@ -334,12 +334,6 @@
     <Compile Include="ManagerFormPanels\AddCarsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerFormPanels\paramField.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ManagerFormPanels\paramField.Designer.cs">
-      <DependentUpon>paramField.cs</DependentUpon>
-    </Compile>
     <Compile Include="Models\salon_samochodowyContext.cs" />
     <Compile Include="Models\Logi.cs" />
     <Compile Include="Models\Klienci.cs" />
@@ -480,9 +474,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerFormPanels\AddCarsForm.resx">
       <DependentUpon>AddCarsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManagerFormPanels\paramField.resx">
-      <DependentUpon>paramField.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SellerFormPanels\CarsPanel.resx">
       <DependentUpon>CarsPanel.cs</DependentUpon>
