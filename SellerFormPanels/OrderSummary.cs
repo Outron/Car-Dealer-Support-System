@@ -154,7 +154,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
 
         private void AddOrderButton_Click(object sender, EventArgs e)
         {
-            int id = ((SellerPanel)Application.OpenForms["SellerPanel"]).id;
+            int id = ((OrdersPanel)Application.OpenForms["OrdersPanel"]).idPraco;
             int ClientID = 0;
             string TypeOfSell = CheckTypeOfSell();
 
@@ -178,20 +178,15 @@ namespace CarDealerSupportSystem.SellerFormPanels
                 TypZamowienia = TypeOfSell,
                 Data = DateTime.Now,
                 CalkowityKoszt = int.Parse(PriceLabel.Text),
+                Status = selectedServices.Count > 0 ? "wtrakcie" : "zakończone"
+
             };
         
             if (TypeOfSell == "Auto+Uslugi")
             {
                 for (int i = 0; i < selectedServices.Count; i++)
                 {
-                    order.Status = "wtrakcie";
-                    db.Zamowienia.Add(order);
-                    db.SaveChanges();
-                    db.Database.ExecuteSqlRaw("INSERT INTO zamowienia_samochody_uslugi values('" + db.Samochody
-                        .Where(s => s.Marka == selectedCarInfo.SelectedBrand && s.Model == selectedCarInfo.SelectedModel)
-                        .Select(s => s.IdSamochodu).FirstOrDefault() + "', '" + db.Uslugi
-                        .Where(u => u.Nazwa == selectedServices[i])
-                        .Select(u => u.IdUslugi).FirstOrDefault() + "', '" + order.IdZamowienia + "', NULL, 'wolne')");
+                    db.Database.ExecuteSqlRaw("INSERT INTO zamowienia_samochody_uslugi values('" + db.Samochody.Where(s => s.Marka == selectedCarInfo.SelectedBrand && s.Model == selectedCarInfo.SelectedModel).Select(s => s.IdSamochodu).FirstOrDefault() + "', '" + db.Uslugi.Where(u => u.Nazwa == selectedServices[i]).Select(u => u.IdUslugi).FirstOrDefault() + "', '" + order.IdZamowienia + "', NULL, 'wtrakcie')");
                     db.SaveChanges();
                 }
             }

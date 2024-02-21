@@ -15,7 +15,14 @@ namespace CarDealerSupportSystem
         public PdfCreator(string fileName)
         {
             document = new();
-            PdfWriter.GetInstance(document, new FileStream(fileName, FileMode.Create));
+            try
+            {
+                PdfWriter.GetInstance(document, new FileStream(fileName, FileMode.Create));
+            }
+            catch(IOException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void DocOpen() => this.document.Open();
         private void DocClose() => this.document.Close();

@@ -15,9 +15,11 @@ namespace CarDealerSupportSystem.SellerFormPanels
     public partial class OrdersPanel : Form
     {
         private readonly salon_samochodowyContext db = new salon_samochodowyContext();
-        public OrdersPanel()
+        public int idPraco;
+        public OrdersPanel(int idPrac)
         {
             InitializeComponent();
+            this.idPraco = idPrac;
         }
 
         private void OrdersPanel_Load(object sender, EventArgs e)
@@ -37,7 +39,7 @@ namespace CarDealerSupportSystem.SellerFormPanels
 
 
             //var Orders = db.Database.ExecuteSqlRaw("SELECT * FROM zamowienia zam JOIN zamowienia_samochody_uslugi zsu ON zam.id_zamowienia = zsu.id_zamowienia JOIN samochody s ON zsu.id_samochodu = s.id_samochodu;");
-            var orders = db.Zamowienia.ToList();
+            var orders = db.Zamowienia.Where(p=> p.IdPracownika==idPraco).ToList();
             OrdersGridView.DataSource = orders;
            
             //disp orders in console
@@ -53,6 +55,20 @@ namespace CarDealerSupportSystem.SellerFormPanels
             OrdersGridView.ClearSelection();
         }
 
+        private void SearchClientsTextBox_TextChanged(object sender, EventArgs e)
+        {
 
+            var searchValue = SearchClientsTextBox.Text.ToLower();
+
+            var ordersRight = db.Zamowienia.Where(p => p.IdPracownika == idPraco).ToList();
+
+            var orders = ordersRight.Where(c => c.RodzajPlatnosci.ToLower().Contains(searchValue)
+            || c.IdKlienta.ToString().Contains(searchValue) || c.RodzajPlatnosci.ToLower().Contains(searchValue)
+            || c.IdZamowienia.ToString().Contains(searchValue)
+            || c.Status.ToLower().Contains(searchValue) || c.CalkowityKoszt.ToString().Contains(searchValue)||c.Data.ToString().Contains(searchValue)).ToList();
+
+            OrdersGridView.DataSource = orders;
+
+        }
     }
 }

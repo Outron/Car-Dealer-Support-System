@@ -216,12 +216,6 @@
     <Compile Include="ManagerFormPanels\ManagerPanel.Designer.cs">
       <DependentUpon>ManagerPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerFormPanels\paramField.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ManagerFormPanels\paramField.Designer.cs">
-      <DependentUpon>paramField.cs</DependentUpon>
-    </Compile>
     <Compile Include="ManagerFormPanels\RaportyForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -351,6 +345,22 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerFormPanels\.Designer - Copy - Copy.cs">
+      <DependentUpon>EditCarsForm.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerFormPanels\.Designer - Copy.cs">
+      <DependentUpon>AddCarsForm.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerFormPanels\EditCarsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerFormPanels\AddCarsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Models\salon_samochodowyContext.cs" />
+    <Compile Include="Models\Logi.cs" />
     <Compile Include="Models\Klienci.cs" />
     <Compile Include="Models\Logi.cs" />
     <Compile Include="Models\PakietyPromocyjne.cs" />
@@ -409,9 +419,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerFormPanels\ManagerPanel.resx">
       <DependentUpon>ManagerPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManagerFormPanels\paramField.resx">
-      <DependentUpon>paramField.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerFormPanels\RaportyForm.resx">
       <DependentUpon>RaportyForm.cs</DependentUpon>

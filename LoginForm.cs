@@ -92,10 +92,9 @@ namespace CarDealerSupportSystem
                         break;
                 }
             }
-            catch (Exception ex)
+            catch (InvalidOperationException ex)
             {
                 MessageBox.Show(text: ex.Message, caption: "Logowanie się nie powiodło");
-                Log.SaveLog("Logowanie pracownika nie powiodło się", LogType.Blad);
             }
         }
 

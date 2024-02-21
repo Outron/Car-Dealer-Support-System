@@ -28,7 +28,8 @@ namespace CarDealerSupportSystem.SellerFormPanels
         private void SearchClientsTextBox_TextChanged(object sender, EventArgs e)
         {
             var searchValue = SearchClientsTextBox.Text.ToLower();
-            var clients = db.Klienci.Where(c => c.Telefon.ToLower().Contains(searchValue)).ToList();
+            var clients = db.Klienci.Where(c => c.Telefon.ToLower().Contains(searchValue) || c.Nazwisko.ToLower().Contains(searchValue) 
+            || c.Imie.ToLower().Contains(searchValue) || c.Adres.ToLower().Contains(searchValue) || c.Email.ToLower().Contains(searchValue)).ToList();
             ClientsGridView.DataSource = clients;
         }
 

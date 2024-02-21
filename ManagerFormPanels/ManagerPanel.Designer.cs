@@ -43,6 +43,7 @@
             this.TopLabel = new System.Windows.Forms.Label();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.DodajZamowienieButton = new System.Windows.Forms.Button();
             this.LeftMenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.TopPanel.SuspendLayout();
@@ -189,6 +190,7 @@
             // TopPanel
             // 
             this.TopPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.TopPanel.Controls.Add(this.DodajZamowienieButton);
             this.TopPanel.Controls.Add(this.EditSpisSamochodowButton);
             this.TopPanel.Controls.Add(this.SpisSamochodowButton);
             this.TopPanel.Controls.Add(this.TopLabel);
@@ -262,6 +264,21 @@
             this.MainPanel.TabIndex = 3;
             this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint);
             // 
+            // DodajZamowienieButton
+            // 
+            this.DodajZamowienieButton.FlatAppearance.BorderSize = 0;
+            this.DodajZamowienieButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DodajZamowienieButton.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.DodajZamowienieButton.ForeColor = System.Drawing.Color.White;
+            this.DodajZamowienieButton.Location = new System.Drawing.Point(564, 12);
+            this.DodajZamowienieButton.Name = "DodajZamowienieButton";
+            this.DodajZamowienieButton.Size = new System.Drawing.Size(229, 37);
+            this.DodajZamowienieButton.TabIndex = 5;
+            this.DodajZamowienieButton.Text = "Dodaj zamowienie";
+            this.DodajZamowienieButton.UseVisualStyleBackColor = true;
+            this.DodajZamowienieButton.Visible = false;
+            this.DodajZamowienieButton.Click += new System.EventHandler(this.DodajZamowienieButton_Click);
+            // 
             // ManagerPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -303,5 +320,6 @@
         private System.Windows.Forms.Button LeftMenuBtn5;
         private System.Windows.Forms.Button SpisSamochodowButton;
         private System.Windows.Forms.Button EditSpisSamochodowButton;
+        private System.Windows.Forms.Button DodajZamowienieButton;
     }
 }
